@@ -7,7 +7,9 @@
     <string name="calendar_button">Calendar</string>
     <string name="directory_button">Faculty and Staff Directory</string>
     <string name="title_activity_calendar">CalendarActivity</string>
-    <string name="button_send">test connection to calendar API?</string>
+    <string name="cal_button_send">test connection to calendar API?</string>
     <string name="news_button_send">test connection to news API?</string>
+    <string name="dir_button_send">test connection to Directory API?</string>
     <string name="title_activity_news">NewsActivity</string>
+    <string name="title_activity_dir">DirActivity</string>
 </resources>

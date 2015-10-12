@@ -12,6 +12,7 @@ public class StartScreenActivity extends AppCompatActivity {
 
     Button CalendarButton;
     Button NewsButton;
+    Button DirButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +21,7 @@ public class StartScreenActivity extends AppCompatActivity {
 
         setCalendarButton();
         setNewsButton();
+        setDirButton();
     }
 
     @Override
@@ -70,6 +72,22 @@ public class StartScreenActivity extends AppCompatActivity {
                 // Start NewActivity.class
                 Intent myIntent = new Intent(StartScreenActivity.this,
                         NewsActivity.class);
+                startActivity(myIntent);
+            }
+        });
+
+    }
+
+    public void setDirButton(){
+        // Locate the button in activity_main.xml
+        NewsButton = (Button) findViewById(R.id.dir_button);
+        // Capture button clicks
+        NewsButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+
+                // Start NewActivity.class
+                Intent myIntent = new Intent(StartScreenActivity.this,
+                        DirActivity.class);
                 startActivity(myIntent);
             }
         });
