@@ -1,16 +1,25 @@
 package com.app.ssumobile.ssumobile_android;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
-public class MyActivity extends AppCompatActivity {
+public class StartScreenActivity extends AppCompatActivity {
+
+    Button CalendarButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my);
+        setContentView(R.layout.activity_main);
+
+        setCalendarButton();
+
     }
 
     @Override
@@ -34,4 +43,21 @@ public class MyActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void setCalendarButton(){
+        // Locate the button in activity_main.xml
+        CalendarButton = (Button) findViewById(R.id.calendar_button);
+        // Capture button clicks
+        CalendarButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+
+                // Start NewActivity.class
+                Intent myIntent = new Intent(StartScreenActivity.this,
+                        CalendarActivity.class);
+                startActivity(myIntent);
+            }
+        });
+
+    }
+
 }
