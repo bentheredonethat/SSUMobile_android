@@ -11,7 +11,7 @@ import android.widget.Button;
 public class StartScreenActivity extends AppCompatActivity {
 
     Button CalendarButton;
-
+    Button NewsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +19,7 @@ public class StartScreenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         setCalendarButton();
-
+        setNewsButton();
     }
 
     @Override
@@ -59,5 +59,22 @@ public class StartScreenActivity extends AppCompatActivity {
         });
 
     }
+
+    public void setNewsButton(){
+        // Locate the button in activity_main.xml
+        NewsButton = (Button) findViewById(R.id.news_button);
+        // Capture button clicks
+        NewsButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+
+                // Start NewActivity.class
+                Intent myIntent = new Intent(StartScreenActivity.this,
+                        NewsActivity.class);
+                startActivity(myIntent);
+            }
+        });
+
+    }
+
 
 }
