@@ -8,4 +8,6 @@
     <string name="directory_button">Faculty and Staff Directory</string>
     <string name="title_activity_calendar">CalendarActivity</string>
     <string name="button_send">test connection to calendar API?</string>
+    <string name="news_button_send">test connection to news API?</string>
+    <string name="title_activity_news">NewsActivity</string>
 </resources>
