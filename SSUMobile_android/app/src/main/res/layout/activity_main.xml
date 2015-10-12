@@ -1,6 +1,4 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_alignParentBottom="true"
@@ -9,16 +7,17 @@
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Faculty and Staff Calendar"
+        android:text="@string/directory_button"
         android:id="@+id/dir_button"/>
 
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Events Calendar"
+        android:text="@string/calendar_button"
         android:id="@+id/calendar_button"
         android:layout_gravity="center_horizontal"
-        android:layout_alignBottom="@+id/dir_button"/>
+        android:layout_alignBottom="@+id/dir_button"
+        />
 
     <Button
         android:layout_width="fill_parent"

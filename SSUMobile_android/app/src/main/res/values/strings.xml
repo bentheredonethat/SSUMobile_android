@@ -6,4 +6,6 @@
     <string name="news_button">University News</string>
     <string name="calendar_button">Calendar</string>
     <string name="directory_button">Faculty and Staff Directory</string>
+    <string name="title_activity_calendar">CalendarActivity</string>
+    <string name="button_send">test connection to calendar API?</string>
 </resources>
