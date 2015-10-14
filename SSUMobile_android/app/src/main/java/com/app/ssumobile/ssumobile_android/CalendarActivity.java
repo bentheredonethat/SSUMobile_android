@@ -2,11 +2,13 @@ package com.app.ssumobile.ssumobile_android;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.FragmentTransaction;
 import android.content.ContentResolver;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.CalendarContract;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -16,12 +18,14 @@ import android.webkit.WebView;
 import android.widget.CalendarView;
 import android.widget.Toast;
 
+import com.roomorama.caldroid.CaldroidFragment;
+
 import java.util.Calendar;
 
-public class CalendarActivity extends Activity {
+public class CalendarActivity extends FragmentActivity {
 
-    //public WebView webView = new WebView(this);
-    CalendarView calendar;
+    Calendar cal;
+    CaldroidFragment caldroidFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,34 +80,16 @@ public class CalendarActivity extends Activity {
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     public void initializeCalendar(){
-        calendar = (CalendarView)findViewById(R.id.calendar);
+        CaldroidFragment caldroidFragment = new CaldroidFragment();
+        Bundle args = new Bundle();
+        Calendar cal = Calendar.getInstance();
+        args.putInt(CaldroidFragment.MONTH, cal.get(Calendar.MONTH) + 1);
+        args.putInt(CaldroidFragment.YEAR, cal.get(Calendar.YEAR));
+        caldroidFragment.setArguments(args);
 
-        // set whether to show week number
-        calendar.setShowWeekNumber(false);
-
-        // set first day of week (monday)
-        calendar.setFirstDayOfWeek(2);
-
-        // background color for selected week
-        calendar.setSelectedWeekBackgroundColor(getResources().getColor(R.color.green));
-
-        // unfocused month color
-        calendar.setUnfocusedMonthDateColor(getResources().getColor(R.color.transparent));
-
-        // line separator between weeks
-        calendar.setWeekSeparatorLineColor(getResources().getColor(R.color.transparent));
-
-        // set vertical bar shown at selected vertical date bar
-        calendar.setSelectedDateVerticalBar(R.color.darkgreen);
-
-        // set listener to be notified upon selected date change
-        calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-               //show the selected date as a toast
-            @Override
-            public void onSelectedDayChange(CalendarView view, int year, int month, int day) {
-                Toast.makeText(getApplicationContext(), day + "/" + month + "/" + year, Toast.LENGTH_LONG).show();
-            }
-        });
+        android.support.v4.app.FragmentTransaction t = getSupportFragmentManager().beginTransaction();
+        t.replace(R.id.calendar, caldroidFragment);
+        t.commit();
     }
 
 
