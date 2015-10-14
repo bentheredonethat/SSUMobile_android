@@ -1,0 +1,27 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentBottom="true"
+    android:orientation="vertical">
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/directory_button"
+        android:id="@+id/dir_button"/>
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/calendar_button"
+        android:id="@+id/calendar_button"
+        android:layout_alignBottom="@+id/dir_button"
+        />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="University News"
+        android:id="@+id/news_button"
+        android:layout_alignBottom="@+id/calendar_button" />
+</LinearLayout>

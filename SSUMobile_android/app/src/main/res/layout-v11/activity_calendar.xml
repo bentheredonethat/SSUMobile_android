@@ -1,0 +1,18 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:padding="20dp"
+    android:background="@color/grey"
+    android:orientation="vertical"
+    tools:context="com.app.ssumobile.ssumobile_android.CalendarActivity">
+
+
+    <CalendarView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/calendar"
+        android:layout_margin="10dp"
+        />
+
+
+</RelativeLayout>
