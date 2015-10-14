@@ -80,12 +80,12 @@ public class StartScreenActivity extends AppCompatActivity {
 
     public void setDirButton(){
         // Locate the button in activity_main.xml
-        NewsButton = (Button) findViewById(R.id.dir_button);
+        DirButton = (Button) findViewById(R.id.dir_button);
         // Capture button clicks
-        NewsButton.setOnClickListener(new View.OnClickListener() {
+        DirButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
 
-                // Start NewActivity.class
+                // Start DirActivity.class
                 Intent myIntent = new Intent(StartScreenActivity.this,
                         DirActivity.class);
                 startActivity(myIntent);
