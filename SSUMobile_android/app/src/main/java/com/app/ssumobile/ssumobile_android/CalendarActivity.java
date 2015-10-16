@@ -19,13 +19,23 @@ import android.widget.CalendarView;
 import android.widget.Toast;
 
 import com.roomorama.caldroid.CaldroidFragment;
+import com.roomorama.caldroid.CaldroidListener;
+
 
 import java.util.Calendar;
+import java.util.Date;
 
 public class CalendarActivity extends FragmentActivity {
 
-    Calendar cal;
+
+
     CaldroidFragment caldroidFragment;
+    android.support.v4.app.FragmentTransaction t;
+
+    CaldroidListener listener;
+
+    CalendarDataHolder calendarDataHolder;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,12 +43,13 @@ public class CalendarActivity extends FragmentActivity {
 
         // set layout for activity
         setContentView(R.layout.activity_calendar);
-
-        // init calendarview
         initializeCalendar();
+        initializeListener();
 
         // connect to remote calendar api?
         testConnection();
+        calendarDataHolder = new CalendarDataHolder(getAssets());
+
 
     }
 
@@ -68,29 +79,66 @@ public class CalendarActivity extends FragmentActivity {
     public void testConnection() {
         // Do something in response to button
         boolean connected = false;
-        String message = "still no cnxn :(";
+        String message = "still no cnxn ";
 
         // if condition works then say so!
         if (connected){
             message = "got cnxn :)";
         }
-        Toast.makeText(getBaseContext(), message, Toast.LENGTH_SHORT).show();
 
+        Toast.makeText(getBaseContext(), message, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getBaseContext(), getBaseContext().toString(), Toast.LENGTH_SHORT).show();
     }
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     public void initializeCalendar(){
-        CaldroidFragment caldroidFragment = new CaldroidFragment();
+        caldroidFragment = new CaldroidFragment();
         Bundle args = new Bundle();
         Calendar cal = Calendar.getInstance();
         args.putInt(CaldroidFragment.MONTH, cal.get(Calendar.MONTH) + 1);
         args.putInt(CaldroidFragment.YEAR, cal.get(Calendar.YEAR));
         caldroidFragment.setArguments(args);
 
-        android.support.v4.app.FragmentTransaction t = getSupportFragmentManager().beginTransaction();
+        t = getSupportFragmentManager().beginTransaction();
         t.replace(R.id.calendar, caldroidFragment);
         t.commit();
     }
+
+    public void initializeListener() {
+        listener = new CaldroidListener() {
+
+            @Override
+            public void onSelectDate(Date date, View view) {
+                Toast.makeText(getApplicationContext(), date.toString(),
+                        Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onChangeMonth(int month, int year) {
+                String text = "month: " + month + " year: " + year;
+                Toast.makeText(getApplicationContext(), text,
+                        Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onLongClickDate(Date date, View view) {
+                Toast.makeText(getApplicationContext(),
+                        "Long click " + date.toString(),
+                        Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onCaldroidViewCreated() {
+                Toast.makeText(getApplicationContext(),
+                        "Caldroid view is created",
+                        Toast.LENGTH_SHORT).show();
+            }
+        };
+        caldroidFragment.setCaldroidListener(listener);
+    }
+
+
+
 
 
 }
