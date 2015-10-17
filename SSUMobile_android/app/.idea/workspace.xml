@@ -29,7 +29,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5090f6b-caf3-42ed-9349-9aec390fb3de" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SSUMobile_android.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1723,7 +1724,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="398" y="20" width="1400" height="1000" extended-state="0" />
+    <frame x="398" y="20" width="1400" height="1000" extended-state="1" />
     <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
