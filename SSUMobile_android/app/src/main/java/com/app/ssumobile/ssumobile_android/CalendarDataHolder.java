@@ -1,6 +1,7 @@
 package com.app.ssumobile.ssumobile_android;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.res.AssetManager;
 import android.graphics.Path;
 import android.widget.Toast;
@@ -8,6 +9,10 @@ import android.widget.Toast;
 import net.fortuna.ical4j.data.CalendarBuilder;
 import net.fortuna.ical4j.model.Calendar;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -31,11 +36,29 @@ import static java.security.AccessController.getContext;
 public class CalendarDataHolder {
     InputStream fin;
     Calendar calendar;
-    public CalendarDataHolder(AssetManager assetManager) {
+    String calHeaderInfoURL = "http://localhost:3000/VCALENDAR";
+    String calEventInfoURL = "http://localhost:3000/VEVENT";
+    Context currentContext;
+
+    public void setContext(Context c){
+        currentContext = c;
+    }
+
+    public CalendarDataHolder() {
         try {
-            InputStream inputStream = assetManager.open("ssucalendar_community.ics");
+
             CalendarBuilder builder = new CalendarBuilder();
-         //   calendar = builder.build(inputStream);
+
+
+            // hold json from url
+            CalendarJSONClient calendarJSONClient = new CalendarJSONClient();
+
+            // get header info
+            calendarJSONClient.getWebpage(calHeaderInfoURL, currentContext.getApplicationContext());
+
+
+
+          //  calendar = builder.build(inputStream);
             System.out.println("xyz found file or dir");
 
         }
@@ -44,6 +67,7 @@ public class CalendarDataHolder {
             System.out.println("xyz could not find file or dir");
             }
     }
+
 
 
 

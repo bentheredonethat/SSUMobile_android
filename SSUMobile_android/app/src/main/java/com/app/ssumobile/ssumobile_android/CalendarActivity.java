@@ -48,8 +48,8 @@ public class CalendarActivity extends FragmentActivity {
 
         // connect to remote calendar api?
         testConnection();
-        calendarDataHolder = new CalendarDataHolder(getAssets());
-
+        calendarDataHolder = new CalendarDataHolder();
+        calendarDataHolder.setContext(getApplicationContext());
 
     }
 
