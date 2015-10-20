@@ -1,0 +1,164 @@
+BEGIN:VCALENDAR
+PRODID:-//Trumba Corporation//Trumba Calendar Services 0.11.12520//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+X-WR-CALNAME:SSUCalendar|Highlighted
+X-WR-TIMEZONE:America/Los_Angeles
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:America/Los_Angeles
+BEGIN:STANDARD
+TZOFFSETFROM:-0700
+TZOFFSETTO:-0800
+TZNAME:PST
+DTSTART:20071104T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0800
+TZOFFSETTO:-0700
+TZNAME:PDT
+DTSTART:20070311T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VEVENT
+SUMMARY:SEAWOLF DECISION DAY 2016
+LOCATION:Quad | Darwin & Stevenson
+DTSTART;TZID=America/Los_Angeles:20160409T080000
+DTEND;TZID=America/Los_Angeles:20160409T160000
+X-MICROSOFT-CDO-ALLDAYEVENT:FALSE
+X-TRUMBA-CUSTOMFIELD;NAME="Event Type";ID=12;TYPE=number:Fair/Festival
+X-TRUMBA-CUSTOMFIELD;NAME="Registered Headcount";ID=3134;TYPE=SingleLine
+ :2500
+DTSTAMP:20151012T083059Z
+DESCRIPTION:Seawolf Decision Day\, open house event for admitted Fall 20
+ 15 students to preview SSU.
+CATEGORIES:Highlighted
+UID:http://uid.trumba.com/event/173633673
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:SEAWOLF DECISION DAY 2016
+DTSTART;TZID=America/Los_Angeles:20160409T083000
+DTEND;TZID=America/Los_Angeles:20160409T160000
+X-MICROSOFT-CDO-ALLDAYEVENT:FALSE
+X-TRUMBA-CUSTOMFIELD;NAME="Event Type";ID=12;TYPE=number:Fair/Festival
+X-TRUMBA-CUSTOMFIELD;NAME="Registered Headcount";ID=3134;TYPE=SingleLine
+ :2000
+DTSTAMP:20151012T083059Z
+DESCRIPTION:Seawolf Decision Day\, open house event for admitted Fall 20
+ 15 students to preview SSU.
+CATEGORIES:Highlighted
+UID:http://uid.trumba.com/event/173633675
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:SEAWOLF DECISION DAY 2016
+LOCATION:Physical Education Building | 8 (Gymnasium)\,Physical Education
+  Building | 8 (Gymnasium)\,Physical Education Building | 8 (Gymnasium Co
+ urt #2)\,Physical Education Building | 8 (Gymnasium Court #3)\,Physical 
+ Education Building | 8 (Gymnasium Court #1)
+DTSTART;TZID=America/Los_Angeles:20160409T083000
+DTEND;TZID=America/Los_Angeles:20160409T153000
+X-MICROSOFT-CDO-ALLDAYEVENT:FALSE
+X-TRUMBA-CUSTOMFIELD;NAME="Event Type";ID=12;TYPE=number:Fair/Festival
+X-TRUMBA-CUSTOMFIELD;NAME="Registered Headcount";ID=3134;TYPE=SingleLine
+ :2500
+DTSTAMP:20151012T083059Z
+DESCRIPTION:Seawolf Decision Day\, open house event for admitted Fall 20
+ 15 students to preview SSU.
+CATEGORIES:Highlighted
+UID:http://uid.trumba.com/event/173633674
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:SEAWOLF DECISION DAY 2016
+LOCATION:Ives Hall | 101 (Warren Auditorium)
+DTSTART;TZID=America/Los_Angeles:20160409T100000
+DTEND;TZID=America/Los_Angeles:20160409T143000
+X-MICROSOFT-CDO-ALLDAYEVENT:FALSE
+X-TRUMBA-CUSTOMFIELD;NAME="Event Type";ID=12;TYPE=number:Fair/Festival
+X-TRUMBA-CUSTOMFIELD;NAME="Registered Headcount";ID=3134;TYPE=SingleLine
+ :2000
+DTSTAMP:20151012T083059Z
+DESCRIPTION:Seawolf Decision Day\, open house event for admitted Fall 20
+ 15 students to preview SSU.
+CATEGORIES:Highlighted
+UID:http://uid.trumba.com/event/173633678
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:SEAWOLF DECISION DAY 2016
+LOCATION:Student Center | Grand Ballroom\,Student Center | Ballroom A\,S
+ tudent Center | Ballroom B\,Student Center | Ballroom C\,Student Center 
+ | Ballroom D
+DTSTART;TZID=America/Los_Angeles:20160409T100000
+DTEND;TZID=America/Los_Angeles:20160409T153000
+X-MICROSOFT-CDO-ALLDAYEVENT:FALSE
+X-TRUMBA-CUSTOMFIELD;NAME="Event Type";ID=12;TYPE=number:Fair/Festival
+X-TRUMBA-CUSTOMFIELD;NAME="Registered Headcount";ID=3134;TYPE=SingleLine
+ :2500
+DTSTAMP:20151012T083059Z
+DESCRIPTION:Seawolf Decision Day\, open house event for admitted Fall 20
+ 15 students to preview SSU.
+CATEGORIES:Highlighted
+UID:http://uid.trumba.com/event/173633677
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:SEAWOLF DECISION DAY 2016
+LOCATION:Salazar Hall | 2014\,Salazar Hall 2021\,Salazar Hall 2025\,Stev
+ enson Hall 1002\,Salazar Hall 2016\,Stevenson Hall 3008\,Darwin Hall | 1
+ 02\,Darwin Hall | 103
+DTSTART;TZID=America/Los_Angeles:20160409T100000
+DTEND;TZID=America/Los_Angeles:20160409T153000
+X-MICROSOFT-CDO-ALLDAYEVENT:FALSE
+X-TRUMBA-CUSTOMFIELD;NAME="Event Type";ID=12;TYPE=number:Fair/Festival
+X-TRUMBA-CUSTOMFIELD;NAME="Registered Headcount";ID=3134;TYPE=SingleLine
+ :2500
+DTSTAMP:20151012T083059Z
+DESCRIPTION:Seawolf Decision Day\, open house event for admitted Fall 20
+ 15 students to preview SSU.
+CATEGORIES:Highlighted
+UID:http://uid.trumba.com/event/173633676
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:SEAWOLF DECISION DAY 2016
+LOCATION:Salazar Hall | Plaza Area
+DTSTART;TZID=America/Los_Angeles:20160409T110000
+DTEND;TZID=America/Los_Angeles:20160409T150000
+X-MICROSOFT-CDO-ALLDAYEVENT:FALSE
+X-TRUMBA-CUSTOMFIELD;NAME="Event Type";ID=12;TYPE=number:Fair/Festival
+X-TRUMBA-CUSTOMFIELD;NAME="Registered Headcount";ID=3134;TYPE=SingleLine
+ :2000
+DTSTAMP:20151012T083059Z
+DESCRIPTION:Seawolf Decision Day\, open house event for admitted Fall 20
+ 15 students to preview SSU.
+CATEGORIES:Highlighted
+UID:http://uid.trumba.com/event/173633680
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:SEAWOLF DECISION DAY 2016
+DTSTART;TZID=America/Los_Angeles:20160409T110000
+DTEND;TZID=America/Los_Angeles:20160409T140000
+X-MICROSOFT-CDO-ALLDAYEVENT:FALSE
+X-TRUMBA-CUSTOMFIELD;NAME="Event Type";ID=12;TYPE=number:Fair/Festival
+DTSTAMP:20151012T083059Z
+DESCRIPTION:Seawolf Decision Day\, open house event for admitted Fall 20
+ 15 students to preview SSU.
+CATEGORIES:Highlighted
+UID:http://uid.trumba.com/event/173633679
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:SEAWOLF DECISION DAY 2016
+LOCATION:The Cooperage\, Room 1\,The Cooperage\, Room 3\,The Cooperage\,
+  Room 2\,Cooperage Building
+DTSTART;TZID=America/Los_Angeles:20160409T120000
+DTEND;TZID=America/Los_Angeles:20160409T130000
+X-MICROSOFT-CDO-ALLDAYEVENT:FALSE
+X-TRUMBA-CUSTOMFIELD;NAME="Event Type";ID=12;TYPE=number:Fair/Festival
+X-TRUMBA-CUSTOMFIELD;NAME="Registered Headcount";ID=3134;TYPE=SingleLine
+ :400
+DTSTAMP:20151012T083059Z
+DESCRIPTION:Seawolf Decision Day\, open house event for admitted Fall 20
+ 15 students to preview SSU.
+CATEGORIES:Highlighted
+UID:http://uid.trumba.com/event/173633681
+END:VEVENT
+END:VCALENDAR

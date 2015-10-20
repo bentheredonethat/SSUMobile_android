@@ -2,11 +2,13 @@ package com.app.ssumobile.ssumobile_android;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.FragmentTransaction;
 import android.content.ContentResolver;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.CalendarContract;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -16,12 +18,24 @@ import android.webkit.WebView;
 import android.widget.CalendarView;
 import android.widget.Toast;
 
+import com.roomorama.caldroid.CaldroidFragment;
+import com.roomorama.caldroid.CaldroidListener;
+
+
 import java.util.Calendar;
+import java.util.Date;
 
-public class CalendarActivity extends Activity {
+public class CalendarActivity extends FragmentActivity {
 
-    //public WebView webView = new WebView(this);
-    CalendarView calendar;
+
+
+    CaldroidFragment caldroidFragment;
+    android.support.v4.app.FragmentTransaction t;
+
+    CaldroidListener listener;
+
+    CalendarDataHolder calendarDataHolder;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,12 +43,13 @@ public class CalendarActivity extends Activity {
 
         // set layout for activity
         setContentView(R.layout.activity_calendar);
-
-        // init calendarview
         initializeCalendar();
+        initializeListener();
 
         // connect to remote calendar api?
         testConnection();
+        calendarDataHolder = new CalendarDataHolder();
+        calendarDataHolder.setContext(getApplicationContext());
 
     }
 
@@ -64,47 +79,66 @@ public class CalendarActivity extends Activity {
     public void testConnection() {
         // Do something in response to button
         boolean connected = false;
-        String message = "still no cnxn :(";
+        String message = "still no cnxn ";
 
         // if condition works then say so!
         if (connected){
             message = "got cnxn :)";
         }
-        Toast.makeText(getBaseContext(), message, Toast.LENGTH_SHORT).show();
 
+        Toast.makeText(getBaseContext(), message, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getBaseContext(), getBaseContext().toString(), Toast.LENGTH_SHORT).show();
     }
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     public void initializeCalendar(){
-        calendar = (CalendarView)findViewById(R.id.calendar);
+        caldroidFragment = new CaldroidFragment();
+        Bundle args = new Bundle();
+        Calendar cal = Calendar.getInstance();
+        args.putInt(CaldroidFragment.MONTH, cal.get(Calendar.MONTH) + 1);
+        args.putInt(CaldroidFragment.YEAR, cal.get(Calendar.YEAR));
+        caldroidFragment.setArguments(args);
 
-        // set whether to show week number
-        calendar.setShowWeekNumber(false);
-
-        // set first day of week (monday)
-        calendar.setFirstDayOfWeek(2);
-
-        // background color for selected week
-        calendar.setSelectedWeekBackgroundColor(getResources().getColor(R.color.green));
-
-        // unfocused month color
-        calendar.setUnfocusedMonthDateColor(getResources().getColor(R.color.transparent));
-
-        // line separator between weeks
-        calendar.setWeekSeparatorLineColor(getResources().getColor(R.color.transparent));
-
-        // set vertical bar shown at selected vertical date bar
-        calendar.setSelectedDateVerticalBar(R.color.darkgreen);
-
-        // set listener to be notified upon selected date change
-        calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-               //show the selected date as a toast
-            @Override
-            public void onSelectedDayChange(CalendarView view, int year, int month, int day) {
-                Toast.makeText(getApplicationContext(), day + "/" + month + "/" + year, Toast.LENGTH_LONG).show();
-            }
-        });
+        t = getSupportFragmentManager().beginTransaction();
+        t.replace(R.id.calendar, caldroidFragment);
+        t.commit();
     }
+
+    public void initializeListener() {
+        listener = new CaldroidListener() {
+
+            @Override
+            public void onSelectDate(Date date, View view) {
+                Toast.makeText(getApplicationContext(), date.toString(),
+                        Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onChangeMonth(int month, int year) {
+                String text = "month: " + month + " year: " + year;
+                Toast.makeText(getApplicationContext(), text,
+                        Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onLongClickDate(Date date, View view) {
+                Toast.makeText(getApplicationContext(),
+                        "Long click " + date.toString(),
+                        Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onCaldroidViewCreated() {
+                Toast.makeText(getApplicationContext(),
+                        "Caldroid view is created",
+                        Toast.LENGTH_SHORT).show();
+            }
+        };
+        caldroidFragment.setCaldroidListener(listener);
+    }
+
+
+
 
 
 }
