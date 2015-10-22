@@ -1,4 +1,4 @@
-package com.app.ssumobile.ssumobile_android;
+package com.app.ssumobile.ssumobile_android.activity;
 
 import android.annotation.TargetApi;
 import android.os.Build;
@@ -9,23 +9,35 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.app.ssumobile.ssumobile_android.R;
+import com.app.ssumobile.ssumobile_android.service.CalendarService;
+import com.app.ssumobile.ssumobile_android.service.RestClient;
 import com.roomorama.caldroid.CaldroidFragment;
 import com.roomorama.caldroid.CaldroidListener;
 
+import org.json.JSONObject;
+
+import java.io.File;
 import java.util.Calendar;
 import java.util.Date;
 
+import rx.Observable;
+import rx.Observer;
+import rx.Subscription;
+import rx.subscriptions.Subscriptions;
+
 public class CalendarActivity extends FragmentActivity {
 
-
+    String SERVICE_ENDPOINT = "http://localhost:3000";
 
     CaldroidFragment caldroidFragment;
     android.support.v4.app.FragmentTransaction t;
 
     CaldroidListener listener;
 
-    CalendarDataHolder calendarDataHolder;
+    RestClient restClient;
 
+    CalendarService calendarService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +50,18 @@ public class CalendarActivity extends FragmentActivity {
 
         // connect to remote calendar api?
         testConnection();
-        calendarDataHolder = new CalendarDataHolder();
-        calendarDataHolder.setContext(getApplicationContext());
-        Toast.makeText(getBaseContext(), "attached debugger to process do ", Toast.LENGTH_SHORT).show();
+
+        System.out.println("xyz trying instantiate service");
+        restClient = new RestClient();
+        System.out.println("xyz instantiated service");
+
+        System.out.println("xyz trying to get service");
+        calendarService = restClient.getCalendarService();
+        System.out.println("xyz got the service");
+
+
+
+
 
     }
 

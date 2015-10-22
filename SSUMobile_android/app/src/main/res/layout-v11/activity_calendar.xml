@@ -4,7 +4,7 @@
     android:padding="20dp"
     android:background="@color/grey"
     android:orientation="vertical"
-    tools:context="com.app.ssumobile.ssumobile_android.CalendarActivity">
+    tools:context="com.app.ssumobile.ssumobile_android.activity.CalendarActivity">
 
 
     <FrameLayout
