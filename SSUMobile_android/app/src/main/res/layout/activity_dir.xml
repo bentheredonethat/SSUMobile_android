@@ -11,6 +11,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/dir_button_send"
-        android:onClick="testConnection" />
+        android:onClick="testConnection"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/button2" />
+
+    <Button
+        android:layout_width="175dp"
+        android:layout_height="45dp"
+        android:text="@string/contact_button"
+        android:id="@+id/contact_button"
+        android:layout_marginTop="31dp"
+        android:layout_below="@+id/button2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="175dp"
+        android:layout_height="45dp"
+        android:text="@string/contact_button"
+        android:id="@+id/button"
+        android:layout_below="@+id/contact_button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
