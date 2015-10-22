@@ -1,31 +1,11 @@
 package com.app.ssumobile.ssumobile_android;
 
-import android.app.Dialog;
 import android.content.Context;
-import android.content.res.AssetManager;
-import android.graphics.Path;
-import android.widget.Toast;
 
 import net.fortuna.ical4j.data.CalendarBuilder;
 import net.fortuna.ical4j.model.Calendar;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.ByteArrayInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Properties;
-import java.util.Queue;
-import java.util.concurrent.ConcurrentHashMap;
-
-import static java.security.AccessController.getContext;
 
 
 
@@ -53,8 +33,8 @@ public class CalendarDataHolder {
             // hold json from url
             CalendarJSONClient calendarJSONClient = new CalendarJSONClient();
 
-            // get header info
-            calendarJSONClient.getWebpage(calHeaderInfoURL, currentContext.getApplicationContext());
+            CalendarFormatDataObject calendarFormatDataObj = new CalendarFormatDataObject();
+
 
 
 

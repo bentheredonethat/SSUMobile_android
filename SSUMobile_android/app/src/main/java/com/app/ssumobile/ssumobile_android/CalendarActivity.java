@@ -1,26 +1,16 @@
 package com.app.ssumobile.ssumobile_android;
 
 import android.annotation.TargetApi;
-import android.app.Activity;
-import android.app.FragmentTransaction;
-import android.content.ContentResolver;
-import android.database.Cursor;
-import android.net.Uri;
 import android.os.Build;
-import android.provider.CalendarContract;
-import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.webkit.WebView;
-import android.widget.CalendarView;
 import android.widget.Toast;
 
 import com.roomorama.caldroid.CaldroidFragment;
 import com.roomorama.caldroid.CaldroidListener;
-
 
 import java.util.Calendar;
 import java.util.Date;
@@ -50,6 +40,7 @@ public class CalendarActivity extends FragmentActivity {
         testConnection();
         calendarDataHolder = new CalendarDataHolder();
         calendarDataHolder.setContext(getApplicationContext());
+        Toast.makeText(getBaseContext(), "attached debugger to process do ", Toast.LENGTH_SHORT).show();
 
     }
 

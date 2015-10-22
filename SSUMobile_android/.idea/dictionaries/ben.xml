@@ -2,6 +2,7 @@
   <dictionary name="ben">
     <words>
       <w>privateget</w>
+      <w>vtimezone</w>
     </words>
   </dictionary>
 </component>
