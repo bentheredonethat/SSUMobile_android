@@ -1,4 +1,4 @@
-package com.app.ssumobile.ssumobile_android;
+package com.app.ssumobile.ssumobile_android.models;
 import com.google.gson.annotations.SerializedName;
 
 /**

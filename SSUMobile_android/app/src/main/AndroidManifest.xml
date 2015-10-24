@@ -40,7 +40,7 @@
             android:label="@string/title_activity_dir" >
         </activity>
         <activity
-            android:name=".ContactActivity"
+            android:name=".activity.ContactActivity"
             android:label="@string/title_activity_contact">
         </activity>
     </application>

@@ -1,4 +1,4 @@
-package com.app.ssumobile.ssumobile_android;
+package com.app.ssumobile.ssumobile_android.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
+
+import com.app.ssumobile.ssumobile_android.R;
 
 /**
  * Created by WestFlow on 10/22/2015.
