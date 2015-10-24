@@ -19,7 +19,7 @@
         android:theme="@style/AppTheme" >
 
         <activity
-            android:name=".StartScreenActivity"
+            android:name=".activity.StartScreenActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,15 +28,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CalendarActivity"
+            android:name=".activity.CalendarActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name=".NewsActivity"
+            android:name=".activity.NewsActivity"
             android:label="@string/title_activity_news" >
         </activity>
         <activity
-            android:name=".DirActivity"
+            android:name=".activity.DirActivity"
             android:label="@string/title_activity_dir" >
         </activity>
         <activity

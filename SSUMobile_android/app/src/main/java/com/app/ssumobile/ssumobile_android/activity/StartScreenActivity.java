@@ -1,4 +1,4 @@
-package com.app.ssumobile.ssumobile_android;
+package com.app.ssumobile.ssumobile_android.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +7,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+
+import com.app.ssumobile.ssumobile_android.R;
 
 public class StartScreenActivity extends AppCompatActivity {
 
