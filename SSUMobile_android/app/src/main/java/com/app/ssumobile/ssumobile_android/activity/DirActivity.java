@@ -8,8 +8,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 import android.widget.Button;
-
 import com.app.ssumobile.ssumobile_android.R;
+
+
 
 public class DirActivity extends AppCompatActivity {
 
@@ -19,8 +20,8 @@ public class DirActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dir);
-
         setContactButton();
+
     }
 
     @Override
@@ -52,12 +53,13 @@ public class DirActivity extends AppCompatActivity {
         ContactButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 // Start ContactActivity.class
+
                 Intent myIntent = new Intent(DirActivity.this,
                         ContactActivity.class);
                 startActivity(myIntent);
-            }
+                }
 
-        });
+     });
     }
 
     public void testConnection(View view) {

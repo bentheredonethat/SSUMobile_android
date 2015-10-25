@@ -1,6 +1,7 @@
 package com.app.ssumobile.ssumobile_android.models;
 import com.google.gson.annotations.SerializedName;
 
+
 /**
  * Created by WestFlow on 10/16/2015.
  */

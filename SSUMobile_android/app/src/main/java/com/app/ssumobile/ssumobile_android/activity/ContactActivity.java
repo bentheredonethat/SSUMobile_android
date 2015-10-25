@@ -1,23 +1,41 @@
 package com.app.ssumobile.ssumobile_android.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Toast;
-
+import android.widget.Button;
+import android.widget.TextView;
+import com.app.ssumobile.ssumobile_android.models.ContactModel;
 import com.app.ssumobile.ssumobile_android.R;
+import com.app.ssumobile.ssumobile_android.providers.IContactProviderTest;
 
 /**
  * Created by WestFlow on 10/22/2015.
  */
+
 public class ContactActivity extends AppCompatActivity {
+    private TextView Fname;
+    private TextView Lname;
+    private TextView Title;
+    private Button PhoneButton;
+    private Button EmailButton;
+    IContactProviderTest getMockContact = new IContactProviderTest();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.contact_view);
+        //ContactModel model = getMockContact.MockContactCreation();
+        // Set instances of each Button/Text View
+        Fname = (TextView)findViewById(R.id.Fname_button);
+        Lname = (TextView)findViewById(R.id.Lname_button);
+        Title = (TextView)findViewById(R.id.Title_button);
+        PhoneButton = (Button)findViewById(R.id.Phone_button);
+        EmailButton = (Button)findViewById(R.id.Email_button);
+
+        //MockContactCreation(model);
+
     }
 
     @Override
@@ -40,5 +58,13 @@ public class ContactActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void MockContactCreation(ContactModel contactModel){
+        Fname.setText(contactModel.getFname());
+        Lname.setText(contactModel.getLname());
+        Title.setText(contactModel.getTitle());
+        PhoneButton.setText(contactModel.getPhone_num());
+        EmailButton.setText(contactModel.getEmail());
     }
 }
