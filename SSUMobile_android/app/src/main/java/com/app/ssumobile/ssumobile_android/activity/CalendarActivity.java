@@ -11,16 +11,13 @@ import android.widget.Toast;
 
 import com.app.ssumobile.ssumobile_android.R;
 import com.app.ssumobile.ssumobile_android.service.CalendarService;
-import com.app.ssumobile.ssumobile_android.service.RestClient;
 import com.roomorama.caldroid.CaldroidFragment;
 import com.roomorama.caldroid.CaldroidListener;
 
-import org.json.JSONObject;
-
-import java.io.File;
 import java.util.Calendar;
 import java.util.Date;
 
+<<<<<<< HEAD
 import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
@@ -29,6 +26,8 @@ import rx.Observer;
 import rx.Subscription;
 import rx.subscriptions.Subscriptions;
 
+=======
+>>>>>>> master
 public class CalendarActivity extends FragmentActivity {
 
     String SERVICE_ENDPOINT = "http://localhost:3000";
@@ -38,7 +37,6 @@ public class CalendarActivity extends FragmentActivity {
 
     CaldroidListener listener;
 
-    RestClient restClient;
 
     CalendarService calendarService;
 
@@ -55,11 +53,9 @@ public class CalendarActivity extends FragmentActivity {
         testConnection();
 
         System.out.println("xyz trying instantiate service");
-        restClient = new RestClient();
         System.out.println("xyz instantiated service");
 
         System.out.println("xyz trying to get service");
-        calendarService = restClient.getCalendarService();
         System.out.println("xyz got the service");
 
 
