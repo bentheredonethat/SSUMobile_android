@@ -15,19 +15,12 @@ import com.app.ssumobile.ssumobile_android.service.RestClient;
 import com.roomorama.caldroid.CaldroidFragment;
 import com.roomorama.caldroid.CaldroidListener;
 
-import org.json.JSONObject;
-
-import java.io.File;
 import java.util.Calendar;
 import java.util.Date;
 
 import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
-import rx.Observable;
-import rx.Observer;
-import rx.Subscription;
-import rx.subscriptions.Subscriptions;
 
 public class CalendarActivity extends FragmentActivity {
 
