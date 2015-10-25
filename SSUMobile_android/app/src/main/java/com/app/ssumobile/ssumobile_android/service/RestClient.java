@@ -15,7 +15,8 @@ import retrofit.converter.GsonConverter;
  * restAdapter
  */
 public class RestClient {
-    private static final String BASE_URL = "http://localhost:3000/";
+    //private static final String BASE_URL = "http://www.cs.sonoma.edu/~levinsky";
+    private static final String BASE_URL = "http://130.157.101.4:3000/";
     private CalendarService apiService;
 
     public RestClient()

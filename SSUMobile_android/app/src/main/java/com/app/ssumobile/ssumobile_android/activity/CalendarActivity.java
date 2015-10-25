@@ -21,6 +21,9 @@ import java.io.File;
 import java.util.Calendar;
 import java.util.Date;
 
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 import rx.Observable;
 import rx.Observer;
 import rx.Subscription;
@@ -61,6 +64,17 @@ public class CalendarActivity extends FragmentActivity {
 
 
 
+        calendarService.getHeaderInfo(new Callback<Response>() {
+            @Override
+            public void success(Response response, Response response2) {
+                System.out.println("xyz success in callback");
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+                System.out.println("xyz failure in callback");
+            }
+        });
 
 
     }
