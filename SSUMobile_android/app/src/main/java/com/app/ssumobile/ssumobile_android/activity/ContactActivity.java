@@ -25,16 +25,26 @@ public class ContactActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Runnable r = new Runnable() {
+            @Override
+            public void run() {
+                ContactModel model = getMockContact.MockContactCreation();
+                MockContactCreation(model);
+            }
+        };
+        // This Thread should populate the text fields of each button.
+        new Thread(r).start();
+
+
         setContentView(R.layout.contact_view);
-        //ContactModel model = getMockContact.MockContactCreation();
+
         // Set instances of each Button/Text View
         Fname = (TextView)findViewById(R.id.Fname_button);
         Lname = (TextView)findViewById(R.id.Lname_button);
         Title = (TextView)findViewById(R.id.Title_button);
         PhoneButton = (Button)findViewById(R.id.Phone_button);
         EmailButton = (Button)findViewById(R.id.Email_button);
-
-        //MockContactCreation(model);
 
     }
 
