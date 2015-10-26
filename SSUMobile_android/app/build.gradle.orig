@@ -45,12 +45,16 @@ dependencies {
 
     compile 'com.google.code.gson:gson:2.3'
     compile 'org.parceler:parceler:0.2.13'
+<<<<<<< HEAD
     compile 'io.reactivex:rxandroid:1.0.1'
 // Because RxAndroid releases are few and far between, it is recommended you also
 // explicitly depend on RxJava's latest version for bug fixes and new features.
     compile 'io.reactivex:rxjava:1.0.14'
     compile 'com.squareup.retrofit:converter-gson:2.0.0-beta1'
     compile 'com.squareup.retrofit:retrofit:1.9.1'
+=======
     compile 'com.squareup.okhttp:okhttp:2.5.0'
 
+
+>>>>>>> cnxn_to_node
 }
