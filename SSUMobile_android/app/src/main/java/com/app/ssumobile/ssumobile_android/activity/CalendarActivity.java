@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.app.ssumobile.ssumobile_android.R;
 import com.app.ssumobile.ssumobile_android.service.CalendarService;
+import com.app.ssumobile.ssumobile_android.service.RestClient;
 import com.roomorama.caldroid.CaldroidFragment;
 import com.roomorama.caldroid.CaldroidListener;
 
@@ -38,6 +39,8 @@ public class CalendarActivity extends FragmentActivity {
 
 
     CalendarService calendarService;
+
+    RestClient restClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
