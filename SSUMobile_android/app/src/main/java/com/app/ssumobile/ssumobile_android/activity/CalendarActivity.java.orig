@@ -48,7 +48,6 @@ public class CalendarActivity extends FragmentActivity {
         initializeCalendar();
         initializeListener();
 
-
         restClient = new RestClient();
 
 
