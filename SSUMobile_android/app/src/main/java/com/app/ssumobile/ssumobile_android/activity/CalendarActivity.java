@@ -13,7 +13,7 @@ import com.app.ssumobile.ssumobile_android.R;
 import com.app.ssumobile.ssumobile_android.service.CalendarService;
 import com.roomorama.caldroid.CaldroidFragment;
 import com.roomorama.caldroid.CaldroidListener;
-
+import com.app.ssumobile.ssumobile_android.service.RestClient;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -34,9 +34,9 @@ public class CalendarActivity extends FragmentActivity {
     CaldroidFragment caldroidFragment;
     android.support.v4.app.FragmentTransaction t;
 
+    RestClient restClient;
+
     CaldroidListener listener;
-
-
     CalendarService calendarService;
 
     @Override
