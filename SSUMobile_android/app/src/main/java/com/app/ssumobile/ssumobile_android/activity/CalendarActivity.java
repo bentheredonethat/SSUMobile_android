@@ -20,6 +20,7 @@ import org.json.JSONObject;
 import java.io.File;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 import retrofit.Callback;
 import retrofit.RetrofitError;
@@ -51,30 +52,13 @@ public class CalendarActivity extends FragmentActivity {
         initializeCalendar();
         initializeListener();
 
+
+        restClient = new RestClient();
+
         // connect to remote calendar api?
         testConnection();
 
-        System.out.println("xyz trying instantiate service");
-        restClient = new RestClient();
-        System.out.println("xyz instantiated service");
 
-        System.out.println("xyz trying to get service");
-        calendarService = restClient.getCalendarService();
-        System.out.println("xyz got the service");
-
-
-
-        calendarService.getHeaderInfo(new Callback<Response>() {
-            @Override
-            public void success(Response response, Response response2) {
-                System.out.println("xyz success in callback");
-            }
-
-            @Override
-            public void failure(RetrofitError error) {
-                System.out.println("xyz failure in callback");
-            }
-        });
 
 
     }
@@ -103,17 +87,18 @@ public class CalendarActivity extends FragmentActivity {
 
     /** Called when the activity starts */
     public void testConnection() {
-        // Do something in response to button
-        boolean connected = false;
-        String message = "still no cnxn ";
+        calendarService = restClient.getCalendarService();
+        calendarService.getHeaderInfo(new Callback<Response>() {
+            @Override
+            public void success(Response response, Response response2) {
+                Toast.makeText(getBaseContext(), "xyz yes!", Toast.LENGTH_SHORT).show();
+            }
 
-        // if condition works then say so!
-        if (connected){
-            message = "got cnxn :)";
-        }
-
-        Toast.makeText(getBaseContext(), message, Toast.LENGTH_SHORT).show();
-        Toast.makeText(getBaseContext(), getBaseContext().toString(), Toast.LENGTH_SHORT).show();
+            @Override
+            public void failure(RetrofitError error) {
+                Toast.makeText(getBaseContext(), "xyz no!", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)

@@ -19,7 +19,7 @@ android {
 
     defaultConfig {
         applicationId "com.app.ssumobile.ssumobile_android"
-        minSdkVersion 8
+        minSdkVersion 9
         targetSdkVersion 21
         versionCode 1
         versionName "1.0"
@@ -45,5 +45,7 @@ dependencies {
     compile 'io.reactivex:rxandroid:0.24.0'
     compile 'com.google.code.gson:gson:2.3'
     compile 'org.parceler:parceler:0.2.13'
+    compile 'com.squareup.okhttp:okhttp:2.5.0'
+
 
 }

@@ -17,22 +17,24 @@ import retrofit.converter.GsonConverter;
 public class RestClient {
     //private static final String BASE_URL = "http://www.cs.sonoma.edu/~levinsky";
     private static final String BASE_URL = "http://130.157.101.4:3000/";
-    private CalendarService apiService;
+    private static CalendarService apiService;
 
     public RestClient()
     {
-        System.out.println("xyz got into restclient()");
+        System.out.println("xyz got into rest client()");
+
         Gson gson = new GsonBuilder()
-                .registerTypeAdapterFactory(new ItemTypeAdapterFactory())
+               // .registerTypeAdapterFactory(new ItemTypeAdapterFactory())
                 .create();
 
         RestAdapter restAdapter = new RestAdapter.Builder()
-                .setLogLevel(RestAdapter.LogLevel.FULL)
+                .setLogLevel(RestAdapter.LogLevel.FULL  )
                 .setEndpoint(BASE_URL)
                 .setConverter(new GsonConverter(gson))
                 .build();
 
         apiService = restAdapter.create(CalendarService.class);
+
     }
 
     public CalendarService getCalendarService()
