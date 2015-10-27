@@ -13,19 +13,14 @@ import com.app.ssumobile.ssumobile_android.R;
 import com.app.ssumobile.ssumobile_android.service.CalendarService;
 import com.roomorama.caldroid.CaldroidFragment;
 import com.roomorama.caldroid.CaldroidListener;
-import com.app.ssumobile.ssumobile_android.service.RestClient;
+
 import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
 
 
 import retrofit.Callback;
-import retrofit.RetrofitError;
-import retrofit.client.Response;
-import rx.Observable;
-import rx.Observer;
-import rx.Subscription;
-import rx.subscriptions.Subscriptions;
+//import retrofit.RetrofitError;
+//import retrofit.client.Response;
 
 public class CalendarActivity extends FragmentActivity {
 
@@ -34,7 +29,7 @@ public class CalendarActivity extends FragmentActivity {
     CaldroidFragment caldroidFragment;
     android.support.v4.app.FragmentTransaction t;
 
-    RestClient restClient;
+    //RestClient restClient;
 
     CaldroidListener listener;
     CalendarService calendarService;
@@ -49,11 +44,11 @@ public class CalendarActivity extends FragmentActivity {
         initializeListener();
 
 
-        restClient = new RestClient();
+       // restClient = new RestClient();
 
 
         // connect to remote calendar api?
-        testConnection();
+       // testConnection();
 
 
 
@@ -82,7 +77,8 @@ public class CalendarActivity extends FragmentActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    /** Called when the activity starts */
+    /*
+    /** Called when the activity starts
     public void testConnection() {
         calendarService = restClient.getCalendarService();
         calendarService.getHeaderInfo(new Callback<Response>() {
@@ -96,7 +92,7 @@ public class CalendarActivity extends FragmentActivity {
                 Toast.makeText(getBaseContext(), "xyz no!", Toast.LENGTH_SHORT).show();
             }
         });
-    }
+    }*/
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     public void initializeCalendar(){

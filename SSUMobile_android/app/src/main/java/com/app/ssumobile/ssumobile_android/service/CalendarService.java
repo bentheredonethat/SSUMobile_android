@@ -14,7 +14,7 @@ import rx.Observable;
  * Created by ben on 10/21/15.
  */
 public interface CalendarService {
-    @GET("/VCALENDAR")
-    void getHeaderInfo(Callback<retrofit.client.Response> c);
+    //@GET("/VCALENDAR")
+    //void getHeaderInfo(Callback<retrofit.client.Response> c);
 }
 

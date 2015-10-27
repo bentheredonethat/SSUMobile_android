@@ -53,7 +53,6 @@ public class DirActivity extends AppCompatActivity {
         ContactButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 // Start ContactActivity.class
-
                 Intent myIntent = new Intent(DirActivity.this,
                         ContactActivity.class);
                 startActivity(myIntent);

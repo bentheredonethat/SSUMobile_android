@@ -8,7 +8,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import com.app.ssumobile.ssumobile_android.models.ContactModel;
 import com.app.ssumobile.ssumobile_android.R;
-import com.app.ssumobile.ssumobile_android.providers.IContactProviderTest;
 
 /**
  * Created by WestFlow on 10/22/2015.
@@ -20,24 +19,10 @@ public class ContactActivity extends AppCompatActivity {
     private TextView Title;
     private Button PhoneButton;
     private Button EmailButton;
-    IContactProviderTest getMockContact = new IContactProviderTest();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        Runnable r = new Runnable() {
-            @Override
-            public void run() {
-                ContactModel model = getMockContact.MockContactCreation();
-                MockContactCreation(model);
-            }
-        };
-        // This Thread should populate the text fields of each button.
-        new Thread(r).start();
-
-
-        setContentView(R.layout.contact_view);
 
         // Set instances of each Button/Text View
         Fname = (TextView)findViewById(R.id.Fname_button);
@@ -45,6 +30,19 @@ public class ContactActivity extends AppCompatActivity {
         Title = (TextView)findViewById(R.id.Title_button);
         PhoneButton = (Button)findViewById(R.id.Phone_button);
         EmailButton = (Button)findViewById(R.id.Email_button);
+
+
+        Runnable r = new Runnable() {
+            @Override
+            public void run() {
+                MockContactProvider();
+            }
+        };
+        Thread myThread = new Thread(r);
+        myThread.start();
+
+
+        setContentView(R.layout.contact_view);
 
     }
 
@@ -70,11 +68,7 @@ public class ContactActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void MockContactCreation(ContactModel contactModel){
-        Fname.setText(contactModel.getFname());
-        Lname.setText(contactModel.getLname());
-        Title.setText(contactModel.getTitle());
-        PhoneButton.setText(contactModel.getPhone_num());
-        EmailButton.setText(contactModel.getEmail());
+    public void MockContactProvider(){
+
     }
 }
