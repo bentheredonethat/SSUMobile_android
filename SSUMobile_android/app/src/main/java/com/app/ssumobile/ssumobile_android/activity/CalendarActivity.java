@@ -13,9 +13,17 @@ import com.app.ssumobile.ssumobile_android.R;
 import com.app.ssumobile.ssumobile_android.service.CalendarService;
 import com.roomorama.caldroid.CaldroidFragment;
 import com.roomorama.caldroid.CaldroidListener;
-
+import com.app.ssumobile.ssumobile_android.service.RestClient;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
+
+
+import retrofit.Callback;
+import rx.Observable;
+import rx.Observer;
+import rx.Subscription;
+import rx.subscriptions.Subscriptions;
 
 public class CalendarActivity extends FragmentActivity {
 
@@ -24,9 +32,9 @@ public class CalendarActivity extends FragmentActivity {
     CaldroidFragment caldroidFragment;
     android.support.v4.app.FragmentTransaction t;
 
+    RestClient restClient;
+
     CaldroidListener listener;
-
-
     CalendarService calendarService;
 
     @Override
@@ -38,15 +46,12 @@ public class CalendarActivity extends FragmentActivity {
         initializeCalendar();
         initializeListener();
 
+
+        restClient = new RestClient();
+
+
         // connect to remote calendar api?
-        testConnection();
-
-        System.out.println("xyz trying instantiate service");
-        System.out.println("xyz instantiated service");
-
-        System.out.println("xyz trying to get service");
-        System.out.println("xyz got the service");
-
+        //testConnection();
 
 
 
@@ -75,20 +80,21 @@ public class CalendarActivity extends FragmentActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    /** Called when the activity starts */
+    /* Called when the activity starts
     public void testConnection() {
-        // Do something in response to button
-        boolean connected = false;
-        String message = "still no cnxn ";
+        calendarService = restClient.getCalendarService();
+        calendarService.getHeaderInfo(new Callback<Response>() {
+            @Override
+            public void success(Response response, Response response2) {
+                Toast.makeText(getBaseContext(), "xyz yes!", Toast.LENGTH_SHORT).show();
+            }
 
-        // if condition works then say so!
-        if (connected){
-            message = "got cnxn :)";
-        }
-
-        Toast.makeText(getBaseContext(), message, Toast.LENGTH_SHORT).show();
-        Toast.makeText(getBaseContext(), getBaseContext().toString(), Toast.LENGTH_SHORT).show();
-    }
+            @Override
+            public void failure(RetrofitError error) {
+                Toast.makeText(getBaseContext(), "xyz no!", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }*/
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     public void initializeCalendar(){

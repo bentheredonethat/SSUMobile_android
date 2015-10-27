@@ -35,6 +35,7 @@ public class ContactActivity extends AppCompatActivity {
         PhoneButton = (Button) findViewById(R.id.Phone_button);
         EmailButton = (Button) findViewById(R.id.Email_button);
 
+
         // Create a new Thread to handle instantiation of Text values for each TextView and Button
         Runnable r = new Runnable() {
             @Override
@@ -47,6 +48,7 @@ public class ContactActivity extends AppCompatActivity {
 
         // Set the contact_view to the current view
         setContentView(R.layout.contact_view);
+
 
     }
 
