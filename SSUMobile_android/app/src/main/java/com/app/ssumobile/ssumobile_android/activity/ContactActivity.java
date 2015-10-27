@@ -8,33 +8,45 @@ import android.widget.Button;
 import android.widget.TextView;
 import com.app.ssumobile.ssumobile_android.models.ContactModel;
 import com.app.ssumobile.ssumobile_android.R;
-import com.app.ssumobile.ssumobile_android.providers.IContactProviderTest;
+import org.junit.Test;
+import org.mockito.Mockito;
+import static org.mockito.Mockito.mock;
+
 
 /**
  * Created by WestFlow on 10/22/2015.
  */
 
 public class ContactActivity extends AppCompatActivity {
-    private TextView Fname;
-    private TextView Lname;
-    private TextView Title;
-    private Button PhoneButton;
-    private Button EmailButton;
-    IContactProviderTest getMockContact = new IContactProviderTest();
+    TextView Fname;
+    TextView Lname;
+    TextView Title;
+    Button PhoneButton;
+    Button EmailButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.contact_view);
-        //ContactModel model = getMockContact.MockContactCreation();
-        // Set instances of each Button/Text View
-        Fname = (TextView)findViewById(R.id.Fname_button);
-        Lname = (TextView)findViewById(R.id.Lname_button);
-        Title = (TextView)findViewById(R.id.Title_button);
-        PhoneButton = (Button)findViewById(R.id.Phone_button);
-        EmailButton = (Button)findViewById(R.id.Email_button);
 
-        //MockContactCreation(model);
+        // Set instances of each Button/Text View
+        Fname = (TextView) findViewById(R.id.Fname_button);
+        Lname = (TextView) findViewById(R.id.Lname_button);
+        Title = (TextView) findViewById(R.id.Title_button);
+        PhoneButton = (Button) findViewById(R.id.Phone_button);
+        EmailButton = (Button) findViewById(R.id.Email_button);
+
+        // Create a new Thread to handle instantiation of Text values for each TextView and Button
+        Runnable r = new Runnable() {
+            @Override
+            public void run() {
+                MockContactProvider();
+            }
+        };
+        Thread myThread = new Thread(r);
+        myThread.start();
+
+        // Set the contact_view to the current view
+        setContentView(R.layout.contact_view);
 
     }
 
@@ -59,12 +71,18 @@ public class ContactActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-    public void MockContactCreation(ContactModel contactModel){
-        Fname.setText(contactModel.getFname());
-        Lname.setText(contactModel.getLname());
-        Title.setText(contactModel.getTitle());
-        PhoneButton.setText(contactModel.getPhone_num());
-        EmailButton.setText(contactModel.getEmail());
+    @Test
+    public void  MockContactProvider(){
+        ContactModel testModel = mock(ContactModel.class);
+        Mockito.when(testModel.getLname()).thenReturn("Weston");
+        Mockito.when(testModel.getFname()).thenReturn("Mitchell");
+        Mockito.when(testModel.getTitle()).thenReturn("Student");
+        Mockito.when(testModel.getPhone_num()).thenReturn("310-999-9999");
+        Mockito.when(testModel.getEmail()).thenReturn("westonm127@gmail.com");
+        Fname.setText(testModel.getFname());
+        Lname.setText(testModel.getLname());
+        Title.setText(testModel.getTitle());
+        PhoneButton.setText(testModel.getPhone_num());
+        EmailButton.setText(testModel.getEmail());
     }
 }

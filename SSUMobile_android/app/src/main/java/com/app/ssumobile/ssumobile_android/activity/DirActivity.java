@@ -10,8 +10,6 @@ import android.widget.Toast;
 import android.widget.Button;
 import com.app.ssumobile.ssumobile_android.R;
 
-
-
 public class DirActivity extends AppCompatActivity {
 
     Button ContactButton;
@@ -21,7 +19,6 @@ public class DirActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dir);
         setContactButton();
-
     }
 
     @Override
@@ -53,13 +50,12 @@ public class DirActivity extends AppCompatActivity {
         ContactButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 // Start ContactActivity.class
-
                 Intent myIntent = new Intent(DirActivity.this,
                         ContactActivity.class);
                 startActivity(myIntent);
-                }
+            }
 
-     });
+        });
     }
 
     public void testConnection(View view) {
@@ -81,5 +77,4 @@ public class DirActivity extends AppCompatActivity {
         Toast.makeText(getBaseContext(), message, Toast.LENGTH_SHORT).show();
 
     }
-
 }
