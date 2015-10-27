@@ -1,9 +1,9 @@
 package com.app.ssumobile.ssumobile_android.activity;
 
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,12 +11,10 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.app.ssumobile.ssumobile_android.R;
-import com.app.ssumobile.ssumobile_android.models.CalendarFormat;
 import com.app.ssumobile.ssumobile_android.service.CalendarService;
 import com.app.ssumobile.ssumobile_android.service.RestClient;
 import com.app.ssumobile.ssumobile_android.service.calendarEvent;
 import com.google.gson.FieldNamingPolicy;
-import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.roomorama.caldroid.CaldroidFragment;
 import com.roomorama.caldroid.CaldroidListener;
@@ -41,8 +39,6 @@ public class CalendarActivity extends FragmentActivity {
     CaldroidListener listener;
 
     RestClient restClient;
-
-    CalendarService calendarService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +82,8 @@ public class CalendarActivity extends FragmentActivity {
         return super.onOptionsItemSelected(item);
     }
 
+
+
     /** Called when the activity starts */
     public void testConnection() {
 
@@ -101,8 +99,9 @@ public class CalendarActivity extends FragmentActivity {
             public void success(List<calendarEvent> calendarEvents, Response response) {
                 String x = null;
                 for (calendarEvent event: calendarEvents){
-                    System.out.
-                            println("SUMMARY: " + event.getSUMMARY());
+                    System.out.println("Location:" + event.getLOCATION());
+                    System.out.println("SUMMARY: " + event.getSUMMARY());
+                    System.out.println("DTSTAMP:" + event.getDTSTAMP());
                 }
                 responseSuccess(response);
             }
@@ -159,6 +158,10 @@ public class CalendarActivity extends FragmentActivity {
                 Toast.makeText(getApplicationContext(),
                         "Long click " + date.toString(),
                         Toast.LENGTH_SHORT).show();
+                startActivity(
+                        new Intent(CalendarActivity.this,
+                                CalendarSingleDate.class)
+                );
             }
 
             @Override
