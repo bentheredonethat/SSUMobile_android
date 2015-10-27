@@ -42,4 +42,5 @@ public class ContactModel {
     public String getDepartment() { return department; }
 
     public String getOffice() { return office; }
+
 }
