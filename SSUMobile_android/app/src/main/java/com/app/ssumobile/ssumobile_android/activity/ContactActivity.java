@@ -74,15 +74,16 @@ public class ContactActivity extends AppCompatActivity {
     @Test
     public void  MockContactProvider(){
         ContactModel testModel = mock(ContactModel.class);
-        Mockito.when(testModel.getLname()).thenReturn("Weston");
-        Mockito.when(testModel.getFname()).thenReturn("Mitchell");
-        Mockito.when(testModel.getTitle()).thenReturn("Student");
-        Mockito.when(testModel.getPhone_num()).thenReturn("310-999-9999");
-        Mockito.when(testModel.getEmail()).thenReturn("westonm127@gmail.com");
+
+        Mockito.when(testModel.getFname()).thenReturn("John");
         Fname.setText(testModel.getFname());
+        Mockito.when(testModel.getLname()).thenReturn("Doe");
         Lname.setText(testModel.getLname());
+        Mockito.when(testModel.getTitle()).thenReturn("Student");
         Title.setText(testModel.getTitle());
+        Mockito.when(testModel.getPhone_num()).thenReturn("310-999-9999");
         PhoneButton.setText(testModel.getPhone_num());
+        Mockito.when(testModel.getEmail()).thenReturn("JohnDoe@gmail.com");
         EmailButton.setText(testModel.getEmail());
     }
 }
