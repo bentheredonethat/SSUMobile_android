@@ -1,9 +1,20 @@
-package com.app.ssumobile.ssumobile_android.service;
+package com.app.ssumobile.ssumobile_android.models;
+
+
+import android.os.Parcel;
+import android.os.Parcelable;
 
 /**
  * Created by ben on 10/26/15.
  */
-public class calendarEvent {
+public class calendarEvent implements Parcelable{
+//20151011T235000
+    public String Year() {return this.DTSTAMP.substring(0, 4);}
+    public String Month() {return this.DTSTAMP.substring(5, 6);}
+    public String Day() {return this.DTSTAMP.substring(7, 8);}
+    public String Hour() {return this.DTSTAMP.substring(9, 10);}
+    public String Minute() {return this.DTSTAMP.substring(11, 12);}
+
     private String SUMMARY;
     private String LOCATION;
     private String X_TRUMBA_FIELD_NAME;
@@ -58,4 +69,28 @@ public class calendarEvent {
     public void setUID(String UID) {
         this.UID = UID;
     }
+
+    @Override
+    public int describeContents() {
+        return hashCode();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(getDTSTAMP());
+        dest.writeString(getSUMMARY());
+        dest.writeString(getUID());
+    }
+
+
+    public static final Parcelable.Creator<calendarEvent> CREATOR = new Parcelable.Creator<calendarEvent>() {
+
+        public calendarEvent createFromParcel(Parcel in) {
+            return new calendarEvent();
+        }
+
+        public calendarEvent[] newArray(int size) {
+            return new calendarEvent[size];
+        }
+    };
 }

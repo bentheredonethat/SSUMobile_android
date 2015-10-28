@@ -46,6 +46,5 @@ dependencies {
     compile 'com.google.code.gson:gson:2.3'
     compile 'org.parceler:parceler:0.2.13'
     compile 'com.squareup.okhttp:okhttp:2.5.0'
-
-
+    //compile 'joda-time:joda-time:2.3'
 }

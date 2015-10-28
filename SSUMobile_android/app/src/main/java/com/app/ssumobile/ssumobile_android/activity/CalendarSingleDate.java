@@ -1,7 +1,9 @@
 package com.app.ssumobile.ssumobile_android.activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -9,16 +11,21 @@ import android.widget.TextView;
 
 import com.app.ssumobile.ssumobile_android.R;
 
+import java.io.Serializable;
+
 public class CalendarSingleDate extends AppCompatActivity {
+
+    TextView t;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar_single_date);
+        t  = (TextView) findViewById(R.id.single_date_location);
 
-        TextView t = (TextView) findViewById(R.id.single_date_location);
+
+
         t.setText("less newbbbb");
-
     }
 
     @Override
@@ -41,5 +48,16 @@ public class CalendarSingleDate extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Intent i = this.getIntent();
+        Bundle bundle = this.getIntent().getExtras();
+        i.getBundleExtra("eventMap");
+        t.setText("slightly less newbbbb");
+
+
     }
 }
