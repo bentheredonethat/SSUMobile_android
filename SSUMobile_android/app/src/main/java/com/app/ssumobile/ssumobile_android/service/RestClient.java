@@ -6,7 +6,7 @@ import com.google.gson.GsonBuilder;
 
 import java.util.List;
 
-import retrofit.RestAdapter;
+import retrofit.R;
 import retrofit.converter.GsonConverter;
 
 
@@ -28,16 +28,16 @@ public class RestClient {
         System.out.println("xyz got into rest client()");
 
         Gson gson = new GsonBuilder()
-               // .registerTypeAdapterFactory(new ItemTypeAdapterFactory())
+                .registerTypeAdapterFactory(new ItemTypeAdapterFactory())
                 .create();
 
-        /*RestAdapter restAdapter = new RestAdapter.Builder()
+        RestAdapter restAdapter = new RestAdapter.Builder()
                .setLogLevel(RestAdapter.LogLevel.FULL  )
                 .setEndpoint(BASE_URL)
                 .setConverter(new GsonConverter(gson))
                 .build();
 
-        apiService = restAdapter.create(CalendarService.class); */
+        apiService = restAdapter.create(CalendarService.class);
 
     }
 
