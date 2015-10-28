@@ -1,17 +1,11 @@
 package com.app.ssumobile.ssumobile_android.service;
 
-import android.provider.ContactsContract;
-
-import com.app.ssumobile.ssumobile_android.models.CalendarFormat;
-import com.squareup.okhttp.Response;
-
-import net.fortuna.ical4j.model.Calendar;
+import com.app.ssumobile.ssumobile_android.models.calendarEvent;
 
 import java.util.List;
 
 import retrofit.Callback;
 import retrofit.http.GET;
-import rx.Observable;
 
 
 /**

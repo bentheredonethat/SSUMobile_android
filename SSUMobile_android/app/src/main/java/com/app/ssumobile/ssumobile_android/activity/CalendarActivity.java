@@ -12,13 +12,17 @@ import android.widget.Toast;
 import com.app.ssumobile.ssumobile_android.R;
 import com.app.ssumobile.ssumobile_android.service.CalendarService;
 import com.app.ssumobile.ssumobile_android.service.RestClient;
-import com.app.ssumobile.ssumobile_android.service.calendarEvent;
+import com.app.ssumobile.ssumobile_android.models.calendarEvent;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.GsonBuilder;
 import com.roomorama.caldroid.CaldroidFragment;
 import com.roomorama.caldroid.CaldroidListener;
+import net.fortuna.ical4j.model.DateTime;
+import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import retrofit.Callback;
 import retrofit.RestAdapter;
@@ -36,6 +40,7 @@ public class CalendarActivity extends FragmentActivity {
 
     RestClient restClient;
 
+    HashMap<String, calendarEvent> events = new HashMap<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +48,7 @@ public class CalendarActivity extends FragmentActivity {
         // set layout for activity
         setContentView(R.layout.activity_calendar);
         initializeCalendar();
-        initializeListener();
+
 
 
         restClient = new RestClient();
@@ -52,7 +57,7 @@ public class CalendarActivity extends FragmentActivity {
         // connect to remote calendar api?
         //testConnection();
 
-
+        initializeListener();
 
 
     }
@@ -93,18 +98,15 @@ public class CalendarActivity extends FragmentActivity {
         calendarService.getEvents(new Callback<List<calendarEvent>>() {
             @Override
             public void success(List<calendarEvent> calendarEvents, Response response) {
-                String x = null;
-                for (calendarEvent event: calendarEvents){
-                    System.out.println("Location:" + event.getLOCATION());
-                    System.out.println("SUMMARY: " + event.getSUMMARY());
-                    System.out.println("DTSTAMP:" + event.getDTSTAMP());
+                for (calendarEvent event : calendarEvents){
+                    events.put(event.getSUMMARY(), event);
                 }
                 responseSuccess(response);
             }
 
             @Override
             public void failure(RetrofitError error) {
-                System.out.println("xyz fail to get list");
+                //System.out.println("xyz fail to get list");
                 responseFailure(error);
             }
         });
@@ -150,20 +152,24 @@ public class CalendarActivity extends FragmentActivity {
 
             @Override
             public void onLongClickDate(Date date, View view) {
-                Toast.makeText(getApplicationContext(),
-                        "Long click " + date.toString(),
-                        Toast.LENGTH_SHORT).show();
-                startActivity(
-                        new Intent(CalendarActivity.this,
-                                CalendarSingleDate.class)
-                );
+                Toast.makeText(getApplicationContext(), "Long click " + date.toString(), Toast.LENGTH_SHORT).show();
+
+                Intent singleDateIntent = new Intent(CalendarActivity.this, CalendarSingleDate.class);
+
+
+//                Bundle extras = new Bundle();
+//                extras.putSerializable("eventMap", events);
+//                singleDateIntent.putExtras(extras);
+                singleDateIntent.putExtra("eventMap", events);
+               // singleDateIntent.putExtras(events);
+                Bundle y = singleDateIntent.getExtras();
+                Bundle x = singleDateIntent.getBundleExtra("eventMap");
+                startActivity(singleDateIntent); // put intent with event map in activity
             }
 
             @Override
             public void onCaldroidViewCreated() {
-                Toast.makeText(getApplicationContext(),
-                        "Caldroid view is created",
-                        Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Caldroid view is created", Toast.LENGTH_SHORT).show();
             }
         };
         caldroidFragment.setCaldroidListener(listener);
