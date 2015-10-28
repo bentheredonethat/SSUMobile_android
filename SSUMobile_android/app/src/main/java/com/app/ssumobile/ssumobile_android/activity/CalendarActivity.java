@@ -1,6 +1,7 @@
 package com.app.ssumobile.ssumobile_android.activity;
 
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -8,22 +9,23 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
-
 import com.app.ssumobile.ssumobile_android.R;
 import com.app.ssumobile.ssumobile_android.service.CalendarService;
+import com.app.ssumobile.ssumobile_android.service.RestClient;
+import com.app.ssumobile.ssumobile_android.service.calendarEvent;
+import com.google.gson.FieldNamingPolicy;
+import com.google.gson.GsonBuilder;
 import com.roomorama.caldroid.CaldroidFragment;
 import com.roomorama.caldroid.CaldroidListener;
-import com.app.ssumobile.ssumobile_android.service.RestClient;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-
-
 import retrofit.Callback;
-import rx.Observable;
-import rx.Observer;
-import rx.Subscription;
-import rx.subscriptions.Subscriptions;
+import retrofit.RestAdapter;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
+import retrofit.converter.GsonConverter;
+
 
 public class CalendarActivity extends FragmentActivity {
 
@@ -33,9 +35,6 @@ public class CalendarActivity extends FragmentActivity {
     android.support.v4.app.FragmentTransaction t;
 
     RestClient restClient;
-
-    CaldroidListener listener;
-    CalendarService calendarService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,21 +79,44 @@ public class CalendarActivity extends FragmentActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    /* Called when the activity starts
+
+    /** Called when the activity starts */
     public void testConnection() {
-        calendarService = restClient.getCalendarService();
-        calendarService.getHeaderInfo(new Callback<Response>() {
+
+        RestAdapter eventAdapter = new RestAdapter.Builder()
+                .setEndpoint("http://www.cs.sonoma.edu/~levinsky/")
+                .setLogLevel(RestAdapter.LogLevel.FULL)
+                .setConverter(new GsonConverter(new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).create()))
+                .build();
+        CalendarService calendarService = eventAdapter.create(CalendarService.class); // get service
+
+        calendarService.getEvents(new Callback<List<calendarEvent>>() {
             @Override
-            public void success(Response response, Response response2) {
-                Toast.makeText(getBaseContext(), "xyz yes!", Toast.LENGTH_SHORT).show();
+            public void success(List<calendarEvent> calendarEvents, Response response) {
+                String x = null;
+                for (calendarEvent event: calendarEvents){
+                    System.out.println("Location:" + event.getLOCATION());
+                    System.out.println("SUMMARY: " + event.getSUMMARY());
+                    System.out.println("DTSTAMP:" + event.getDTSTAMP());
+                }
+                responseSuccess(response);
             }
 
             @Override
             public void failure(RetrofitError error) {
-                Toast.makeText(getBaseContext(), "xyz no!", Toast.LENGTH_SHORT).show();
+                System.out.println("xyz fail to get list");
+                responseFailure(error);
             }
         });
-    }*/
+
+    }
+
+    public void responseSuccess(Response response){
+        Toast.makeText(getBaseContext(), "xyz yes!", Toast.LENGTH_SHORT).show();
+    }
+    public void responseFailure(RetrofitError error){
+        Toast.makeText(getBaseContext(), error.toString(), Toast.LENGTH_SHORT).show();
+    }
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     public void initializeCalendar(){
@@ -131,6 +153,10 @@ public class CalendarActivity extends FragmentActivity {
                 Toast.makeText(getApplicationContext(),
                         "Long click " + date.toString(),
                         Toast.LENGTH_SHORT).show();
+                startActivity(
+                        new Intent(CalendarActivity.this,
+                                CalendarSingleDate.class)
+                );
             }
 
             @Override
