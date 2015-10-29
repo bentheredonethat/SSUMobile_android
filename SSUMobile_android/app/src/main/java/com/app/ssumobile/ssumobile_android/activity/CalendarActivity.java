@@ -2,6 +2,7 @@ package com.app.ssumobile.ssumobile_android.activity;
 
 import android.annotation.TargetApi;
 import android.content.Intent;
+import android.location.GpsStatus;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -25,7 +26,10 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import retrofit.Callback;
+import retrofit.Response;
+
 import retrofit.RestAdapter;
+import retrofit.Retrofit;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
 import retrofit.converter.GsonConverter;
@@ -135,7 +139,7 @@ public class CalendarActivity extends FragmentActivity {
     }
 
     public void initializeListener() {
-        listener = new CaldroidListener() {
+        CaldroidListener listener = new CaldroidListener() {
 
             @Override
             public void onSelectDate(Date date, View view) {
