@@ -4,7 +4,6 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 
-
 /**
  * Created by ben on 10/21/15.
  *
@@ -14,8 +13,8 @@ import com.google.gson.GsonBuilder;
  * restAdapter
  */
 public class RestClient {
-    //private static final String BASE_URL = "http://www.cs.sonoma.edu/~levinsky";
-    private static final String BASE_URL = "http://130.157.101.4:3000/";
+    private static final String BASE_URL = "130.157.101.121:3000/";
+    //private static final String BASE_URL = "http://130.157.101.231:3000/";
     private static CalendarService apiService;
 
     public RestClient()
@@ -23,7 +22,7 @@ public class RestClient {
         System.out.println("xyz got into rest client()");
 
         Gson gson = new GsonBuilder()
-               // .registerTypeAdapterFactory(new ItemTypeAdapterFactory())
+                .registerTypeAdapterFactory(new ItemTypeAdapterFactory())
                 .create();
 
         /*RestAdapter restAdapter = new RestAdapter.Builder()
@@ -32,9 +31,11 @@ public class RestClient {
                 .setConverter(new GsonConverter(gson))
                 .build();
 
-        apiService = restAdapter.create(CalendarService.class); */
-
+        apiService = restAdapter.create(CalendarService.class);
+*/
     }
+
+
 
     public CalendarService getCalendarService()
     {

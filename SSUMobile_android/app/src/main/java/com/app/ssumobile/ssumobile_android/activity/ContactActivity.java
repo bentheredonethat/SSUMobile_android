@@ -1,16 +1,22 @@
 package com.app.ssumobile.ssumobile_android.activity;
 
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import com.app.ssumobile.ssumobile_android.models.ContactModel;
+import android.widget.Toast;
+
 import com.app.ssumobile.ssumobile_android.R;
-import org.junit.Test;
-import org.mockito.Mockito;
-import static org.mockito.Mockito.mock;
+
+import retrofit.http.HTTP;
 
 
 /**
@@ -24,11 +30,13 @@ public class ContactActivity extends AppCompatActivity {
     TextView Title;
     Button PhoneButton;
     Button EmailButton;
+    Button AddToContacts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        // Set the contact_view to the current view
+        setContentView(R.layout.contact_view);
         // Set instances of each Button/Text View
         Fname = (TextView) findViewById(R.id.Fname_button);
         Lname = (TextView) findViewById(R.id.Lname_button);
@@ -36,20 +44,11 @@ public class ContactActivity extends AppCompatActivity {
         PhoneButton = (Button) findViewById(R.id.Phone_button);
         EmailButton = (Button) findViewById(R.id.Email_button);
 
-
-        // Create a new Thread to handle instantiation of Text values for each TextView and Button
-        Runnable r = new Runnable() {
-            @Override
-            public void run() {
-                MockContactProvider();
-            }
-        };
-        Thread myThread = new Thread(r);
-        myThread.start();
-
-        // Set the contact_view to the current view
-        setContentView(R.layout.contact_view);
-
+        AddToContacts = (Button) findViewById(R.id.AddContact_button);
+        MockContactProvider();
+        PhoneButtonThread();
+        EmailButtonThread();
+        AddToContactsThread();
     }
 
     @Override
@@ -73,20 +72,100 @@ public class ContactActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-    @Test
-    public void  MockContactProvider(){
-        ContactModel testModel = mock(ContactModel.class);
 
-        Mockito.when(testModel.getFname()).thenReturn("John");
-        Fname.setText(testModel.getFname());
-        Mockito.when(testModel.getLname()).thenReturn("Doe");
-        Lname.setText(testModel.getLname());
-        Mockito.when(testModel.getTitle()).thenReturn("Student");
-        Title.setText(testModel.getTitle());
-        Mockito.when(testModel.getPhone_num()).thenReturn("310-999-9999");
-        PhoneButton.setText(testModel.getPhone_num());
-        Mockito.when(testModel.getEmail()).thenReturn("JohnDoe@gmail.com");
-        EmailButton.setText(testModel.getEmail());
+    public void MockContactProvider() {
+        Fname.setText("John");
+        Lname.setText("Doe");
+        Title.setText("Student");
+        PhoneButton.setText("310-999-9999");
+        EmailButton.setText("JohnDoe@gmail.com");
+    }
 
+    public void PhoneButtonThread() {
+        Thread PhoneCallRunner = new Thread(new Runnable() {
+            public void run() {
+                String message = "Error: Failed to SetPhoneButton.";
+                try {
+                    SetPhoneButton();
+                } catch (Throwable t) {
+                    Toast.makeText(getBaseContext(), message, Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        PhoneCallRunner.start();
+    }
+
+    public void SetPhoneButton() {
+        PhoneButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    final Intent callIntent = new Intent(Intent.ACTION_CALL);
+                    callIntent.setData(Uri.parse("tel:" + PhoneButton.getText().toString()));
+                    ContactActivity.this.startActivity(callIntent);
+                } catch (ActivityNotFoundException e) {
+                    Log.e("Dialing", "Call Failed!", e);
+                }
+            }
+        });
+    }
+
+    public void EmailButtonThread() {
+        Thread EmailRunner = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                String message = "Error: Failed to Set Email Button";
+                try {
+                    SetEmailButton();
+                } catch (Throwable t) {
+                    Toast.makeText(getBaseContext(), message, Toast.LENGTH_SHORT).show();
+                }
+            }
+        }
+        );
+        EmailRunner.start();
+    }
+
+    public void SetEmailButton() {
+        EmailButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Intent intent = new Intent(Intent.ACTION_SEND);
+                ;
+                intent.setType(getResources().getString(R.string.PLAIN_TEXT_TYPE));
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[] { EmailButton.getText().toString() } );
+                startActivity(intent);
+            }
+        });
+    }
+
+    public void AddToContactsThread() {
+        Thread AddContact = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                String message = "Error: Failed to Set Add-To-Contacts Button";
+                try {
+                    SetAddToContactsButton();
+                } catch (Throwable t) {
+                    Toast.makeText(getBaseContext(), message, Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        AddContact.start();
+    }
+
+    public void SetAddToContactsButton(){
+        AddToContacts.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Intent intent = new Intent(ContactsContract.Intents.Insert.ACTION);
+                intent.setType(ContactsContract.RawContacts.CONTENT_TYPE);
+                intent.putExtra(ContactsContract.Intents.Insert.EMAIL, EmailButton.getText());
+                intent.putExtra(ContactsContract.Intents.Insert.PHONE, PhoneButton.getText());
+                intent.putExtra(ContactsContract.Intents.Insert.NAME, Fname.getText() + " " + Lname.getText() );
+                intent.putExtra(ContactsContract.Intents.Insert.JOB_TITLE, Title.getText());
+                startActivity(intent);
+            }
+        });
     }
 }
