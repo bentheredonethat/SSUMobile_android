@@ -1,38 +1,25 @@
 package com.app.ssumobile.ssumobile_android.activity;
 
-import android.annotation.TargetApi;
 import android.content.Intent;
-import android.location.GpsStatus;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
+
 import com.app.ssumobile.ssumobile_android.R;
-import com.app.ssumobile.ssumobile_android.service.CalendarService;
-import com.app.ssumobile.ssumobile_android.service.RestClient;
 import com.app.ssumobile.ssumobile_android.models.calendarEvent;
-import com.google.gson.FieldNamingPolicy;
-import com.google.gson.GsonBuilder;
+import com.app.ssumobile.ssumobile_android.service.RestClient;
 import com.roomorama.caldroid.CaldroidFragment;
 import com.roomorama.caldroid.CaldroidListener;
-import net.fortuna.ical4j.model.DateTime;
-import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import retrofit.Callback;
-import retrofit.Response;
 
-import retrofit.RestAdapter;
-import retrofit.Retrofit;
-import retrofit.RetrofitError;
-import retrofit.client.Response;
-import retrofit.converter.GsonConverter;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+//import retrofit.RestAdapter;
+//import retrofit.RetrofitError;
+//import retrofit.converter.GsonConverter;
 
 
 public class CalendarActivity extends FragmentActivity {
@@ -51,7 +38,7 @@ public class CalendarActivity extends FragmentActivity {
 
         // set layout for activity
         setContentView(R.layout.activity_calendar);
-        initializeCalendar();
+        //initializeCalendar();
 
 
 
@@ -90,9 +77,9 @@ public class CalendarActivity extends FragmentActivity {
 
 
     /** Called when the activity starts */
-    public void testConnection() {
+    public void testConnection() {};
 
-        RestAdapter eventAdapter = new RestAdapter.Builder()
+        /*RestAdapter eventAdapter = new RestAdapter.Builder()
                 .setEndpoint("http://www.cs.sonoma.edu/~levinsky/")
                 .setLogLevel(RestAdapter.LogLevel.FULL)
                 .setConverter(new GsonConverter(new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).create()))
@@ -137,8 +124,8 @@ public class CalendarActivity extends FragmentActivity {
         t.replace(R.id.calendar, caldroidFragment);
         t.commit();
     }
-
-    public void initializeListener() {
+        */
+        public void initializeListener() {
         CaldroidListener listener = new CaldroidListener() {
 
             @Override

@@ -15,4 +15,5 @@
     <string name="contact_button">Contact</string>
     <string name="title_activity_contact">ContactActivity</string>
     <string name="title_activity_calendar_single_date">CalendarSingleDate</string>
+    <string name="PLAIN_TEXT_TYPE">"text/plain"</string>
 </resources>

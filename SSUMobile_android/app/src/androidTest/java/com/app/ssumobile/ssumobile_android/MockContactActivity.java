@@ -8,11 +8,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
+
 import com.app.ssumobile.ssumobile_android.models.ContactModel;
-import com.app.ssumobile.ssumobile_android.R;
-import org.junit.Test;
-import org.mockito.Mockito;
-import static org.mockito.Mockito.mock;
 
 
 /**
@@ -24,7 +21,7 @@ public class MockContactActivity extends AppCompatActivity {
     TextView Title;
     Button PhoneButton;
     Button EmailButton;
-    ContactModel testModel = mock(ContactModel.class);
+    ContactModel testModel;
 
     Handler handler = new Handler(){
         @Override
@@ -43,11 +40,11 @@ public class MockContactActivity extends AppCompatActivity {
          Runnable r = new Runnable() {
             @Override
             public void run() {
-                Mockito.when(testModel.getFname()).thenReturn("John");
-                Mockito.when(testModel.getLname()).thenReturn("Doe");
-                Mockito.when(testModel.getTitle()).thenReturn("Student");
-                Mockito.when(testModel.getPhone_num()).thenReturn("310-999-9999");
-                Mockito.when(testModel.getEmail()).thenReturn("JohnDoe@gmail.com");
+               // Mockito.when(testModel.getFname()).thenReturn("John");
+               // Mockito.when(testModel.getLname()).thenReturn("Doe");
+               // Mockito.when(testModel.getTitle()).thenReturn("Student");
+               // Mockito.when(testModel.getPhone_num()).thenReturn("310-999-9999");
+              //  Mockito.when(testModel.getEmail()).thenReturn("JohnDoe@gmail.com");
                 handler.sendMessage(handler.obtainMessage());
             }
         };// Create a new Thread to handle instantiation of Text values for each TextView and Button

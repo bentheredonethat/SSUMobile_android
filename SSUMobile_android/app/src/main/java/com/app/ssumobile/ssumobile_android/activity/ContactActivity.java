@@ -4,8 +4,6 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -16,11 +14,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.app.ssumobile.ssumobile_android.models.ContactModel;
 import com.app.ssumobile.ssumobile_android.R;
-import org.junit.Test;
-import org.mockito.Mockito;
-import static org.mockito.Mockito.mock;
+
+import retrofit.http.HTTP;
 
 
 /**
@@ -75,7 +71,6 @@ public class ContactActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    @Test
     public void MockContactProvider() {
         Fname.setText("John");
         Lname.setText("Doe");
@@ -134,9 +129,10 @@ public class ContactActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 final Intent intent = new Intent(Intent.ACTION_SEND);
-                intent.setType("plain/text");
-                intent.putExtra(Intent.EXTRA_EMAIL, EmailButton.getText());
-                startActivity(Intent.createChooser(intent, ""));
+                ;
+                intent.setType(getResources().getString(R.string.PLAIN_TEXT_TYPE));
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[] { EmailButton.getText().toString() } );
+                startActivity(intent);
             }
         });
     }
@@ -165,6 +161,7 @@ public class ContactActivity extends AppCompatActivity {
                 intent.putExtra(ContactsContract.Intents.Insert.EMAIL, EmailButton.getText());
                 intent.putExtra(ContactsContract.Intents.Insert.PHONE, PhoneButton.getText());
                 intent.putExtra(ContactsContract.Intents.Insert.NAME, Fname.getText() + " " + Lname.getText() );
+                intent.putExtra(ContactsContract.Intents.Insert.JOB_TITLE, Title.getText());
                 startActivity(intent);
             }
         });
