@@ -19,10 +19,6 @@ import com.google.gson.GsonBuilder;
 import com.roomorama.caldroid.CaldroidFragment;
 import com.roomorama.caldroid.CaldroidListener;
 
-import net.fortuna.ical4j.model.DateTime;
-
-import java.text.ParseException;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
@@ -43,9 +39,12 @@ public class CalendarActivity extends FragmentActivity {
 
     CaldroidListener listener;
 
+    CalendarService calendarService;
+
     RestClient restClient;
     
 
+>>>>>>> 5bb6abf4a0868664548be7f138dd0306ab9761c7
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
