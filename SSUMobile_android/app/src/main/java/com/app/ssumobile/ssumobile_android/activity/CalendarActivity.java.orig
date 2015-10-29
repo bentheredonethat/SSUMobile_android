@@ -49,16 +49,8 @@ public class CalendarActivity extends FragmentActivity {
         initializeCalendar();
         initializeListener();
 
-
-<<<<<<< HEAD
-        System.out.println("xyz trying instantiate service");
-        System.out.println("xyz instantiated service");
-
-        System.out.println("xyz trying to get service");
-        System.out.println("xyz got the service");
-=======
         restClient = new RestClient();
->>>>>>> cnxn_to_node
+
 
         // connect to remote calendar api?
         testConnection();

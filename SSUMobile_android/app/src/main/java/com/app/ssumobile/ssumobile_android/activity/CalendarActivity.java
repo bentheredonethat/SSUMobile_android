@@ -18,17 +18,16 @@ import com.google.gson.FieldNamingPolicy;
 import com.google.gson.GsonBuilder;
 import com.roomorama.caldroid.CaldroidFragment;
 import com.roomorama.caldroid.CaldroidListener;
-
+import retrofit.Callback;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-
-import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
 import retrofit.converter.GsonConverter;
+
 
 public class CalendarActivity extends FragmentActivity {
 
@@ -42,7 +41,6 @@ public class CalendarActivity extends FragmentActivity {
     CalendarService calendarService;
 
     RestClient restClient;
-    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,11 +52,11 @@ public class CalendarActivity extends FragmentActivity {
 
 
 
-        restClient = new RestClient();
+       restClient = new RestClient();
 
 
         // connect to remote calendar api?
-        testConnection();
+       // testConnection();
 
         initializeListener();
 
@@ -86,7 +84,6 @@ public class CalendarActivity extends FragmentActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
 
 
     /** Called when the activity starts */
@@ -120,7 +117,6 @@ public class CalendarActivity extends FragmentActivity {
         Toast.makeText(getBaseContext(), error.toString(), Toast.LENGTH_SHORT).show();
     }
 
-
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     public void initializeCalendar(){
         caldroidFragment = new CaldroidFragment();
@@ -134,9 +130,9 @@ public class CalendarActivity extends FragmentActivity {
         t.replace(R.id.calendar, caldroidFragment);
         t.commit();
     }
-
-    public void initializeListener() {
-        listener = new CaldroidListener() {
+        
+        public void initializeListener() {
+        CaldroidListener listener = new CaldroidListener() {
 
             @Override
             public void onSelectDate(Date date, View view) {

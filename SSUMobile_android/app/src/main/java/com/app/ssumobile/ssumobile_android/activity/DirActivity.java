@@ -1,20 +1,25 @@
 package com.app.ssumobile.ssumobile_android.activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
-
+import android.widget.Button;
 import com.app.ssumobile.ssumobile_android.R;
 
 public class DirActivity extends AppCompatActivity {
+
+    Button ContactButton, ContactButton2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dir);
+        setContactButton();
+        setContactButton2();
     }
 
     @Override
@@ -39,6 +44,36 @@ public class DirActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void setContactButton(){
+        // Locate the button in activity_dir.xml
+        ContactButton = (Button) findViewById(R.id.contact_button);
+        ContactButton.setText("John Doe");
+        // Capture button clicks
+        ContactButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                // Start ContactActivity.class
+                Intent myIntent = new Intent(DirActivity.this,
+                        ContactActivity.class);
+                startActivity(myIntent);
+            }
+
+        });
+    }
+    public void setContactButton2(){
+        // Locate the button in activity_dir.xml
+        ContactButton2 = (Button) findViewById(R.id.contact_button2);
+        ContactButton2.setText("John Doe");
+        // Capture button clicks
+        ContactButton2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                // Start ContactActivity.class
+                Intent myIntent = new Intent(DirActivity.this,
+                        ContactActivity.class);
+                startActivity(myIntent);
+            }
+
+        });
+    }
     public void testConnection(View view) {
         // Do something in response to button
         boolean connected = false;
@@ -58,5 +93,4 @@ public class DirActivity extends AppCompatActivity {
         Toast.makeText(getBaseContext(), message, Toast.LENGTH_SHORT).show();
 
     }
-
 }

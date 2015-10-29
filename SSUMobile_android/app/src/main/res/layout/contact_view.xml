@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fname"
+        android:id="@+id/Fname_button"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/Lname_button"
+        android:layout_alignStart="@+id/Lname_button" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="208dp"
+        android:layout_height="wrap_content"
+        android:text="Lname"
+        android:id="@+id/Lname_button"
+        android:layout_gravity="right"
+        android:layout_below="@+id/Fname_button"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        android:id="@+id/Title_button"
+        android:layout_below="@+id/Lname_button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Phone"
+        android:id="@+id/Phone_button"
+        android:layout_below="@+id/Title_button"
+        android:layout_alignRight="@+id/Lname_button"
+        android:layout_alignEnd="@+id/Lname_button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:id="@+id/Email_button"
+        android:layout_below="@+id/Phone_button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/Lname_button"
+        android:layout_alignEnd="@+id/Lname_button" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add To Contacts"
+        android:id="@+id/AddContact_button"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="450dp" />
+
+</RelativeLayout>

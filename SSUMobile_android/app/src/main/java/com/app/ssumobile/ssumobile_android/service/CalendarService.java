@@ -1,6 +1,7 @@
 package com.app.ssumobile.ssumobile_android.service;
 
 import com.app.ssumobile.ssumobile_android.models.calendarEvent;
+import com.squareup.okhttp.Response;
 
 import java.util.List;
 
@@ -12,8 +13,9 @@ import retrofit.http.GET;
  * Created by ben on 10/21/15.
  */
 public interface CalendarService {
+
     @GET("/VCALENDAR")
-    void getHeaderInfo(Callback<retrofit.client.Response> c);
+    void getHeaderInfo(Callback<Response> c);
 
 
     @GET("/VEVENT")

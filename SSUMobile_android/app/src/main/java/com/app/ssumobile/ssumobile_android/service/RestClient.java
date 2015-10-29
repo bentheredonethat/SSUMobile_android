@@ -3,8 +3,6 @@ package com.app.ssumobile.ssumobile_android.service;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import retrofit.RestAdapter;
-import retrofit.converter.GsonConverter;
 
 /**
  * Created by ben on 10/21/15.
@@ -24,17 +22,17 @@ public class RestClient {
         System.out.println("xyz got into rest client()");
 
         Gson gson = new GsonBuilder()
-               // .registerTypeAdapterFactory(new ItemTypeAdapterFactory())
+                .registerTypeAdapterFactory(new ItemTypeAdapterFactory())
                 .create();
 
-        RestAdapter restAdapter = new RestAdapter.Builder()
-                .setLogLevel(RestAdapter.LogLevel.FULL  )
+        /*RestAdapter restAdapter = new RestAdapter.Builder()
+               .setLogLevel(RestAdapter.LogLevel.FULL  )
                 .setEndpoint(BASE_URL)
                 .setConverter(new GsonConverter(gson))
                 .build();
 
         apiService = restAdapter.create(CalendarService.class);
-
+*/
     }
 
 
