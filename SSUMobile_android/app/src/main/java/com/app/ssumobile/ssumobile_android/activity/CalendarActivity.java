@@ -44,7 +44,6 @@ public class CalendarActivity extends FragmentActivity {
     RestClient restClient;
     
 
->>>>>>> 5bb6abf4a0868664548be7f138dd0306ab9761c7
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
