@@ -2,9 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.app.ssumobile.ssumobile_android" >
 
+<<<<<<< HEAD
     <uses-sdk
         android:minSdkVersion="11"
         android:targetSdkVersion="19" />
+=======
+    <uses-sdk android:minSdkVersion="8"
+        android:targetSdkVersion="19"/>
+
+>>>>>>> 5bb6abf4a0868664548be7f138dd0306ab9761c7
 
     <uses-permission android:name="android.permission.READ_CALENDAR" />
     <uses-permission android:name="android.permission.WRITE_CALENDAR" />

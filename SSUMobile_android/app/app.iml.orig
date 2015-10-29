@@ -99,10 +99,7 @@
     <orderEntry type="library" exported="" name="backport-util-concurrent-2.1" level="project" />
     <orderEntry type="library" exported="" name="converter-gson-2.0.0-beta1" level="project" />
     <orderEntry type="library" exported="" name="ical4j-1.0.5" level="project" />
-<<<<<<< HEAD
-=======
     <orderEntry type="library" exported="" name="retrofit-2.0.0-beta2" level="project" />
->>>>>>> master
     <orderEntry type="library" exported="" name="hirondelle-date4j-1.5.1" level="project" />
     <orderEntry type="library" exported="" name="commons-lang-2.6" level="project" />
     <orderEntry type="library" exported="" name="cardview-v7-21.0.3" level="project" />
@@ -112,17 +109,9 @@
     <orderEntry type="library" exported="" name="caldroid-2.2.1" level="project" />
     <orderEntry type="library" exported="" name="parceler-api-0.2.13" level="project" />
     <orderEntry type="library" exported="" name="parceler-0.2.13" level="project" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     <orderEntry type="library" exported="" name="okhttp-2.5.0" level="project" />
     <orderEntry type="library" exported="" name="okio-1.6.0" level="project" />
     <orderEntry type="library" exported="" name="adapter-rxjava-2.0.0-beta2" level="project" />
->>>>>>> master
-=======
-    <orderEntry type="library" exported="" name="okhttp-2.5.0" level="project" />
-    <orderEntry type="library" exported="" name="okio-1.6.0" level="project" />
->>>>>>> cnxn_to_node
     <orderEntry type="library" exported="" name="appcompat-v7-23.0.0" level="project" />
     <orderEntry type="library" exported="" name="recyclerview-v7-23.0.1" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-23.0.1" level="project" />
