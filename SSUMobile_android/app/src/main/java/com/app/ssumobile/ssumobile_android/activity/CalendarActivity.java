@@ -45,7 +45,6 @@ public class CalendarActivity extends FragmentActivity {
 
     RestClient restClient;
 
-    List<calendarEvent> events = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -103,15 +102,11 @@ public class CalendarActivity extends FragmentActivity {
         calendarService.getEvents(new Callback<List<calendarEvent>>() {
             @Override
             public void success(List<calendarEvent> calendarEvents, Response response) {
-                for (calendarEvent event : calendarEvents){
-                    events.add(event);
-                }
                 responseSuccess(response);
             }
 
             @Override
             public void failure(RetrofitError error) {
-                //System.out.println("xyz fail to get list");
                 responseFailure(error);
             }
         });
@@ -161,12 +156,6 @@ public class CalendarActivity extends FragmentActivity {
                 Toast.makeText(getApplicationContext(), "Long click " + date.toString(), Toast.LENGTH_SHORT).show();
 
                 Intent singleDateIntent = new Intent(CalendarActivity.this, CalendarSingleDate.class);
-                //Bundle b  = new Bundle();
-//                for (calendarEvent event : events){
-//                    //b.putParcelable(event.getSUMMARY(), event);
-//                    singleDateIntent.putExtra(event.getSUMMARY(), event);
-//                }
-                //singleDateIntent.putExtras(b);
                 startActivity(singleDateIntent); // put intent with event map in activity
             }
 

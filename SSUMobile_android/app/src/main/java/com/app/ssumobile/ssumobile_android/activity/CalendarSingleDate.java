@@ -11,13 +11,25 @@ import android.widget.TextView;
 
 import com.app.ssumobile.ssumobile_android.R;
 import com.app.ssumobile.ssumobile_android.models.calendarEvent;
+import com.app.ssumobile.ssumobile_android.service.CalendarService;
+import com.google.gson.FieldNamingPolicy;
+import com.google.gson.GsonBuilder;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+
+import retrofit.Callback;
+import retrofit.RestAdapter;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
+import retrofit.converter.GsonConverter;
 
 public class CalendarSingleDate extends AppCompatActivity {
 
     TextView t;
+    List<calendarEvent> events = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,8 +68,30 @@ public class CalendarSingleDate extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         Intent i = this.getIntent();
-        Bundle bundle = this.getIntent().getExtras();
-        i.getBundleExtra("eventMap");
+
+        RestAdapter eventAdapter = new RestAdapter.Builder()
+                .setEndpoint("http://www.cs.sonoma.edu/~levinsky/")
+                .setLogLevel(RestAdapter.LogLevel.FULL)
+                .setConverter(new GsonConverter(new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).create()))
+                .build();
+        CalendarService calendarService = eventAdapter.create(CalendarService.class); // get service
+
+        calendarService.getEvents(new Callback<List<calendarEvent>>() {
+            @Override
+            public void success(List<calendarEvent> calendarEvents, Response response) {
+                for (calendarEvent event : calendarEvents) {
+                    events.add(event);
+                }
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+                System.out.println("xyz fail to get list");
+
+            }
+        });
+
+
         t.setText("slightly less newbbbb");
 
 
