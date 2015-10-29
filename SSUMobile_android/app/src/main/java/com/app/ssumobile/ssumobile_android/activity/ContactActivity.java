@@ -8,8 +8,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import com.app.ssumobile.ssumobile_android.models.ContactModel;
 import com.app.ssumobile.ssumobile_android.R;
-<<<<<<< HEAD
-=======
 import org.junit.Test;
 import org.mockito.Mockito;
 import static org.mockito.Mockito.mock;
