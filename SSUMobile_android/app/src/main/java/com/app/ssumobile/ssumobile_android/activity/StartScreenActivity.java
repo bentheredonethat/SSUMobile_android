@@ -50,7 +50,6 @@ public class StartScreenActivity extends AppCompatActivity {
     }
 
     public void setCalendarButton(){
-
         Thread runner = new Thread(new Runnable() {
             public void run() {
                 String message = "Error: Failed to set calendar button.";
@@ -74,8 +73,6 @@ public class StartScreenActivity extends AppCompatActivity {
         });
         runner.start();
 
-
-
     }
 
     public void setNewsButton(){
@@ -84,7 +81,6 @@ public class StartScreenActivity extends AppCompatActivity {
         // Capture button clicks
         NewsButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-
                 // Start NewActivity.class
                 Intent myIntent = new Intent(StartScreenActivity.this,
                         NewsActivity.class);
@@ -95,19 +91,24 @@ public class StartScreenActivity extends AppCompatActivity {
     }
 
     public void setDirButton(){
-        // Locate the button in activity_main.xml
-        DirButton = (Button) findViewById(R.id.dir_button);
-        // Capture button clicks
-        DirButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
+        Thread DirThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                // Locate the button in activity_main.xml
+                DirButton = (Button) findViewById(R.id.dir_button);
+                // Capture button clicks
+                DirButton.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View arg0) {
 
-                // Start DirActivity.class
-                Intent myIntent = new Intent(StartScreenActivity.this,
-                        DirActivity.class);
-                startActivity(myIntent);
+                        // Start DirActivity.class
+                        Intent myIntent = new Intent(StartScreenActivity.this,
+                                DirActivity.class);
+                        startActivity(myIntent);
+                    }
+                });
             }
         });
-
+        DirThread.start();
     }
 
 
