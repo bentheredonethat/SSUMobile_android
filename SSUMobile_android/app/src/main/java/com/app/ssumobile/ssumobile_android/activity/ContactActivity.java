@@ -16,8 +16,6 @@ import android.widget.Toast;
 
 import com.app.ssumobile.ssumobile_android.R;
 
-import retrofit.http.HTTP;
-
 
 /**
  * Created by WestFlow on 10/22/2015.

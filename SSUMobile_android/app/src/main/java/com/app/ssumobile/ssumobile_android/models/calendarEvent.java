@@ -21,6 +21,58 @@ public class calendarEvent implements Parcelable{
     private String CATEGORIES;
     private String UID;
 
+    public String getStYear() {
+        return stYear;
+    }
+
+    public String getStMonth() {
+        return stMonth;
+    }
+
+    public String getStDay() {
+        return stDay;
+    }
+
+    public String getStHour() {
+        return stHour;
+    }
+
+    public String getStMin() {
+        return stMin;
+    }
+
+    public String getEndYear() {
+        return endYear;
+    }
+
+    public String getEndMonth() {
+        return endMonth;
+    }
+
+    public String getEndDay() {
+        return endDay;
+    }
+
+    public String getEndHour() {
+        return endHour;
+    }
+
+    public String getEndMin() {
+        return endMin;
+    }
+
+    private String stYear;
+    private String stMonth;
+    private String stDay;
+    private String stHour;
+    private String stMin;
+
+    private String endYear;
+    private String endMonth;
+    private String endDay;
+    private String endHour;
+    private String endMin;
+
     public String getSUMMARY() {
         return SUMMARY;
     }
