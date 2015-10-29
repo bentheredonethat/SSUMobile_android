@@ -153,10 +153,22 @@ public class CalendarActivity extends FragmentActivity {
 
             @Override
             public void onLongClickDate(Date date, View view) {
-                Toast.makeText(getApplicationContext(), "Long click " + date.toString(), Toast.LENGTH_SHORT).show();
 
-                Intent singleDateIntent = new Intent(CalendarActivity.this, CalendarSingleDate.class);
-                startActivity(singleDateIntent); // put intent with event map in activity
+                Thread PhoneCallRunner = new Thread(new Runnable() {
+                    public void run() {
+                        String message = "Error: Failed to start single date .";
+                        try {
+                            Toast.makeText(getApplicationContext(), "Long click ", Toast.LENGTH_SHORT).show();
+
+                            Intent singleDateIntent = new Intent(CalendarActivity.this, CalendarSingleDate.class);
+                            startActivity(singleDateIntent); // put intent with event map in activity
+                        } catch (Throwable t) {
+                            Toast.makeText(getBaseContext(), message, Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+                PhoneCallRunner.start();
+
             }
 
             @Override

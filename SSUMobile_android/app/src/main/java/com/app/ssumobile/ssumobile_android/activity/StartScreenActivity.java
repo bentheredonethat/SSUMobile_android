@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.app.ssumobile.ssumobile_android.R;
 
@@ -49,18 +50,31 @@ public class StartScreenActivity extends AppCompatActivity {
     }
 
     public void setCalendarButton(){
-        // Locate the button in activity_main.xml
-        CalendarButton = (Button) findViewById(R.id.calendar_button);
-        // Capture button clicks
-        CalendarButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
 
-                // Start NewActivity.class
-                Intent myIntent = new Intent(StartScreenActivity.this,
-                        CalendarActivity.class);
-                startActivity(myIntent);
+        Thread runner = new Thread(new Runnable() {
+            public void run() {
+                String message = "Error: Failed to set calendar button.";
+                try {
+                    // Locate the button in activity_main.xml
+                    CalendarButton = (Button) findViewById(R.id.calendar_button);
+                    // Capture button clicks
+                    CalendarButton.setOnClickListener(new View.OnClickListener() {
+                        public void onClick(View arg0) {
+
+                            // Start NewActivity.class
+                            Intent myIntent = new Intent(StartScreenActivity.this,
+                                    CalendarActivity.class);
+                            startActivity(myIntent);
+                        }
+                    });
+                } catch (Throwable t) {
+                    Toast.makeText(getBaseContext(), message, Toast.LENGTH_SHORT).show();
+                }
             }
         });
+        runner.start();
+
+
 
     }
 
