@@ -8,13 +8,12 @@ import android.os.Parcelable;
  * Created by ben on 10/26/15.
  */
 public class calendarEvent implements Parcelable{
-//20151011T235000
-    public String Year() {return this.DTSTAMP.substring(0, 4);}
-    public String Month() {return this.DTSTAMP.substring(5, 6);}
-    public String Day() {return this.DTSTAMP.substring(7, 8);}
-    public String Hour() {return this.DTSTAMP.substring(9, 10);}
-    public String Minute() {return this.DTSTAMP.substring(11, 12);}
 
+
+    public calendarEvent(Parcel in) {
+        readFromParcel(in);
+    }
+    public calendarEvent() { ; };
     private String SUMMARY;
     private String LOCATION;
     private String X_TRUMBA_FIELD_NAME;
@@ -26,48 +25,24 @@ public class calendarEvent implements Parcelable{
         return SUMMARY;
     }
 
-    public void setSUMMARY(String SUMMARY) {
-        this.SUMMARY = SUMMARY;
-    }
-
     public String getLOCATION() {
         return LOCATION;
-    }
-
-    public void setLOCATION(String LOCATION) {
-        this.LOCATION = LOCATION;
     }
 
     public String getX_TRUMBA_FIELD_NAME() {
         return X_TRUMBA_FIELD_NAME;
     }
 
-    public void setX_TRUMBA_FIELD_NAME(String x_TRUMBA_FIELD_NAME) {
-        X_TRUMBA_FIELD_NAME = x_TRUMBA_FIELD_NAME;
-    }
-
     public String getDTSTAMP() {
         return DTSTAMP;
-    }
-
-    public void setDTSTAMP(String DTSTAMP) {
-        this.DTSTAMP = DTSTAMP;
     }
 
     public String getCATEGORIES() {
         return CATEGORIES;
     }
 
-    public void setCATEGORIES(String CATEGORIES) {
-        this.CATEGORIES = CATEGORIES;
-    }
-
     public String getUID() {
         return UID;
-    }
-
-    public void setUID(String UID) {
-        this.UID = UID;
     }
 
     @Override
@@ -80,8 +55,24 @@ public class calendarEvent implements Parcelable{
         dest.writeString(getDTSTAMP());
         dest.writeString(getSUMMARY());
         dest.writeString(getUID());
+        dest.writeString(getCATEGORIES());
+        dest.writeString(getX_TRUMBA_FIELD_NAME());
+        dest.writeString(getLOCATION());
     }
 
+    private void readFromParcel(Parcel in) {
+// We just need to read back each
+        // field in the order that it was
+        // written to the parcel
+        DTSTAMP = in.readString();
+        SUMMARY = in.readString();
+        UID = in.readString();
+        CATEGORIES = in.readString();
+        X_TRUMBA_FIELD_NAME = in.readString();
+        LOCATION = in.readString();
+
+
+    }
 
     public static final Parcelable.Creator<calendarEvent> CREATOR = new Parcelable.Creator<calendarEvent>() {
 

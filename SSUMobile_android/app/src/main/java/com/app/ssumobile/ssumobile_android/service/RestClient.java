@@ -1,12 +1,9 @@
 package com.app.ssumobile.ssumobile_android.service;
 
-import com.app.ssumobile.ssumobile_android.models.CalendarFormat;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import java.util.List;
-
-import retrofit.R;
+import retrofit.RestAdapter;
 import retrofit.converter.GsonConverter;
 
 

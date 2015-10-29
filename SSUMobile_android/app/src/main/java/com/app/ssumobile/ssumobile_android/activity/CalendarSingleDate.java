@@ -10,8 +10,10 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.app.ssumobile.ssumobile_android.R;
+import com.app.ssumobile.ssumobile_android.models.calendarEvent;
 
 import java.io.Serializable;
+import java.util.HashMap;
 
 public class CalendarSingleDate extends AppCompatActivity {
 
@@ -23,8 +25,8 @@ public class CalendarSingleDate extends AppCompatActivity {
         setContentView(R.layout.activity_calendar_single_date);
         t  = (TextView) findViewById(R.id.single_date_location);
 
-
-
+        //Intent i = getIntent();
+        //Bundle b = getIntent().getExtras();
         t.setText("less newbbbb");
     }
 
@@ -60,4 +62,21 @@ public class CalendarSingleDate extends AppCompatActivity {
 
 
     }
+
+    static class DTSTAMPParser{
+        //20151011T235000
+        private String DTSTAMP;
+
+        DTSTAMPParser(String DTSTAMP){
+            this.DTSTAMP = DTSTAMP;
+        }
+
+        public String Year() {return this.DTSTAMP.substring(0, 4);}
+        public String Month() {return this.DTSTAMP.substring(5, 6);}
+        public String Day() {return this.DTSTAMP.substring(7, 8);}
+        public String Hour() {return this.DTSTAMP.substring(9, 10);}
+        public String Minute() {return this.DTSTAMP.substring(11, 12);}
+
+    }
+
 }
