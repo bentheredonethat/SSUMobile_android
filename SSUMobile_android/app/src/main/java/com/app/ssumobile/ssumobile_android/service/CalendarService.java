@@ -7,6 +7,7 @@ import java.util.List;
 
 import retrofit.Callback;
 import retrofit.http.GET;
+import rx.Observable;
 
 
 /**
@@ -18,12 +19,15 @@ public interface CalendarService {
     void getHeaderInfo(Callback<Response> c);
 
 
-    @GET("/VEVENT")
-    List<calendarEvent> getEvents();
+//    @GET("/mini_events.json")
+//    List<calendarEvent> getEvents();
 
     //@GET("/VEVENT")
     @GET("/mini_events.json")
     void getEvents(Callback<List<calendarEvent>> g);
+
+    @GET("/mini_events.json")
+    Observable<List<calendarEvent>> getEvents();
 
 }
 
