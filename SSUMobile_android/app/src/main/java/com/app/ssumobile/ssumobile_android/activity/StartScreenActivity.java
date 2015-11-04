@@ -50,10 +50,7 @@ public class StartScreenActivity extends AppCompatActivity {
     }
 
     public void setCalendarButton(){
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
         Thread runner = new Thread(new Runnable() {
             public void run() {
                 String message = "Error: Failed to set calendar button.";
@@ -76,11 +73,6 @@ public class StartScreenActivity extends AppCompatActivity {
             }
         });
         runner.start();
-<<<<<<< Updated upstream
-=======
-
-
->>>>>>> Stashed changes
 
     }
 
@@ -100,7 +92,6 @@ public class StartScreenActivity extends AppCompatActivity {
     }
 
     public void setDirButton(){
-<<<<<<< Updated upstream
         Thread DirThread = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -116,18 +107,6 @@ public class StartScreenActivity extends AppCompatActivity {
                         startActivity(myIntent);
                     }
                 });
-=======
-        // Locate the button in activity_main.xml
-        DirButton = (Button) findViewById(R.id.dir_button);
-        // Capture button clicks
-        DirButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-
-                // Start DirActivity.class
-                Intent myIntent = new Intent(StartScreenActivity.this,
-                        DirActivity.class);
-                startActivity(myIntent);
->>>>>>> Stashed changes
             }
         });
         DirThread.start();
