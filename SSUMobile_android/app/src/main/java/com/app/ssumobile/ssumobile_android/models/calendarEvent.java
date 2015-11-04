@@ -21,17 +21,15 @@ public class calendarEvent implements Parcelable{
     private String CATEGORIES;
     private String UID;
 
-    public String getStYear() {
-        return stYear;
+    public String getSTYEAR() {
+        return STYEAR;
     }
 
-    public String getStMonth() {
-        return stMonth;
+    public String getSTMONTH() {
+        return STMONTH;
     }
 
-    public String getStDay() {
-        return stDay;
-    }
+    public String getSTDAY() {return STDAY;}
 
     public String getStHour() {
         return stHour;
@@ -61,9 +59,9 @@ public class calendarEvent implements Parcelable{
         return endMin;
     }
 
-    private String stYear;
-    private String stMonth;
-    private String stDay;
+    private String STYEAR;
+    private String STMONTH;
+    private String STDAY;
     private String stHour;
     private String stMin;
 
@@ -110,6 +108,9 @@ public class calendarEvent implements Parcelable{
         dest.writeString(getCATEGORIES());
         dest.writeString(getX_TRUMBA_FIELD_NAME());
         dest.writeString(getLOCATION());
+        dest.writeString(getSTYEAR());
+        dest.writeString(getSTMONTH());
+        dest.writeString(getSTDAY());
     }
 
     private void readFromParcel(Parcel in) {
@@ -122,8 +123,9 @@ public class calendarEvent implements Parcelable{
         CATEGORIES = in.readString();
         X_TRUMBA_FIELD_NAME = in.readString();
         LOCATION = in.readString();
-
-
+        STYEAR = in.readString();
+        STMONTH = in.readString();
+        STDAY = in.readString();
     }
 
     public static final Parcelable.Creator<calendarEvent> CREATOR = new Parcelable.Creator<calendarEvent>() {

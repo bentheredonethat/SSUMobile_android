@@ -11,18 +11,17 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.app.ssumobile.ssumobile_android.R;
+import com.app.ssumobile.ssumobile_android.models.calendarEvent;
 import com.app.ssumobile.ssumobile_android.service.CalendarService;
 import com.app.ssumobile.ssumobile_android.service.RestClient;
-import com.app.ssumobile.ssumobile_android.models.calendarEvent;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.GsonBuilder;
 import com.roomorama.caldroid.CaldroidFragment;
 import com.roomorama.caldroid.CaldroidListener;
-import retrofit.Callback;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
@@ -36,9 +35,6 @@ public class CalendarActivity extends FragmentActivity {
     CaldroidFragment caldroidFragment;
     android.support.v4.app.FragmentTransaction t;
 
-    CaldroidListener listener;
-
-    CalendarService calendarService;
 
     RestClient restClient;
 
@@ -53,10 +49,6 @@ public class CalendarActivity extends FragmentActivity {
 
 
        restClient = new RestClient();
-
-
-        // connect to remote calendar api?
-       // testConnection();
 
         initializeListener();
 
@@ -150,13 +142,15 @@ public class CalendarActivity extends FragmentActivity {
             @Override
             public void onLongClickDate(Date date, View view) {
 
+                final Date dateCopy = date;
+
                 Thread runner = new Thread(new Runnable() {
                     public void run() {
                         String message = "Error: Failed to start single date .";
                         try {
-                            //Toast.makeText(getApplicationContext(), "Long click " + message, Toast.LENGTH_SHORT).show();
-
                             Intent singleDateIntent = new Intent(CalendarActivity.this, CalendarSingleDate.class);
+                            singleDateIntent.putExtra("dateString", dateCopy.toString());
+
                             startActivity(singleDateIntent); // put intent with event map in activity
                         } catch (Throwable t) {
                             Toast.makeText(getBaseContext(), message, Toast.LENGTH_SHORT).show();

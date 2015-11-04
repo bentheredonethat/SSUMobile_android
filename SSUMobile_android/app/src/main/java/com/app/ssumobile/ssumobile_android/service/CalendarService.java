@@ -26,7 +26,7 @@ public interface CalendarService {
     @GET("/mini_events.json")
     void getEvents(Callback<List<calendarEvent>> g);
 
-    @GET("/mini_events.json")
+    @GET("/out.json")
     Observable<List<calendarEvent>> getEvents();
 
 }

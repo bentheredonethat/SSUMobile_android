@@ -6,15 +6,12 @@
         android:minSdkVersion="11"
         android:targetSdkVersion="19" />
 
-
     <uses-permission android:name="android.permission.READ_CALENDAR" />
     <uses-permission android:name="android.permission.WRITE_CALENDAR" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
     <uses-permission android:name="android.permission.SET_DEBUG_APP" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
-
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -46,13 +43,16 @@
             android:label="@string/title_activity_dir" >
         </activity>
         <activity
-
             android:name=".activity.ContactActivity"
-            android:label="@string/title_activity_contact">		
-	</activity>
-	<activity
+            android:label="@string/title_activity_contact" >
+        </activity>
+        <activity
             android:name=".activity.CalendarSingleDate"
             android:label="@string/title_activity_calendar_single_date" >
+        </activity>
+        <activity
+            android:name=".activity.calendarSingleEvent"
+            android:label="@string/title_activity_calendar_single_event" >
         </activity>
     </application>
 
