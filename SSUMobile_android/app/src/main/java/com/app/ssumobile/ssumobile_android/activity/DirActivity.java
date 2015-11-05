@@ -3,6 +3,7 @@ package com.app.ssumobile.ssumobile_android.activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,14 +14,18 @@ import com.app.ssumobile.ssumobile_android.R;
 public class DirActivity extends AppCompatActivity {
 
     Button ContactButton, ContactButton2;
+    MenuItem FacultyTab, DepartmentsTab, BuildingsTab, SchoolsTab;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dir);
-        setContactButton();
-        setContactButton2();
-    }
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_dir);
+
+            SetToolBar();
+
+            setContactButton();
+            setContactButton2();
+        }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -73,6 +78,17 @@ public class DirActivity extends AppCompatActivity {
             }
 
         });
+    }
+
+    public void SetToolBar() {
+        Thread worker = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Toolbar toolbar = (Toolbar) findViewById(R.id.my_toolbar);
+                setSupportActionBar(toolbar);
+            }
+        });
+        worker.start();
     }
     public void testConnection(View view) {
         // Do something in response to button

@@ -1,7 +1,9 @@
 package com.app.ssumobile.ssumobile_android.activity;
 
+import android.Manifest;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
@@ -100,6 +102,17 @@ public class ContactActivity extends AppCompatActivity {
                 try {
                     final Intent callIntent = new Intent(Intent.ACTION_CALL);
                     callIntent.setData(Uri.parse("tel:" + PhoneButton.getText().toString()));
+
+                    if (checkSelfPermission(Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                        // TODO: Consider calling
+                        //    public void requestPermissions(@NonNull String[] permissions, int requestCode)
+                        // here to request the missing permissions, and then overriding
+                        //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                        //                                          int[] grantResults)
+                        // to handle the case where the user grants the permission. See the documentation
+                        // for Activity#requestPermissions for more details.
+                        return;
+                    }
                     ContactActivity.this.startActivity(callIntent);
                 } catch (ActivityNotFoundException e) {
                     Log.e("Dialing", "Call Failed!", e);
