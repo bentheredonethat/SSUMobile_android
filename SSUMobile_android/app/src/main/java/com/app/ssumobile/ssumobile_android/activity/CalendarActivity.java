@@ -78,30 +78,6 @@ public class CalendarActivity extends FragmentActivity {
     }
 
 
-    /** Called when the activity starts */
-    public void testConnection() {
-
-        RestAdapter eventAdapter = new RestAdapter.Builder()
-                .setEndpoint("http://www.cs.sonoma.edu/~levinsky/")
-                .setLogLevel(RestAdapter.LogLevel.FULL)
-                .setConverter(new GsonConverter(new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).create()))
-                .build();
-        CalendarService calendarService = eventAdapter.create(CalendarService.class); // get service
-
-        calendarService.getEvents(new Callback<List<calendarEvent>>() {
-            @Override
-            public void success(List<calendarEvent> calendarEvents, Response response) {
-                responseSuccess(response);
-            }
-
-            @Override
-            public void failure(RetrofitError error) {
-                responseFailure(error);
-            }
-        });
-
-    }
-
     public void responseSuccess(Response response){
         Toast.makeText(getBaseContext(), "xyz yes!", Toast.LENGTH_SHORT).show();
     }
@@ -135,8 +111,7 @@ public class CalendarActivity extends FragmentActivity {
             @Override
             public void onChangeMonth(int month, int year) {
                 String text = "month: " + month + " year: " + year;
-                Toast.makeText(getApplicationContext(), text,
-                        Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT).show();
             }
 
             @Override

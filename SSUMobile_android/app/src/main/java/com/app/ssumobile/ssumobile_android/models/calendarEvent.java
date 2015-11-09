@@ -16,6 +16,51 @@ public class calendarEvent implements Parcelable{
     public calendarEvent() { ; };
     private String SUMMARY;
     private String LOCATION;
+
+    public void setSUMMARY(String SUMMARY) {
+        this.SUMMARY = SUMMARY;
+    }
+
+    public void setLOCATION(String LOCATION) {
+        this.LOCATION = LOCATION;
+    }
+
+    public void setX_TRUMBA_FIELD_NAME(String x_TRUMBA_FIELD_NAME) {
+        X_TRUMBA_FIELD_NAME = x_TRUMBA_FIELD_NAME;
+    }
+
+    public void setDTSTAMP(String DTSTAMP) {
+        this.DTSTAMP = DTSTAMP;
+    }
+
+    public void setCATEGORIES(String CATEGORIES) {
+        this.CATEGORIES = CATEGORIES;
+    }
+
+    public void setUID(String UID) {
+        this.UID = UID;
+    }
+
+    public void setSTYEAR(String STYEAR) {
+        this.STYEAR = STYEAR;
+    }
+
+    public void setSTMONTH(String STMONTH) {
+        this.STMONTH = STMONTH;
+    }
+
+    public void setSTDAY(String STDAY) {
+        this.STDAY = STDAY;
+    }
+
+    public void setStHour(String stHour) {
+        this.stHour = stHour;
+    }
+
+    public void setStMin(String stMin) {
+        this.stMin = stMin;
+    }
+
     private String X_TRUMBA_FIELD_NAME;
     private String DTSTAMP;
     private String CATEGORIES;

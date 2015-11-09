@@ -13,23 +13,21 @@ import com.app.ssumobile.ssumobile_android.R;
 import com.app.ssumobile.ssumobile_android.adapters.CardAdapter;
 import com.app.ssumobile.ssumobile_android.models.calendarEvent;
 import com.app.ssumobile.ssumobile_android.service.CalendarService;
-import com.google.gson.FieldNamingPolicy;
-import com.google.gson.GsonBuilder;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import retrofit.RestAdapter;
-import retrofit.converter.GsonConverter;
-import rx.Observable;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action0;
-import rx.functions.Action1;
-import rx.functions.Func1;
-import rx.schedulers.Schedulers;
+
 
 public class CalendarSingleDate extends Activity {
 
@@ -39,12 +37,16 @@ public class CalendarSingleDate extends Activity {
     RestAdapter restAdapter;
     CalendarService calendarService;
 
+    final String url = "http://25livepub.collegenet.com/s.aspx?calendar=ssucalendar-all-events&widget=main&date=";
+
+    String body;
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
     String Year, Month, Day = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,58 +56,15 @@ public class CalendarSingleDate extends Activity {
         setDateFields(dateString);
 
 
-
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-         mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setHasFixedSize(true);
         Context c = getApplicationContext();
         mLayoutManager = new LinearLayoutManager(c);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-
-        restAdapter = getEventAdapter();
-        calendarService = restAdapter.create(CalendarService.class);
-
-        setupService();
     }
 
-
-    private void setupService(){
-        calendarService.getEvents()
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .flatMap(new Func1<List<calendarEvent>, Observable<calendarEvent>>() {
-                    @Override
-                    public Observable<calendarEvent> call(List<calendarEvent> calendarEvents) {
-                        return Observable.from(calendarEvents);
-                    }
-                })
-                .filter(new Func1<calendarEvent, Boolean>() {
-                    @Override
-                    public Boolean call(calendarEvent calendarEvent) {
-                        return true;
-                    }
-                })
-                .doOnCompleted(new Action0() {
-                    @Override
-                    public void call() {
-                        // specify an adapter
-                        mAdapter = new CardAdapter(events);
-                        mRecyclerView.setAdapter(mAdapter);
-                        mAdapter.notifyDataSetChanged();
-
-                    }
-                })
-                .subscribe(
-                        new Action1<calendarEvent>() {
-                            @Override
-                            public void call(calendarEvent calendarEvent) {
-                                events.add(calendarEvent); // right now unconditionally display events on page
-                            }
-                        }
-                );
-    }
-
-    private void setDateFields(String dateStr){
+    private void setDateFields(String dateStr) {
         Date date = null;
         String format = "EEE MMM dd hh:mm:ss zzz yyyy";
 
@@ -113,11 +72,10 @@ public class CalendarSingleDate extends Activity {
         try {
             date = new SimpleDateFormat(format).parse(dateStr);
             Integer month = date.getMonth();
-            Integer day = date.getDay();
 
             Year = dateStr.substring(24);
             Month = month.toString();
-            Day = day.toString();
+            Day = dateStr.substring(8, 10);
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -145,19 +103,113 @@ public class CalendarSingleDate extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    private RestAdapter getEventAdapter(){
-
-        return  new RestAdapter.Builder()
-                .setEndpoint("http://www.cs.sonoma.edu/~levinsky/")
-                .setLogLevel(RestAdapter.LogLevel.FULL)
-                .setConverter(new GsonConverter(new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).create()))
-                .build();
-    }
-
     @Override
     protected void onStart() {
         super.onStart();
+        Thread runner = new Thread(new Runnable(){
+            public void run()  {
+                try {
+                    sendGet(url + Year + Month + Day); // get selected date's info
+                } catch (Throwable t) {
+                    System.out.println(t.getCause());
+                }
+                finally {
+                    mAdapter = new CardAdapter(events); // specify an adapter
+                    mRecyclerView.setAdapter(mAdapter);
+                    mAdapter.notifyDataSetChanged(); // update cards 
+                }
+            }
+        });
+        runner.start();
+        System.out.println("in onstart()");
     }
 
+    // HTTP GET request
+    private void sendGet(String url) throws Exception {
+
+        final String USER_AGENT = "Mozilla/5.0";
+
+        URL obj = new URL(url);
+        HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+
+        con.setRequestMethod("GET");  // optional default is GET
+
+        con.setRequestProperty("User-Agent", USER_AGENT); //add request header
+
+        int responseCode = con.getResponseCode();
+        System.out.println("\nSending 'GET' request to URL : " + url);
+        System.out.println("Response Code : " + responseCode);
+
+        BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+        String inputLine;
+        StringBuffer response = new StringBuffer();
+
+        while ((inputLine = in.readLine()) != null) {
+            response.append(inputLine);
+        }
+        in.close();
+
+        body = response.toString();
+        parseOutEvents();
+    }
+
+    // parse out events from body
+    private void parseOutEvents(){
+        String regexForOneEvent = "<tr class=\\\\\\\"twSimpleTableEventRow0 ebg0\\\\\\\">(.*?)<\\/tr>";
+
+        Matcher matcher = Pattern
+                .compile(regexForOneEvent, Pattern.DOTALL)
+                .matcher(body);
+        while (matcher.find()){
+            // parse out event from html text, then add to group!
+                events.add(parseHTMLTableRow(matcher.group()));
+        }
+        mAdapter.notifyDataSetChanged();
+    }
+
+    // get attributes of event string into an event
+    private calendarEvent parseHTMLTableRow(String s){
+        calendarEvent currentEvent = new calendarEvent();
+
+        String startdateregex = "StartDate(.*?)<", locationregex = "twLocation(.*?)<",
+                titleregex = "aria-level=\\\\\"6\\\\\">(.*?)<", eventidregex = "eventid=(.*?);";
+
+        String startDateResult = "", locationResult = "", titleResult = "", eventIDResult = "";
+
+        // find start date
+        Matcher findMe = Pattern.compile(startdateregex, Pattern.DOTALL).matcher(s);
+        while (findMe.find()){
+            startDateResult = findMe.group();
+            startDateResult = startDateResult.substring(12);
+            startDateResult = startDateResult.substring(0, startDateResult.length()-1);
+        }
+
+        // find location
+        findMe = Pattern.compile(locationregex, Pattern.DOTALL).matcher(s);
+        while (findMe.find()){
+            locationResult = findMe.group();
+            locationResult = locationResult.substring(13);
+            locationResult = locationResult.substring(0, locationResult.length()-1);
+        }
+        // find title
+        findMe = Pattern.compile(titleregex, Pattern.DOTALL).matcher(s);
+        while (findMe.find()){
+            titleResult = findMe.group();
+            titleResult = titleResult.substring(17);
+            titleResult = titleResult.substring(0,titleResult.length()-1);
+        }
+        // find event id
+        findMe = Pattern.compile(eventidregex, Pattern.DOTALL).matcher(s);
+        while (findMe.find()){
+            eventIDResult = findMe.group();
+            eventIDResult = eventIDResult.substring(8, eventIDResult.length()-5);}
+
+
+        currentEvent.setLOCATION(locationResult);
+        currentEvent.setSUMMARY(titleResult);
+        currentEvent.setDTSTAMP(startDateResult);
+
+        return currentEvent;
+    }
 
 }

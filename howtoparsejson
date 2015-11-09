@@ -1,0 +1,11 @@
+url:
+http://25livepub.collegenet.com/s.aspx?calendar=ssucalendar-all-events&widget=main&date=20140102
+
+--- note that date param is format yyyymmdd
+
+1: get the string
+2: get json value of "body" property
+-- i.e. get html source 
+
+3: within that body, get the table
+	-- do not use the zero'th row
