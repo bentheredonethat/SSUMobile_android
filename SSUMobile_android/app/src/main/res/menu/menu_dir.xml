@@ -1,9 +1,30 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.app.ssumobile.ssumobile_android.activity.DirActivity">
-    <item android:id="@+id/action_settings" android:title="@string/action_settings"
-        android:orderInCategory="100" app:showAsAction="never" />
+
+    <item android:id="@+id/action_settings"
+        android:title="@string/action_settings"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/Faculty_Staff_Directory"
+        android:title="@string/Faculty_Staff_Directory"
+        android:titleCondensed="@string/Faculty_Staff_Directory"
+        app:showAsAction="ifRoom"/>
+
+    <item android:id="@+id/Departments"
+        android:title="@string/Departments_Directory"
+        app:showAsAction="ifRoom"/>
+
+    <item android:id="@+id/Buildings_Directory"
+        android:title="@string/Buildings_Directory"
+        app:showAsAction="ifRoom"/>
+
+    <item android:id="@+id/Schools_Directory"
+        android:title="@string/Schools_Directory"
+        app:showAsAction="ifRoom"/>
 </menu>
 
 

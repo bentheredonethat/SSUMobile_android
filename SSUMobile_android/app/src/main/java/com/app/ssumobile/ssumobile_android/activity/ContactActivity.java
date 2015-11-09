@@ -1,10 +1,15 @@
 package com.app.ssumobile.ssumobile_android.activity;
 
+import android.Manifest;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.PermissionInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.provider.ContactsContract;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -97,13 +102,7 @@ public class ContactActivity extends AppCompatActivity {
         PhoneButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
-                    final Intent callIntent = new Intent(Intent.ACTION_CALL);
-                    callIntent.setData(Uri.parse("tel:" + PhoneButton.getText().toString()));
-                    ContactActivity.this.startActivity(callIntent);
-                } catch (ActivityNotFoundException e) {
-                    Log.e("Dialing", "Call Failed!", e);
-                }
+                ActivatePhoneCall();
             }
         });
     }
@@ -129,9 +128,8 @@ public class ContactActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 final Intent intent = new Intent(Intent.ACTION_SEND);
-                ;
                 intent.setType(getResources().getString(R.string.PLAIN_TEXT_TYPE));
-                intent.putExtra(Intent.EXTRA_EMAIL, new String[] { EmailButton.getText().toString() } );
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[]{EmailButton.getText().toString()});
                 startActivity(intent);
             }
         });
@@ -160,10 +158,40 @@ public class ContactActivity extends AppCompatActivity {
                 intent.setType(ContactsContract.RawContacts.CONTENT_TYPE);
                 intent.putExtra(ContactsContract.Intents.Insert.EMAIL, EmailButton.getText());
                 intent.putExtra(ContactsContract.Intents.Insert.PHONE, PhoneButton.getText());
-                intent.putExtra(ContactsContract.Intents.Insert.NAME, Fname.getText() + " " + Lname.getText() );
+                intent.putExtra(ContactsContract.Intents.Insert.NAME, Fname.getText() + " " + Lname.getText());
                 intent.putExtra(ContactsContract.Intents.Insert.JOB_TITLE, Title.getText());
                 startActivity(intent);
             }
         });
+    }
+    public void ActivatePhoneCall() {
+        String message = "You need to activate Phone access for this app";
+        try {
+            if (checkSelfPermission(android.Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                String[] CallPermissions = {"android.permission.CALL_PHONE"};
+                int requestID = 1;
+                requestPermissions(CallPermissions, requestID);
+            }else {
+                final Intent callIntent = new Intent(Intent.ACTION_CALL);
+                callIntent.setData(Uri.parse("tel:" + PhoneButton.getText().toString()));
+                ContactActivity.this.startActivity(callIntent);
+            }
+        }catch( Throwable t){
+            Toast.makeText(getBaseContext(), message, Toast.LENGTH_SHORT).show();
+        }
+    }
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                                           int[] grantResults) {
+        String message = "Permission was not granted";
+        if (requestCode == 1) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                ActivatePhoneCall();
+            } else {
+                Toast.makeText(getBaseContext(), message, Toast.LENGTH_SHORT).show();
+            }
+        }else{
+            super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
     }
 }

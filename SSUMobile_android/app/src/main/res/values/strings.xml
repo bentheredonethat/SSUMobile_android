@@ -5,16 +5,22 @@
     <string name="action_settings">Settings</string>
     <string name="news_button">University News</string>
     <string name="calendar_button">Calendar</string>
-    <string name="directory_button">Faculty and Staff Directory</string>
+    <string name="directory_button">Directory</string>
     <string name="title_activity_calendar">CalendarActivity</string>
     <string name="cal_button_send">test connection to calendar API?</string>
     <string name="news_button_send">test connection to news API?</string>
     <string name="dir_button_send">test connection to Directory API?</string>
-    <string name="title_activity_news">NewsActivity</string>
-    <string name="title_activity_dir">DirActivity</string>
+    <string name="title_activity_news">University News</string>
+    <string name="title_activity_dir">Directory</string>
     <string name="contact_button">Contact</string>
-    <string name="title_activity_contact">ContactActivity</string>
+    <string name="title_activity_contact">Contacts</string>
     <string name="title_activity_calendar_single_date">CalendarSingleDate</string>
     <string name="PLAIN_TEXT_TYPE">"text/plain"</string>
     <string name="title_activity_calendar_single_event">calendarSingleEvent</string>
+
+    <string name="Faculty_Staff_Directory">"Faculty &amp; Staff"</string>
+    <string name="Departments_Directory">"Departments"</string>
+    <string name="Buildings_Directory">"Buildings"</string>
+    <string name="Schools_Directory">"Schools"</string>
+
 </resources>
