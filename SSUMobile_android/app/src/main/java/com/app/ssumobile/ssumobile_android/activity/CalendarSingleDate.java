@@ -106,6 +106,9 @@ public class CalendarSingleDate extends Activity {
     @Override
     protected void onStart() {
         super.onStart();
+        mAdapter = new CardAdapter(events); // specify an adapter
+        mRecyclerView.setAdapter(mAdapter);
+
         Thread runner = new Thread(new Runnable(){
             public void run()  {
                 try {
@@ -113,14 +116,15 @@ public class CalendarSingleDate extends Activity {
                 } catch (Throwable t) {
                     System.out.println(t.getCause());
                 }
-                finally {
-                    mAdapter = new CardAdapter(events); // specify an adapter
-                    mRecyclerView.setAdapter(mAdapter);
-                    mAdapter.notifyDataSetChanged(); // update cards 
-                }
             }
         });
         runner.start();
+        try {
+            runner.join();
+            mAdapter.notifyDataSetChanged(); // update cards
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         System.out.println("in onstart()");
     }
 
