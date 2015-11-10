@@ -17,6 +17,27 @@ public class calendarEvent implements Parcelable{
     private String SUMMARY;
     private String LOCATION;
 
+    public String getEventID() {
+        return eventID;
+    }
+
+    public void setEventID(String eventID) {
+        this.eventID = eventID;
+    }
+
+    private String eventID;
+
+    public String getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    private String startTime;
+
+
     public void setSUMMARY(String SUMMARY) {
         this.SUMMARY = SUMMARY;
     }
@@ -156,6 +177,8 @@ public class calendarEvent implements Parcelable{
         dest.writeString(getSTYEAR());
         dest.writeString(getSTMONTH());
         dest.writeString(getSTDAY());
+        dest.writeString(getStartTime());
+        dest.writeString(getEventID());
     }
 
     private void readFromParcel(Parcel in) {
@@ -171,6 +194,8 @@ public class calendarEvent implements Parcelable{
         STYEAR = in.readString();
         STMONTH = in.readString();
         STDAY = in.readString();
+        startTime = in.readString();
+        eventID = in.readString();
     }
 
     public static final Parcelable.Creator<calendarEvent> CREATOR = new Parcelable.Creator<calendarEvent>() {

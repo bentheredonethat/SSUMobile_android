@@ -16,6 +16,7 @@ public class calendarSingleEvent extends AppCompatActivity {
 
     //public TextView summary;
     public TextView location;
+    public TextView time;
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     @Override
@@ -32,6 +33,10 @@ public class calendarSingleEvent extends AppCompatActivity {
         location = (TextView) findViewById(R.id.location);
         location.setText(msg);
 
+
+        msg = getIntent().getStringExtra("time");
+        time = (TextView) findViewById(R.id.time);
+        time.setText(msg);
     }
 
     @Override

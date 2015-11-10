@@ -21,6 +21,8 @@ import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -135,22 +137,15 @@ public class CalendarSingleDate extends Activity {
 
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-
         con.setRequestMethod("GET");  // optional default is GET
-
         con.setRequestProperty("User-Agent", USER_AGENT); //add request header
 
-        int responseCode = con.getResponseCode();
-        System.out.println("\nSending 'GET' request to URL : " + url);
-        System.out.println("Response Code : " + responseCode);
 
         BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
         String inputLine;
         StringBuffer response = new StringBuffer();
 
-        while ((inputLine = in.readLine()) != null) {
-            response.append(inputLine);
-        }
+        while ((inputLine = in.readLine()) != null) {response.append(inputLine);}
         in.close();
 
         body = response.toString();
@@ -158,16 +153,30 @@ public class CalendarSingleDate extends Activity {
     }
 
     // parse out events from body
-    private void parseOutEvents(){
+    private void parseOutEvents() throws InterruptedException {
         String regexForOneEvent = "<tr class=\\\\\\\"twSimpleTableEventRow0 ebg0\\\\\\\">(.*?)<\\/tr>";
 
-        Matcher matcher = Pattern
+        final Matcher matcher = Pattern
                 .compile(regexForOneEvent, Pattern.DOTALL)
                 .matcher(body);
         while (matcher.find()){
             // parse out event from html text, then add to group!
-                events.add(parseHTMLTableRow(matcher.group()));
+            // IN PARALLEL!
+
+            Thread runner = new Thread(new Runnable(){
+                public void run()  {
+                    events.add(parseHTMLTableRow(matcher.group()));
+                }
+            });
+            runner.start();
+            runner.join();
         }
+        Collections.sort(events, new Comparator<calendarEvent>() {
+            @Override
+            public int compare(calendarEvent lhs, calendarEvent rhs) {
+                return String.valueOf(lhs.getStartTime()).compareTo(rhs.getStartTime());
+            }
+        });
         mAdapter.notifyDataSetChanged();
     }
 
@@ -176,9 +185,10 @@ public class CalendarSingleDate extends Activity {
         calendarEvent currentEvent = new calendarEvent();
 
         String startdateregex = "StartDate(.*?)<", locationregex = "twLocation(.*?)<",
-                titleregex = "aria-level=\\\\\"6\\\\\">(.*?)<", eventidregex = "eventid=(.*?);";
+                titleregex = "aria-level=\\\\\"6\\\\\">(.*?)<", eventidregex = "eventid=(.*?);",
+                timeregex = "level=\\\\\\\"5\\\\\\\"\\>(.*?)\\<\\/span\\>";
 
-        String startDateResult = "", locationResult = "", titleResult = "", eventIDResult = "";
+        String startDateResult = "", locationResult = "", titleResult = "", eventIDResult = "", timeResult = "";
 
         // find start date
         Matcher findMe = Pattern.compile(startdateregex, Pattern.DOTALL).matcher(s);
@@ -208,11 +218,17 @@ public class CalendarSingleDate extends Activity {
             eventIDResult = findMe.group();
             eventIDResult = eventIDResult.substring(8, eventIDResult.length()-5);}
 
+        // find time
+        findMe = Pattern.compile(timeregex, Pattern.DOTALL).matcher(s);
+        while (findMe.find()) {
+            timeResult = findMe.group();
+            timeResult = timeResult.substring(12,timeResult.length()-7);
 
+        }
         currentEvent.setLOCATION(locationResult);
         currentEvent.setSUMMARY(titleResult);
         currentEvent.setDTSTAMP(startDateResult);
-
+        currentEvent.setStartTime(timeResult);
         return currentEvent;
     }
 

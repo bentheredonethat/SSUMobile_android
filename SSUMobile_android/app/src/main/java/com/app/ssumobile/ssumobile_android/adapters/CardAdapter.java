@@ -37,13 +37,16 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> im
 
     @Override
     public void onClick(View v) {
-        String x = ((TextView) v.findViewById(R.id.summary)).getText().toString();
+        String summary = ((TextView) v.findViewById(R.id.summary)).getText().toString();
         String location = ((TextView) v.findViewById(R.id.location)).getText().toString();
+        String time = ((TextView) v.findViewById(R.id.time)).getText().toString();
 
         Activity current = (Activity) v.getContext();
         Intent myIntent = new Intent(current, calendarSingleEvent.class);
-        myIntent.putExtra("summary", x); //Optional parameters
+        myIntent.putExtra("summary", summary); //Optional parameters
         myIntent.putExtra("location", location);
+        myIntent.putExtra("time", time);
+        myIntent.putExtra("eventid",((String) v.findViewById(R.id.summary).getTag()));
         current.startActivity(myIntent);
     }
 
@@ -54,11 +57,13 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> im
         // each data item is just a string in this case
         public TextView summary;
         public TextView location;
+        public TextView time;
 
         public ViewHolder(View itemView) {
             super(itemView);
             summary = (TextView) itemView.findViewById(R.id.summary);
             location = (TextView) itemView.findViewById(R.id.location);
+            time = (TextView) itemView.findViewById(R.id.time);
         }
     }
 
@@ -93,7 +98,8 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> im
         // - replace the contents of the view with that element
         holder.summary.setText(mDataset.get(position).getSUMMARY());
         holder.location.setText(mDataset.get(position).getLOCATION());
-
+        holder.time.setText(mDataset.get(position).getStartTime());
+        holder.summary.setTag(mDataset.get(position).getEventID());
     }
 
     // Return the size of your dataset (invoked by the layout manager)
