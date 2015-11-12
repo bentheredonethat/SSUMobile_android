@@ -1,10 +1,11 @@
 package com.app.ssumobile.ssumobile_android.activity;
 
-import android.app.ActionBar;
+
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.content.Intent;
-import android.content.res.Resources;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,15 +13,20 @@ import android.widget.Toast;
 import android.widget.Button;
 import com.app.ssumobile.ssumobile_android.R;
 
-public class DirActivity extends AppCompatActivity {
+public class DirActivity extends FragmentActivity {
 
+    Fragment fac_staff_frag = new FacultyStaffFragment();
+    Fragment department_frag = new DepartmentsFragment();
+    Fragment buildings_frag = new BuildingsFragment();
+    Fragment schools_frag = new SchoolsFragment();
     Button ContactButton, ContactButton2;
-    MenuItem FacultyTab, DepartmentsTab, BuildingsTab, SchoolsTab;
 
     @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
+
             setContentView(R.layout.activity_dir);
+
 
             setContactButton();
             setContactButton2();
@@ -31,6 +37,7 @@ public class DirActivity extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_dir, menu);
 
+
         return true;
     }
 
@@ -39,45 +46,72 @@ public class DirActivity extends AppCompatActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        switch(item.getItemId()){
+            case R.id.action_settings:
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+                return true;
+            case R.id.Faculty_Staff_Directory:
+                ft.replace(R.id.fragment_container, fac_staff_frag);
+                ft.commit();
+                return true;
+            case R.id.Departments_Directory:
+                ft.replace(R.id.fragment_container, department_frag);
+                ft.commit();
+                return true;
+            case R.id.Buildings_Directory:
+                ft.replace(R.id.fragment_container, buildings_frag);
+                ft.commit();
+                return true;
+            case R.id.Schools_Directory:
+                ft.replace(R.id.fragment_container, schools_frag);
+                ft.commit();
+                return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
     public void setContactButton(){
-        // Locate the button in activity_dir.xml
-        ContactButton = (Button) findViewById(R.id.contact_button);
-        ContactButton.setText("John Doe");
-        // Capture button clicks
-        ContactButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-                // Start ContactActivity.class
-                Intent myIntent = new Intent(DirActivity.this,
-                        ContactActivity.class);
-                startActivity(myIntent);
+        Thread runner = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                // Locate the button in activity_dir.xml
+                ContactButton = (Button) findViewById(R.id.contact_button);
+                ContactButton.setText(getResources().getString(R.string.mockName));
+                // Capture button clicks
+                ContactButton.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View arg0) {
+                        // Start ContactActivity.class
+                        Intent myIntent = new Intent(DirActivity.this,
+                                ContactActivity.class);
+                        startActivity(myIntent);
+                    }
+                });
             }
-
         });
+        runner.start();
     }
-    public void setContactButton2(){
-        // Locate the button in activity_dir.xml
-        ContactButton2 = (Button) findViewById(R.id.contact_button2);
-        ContactButton2.setText("John Doe");
-        // Capture button clicks
-        ContactButton2.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-                // Start ContactActivity.class
-                Intent myIntent = new Intent(DirActivity.this,
-                        ContactActivity.class);
-                startActivity(myIntent);
-            }
 
-        });
+    public void setContactButton2(){
+       Thread runner = new Thread(new Runnable() {
+           @Override
+           public void run() {
+               // Locate the button in activity_dir.xml
+               ContactButton2 = (Button) findViewById(R.id.contact_button2);
+               ContactButton2.setText(getResources().getString(R.string.mockName));
+               // Capture button clicks
+               ContactButton2.setOnClickListener(new View.OnClickListener() {
+                   public void onClick(View arg0) {
+                       // Start ContactActivity.class
+                       Intent myIntent = new Intent(DirActivity.this,
+                               ContactActivity.class);
+                       startActivity(myIntent);
+                   }
+               });
+           }}
+       );
+        runner.start();
     }
 
     public void testConnection(View view) {

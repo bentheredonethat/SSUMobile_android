@@ -22,5 +22,14 @@
     <string name="Departments_Directory">"Departments"</string>
     <string name="Buildings_Directory">"Buildings"</string>
     <string name="Schools_Directory">"Schools"</string>
+    <string name="fname_button">"Fname</string>
+    <string name="lname_button">"Lname</string>
+    <string name="title_button">"Title"</string>
+    <string name="phone_button">"Phone"</string>
+    <string name="email_button">"Email"</string>
+    <string name="add_to_contacts">"Add To Contacts"</string>
+    <string name="department_button">"Department"</string>
+    <string name="office_button">"Office"</string>
+    <string name="mockName">"John Doe</string>
 
 </resources>

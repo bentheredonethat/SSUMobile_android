@@ -11,10 +11,9 @@
 
     <item android:id="@+id/Faculty_Staff_Directory"
         android:title="@string/Faculty_Staff_Directory"
-        android:titleCondensed="@string/Faculty_Staff_Directory"
         app:showAsAction="ifRoom"/>
 
-    <item android:id="@+id/Departments"
+    <item android:id="@+id/Departments_Directory"
         android:title="@string/Departments_Directory"
         app:showAsAction="ifRoom"/>
 
