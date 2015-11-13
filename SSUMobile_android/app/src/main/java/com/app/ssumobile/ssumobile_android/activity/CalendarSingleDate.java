@@ -10,7 +10,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.app.ssumobile.ssumobile_android.R;
-import com.app.ssumobile.ssumobile_android.adapters.CardAdapter;
+import com.app.ssumobile.ssumobile_android.adapters.calendarCardAdapter;
 import com.app.ssumobile.ssumobile_android.models.calendarEvent;
 import com.app.ssumobile.ssumobile_android.service.CalendarService;
 
@@ -24,7 +24,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -108,7 +107,7 @@ public class CalendarSingleDate extends Activity {
     @Override
     protected void onStart() {
         super.onStart();
-        mAdapter = new CardAdapter(events); // specify an adapter
+        mAdapter = new calendarCardAdapter(events); // specify an adapter
         mRecyclerView.setAdapter(mAdapter);
 
         Thread runner = new Thread(new Runnable(){

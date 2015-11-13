@@ -22,5 +22,6 @@
     <string name="Departments_Directory">"Departments"</string>
     <string name="Buildings_Directory">"Buildings"</string>
     <string name="Schools_Directory">"Schools"</string>
+    <string name="title_activity_news_single_story">newsSingleStoryActivity</string>
 
 </resources>

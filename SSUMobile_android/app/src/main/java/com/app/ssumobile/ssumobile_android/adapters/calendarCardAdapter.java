@@ -1,12 +1,7 @@
 package com.app.ssumobile.ssumobile_android.adapters;
 
 import android.app.Activity;
-import android.app.ActivityManager;
-import android.app.Dialog;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,22 +9,15 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.app.ssumobile.ssumobile_android.R;
-import com.app.ssumobile.ssumobile_android.activity.CalendarSingleDate;
 import com.app.ssumobile.ssumobile_android.activity.calendarSingleEvent;
 import com.app.ssumobile.ssumobile_android.models.calendarEvent;
 
-import org.w3c.dom.Text;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.List;
-
-import static android.support.v4.app.ActivityCompat.startActivity;
 
 /**
  * Created by ben on 11/2/15.
  */
-public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> implements View.OnClickListener{
+public class calendarCardAdapter extends RecyclerView.Adapter<calendarCardAdapter.ViewHolder> implements View.OnClickListener{
 
 
     private ArrayList<calendarEvent> mDataset;
@@ -70,7 +58,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> im
 
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public CardAdapter(ArrayList<calendarEvent> myDataset) {
+    public calendarCardAdapter(ArrayList<calendarEvent> myDataset) {
         mDataset = myDataset;
     }
 
@@ -78,7 +66,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> im
 
     // Create new views (invoked by the layout manager)
     @Override
-    public CardAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
+    public calendarCardAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
                                                    int viewType) {
         // create a new view
         final View v =  LayoutInflater.from(parent.getContext())

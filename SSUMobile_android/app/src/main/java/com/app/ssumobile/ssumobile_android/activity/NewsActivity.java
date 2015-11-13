@@ -1,7 +1,10 @@
 package com.app.ssumobile.ssumobile_android.activity;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -9,15 +12,44 @@ import android.webkit.WebView;
 import android.widget.Toast;
 
 import com.app.ssumobile.ssumobile_android.R;
+import com.app.ssumobile.ssumobile_android.adapters.calendarCardAdapter;
+import com.app.ssumobile.ssumobile_android.adapters.newsCardAdapter;
+import com.app.ssumobile.ssumobile_android.models.newsStoryModel;
+
+import java.util.ArrayList;
 
 public class NewsActivity extends AppCompatActivity {
 
-
+    ArrayList<newsStoryModel> events = new ArrayList<>();
+    private RecyclerView mRecyclerView;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news);
+        mRecyclerView = (RecyclerView) findViewById(R.id.news_recycler_view);
+        mRecyclerView.setHasFixedSize(true);
+        Context c = getApplicationContext();
+        mLayoutManager = new LinearLayoutManager(c);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+
+        mAdapter = new newsCardAdapter(events); // specify an adapter
+        mRecyclerView.setAdapter(mAdapter);
+
+        newsStoryModel test1 = new newsStoryModel();
+        test1.description = "x";
+        test1.title = "y";
+        test1.publish_date = "z";
+        events.add(test1);
+        test1.description = "a";
+        test1.title = "b";
+        test1.publish_date = "c";
+        events.add(test1);
+
+        mAdapter.notifyDataSetChanged();
+
     }
 
     @Override
