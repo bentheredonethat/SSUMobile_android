@@ -1,6 +1,5 @@
 package com.app.ssumobile.ssumobile_android.activity;
 
-
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.content.Intent;
@@ -24,20 +23,18 @@ public class DirActivity extends FragmentActivity {
     @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-
             setContentView(R.layout.activity_dir);
-
 
             setContactButton();
             setContactButton2();
         }
 
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_dir, menu);
-
-
+        super.onCreateOptionsMenu(menu);
         return true;
     }
 
@@ -49,7 +46,6 @@ public class DirActivity extends FragmentActivity {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         switch(item.getItemId()){
             case R.id.action_settings:
-
                 return true;
             case R.id.Faculty_Staff_Directory:
                 ft.replace(R.id.fragment_container, fac_staff_frag);
@@ -94,23 +90,23 @@ public class DirActivity extends FragmentActivity {
     }
 
     public void setContactButton2(){
-       Thread runner = new Thread(new Runnable() {
-           @Override
-           public void run() {
-               // Locate the button in activity_dir.xml
-               ContactButton2 = (Button) findViewById(R.id.contact_button2);
-               ContactButton2.setText(getResources().getString(R.string.mockName));
-               // Capture button clicks
-               ContactButton2.setOnClickListener(new View.OnClickListener() {
-                   public void onClick(View arg0) {
-                       // Start ContactActivity.class
-                       Intent myIntent = new Intent(DirActivity.this,
-                               ContactActivity.class);
-                       startActivity(myIntent);
-                   }
-               });
-           }}
-       );
+        Thread runner = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                // Locate the button in activity_dir.xml
+                ContactButton2 = (Button) findViewById(R.id.contact_button2);
+                ContactButton2.setText(getResources().getString(R.string.mockName));
+                // Capture button clicks
+                ContactButton2.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View arg0) {
+                        // Start ContactActivity.class
+                        Intent myIntent = new Intent(DirActivity.this,
+                                ContactActivity.class);
+                        startActivity(myIntent);
+                    }
+                });
+            }}
+        );
         runner.start();
     }
 
