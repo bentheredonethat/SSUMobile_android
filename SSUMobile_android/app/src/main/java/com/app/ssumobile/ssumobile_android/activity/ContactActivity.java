@@ -170,7 +170,7 @@ public class ContactActivity extends AppCompatActivity {
         });
     }
     public void ActivatePhoneCall() {
-        String message = "You need to activate Phone access for this app";
+        String message = "You need to activate Phone permissions for this app";
         try {
             if (checkSelfPermission(android.Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                 String[] CallPermissions = {"android.permission.CALL_PHONE"};

@@ -24,7 +24,6 @@ public class DirActivity extends FragmentActivity {
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_dir);
-
             setContactButton();
             setContactButton2();
         }
@@ -34,7 +33,8 @@ public class DirActivity extends FragmentActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_dir, menu);
-        super.onCreateOptionsMenu(menu);
+        String message = "Hit onCreateOptionsMenu.";
+        Toast.makeText(getBaseContext(), message, Toast.LENGTH_SHORT).show();
         return true;
     }
 
