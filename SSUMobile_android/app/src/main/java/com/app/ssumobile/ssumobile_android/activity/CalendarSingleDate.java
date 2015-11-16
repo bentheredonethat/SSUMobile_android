@@ -3,6 +3,7 @@ package com.app.ssumobile.ssumobile_android.activity;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.JsonReader;
@@ -42,7 +43,7 @@ import javax.net.ssl.SSLSession;
 import retrofit.RestAdapter;
 
 
-public class CalendarSingleDate extends Activity {
+public class CalendarSingleDate extends AppCompatActivity {
 
     TextView t;
     ArrayList<calendarEventModel> events = new ArrayList<>();

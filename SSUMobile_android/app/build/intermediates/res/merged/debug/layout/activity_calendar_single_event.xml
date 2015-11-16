@@ -8,17 +8,57 @@
     android:background="@drawable/ssubutton"
     android:textColor="@color/caldroid_white"
     tools:context="com.app.ssumobile.ssumobile_android.activity.calendarSingleEvent">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/caldroid_white"
+        android:id="@+id/singleTitle"/>
 
+<LinearLayout
+    android:id="@+id/times"
+    android:layout_below="@+id/singleTitle"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/location"/>
+        android:textSize="15dp"
+        android:textStyle="italic"
+        android:layout_alignParentLeft="true"
+        android:textColor="@color/caldroid_white"
+        android:id="@+id/singleStartsOn"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/time"
-        android:layout_below="@+id/location"
+        android:id="@+id/singleEndsOn"
+        android:textSize="15dp"
+        android:textStyle="italic"
+        android:textColor="@color/caldroid_white"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/StartsOn"
         />
 
+</LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/singleLocation"
+        android:textColor="@color/caldroid_white"
+        android:layout_below="@+id/times"
+        />
+
+
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/singleDescription"
+    android:layout_below="@+id/singleLocation"
+        android:textColor="@color/caldroid_white"
+        />
 </RelativeLayout>
 <!-- From: file:/home/ben/school/370/Repositories/App/SSUMobile_android/app/src/main/res/layout/activity_calendar_single_event.xml -->

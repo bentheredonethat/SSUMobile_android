@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,9 +22,7 @@ import retrofit.RetrofitError;
 import retrofit.client.Response;
 
 
-public class CalendarActivity extends FragmentActivity {
-
-    String SERVICE_ENDPOINT = "http://localhost:3000";
+public class CalendarActivity extends AppCompatActivity {
 
     CaldroidFragment caldroidFragment;
     android.support.v4.app.FragmentTransaction t;
@@ -72,13 +71,6 @@ public class CalendarActivity extends FragmentActivity {
     }
 
 
-    public void responseSuccess(Response response){
-        Toast.makeText(getBaseContext(), "xyz yes!", Toast.LENGTH_SHORT).show();
-    }
-    public void responseFailure(RetrofitError error){
-        Toast.makeText(getBaseContext(), error.toString(), Toast.LENGTH_SHORT).show();
-    }
-
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     public void initializeCalendar(){
         caldroidFragment = new CaldroidFragment();
@@ -98,14 +90,14 @@ public class CalendarActivity extends FragmentActivity {
 
             @Override
             public void onSelectDate(Date date, View view) {
-                Toast.makeText(getApplicationContext(), date.toString(),
-                        Toast.LENGTH_SHORT).show();
+               // Toast.makeText(getApplicationContext(), date.toString(),
+                 //       Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onChangeMonth(int month, int year) {
                 String text = "month: " + month + " year: " + year;
-                Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -137,9 +129,5 @@ public class CalendarActivity extends FragmentActivity {
         };
         caldroidFragment.setCaldroidListener(listener);
     }
-
-
-
-
 
 }

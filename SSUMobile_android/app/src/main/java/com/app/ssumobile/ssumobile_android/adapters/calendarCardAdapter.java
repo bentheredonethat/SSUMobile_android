@@ -34,6 +34,16 @@ public class calendarCardAdapter extends RecyclerView.Adapter<calendarCardAdapte
         Intent myIntent = new Intent(current, calendarSingleEvent.class);
         myIntent.putExtra("StartsOn", StartsOn);
         myIntent.putExtra("Title", Title);
+
+        calendarEventModel currentEvent = mDataset.get((Integer) v.findViewById(R.id.Title).getTag());
+
+        myIntent.putExtra("Description", currentEvent.getDescription());
+        myIntent.putExtra("Deleted", currentEvent.getDeleted());
+        myIntent.putExtra("Created", currentEvent.getCreated());
+        myIntent.putExtra("Location", currentEvent.getLocation());
+        myIntent.putExtra("Id", currentEvent.getId());
+        myIntent.putExtra("EndsOn", currentEvent.getEndsOn());
+
         current.startActivity(myIntent);
     }
 
@@ -86,7 +96,10 @@ public class calendarCardAdapter extends RecyclerView.Adapter<calendarCardAdapte
         // - replace the contents of the view with that element
         holder.Title.setText(mDataset.get(position).getTitle());
         holder.StartsOn.setText(mDataset.get(position).getStartsOn());
-        holder.pos = position;
+        //holder.pos = position;
+
+        // save reference to event in title
+        holder.Title.setTag(position);
 
     }
 

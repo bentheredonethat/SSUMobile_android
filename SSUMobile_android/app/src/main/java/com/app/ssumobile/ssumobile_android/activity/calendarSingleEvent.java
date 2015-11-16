@@ -16,27 +16,37 @@ public class calendarSingleEvent extends AppCompatActivity {
 
     //public TextView summary;
     public TextView location;
-    public TextView time;
+    public TextView starttime;
+    public TextView endtime;
+    public TextView title;
+    public TextView descrip;
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar_single_event);
-        //Toast.makeText(getBaseContext(), "in single event", Toast.LENGTH_SHORT).show();
 
-        String msg = getIntent().getStringExtra("summary");
-        android.support.v7.app.ActionBar ab = getSupportActionBar();
-        ab.setTitle(msg);
-
-        msg = getIntent().getStringExtra("location");
-        location = (TextView) findViewById(R.id.location);
-        location.setText(msg);
+        String msg = getIntent().getStringExtra("Location");
+        location = (TextView) findViewById(R.id.singleLocation);
+        location.setText("Location: " + msg);
 
 
-        msg = getIntent().getStringExtra("time");
-        time = (TextView) findViewById(R.id.time);
-        time.setText(msg);
+        msg = getIntent().getStringExtra("Description");
+        descrip = (TextView) findViewById(R.id.singleDescription);
+        descrip.setText(msg);
+
+        msg = getIntent().getStringExtra("EndsOn").substring(11);
+        endtime = (TextView) findViewById(R.id.singleEndsOn);
+        endtime.setText("Ends: " +msg);
+
+        msg = getIntent().getStringExtra("StartsOn").substring(11);
+        starttime = (TextView) findViewById(R.id.singleStartsOn);
+        starttime.setText("Starts: " + msg);
+
+        msg = getIntent().getStringExtra("Title");
+        title = (TextView) findViewById(R.id.singleTitle);
+        title.setText(msg);
     }
 
     @Override
