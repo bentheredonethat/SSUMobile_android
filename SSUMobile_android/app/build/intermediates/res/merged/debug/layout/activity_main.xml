@@ -47,4 +47,4 @@
         android:textColor="@color/caldroid_white"
         android:layout_below="@+id/calendar_button" />
 </LinearLayout>
-<!-- From: file:/home/ben/school/370/Repositories/App/SSUMobile_android/app/src/main/res/layout/activity_main.xml -->
+<!-- From: file:/C:/Users/Tephros/Desktop/Repositories/SSUMobile_android/SSUMobile_android/app/src/main/res/layout/activity_main.xml -->
