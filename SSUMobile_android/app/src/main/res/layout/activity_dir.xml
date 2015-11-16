@@ -24,7 +24,8 @@
             android:id="@+id/button2"
             android:background="@drawable/roundedbutton"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:textColor="#d5d7e9" />
 
         <Button
             android:layout_width="175dp"
@@ -33,7 +34,8 @@
             android:background="@drawable/roundedbutton"
             android:id="@+id/contact_button"
             android:layout_alignTop="@id/contact_button"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:textColor="#d5d7e9" />
 
         <Button
             android:layout_width="175dp"
@@ -42,7 +44,8 @@
             android:background="@drawable/roundedbutton"
             android:id="@+id/contact_button2"
             android:layout_below="@+id/contact_button"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:textColor="#d5d7e9" />
 
 
 

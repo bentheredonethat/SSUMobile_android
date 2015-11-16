@@ -6,13 +6,14 @@
     android:background="#d5d7e9" >
 
     <ImageView
-        android:layout_width="150dp"
-        android:layout_height="125dp"
+        android:layout_width="125dp"
+        android:layout_height="110dp"
         android:src="@drawable/ic_launcher"
-        android:scaleType="fitCenter"
-        android:id="@+id/imageView"
+        android:scaleType="fitXY"
+        android:id="@+id/Main_Screen_Image"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="#d5d7e9" />
 
     <Button
         android:layout_width="fill_parent"
@@ -21,9 +22,9 @@
         android:background="@drawable/roundedbutton"
         android:id="@+id/dir_button"
         android:paddingTop="10dp"
-        android:layout_below="@+id/imageView"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="155dp" />
+        android:layout_marginTop="155dp"
+        android:textColor="#d5d7e9"/>
 
     <Button
         android:layout_width="fill_parent"
@@ -33,7 +34,8 @@
         android:background="@drawable/roundedbutton"
         android:paddingBottom="10dp"
         android:layout_below="@+id/dir_button"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="#d5d7e9" />
 
     <Button
         android:layout_width="fill_parent"
@@ -43,7 +45,8 @@
         android:background="@drawable/roundedbutton"
         android:paddingTop="10dp"
         android:layout_below="@+id/calendar_button"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="#d5d7e9" />
 
     <Button
         android:layout_width="fill_parent"
@@ -53,6 +56,7 @@
         android:id="@+id/resource_button"
         android:paddingTop="10dp"
         android:layout_below="@+id/news_button"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="#d5d7e9" />
 
 </RelativeLayout>

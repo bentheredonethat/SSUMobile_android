@@ -71,11 +71,5 @@
     <style name="ActionButton.CloseMode.Ssumobile" parent="@style/Widget.AppCompat.Light.ActionButton.CloseMode">
         <item name="android:background">@drawable/btn_cab_done_ssumobile</item>
     </style>
-    
-    <!-- this style is only referenced in a Light.DarkActionBar based theme -->
-    <style name="Theme.Ssumobile.Widget" parent="@style/Theme.AppCompat">
-        <item name="popupMenuStyle">@style/PopupMenu.Ssumobile</item>
-        <item name="dropDownListViewStyle">@style/DropDownListView.Ssumobile</item>
-    </style>
 
 </resources>
