@@ -2,6 +2,7 @@ package com.app.ssumobile.ssumobile_android.adapters;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +11,7 @@ import android.widget.TextView;
 
 import com.app.ssumobile.ssumobile_android.R;
 import com.app.ssumobile.ssumobile_android.activity.calendarSingleEvent;
-import com.app.ssumobile.ssumobile_android.models.calendarEvent;
+import com.app.ssumobile.ssumobile_android.models.calendarEventModel;
 
 import java.util.ArrayList;
 
@@ -20,21 +21,19 @@ import java.util.ArrayList;
 public class calendarCardAdapter extends RecyclerView.Adapter<calendarCardAdapter.ViewHolder> implements View.OnClickListener{
 
 
-    private ArrayList<calendarEvent> mDataset;
+    private ArrayList<calendarEventModel> mDataset;
 
 
     @Override
     public void onClick(View v) {
-        String summary = ((TextView) v.findViewById(R.id.summary)).getText().toString();
-        String location = ((TextView) v.findViewById(R.id.location)).getText().toString();
-        String time = ((TextView) v.findViewById(R.id.time)).getText().toString();
+
+        String StartsOn = ((TextView) v.findViewById(R.id.StartsOn)).getText().toString();
+        String Title = ((TextView) v.findViewById(R.id.Title)).getText().toString();
 
         Activity current = (Activity) v.getContext();
         Intent myIntent = new Intent(current, calendarSingleEvent.class);
-        myIntent.putExtra("summary", summary); //Optional parameters
-        myIntent.putExtra("location", location);
-        myIntent.putExtra("time", time);
-        myIntent.putExtra("eventid",((String) v.findViewById(R.id.summary).getTag()));
+        myIntent.putExtra("StartsOn", StartsOn);
+        myIntent.putExtra("Title", Title);
         current.startActivity(myIntent);
     }
 
@@ -43,22 +42,23 @@ public class calendarCardAdapter extends RecyclerView.Adapter<calendarCardAdapte
     // you provide access to all the views for a data item in a view holder
     public static class ViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
-        public TextView summary;
-        public TextView location;
-        public TextView time;
+        public TextView StartsOn;
+        public TextView Title;
+
+        Integer pos;
+
 
         public ViewHolder(View itemView) {
             super(itemView);
-            summary = (TextView) itemView.findViewById(R.id.summary);
-            location = (TextView) itemView.findViewById(R.id.location);
-            time = (TextView) itemView.findViewById(R.id.time);
+            StartsOn = (TextView) itemView.findViewById(R.id.StartsOn);
+            Title = (TextView) itemView.findViewById(R.id.Title);
         }
     }
 
 
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public calendarCardAdapter(ArrayList<calendarEvent> myDataset) {
+    public calendarCardAdapter(ArrayList<calendarEventModel> myDataset) {
         mDataset = myDataset;
     }
 
@@ -84,10 +84,10 @@ public class calendarCardAdapter extends RecyclerView.Adapter<calendarCardAdapte
     public void onBindViewHolder(ViewHolder holder, int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        holder.summary.setText(mDataset.get(position).getSUMMARY());
-        holder.location.setText(mDataset.get(position).getLOCATION());
-        holder.time.setText(mDataset.get(position).getStartTime());
-        holder.summary.setTag(mDataset.get(position).getEventID());
+        holder.Title.setText(mDataset.get(position).getTitle());
+        holder.StartsOn.setText(mDataset.get(position).getStartsOn());
+        holder.pos = position;
+
     }
 
     // Return the size of your dataset (invoked by the layout manager)

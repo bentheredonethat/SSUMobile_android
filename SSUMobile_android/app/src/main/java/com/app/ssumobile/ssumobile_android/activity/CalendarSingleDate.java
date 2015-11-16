@@ -5,14 +5,22 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.JsonReader;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.app.ssumobile.ssumobile_android.R;
 import com.app.ssumobile.ssumobile_android.adapters.calendarCardAdapter;
-import com.app.ssumobile.ssumobile_android.models.calendarEvent;
+import com.app.ssumobile.ssumobile_android.models.calendarEventModel;
 import com.app.ssumobile.ssumobile_android.service.CalendarService;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.JsonParser;
+
+import org.apache.http.conn.ssl.SSLSocketFactory;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -27,18 +35,22 @@ import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLSession;
+
 import retrofit.RestAdapter;
 
 
 public class CalendarSingleDate extends Activity {
 
     TextView t;
-    ArrayList<calendarEvent> events = new ArrayList<>();
+    ArrayList<calendarEventModel> events = new ArrayList<>();
 
     RestAdapter restAdapter;
     CalendarService calendarService;
 
-    final String url = "http://25livepub.collegenet.com/s.aspx?calendar=ssucalendar-all-events&widget=main&date=";
+    final String url = "https://moonlight.cs.sonoma.edu/ssumobile/1_0/directory.py";
 
     String body;
 
@@ -46,7 +58,7 @@ public class CalendarSingleDate extends Activity {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
-    String Year, Month, Day = null;
+    String Year, Month, Day, DateString = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +74,6 @@ public class CalendarSingleDate extends Activity {
         Context c = getApplicationContext();
         mLayoutManager = new LinearLayoutManager(c);
         mRecyclerView.setLayoutManager(mLayoutManager);
-
     }
 
     private void setDateFields(String dateStr) {
@@ -77,6 +88,7 @@ public class CalendarSingleDate extends Activity {
             Year = dateStr.substring(24);
             Month = month.toString();
             Day = dateStr.substring(8, 10);
+            DateString = Year + Month + Day;
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -113,7 +125,8 @@ public class CalendarSingleDate extends Activity {
         Thread runner = new Thread(new Runnable(){
             public void run()  {
                 try {
-                    sendGet(url + Year + Month + Day); // get selected date's info
+                    //sendGet(url + Year + Month + Day); // get selected date's info
+                    sendGet("http://www.cs.sonoma.edu/~levinsky/mini_events.json");
                 } catch (Throwable t) {
                     System.out.println(t.getCause());
                 }
@@ -152,82 +165,29 @@ public class CalendarSingleDate extends Activity {
     }
 
     // parse out events from body
-    private void parseOutEvents() throws InterruptedException {
-        String regexForOneEvent = "<tr class=\\\\\\\"twSimpleTableEventRow0 ebg0\\\\\\\">(.*?)<\\/tr>";
+    private void parseOutEvents() throws org.json.JSONException {
 
-        final Matcher matcher = Pattern
-                .compile(regexForOneEvent, Pattern.DOTALL)
-                .matcher(body);
-        while (matcher.find()){
-            // parse out event from html text, then add to group!
-            // IN PARALLEL!
 
-            Thread runner = new Thread(new Runnable(){
-                public void run()  {
-                    events.add(parseHTMLTableRow(matcher.group()));
-                }
-            });
-            runner.start();
-            runner.join();
+        JSONObject myjson = new JSONObject(body);
+        JSONArray the_json_array = myjson.getJSONArray("Event");
+        for (int i = 0; i < the_json_array.length(); i++) {
+            events.add(convertJSONtoEvent(the_json_array.getJSONObject(i)));
+            mAdapter.notifyDataSetChanged(); // update cards
         }
-        Collections.sort(events, new Comparator<calendarEvent>() {
-            @Override
-            public int compare(calendarEvent lhs, calendarEvent rhs) {
-                return String.valueOf(lhs.getStartTime()).compareTo(rhs.getStartTime());
-            }
-        });
-        mAdapter.notifyDataSetChanged();
     }
 
     // get attributes of event string into an event
-    private calendarEvent parseHTMLTableRow(String s){
-        calendarEvent currentEvent = new calendarEvent();
+    private calendarEventModel convertJSONtoEvent(JSONObject s) throws org.json.JSONException{
+        calendarEventModel currentEvent = new calendarEventModel();
 
-        String startdateregex = "StartDate(.*?)<", locationregex = "twLocation(.*?)<",
-                titleregex = "aria-level=\\\\\"6\\\\\">(.*?)<", eventidregex = "eventid=(.*?);",
-                timeregex = "level=\\\\\\\"5\\\\\\\"\\>(.*?)\\<\\/span\\>";
+        currentEvent.setId(s.getString("Id"));
+        currentEvent.setTitle(s.getString("Title"));
+        currentEvent.setCreated(s.getString("Created"));
+        currentEvent.setDeleted(s.getString("Deleted"));
+        currentEvent.setStartsOn(s.getString("StartsOn"));
+        currentEvent.setEndsOn(s.getString("EndsOn"));
+        currentEvent.setLocation(s.getString("Location"));
 
-        String startDateResult = "", locationResult = "", titleResult = "", eventIDResult = "", timeResult = "";
-
-        // find start date
-        Matcher findMe = Pattern.compile(startdateregex, Pattern.DOTALL).matcher(s);
-        while (findMe.find()){
-            startDateResult = findMe.group();
-            startDateResult = startDateResult.substring(12);
-            startDateResult = startDateResult.substring(0, startDateResult.length()-1);
-        }
-
-        // find location
-        findMe = Pattern.compile(locationregex, Pattern.DOTALL).matcher(s);
-        while (findMe.find()){
-            locationResult = findMe.group();
-            locationResult = locationResult.substring(13);
-            locationResult = locationResult.substring(0, locationResult.length()-1);
-        }
-        // find title
-        findMe = Pattern.compile(titleregex, Pattern.DOTALL).matcher(s);
-        while (findMe.find()){
-            titleResult = findMe.group();
-            titleResult = titleResult.substring(17);
-            titleResult = titleResult.substring(0,titleResult.length()-1);
-        }
-        // find event id
-        findMe = Pattern.compile(eventidregex, Pattern.DOTALL).matcher(s);
-        while (findMe.find()){
-            eventIDResult = findMe.group();
-            eventIDResult = eventIDResult.substring(8, eventIDResult.length()-5);}
-
-        // find time
-        findMe = Pattern.compile(timeregex, Pattern.DOTALL).matcher(s);
-        while (findMe.find()) {
-            timeResult = findMe.group();
-            timeResult = timeResult.substring(12,timeResult.length()-7);
-
-        }
-        currentEvent.setLOCATION(locationResult);
-        currentEvent.setSUMMARY(titleResult);
-        currentEvent.setDTSTAMP(startDateResult);
-        currentEvent.setStartTime(timeResult);
         return currentEvent;
     }
 

@@ -21,12 +21,18 @@
         android:layout_height="wrap_content"
         android:text="@string/directory_button"
         android:id="@+id/dir_button"
+        android:background="@drawable/ssubutton"
+        android:layout_marginTop = "10dp"
+        android:textColor="@color/caldroid_white"
         android:layout_below="@+id/imageView1"/>
 
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/calendar_button"
+        android:layout_marginTop = "10dp"
+        android:background="@drawable/ssubutton"
+        android:textColor="@color/caldroid_white"
         android:id="@+id/calendar_button"
         android:layout_below="@+id/dir_button"
         />
@@ -36,5 +42,8 @@
         android:layout_height="wrap_content"
         android:text="University News"
         android:id="@+id/news_button"
+        android:layout_marginTop = "10dp"
+        android:background="@drawable/ssubutton"
+        android:textColor="@color/caldroid_white"
         android:layout_below="@+id/calendar_button" />
 </LinearLayout>

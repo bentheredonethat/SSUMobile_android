@@ -2,6 +2,9 @@
 <LinearLayout xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:layout_marginTop = "10dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
     android:layout_height="match_parent">
     <!-- A CardView that contains a TextView -->
 
@@ -13,30 +16,30 @@
         android:layout_width="fill_parent"
         android:layout_height="100dp"
         android:layout_margin="5dp"
+        android:background="#001339"
         card_view:cardCornerRadius="2dp"
         card_view:contentPadding="10dp">
 <RelativeLayout
     android:layout_width="match_parent"
+    android:layout_gravity="center_vertical"
     android:layout_height="match_parent">
         <TextView
-            android:id="@+id/summary"
+            android:id="@+id/Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:layout_alignParentTop="true"/>
+            android:textSize="20sp"
+            android:textColor="#001339"
+            android:layout_alignParentTop="true" />
         <TextView
-            android:id="@+id/location"
+            android:id="@+id/StartsOn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textStyle="italic"
+            android:layout_alignParentBottom="true"
             android:layout_marginTop="10dp"
-            android:layout_below="@+id/summary"/>
-    <TextView
-        android:id="@+id/time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/location"/>
-
+            android:layout_below="@+id/Title"
+            android:textColor="#001339" />
+/>
 </RelativeLayout>
     </android.support.v7.widget.CardView>
 </LinearLayout>

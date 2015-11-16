@@ -11,21 +11,14 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.app.ssumobile.ssumobile_android.R;
-import com.app.ssumobile.ssumobile_android.models.calendarEvent;
-import com.app.ssumobile.ssumobile_android.service.CalendarService;
 import com.app.ssumobile.ssumobile_android.service.RestClient;
-import com.google.gson.FieldNamingPolicy;
-import com.google.gson.GsonBuilder;
 import com.roomorama.caldroid.CaldroidFragment;
 import com.roomorama.caldroid.CaldroidListener;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
-import retrofit.Callback;
-import retrofit.RestAdapter;
+
 import retrofit.RetrofitError;
 import retrofit.client.Response;
-import retrofit.converter.GsonConverter;
 
 
 public class CalendarActivity extends FragmentActivity {
@@ -44,6 +37,7 @@ public class CalendarActivity extends FragmentActivity {
 
         // set layout for activity
         setContentView(R.layout.activity_calendar);
+
         initializeCalendar();
 
 
@@ -92,8 +86,8 @@ public class CalendarActivity extends FragmentActivity {
         Calendar cal = Calendar.getInstance();
         args.putInt(CaldroidFragment.MONTH, cal.get(Calendar.MONTH) + 1);
         args.putInt(CaldroidFragment.YEAR, cal.get(Calendar.YEAR));
+        args.putInt(CaldroidFragment.THEME_RESOURCE, com.caldroid.R.style.CaldroidDefaultDark);
         caldroidFragment.setArguments(args);
-
         t = getSupportFragmentManager().beginTransaction();
         t.replace(R.id.calendar, caldroidFragment);
         t.commit();

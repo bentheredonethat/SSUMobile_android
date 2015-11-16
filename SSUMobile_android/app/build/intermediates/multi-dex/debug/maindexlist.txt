@@ -33,8 +33,8 @@ org/parceler/transfuse/annotations/ScopeReference.class
 org/parceler/guava/util/concurrent/Futures$ImmediateSuccessfulCheckedFuture.class
 android/support/v4/app/FragmentContainer.class
 org/parceler/transfuse/gen/FilerResourceWriter.class
-org/apache/commons/codec/net/URLCodec.class
 android/support/v4/media/RatingCompatApi21.class
+org/apache/commons/codec/net/URLCodec.class
 org/parceler/transfuse/adapter/ASTPrimitiveType.class
 org/parceler/apache/commons/beanutils/converters/BooleanArrayConverter.class
 org/parceler/transfuse/util/DeclareField.class
@@ -47,8 +47,8 @@ org/parceler/guava/collect/Maps$EntryFunction$1.class
 org/parceler/transfuse/annotations/RegisterListener.class
 org/parceler/apache/commons/beanutils/BeanMap.class
 org/parceler/transfuse/scope/ApplicationScope$ApplicationProvider.class
-android/support/v4/app/LoaderManager.class
 org/parceler/transfuse/annotations/OnLowMemory.class
+android/support/v4/app/LoaderManager.class
 retrofit/http/Multipart.class
 }
 org/parceler/transfuse/adapter/ASTBase.class
@@ -218,7 +218,6 @@ android/support/v4/media/session/MediaSessionCompat$ResultReceiverWrapper.class
 org/parceler/transfuse/gen/invocationBuilder/PackageHelperRepository.class
 org/apache/commons/codec/digest/DigestUtils.class
 org/parceler/apache/commons/beanutils/locale/LocaleConvertUtilsBean.class
-com/app/ssumobile/ssumobile_android/activity/CalendarSingleDate$3.class
 android/support/v4/view/ViewCompatBase.class
 android/support/v4/media/MediaBrowserCompat$1.class
 -keep public class * extends java.lang.annotation.Annotation {
@@ -331,8 +330,8 @@ org/parceler/transfuse/annotations/Install.class
 org/parceler/guava/collect/GeneralRange.class
 org/parceler/transfuse/annotations/MetaData.class
 android/support/v7/app/ActionBar$TabListener.class
-com/app/ssumobile/ssumobile_android/activity/CalendarSingleDate$1.class
 org/apache/commons/codec/language/Soundex.class
+com/app/ssumobile/ssumobile_android/activity/CalendarSingleDate$1.class
 org/parceler/guava/collect/TreeRangeSet$ComplementRangesByLowerBound.class
 org/parceler/apache/commons/beanutils/ConvertUtils.class
 org/parceler/transfuse/SupportedAnnotations.class
@@ -345,7 +344,6 @@ org/parceler/transfuse/annotations/ConfigChanges.class
 org/parceler/guava/collect/RangeMap.class
 org/parceler/guava/util/concurrent/CycleDetectingLockFactory$LockGraphNode.class
 org/parceler/transfuse/gen/variableBuilder/ExpressionVariableBuilderWrapper.class
-com/app/ssumobile/ssumobile_android/models/calendarEvent.class
 android/support/v7/widget/LinearLayoutManager.class
 org/parceler/guava/collect/TreeRangeSet$SubRangeSet.class
 retrofit/http/Part.class
@@ -389,8 +387,8 @@ android/support/v4/media/RatingCompat$1.class
 org/parceler/guava/io/ByteStreams.class
 org/parceler/transfuse/gen/MethodInstantiationStrategy.class
 org/parceler/guava/collect/ImmutableSetMultimap.class
-android/support/annotation/CheckResult.class
 org/parceler/transfuse/bootstrap/BootstrapProcessor.class
+android/support/annotation/CheckResult.class
 org/parceler/guava/hash/Hasher.class
 org/parceler/guava/base/Stopwatch.class
 android/support/v4/view/ViewCompatHC.class
@@ -688,7 +686,6 @@ org/parceler/guava/collect/TreeRangeMap$SubRangeMap.class
 org/parceler/ParcelClasses.class
 org/parceler/transfuse/listeners/CallThrough.class
 android/support/v4/media/MediaMetadataCompat$Builder.class
-com/app/ssumobile/ssumobile_android/activity/CalendarSingleDate$2.class
 org/parceler/guava/collect/Constraint.class
 org/parceler/guava/annotations/VisibleForTesting.class
 android/support/v7/app/ActionBarActivity.class
@@ -734,6 +731,7 @@ android/support/v4/view/WindowInsetsCompat.class
 org/parceler/transfuse/bootstrap/ExistingVariableInjectionBuilder.class
 org/parceler/transfuse/scope/ApplicationScope.class
 android/support/v4/view/ViewCompat$JbMr1ViewCompatImpl.class
+com/app/ssumobile/ssumobile_android/models/calendarEventModel.class
 org/parceler/transfuse/analysis/module/BindProviderProcessor.class
 android/support/v4/media/MediaMetadataCompatApi21.class
 org/parceler/transfuse/annotations/Provides.class

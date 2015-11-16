@@ -35,8 +35,8 @@ public final class R {
 		public static final int caldroid_sky_blue = 0x7f0a001c;
 		public static final int caldroid_transparent = 0x7f0a001d;
 		public static final int caldroid_white = 0x7f0a001e;
-		public static final int cell_text_color = 0x7f0a0059;
-		public static final int cell_text_color_dark = 0x7f0a005a;
+		public static final int cell_text_color = 0x7f0a005a;
+		public static final int cell_text_color_dark = 0x7f0a005b;
 	}
 	public static final class drawable {
 		public static final int calendar_next_arrow = 0x7f020045;
@@ -52,12 +52,12 @@ public final class R {
 		public static final int right_arrow = 0x7f020052;
 	}
 	public static final class id {
-		public static final int calendar_gridview = 0x7f0b006a;
+		public static final int calendar_gridview = 0x7f0b006b;
 		public static final int calendar_left_arrow = 0x7f0b005d;
 		public static final int calendar_month_year_textview = 0x7f0b005e;
 		public static final int calendar_right_arrow = 0x7f0b005f;
 		public static final int calendar_title_view = 0x7f0b005c;
-		public static final int calendar_tv = 0x7f0b006e;
+		public static final int calendar_tv = 0x7f0b006f;
 		public static final int months_infinite_pager = 0x7f0b0061;
 		public static final int weekday_gridview = 0x7f0b0060;
 	}
