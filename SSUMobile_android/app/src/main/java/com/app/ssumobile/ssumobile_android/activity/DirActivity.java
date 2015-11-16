@@ -1,6 +1,7 @@
 package com.app.ssumobile.ssumobile_android.activity;
 
-import android.app.ActionBar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
@@ -16,14 +17,17 @@ import com.app.ssumobile.ssumobile_android.R;
 
 public class DirActivity extends AppCompatActivity {
 
-    Button ContactButton, ContactButton2;
-    MenuItem FacultyTab, DepartmentsTab, BuildingsTab, SchoolsTab;
+    Fragment fac_staff_frag = new FacultyStaffFragment();
+    Fragment department_frag = new DepartmentsFragment();
+    Fragment buildings_frag = new BuildingsFragment();
+    Fragment schools_frag = new SchoolsFragment();
+   
 
     // Array of strings...
     String[] mobileArray = {"Android","IPhone","WindowsMobile","Blackberry","WebOS","Ubuntu","Windows7","Max OS X", "boop", "jhsodfs","booooop"};
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+        protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_dir);
 
@@ -50,64 +54,28 @@ public class DirActivity extends AppCompatActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        switch(item.getItemId()){
+            case R.id.action_settings:
+                return true;
+            case R.id.Faculty_Staff_Directory:
+                ft.replace(R.id.fragment_container, fac_staff_frag);
+                ft.commit();
+                return true;
+            case R.id.Departments_Directory:
+                ft.replace(R.id.fragment_container, department_frag);
+                ft.commit();
+                return true;
+            case R.id.Buildings_Directory:
+                ft.replace(R.id.fragment_container, buildings_frag);
+                ft.commit();
+                return true;
+            case R.id.Schools_Directory:
+                ft.replace(R.id.fragment_container, schools_frag);
+                ft.commit();
+                return true;
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    public void setContactButton(){
-        // Locate the button in activity_dir.xml
-        ContactButton = (Button) findViewById(R.id.contact_button);
-        ContactButton.setText("John Doe");
-        // Capture button clicks
-        ContactButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-                // Start ContactActivity.class
-                Intent myIntent = new Intent(DirActivity.this,
-                        ContactActivity.class);
-                startActivity(myIntent);
-            }
-
-        });
-    }
-    public void setContactButton2(){
-        // Locate the button in activity_dir.xml
-        ContactButton2 = (Button) findViewById(R.id.contact_button2);
-        ContactButton2.setText("John Doe");
-        // Capture button clicks
-        ContactButton2.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-                // Start ContactActivity.class
-                Intent myIntent = new Intent(DirActivity.this,
-                        ContactActivity.class);
-                startActivity(myIntent);
-            }
-
-        });
-    }
-
-    public void testConnection(View view) {
-        // Do something in response to button
-        boolean connected = false;
-        String message = "still no cnxn :(";
-//
-//        // Step 2: Load page from assets -- TO DO: add asset with html file that has js
-//        webView.loadUrl("file:///android_asset/index.html");
-//
-//        // Step 3: Enable Javascript
-//        webView.getSettings().setJavaScriptEnabled(true);
-
-
-        // if condition works then say so!
-        if (connected){
-            message = "got cnxn :)";
-        }
-        Toast.makeText(getBaseContext(), message, Toast.LENGTH_SHORT).show();
-
     }
 }

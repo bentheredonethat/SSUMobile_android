@@ -1,17 +1,11 @@
 package com.app.ssumobile.ssumobile_android.activity;
 
-import android.Manifest;
-import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.content.pm.PermissionInfo;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.provider.ContactsContract;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -33,6 +27,8 @@ public class ContactActivity extends AppCompatActivity {
     TextView Title;
     Button PhoneButton;
     Button EmailButton;
+    Button DepartmentButton;
+    Button OfficeButton;
     Button AddToContacts;
 
     @Override
@@ -46,11 +42,18 @@ public class ContactActivity extends AppCompatActivity {
         Title = (TextView) findViewById(R.id.Title_button);
         PhoneButton = (Button) findViewById(R.id.Phone_button);
         EmailButton = (Button) findViewById(R.id.Email_button);
-
+        DepartmentButton = (Button) findViewById(R.id.department_button);
+        OfficeButton = (Button) findViewById(R.id.office_button);
         AddToContacts = (Button) findViewById(R.id.AddContact_button);
+
+        // Create Mock Data
         MockContactProvider();
+        // Initiate Threads for onClickListeners
         PhoneButtonThread();
         EmailButtonThread();
+
+        // DepartmentButtonThread();
+        // OfficeButtonThread();
         AddToContactsThread();
     }
 
@@ -82,6 +85,8 @@ public class ContactActivity extends AppCompatActivity {
         Title.setText("Student");
         PhoneButton.setText("310-999-9999");
         EmailButton.setText("JohnDoe@gmail.com");
+        DepartmentButton.setText("Computer Science");
+        OfficeButton.setText("Room 1337");
     }
 
     public void PhoneButtonThread() {
@@ -165,7 +170,7 @@ public class ContactActivity extends AppCompatActivity {
         });
     }
     public void ActivatePhoneCall() {
-        String message = "You need to activate Phone access for this app";
+        String message = "You need to activate Phone permissions for this app";
         try {
             if (checkSelfPermission(android.Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                 String[] CallPermissions = {"android.permission.CALL_PHONE"};
