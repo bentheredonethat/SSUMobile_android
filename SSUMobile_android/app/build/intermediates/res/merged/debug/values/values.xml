@@ -36,11 +36,6 @@
     <color name="background_floating_material_light">@android:color/white</color>
     <color name="background_material_dark">@color/material_grey_850</color>
     <color name="background_material_light">@color/material_grey_50</color>
-    <!-- From: file:/C:/Users/Tephros/Desktop/Repositories/SSUMobile_android/SSUMobile_android/app/src/main/res/values/colors.xml -->
-    <eat-comment/>
-    <item name="blue" type="color">#1b47da</item>
-    <!-- From: file:/C:/Users/Tephros/Desktop/Repositories/SSUMobile_android/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
-    <eat-comment/>
     <color name="bright_foreground_disabled_material_dark">#80ffffff</color>
     <color name="bright_foreground_disabled_material_light">#80000000</color>
     <color name="bright_foreground_inverse_material_dark">@color/bright_foreground_material_light</color>
@@ -117,6 +112,11 @@
     <color name="secondary_text_default_material_light">#8a000000</color>
     <color name="secondary_text_disabled_material_dark">#36ffffff</color>
     <color name="secondary_text_disabled_material_light">#24000000</color>
+    <!-- From: file:/C:/Users/Tephros/Desktop/Repositories/SSUMobile_android/SSUMobile_android/app/src/main/res/values/colors.xml -->
+    <eat-comment/>
+    <item name="ssublue" type="color">#001339</item>
+    <!-- From: file:/C:/Users/Tephros/Desktop/Repositories/SSUMobile_android/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
+    <eat-comment/>
     <color name="switch_thumb_disabled_material_dark">#ff616161</color>
     <color name="switch_thumb_disabled_material_light">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_dark">#ffbdbdbd</color>
@@ -319,24 +319,6 @@
     <string name="title_activity_dir">Directory</string>
     <string name="title_activity_news">University News</string>
     <string name="title_button">"Title"</string>
-    <!-- From: file:/C:/Users/Tephros/Desktop/Repositories/SSUMobile_android/SSUMobile_android/app/src/main/res/values/styles_ssumobile.xml -->
-    <eat-comment/>
-    <style name="ActionBar.Solid.Ssumobile" parent="@style/Widget.AppCompat.Light.ActionBar.Solid">
-        <item name="background">@drawable/ab_solid_ssumobile</item>
-        <item name="backgroundStacked">@drawable/ab_stacked_solid_ssumobile</item>
-        <item name="backgroundSplit">@drawable/ab_bottom_solid_ssumobile</item>
-        <item name="progressBarStyle">@style/ProgressBar.Ssumobile</item>
-    </style>
-    <style name="ActionBar.Transparent.Ssumobile" parent="@style/Widget.AppCompat.Light.ActionBar">
-        <item name="background">@drawable/ab_transparent_ssumobile</item>
-        <item name="progressBarStyle">@style/ProgressBar.Ssumobile</item>
-    </style>
-    <style name="ActionBarTabStyle.Ssumobile" parent="@style/Widget.AppCompat.Light.ActionBar.TabView">
-        <item name="android:background">@drawable/tab_indicator_ab_ssumobile</item>
-    </style>
-    <style name="ActionButton.CloseMode.Ssumobile" parent="@style/Widget.AppCompat.Light.ActionButton.CloseMode">
-        <item name="android:background">@drawable/btn_cab_done_ssumobile</item>
-    </style>
     <!-- From: file:/C:/Users/Tephros/Desktop/Repositories/SSUMobile_android/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
     <eat-comment/>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
@@ -1387,16 +1369,6 @@
     <style name="CardView.Light">
         <item name="cardBackgroundColor">@color/cardview_light_background</item>
     </style>
-    <!-- From: file:/C:/Users/Tephros/Desktop/Repositories/SSUMobile_android/SSUMobile_android/app/src/main/res/values/styles_ssumobile.xml -->
-    <eat-comment/>
-    <style name="DropDownListView.Ssumobile" parent="@style/Widget.AppCompat.Light.ListView.DropDown">
-        <item name="android:listSelector">@drawable/selectable_background_ssumobile</item>
-    </style>
-    <style name="DropDownNav.Ssumobile" parent="@style/Widget.AppCompat.Light.Spinner.DropDown.ActionBar">
-        <item name="android:background">@drawable/spinner_background_ab_ssumobile</item>
-        <item name="android:popupBackground">@drawable/menu_dropdown_panel_ssumobile</item>
-        <item name="android:dropDownSelector">@drawable/selectable_background_ssumobile</item>
-    </style>
     <!-- From: file:/C:/Users/Tephros/Desktop/Repositories/SSUMobile_android/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
     <eat-comment/>
     <style name="Platform.AppCompat" parent="android:Theme">
@@ -1497,16 +1469,6 @@
         <item name="android:dropDownItemStyle">@style/Widget.AppCompat.DropDownItem.Spinner</item>
     </style>
     <style name="Platform.Widget.AppCompat.Spinner" parent="android:Widget.Spinner"/>
-    <!-- From: file:/C:/Users/Tephros/Desktop/Repositories/SSUMobile_android/SSUMobile_android/app/src/main/res/values/styles_ssumobile.xml -->
-    <eat-comment/>
-    <style name="PopupMenu.Ssumobile" parent="@style/Widget.AppCompat.Light.PopupMenu">	
-        <item name="android:popupBackground">@drawable/menu_dropdown_panel_ssumobile</item>	
-    </style>
-    <style name="ProgressBar.Ssumobile" parent="@style/Widget.AppCompat.ProgressBar.Horizontal">
-        <item name="android:progressDrawable">@drawable/progress_horizontal_ssumobile</item>
-    </style>
-    <!-- From: file:/C:/Users/Tephros/Desktop/Repositories/SSUMobile_android/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
-    <eat-comment/>
     <style name="RtlOverlay.DialogWindowTitle.AppCompat" parent="Base.DialogWindowTitle.AppCompat">
     </style>
     <style name="RtlOverlay.Widget.AppCompat.ActionBar.TitleItem" parent="android:Widget">
@@ -1642,24 +1604,6 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
-    <!-- From: file:/C:/Users/Tephros/Desktop/Repositories/SSUMobile_android/SSUMobile_android/app/src/main/res/values/styles_ssumobile.xml -->
-    <eat-comment/>
-    <style name="Theme.Ssumobile" parent="@style/Theme.AppCompat.Light">
-        <item name="colorPrimary">@color/blue</item>
-        <item name="actionBarItemBackground">@drawable/selectable_background_ssumobile</item>
-        <item name="popupMenuStyle">@style/PopupMenu.Ssumobile</item>
-        <item name="dropDownListViewStyle">@style/DropDownListView.Ssumobile</item>
-        <item name="actionBarTabStyle">@style/ActionBarTabStyle.Ssumobile</item>
-        <item name="actionDropDownStyle">@style/DropDownNav.Ssumobile</item>
-        <item name="actionBarStyle">@style/ActionBar.Solid.Ssumobile</item>
-        <item name="actionModeBackground">@drawable/cab_background_top_ssumobile</item>
-        <item name="actionModeSplitBackground">@drawable/cab_background_bottom_ssumobile</item>
-        <item name="actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Ssumobile</item>
-
-        
-    </style>
-    <!-- From: file:/C:/Users/Tephros/Desktop/Repositories/SSUMobile_android/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
-    <eat-comment/>
     <style name="ThemeOverlay.AppCompat" parent="Base.ThemeOverlay.AppCompat"/>
     <style name="ThemeOverlay.AppCompat.ActionBar" parent="Base.ThemeOverlay.AppCompat.ActionBar"/>
     <style name="ThemeOverlay.AppCompat.Dark" parent="Base.ThemeOverlay.AppCompat.Dark"/>

@@ -62,9 +62,9 @@ MERGED from [com.android.support:support-v4:23.1.0] C:\Users\Tephros\Desktop\Rep
 	android:allowBackup
 		ADDED from C:\Users\Tephros\Desktop\Repositories\SSUMobile_android\SSUMobile_android\app\src\main\AndroidManifest.xml:18:9-35
 	android:icon
-		ADDED from C:\Users\Tephros\Desktop\Repositories\SSUMobile_android\SSUMobile_android\app\src\main\AndroidManifest.xml:19:9-46
+		ADDED from C:\Users\Tephros\Desktop\Repositories\SSUMobile_android\SSUMobile_android\app\src\main\AndroidManifest.xml:19:9-48
 	android:theme
-		ADDED from C:\Users\Tephros\Desktop\Repositories\SSUMobile_android\SSUMobile_android\app\src\main\AndroidManifest.xml:21:9-47
+		ADDED from C:\Users\Tephros\Desktop\Repositories\SSUMobile_android\SSUMobile_android\app\src\main\AndroidManifest.xml:21:9-53
 activity#com.app.ssumobile.ssumobile_android.activity.StartScreenActivity
 ADDED from C:\Users\Tephros\Desktop\Repositories\SSUMobile_android\SSUMobile_android\app\src\main\AndroidManifest.xml:23:5-31:20
 	android:label

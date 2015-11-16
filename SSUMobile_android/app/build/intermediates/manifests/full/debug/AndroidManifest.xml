@@ -20,9 +20,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/filtered_logo"
         android:label="@string/app_name"
-        android:theme="@style/Theme.Ssumobile" >
+        android:theme="@style/Theme.AppCompat.Light" >
         <activity
             android:name="com.app.ssumobile.ssumobile_android.activity.StartScreenActivity"
             android:label="@string/app_name" >
