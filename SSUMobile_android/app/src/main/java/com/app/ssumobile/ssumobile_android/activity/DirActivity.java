@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
 import android.widget.Button;
 import com.app.ssumobile.ssumobile_android.R;
@@ -17,10 +19,19 @@ public class DirActivity extends AppCompatActivity {
     Button ContactButton, ContactButton2;
     MenuItem FacultyTab, DepartmentsTab, BuildingsTab, SchoolsTab;
 
+    // Array of strings...
+    String[] mobileArray = {"Android","IPhone","WindowsMobile","Blackberry","WebOS","Ubuntu","Windows7","Max OS X", "boop", "jhsodfs","booooop"};
+
     @Override
-        protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_dir);
+
+
+            ArrayAdapter adapter = new ArrayAdapter<String>(this, R.layout.activity_listview, mobileArray);
+
+            ListView listView = (ListView) findViewById(R.id.mobile_list);
+            listView.setAdapter(adapter);
 
             setContactButton();
             setContactButton2();

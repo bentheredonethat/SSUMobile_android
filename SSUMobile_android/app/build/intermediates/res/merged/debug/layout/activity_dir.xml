@@ -36,5 +36,12 @@
         android:layout_below="@+id/contact_button"
         android:layout_alignParentStart="true" />
 
+    <ListView
+        android:id="@+id/mobile_list"
+        android:layout_below="@+id/contact_button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
+
 </RelativeLayout>
 <!-- From: file:/home/ben/school/370/Repositories/App/SSUMobile_android/app/src/main/res/layout/activity_dir.xml -->
