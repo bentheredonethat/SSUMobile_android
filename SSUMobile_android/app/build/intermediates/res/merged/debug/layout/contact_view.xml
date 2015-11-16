@@ -1,72 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
-
+    android:layout_height="wrap_content"
+    android:background="#d5d7e9" >
 
     <Button
         style="?android:attr/buttonStyleSmall"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Fname"
+        android:text="@string/fname_button"
         android:id="@+id/Fname_button"
+        android:background="@drawable/roundedbutton"
         android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/Lname_button"
-        android:layout_alignStart="@+id/Lname_button" />
+        android:layout_alignStart="@+id/Lname_button"
+        android:textColor="#d5d7e9" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
         android:layout_width="208dp"
         android:layout_height="wrap_content"
-        android:text="Lname"
+        android:text="@string/lname_button"
         android:id="@+id/Lname_button"
-        android:layout_gravity="right"
+        android:layout_gravity="end"
+        android:background="@drawable/roundedbutton"
         android:layout_below="@+id/Fname_button"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:textColor="#d5d7e9" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Title"
+        android:text="@string/title_button"
         android:id="@+id/Title_button"
+        android:background="@drawable/roundedbutton"
         android:layout_below="@+id/Lname_button"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:textColor="#d5d7e9"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Phone"
+        android:text="@string/phone_button"
         android:id="@+id/Phone_button"
+        android:background="@drawable/roundedbutton"
         android:layout_below="@+id/Title_button"
-        android:layout_alignRight="@+id/Lname_button"
         android:layout_alignEnd="@+id/Lname_button"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:textColor="#d5d7e9"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Email"
+        android:text="@string/email_button"
         android:id="@+id/Email_button"
+        android:background="@drawable/roundedbutton"
         android:layout_below="@+id/Phone_button"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/Lname_button"
-        android:layout_alignEnd="@+id/Lname_button" />
+        android:layout_alignEnd="@+id/Lname_button"
+        android:textColor="#d5d7e9"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add To Contacts"
+        android:text="@string/add_to_contacts"
         android:id="@+id/AddContact_button"
-        android:layout_alignParentTop="true"
+        android:background="@drawable/roundedbutton"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="450dp" />
+        android:layout_alignParentBottom="true"
+        android:textColor="#d5d7e9"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/department_button"
+        android:id="@+id/department_button"
+        android:layout_below="@+id/Email_button"
+        android:background="@drawable/roundedbutton"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="44dp"
+        android:layout_alignParentEnd="true"
+        android:textColor="#d5d7e9" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/office_button"
+        android:layout_below="@+id/department_button"
+        android:background="@drawable/roundedbutton"
+        android:layout_alignEnd="@+id/Lname_button"
+        android:layout_alignParentStart="true"
+        android:id="@+id/office_button"
+        android:textColor="#d5d7e9" />
 
 </RelativeLayout><!-- From: file:/C:/Users/Tephros/Desktop/Repositories/SSUMobile_android/SSUMobile_android/app/src/main/res/layout/contact_view.xml -->

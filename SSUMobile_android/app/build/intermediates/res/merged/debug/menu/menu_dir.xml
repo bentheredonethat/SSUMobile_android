@@ -11,19 +11,22 @@
 
     <item android:id="@+id/Faculty_Staff_Directory"
         android:title="@string/Faculty_Staff_Directory"
-        android:titleCondensed="@string/Faculty_Staff_Directory"
+        android:visible="true"
         app:showAsAction="ifRoom"/>
 
-    <item android:id="@+id/Departments"
+    <item android:id="@+id/Departments_Directory"
         android:title="@string/Departments_Directory"
+        android:visible="true"
         app:showAsAction="ifRoom"/>
 
     <item android:id="@+id/Buildings_Directory"
         android:title="@string/Buildings_Directory"
+        android:visible="true"
         app:showAsAction="ifRoom"/>
 
     <item android:id="@+id/Schools_Directory"
         android:title="@string/Schools_Directory"
+        android:visible="true"
         app:showAsAction="ifRoom"/>
 </menu>
 

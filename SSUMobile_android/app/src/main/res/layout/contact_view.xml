@@ -4,15 +4,6 @@
     android:layout_height="wrap_content"
     android:background="#d5d7e9" >
 
-    <ImageView
-        android:layout_width="150dp"
-        android:layout_height="102dp"
-        android:src="@drawable/ssu_paw"
-        android:scaleType="fitXY"
-        android:layout_alignTop="@+id/Title_button"
-        android:layout_alignParentTop="true"
-        android:id="@+id/Main_Screen_Image" />
-
     <Button
         style="?android:attr/buttonStyleSmall"
         android:layout_width="match_parent"

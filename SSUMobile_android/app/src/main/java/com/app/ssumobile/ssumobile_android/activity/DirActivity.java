@@ -2,17 +2,12 @@ package com.app.ssumobile.ssumobile_android.activity;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.content.Intent;
-import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
-import android.widget.Button;
 import com.app.ssumobile.ssumobile_android.R;
 
 public class DirActivity extends AppCompatActivity {
@@ -37,8 +32,6 @@ public class DirActivity extends AppCompatActivity {
             ListView listView = (ListView) findViewById(R.id.mobile_list);
             listView.setAdapter(adapter);
 
-            setContactButton();
-            setContactButton2();
         }
 
     @Override
