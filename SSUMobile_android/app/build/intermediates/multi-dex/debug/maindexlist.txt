@@ -33,8 +33,8 @@ org/parceler/transfuse/annotations/ScopeReference.class
 org/parceler/guava/util/concurrent/Futures$ImmediateSuccessfulCheckedFuture.class
 android/support/v4/app/FragmentContainer.class
 org/parceler/transfuse/gen/FilerResourceWriter.class
-android/support/v4/media/RatingCompatApi21.class
 org/apache/commons/codec/net/URLCodec.class
+android/support/v4/media/RatingCompatApi21.class
 org/parceler/transfuse/adapter/ASTPrimitiveType.class
 org/parceler/apache/commons/beanutils/converters/BooleanArrayConverter.class
 org/parceler/transfuse/util/DeclareField.class
