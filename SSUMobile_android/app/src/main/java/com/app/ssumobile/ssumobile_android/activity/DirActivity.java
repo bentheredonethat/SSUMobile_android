@@ -29,7 +29,6 @@ public class DirActivity extends AppCompatActivity {
     Fragment department_frag = new DepartmentsFragment();
     Fragment buildings_frag = new BuildingsFragment();
     Fragment schools_frag = new SchoolsFragment();
-   
 
     String body;
 
@@ -61,9 +60,6 @@ public class DirActivity extends AppCompatActivity {
                 }
 
             });
-
-
-
         }
 
     @Override
