@@ -1865,14 +1865,14 @@ containing a value of this type.
         public static final int end_padder=0x7f0b0083;
         public static final int expand_activities_button=0x7f0b0025;
         public static final int expanded_menu=0x7f0b0038;
-        public static final int fragment_container=0x7f0b0059;
         public static final int home=0x7f0b0004;
         public static final int homeAsUp=0x7f0b000d;
         public static final int icon=0x7f0b0029;
         public static final int ifRoom=0x7f0b001d;
         public static final int image=0x7f0b0026;
+        public static final int imageView1=0x7f0b005b;
         public static final int info=0x7f0b0082;
-        public static final int label=0x7f0b005b;
+        public static final int label=0x7f0b005a;
         public static final int line1=0x7f0b007c;
         public static final int line3=0x7f0b0080;
         public static final int listMode=0x7f0b0009;
@@ -1880,7 +1880,7 @@ containing a value of this type.
         public static final int list_item=0x7f0b0028;
         public static final int media_actions=0x7f0b007a;
         public static final int middle=0x7f0b001a;
-        public static final int mobile_list=0x7f0b005a;
+        public static final int mobile_list=0x7f0b0059;
         public static final int months_infinite_pager=0x7f0b0066;
         public static final int multiply=0x7f0b0013;
         public static final int never=0x7f0b001e;
@@ -1896,7 +1896,7 @@ containing a value of this type.
         public static final int publish_date=0x7f0b0074;
         public static final int radio=0x7f0b003b;
         public static final int recycler_view=0x7f0b0051;
-        public static final int resource_button=0x7f0b005f;
+        public static final int resources_button=0x7f0b005f;
         public static final int screen=0x7f0b0014;
         public static final int scrollIndicatorDown=0x7f0b0035;
         public static final int scrollIndicatorUp=0x7f0b0032;
@@ -1989,7 +1989,7 @@ containing a value of this type.
         public static final int cardview=0x7f030023;
         public static final int contact_view=0x7f030024;
         public static final int date_grid_fragment=0x7f030025;
-        public static final int department_view=0x7f030026;
+        public static final int departments_view=0x7f030026;
         public static final int dirsinglecontact=0x7f030027;
         public static final int fac_staff_view=0x7f030028;
         public static final int newscardview=0x7f030029;

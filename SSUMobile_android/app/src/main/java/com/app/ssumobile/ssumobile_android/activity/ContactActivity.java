@@ -176,13 +176,12 @@ public class ContactActivity extends AppCompatActivity {
                 String[] CallPermissions = {"android.permission.CALL_PHONE"};
                 int requestID = 1;
                 requestPermissions(CallPermissions, requestID);
-            }else {
-                final Intent callIntent = new Intent(Intent.ACTION_CALL);
-                callIntent.setData(Uri.parse("tel:" + PhoneButton.getText().toString()));
-                ContactActivity.this.startActivity(callIntent);
             }
         }catch( Throwable t){
             Toast.makeText(getBaseContext(), message, Toast.LENGTH_SHORT).show();
+            final Intent callIntent = new Intent(Intent.ACTION_CALL);
+            callIntent.setData(Uri.parse("tel:" + PhoneButton.getText().toString()));
+            ContactActivity.this.startActivity(callIntent);
         }
     }
     @Override

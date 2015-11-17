@@ -5,10 +5,13 @@
 -keep class com.app.ssumobile.ssumobile_android.activity.StartScreenActivity { <init>(); }
 -keep class com.app.ssumobile.ssumobile_android.activity.CalendarActivity { <init>(); }
 -keep class com.app.ssumobile.ssumobile_android.activity.NewsActivity { <init>(); }
--keep class com.app.ssumobile.ssumobile_android.activity.DirActivity { <init>(); }
 -keep class com.app.ssumobile.ssumobile_android.activity.ContactActivity { <init>(); }
 -keep class com.app.ssumobile.ssumobile_android.activity.CalendarSingleDate { <init>(); }
 -keep class com.app.ssumobile.ssumobile_android.activity.calendarSingleEvent { <init>(); }
+-keep class com.app.ssumobile.ssumobile_android.activity.FacultyStaffActivity { <init>(); }
+-keep class com.app.ssumobile.ssumobile_android.activity.DepartmentsActivity { <init>(); }
+-keep class com.app.ssumobile.ssumobile_android.activity.SchoolsActivity { <init>(); }
+-keep class com.app.ssumobile.ssumobile_android.activity.BuildingsActivity { <init>(); }
 -keep class android.support.v7.widget.TestActivity { <init>(); }
 -keep public class * extends android.app.backup.BackupAgent {
     <init>();

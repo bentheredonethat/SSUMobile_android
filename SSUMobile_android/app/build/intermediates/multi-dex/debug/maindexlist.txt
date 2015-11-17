@@ -1,4 +1,3 @@
-com/app/ssumobile/ssumobile_android/activity/DirActivity$1.class
 
 org/parceler/transfuse/gen/variableBuilder/ProvidesInjectionNodeBuilder.class
 retrofit/http/RestMethod.class
@@ -23,6 +22,7 @@ org/parceler/transfuse/gen/proxy/VirtualProxyGenerator$VirtualProxyGeneratorCach
 org/parceler/internal/generator/SetReadWriteGenerator.class
 android/support/v4/app/AppOpsManagerCompat.class
 com/app/ssumobile/ssumobile_android/adapters/calendarCardAdapter.class
+com/app/ssumobile/ssumobile_android/activity/BuildingsActivity$1.class
 android/support/v7/view/ActionMode$Callback.class
 android/support/v4/graphics/drawable/DrawableCompat.class
 org/parceler/transfuse/annotations/OnRestart.class
@@ -69,6 +69,7 @@ org/parceler/apache/commons/beanutils/ConvertUtilsBean.class
 org/parceler/transfuse/gen/ExpressionMatchingListFactory.class
 org/parceler/transfuse/adapter/classes/LazyClassParameterBuilder.class
 org/parceler/apache/commons/beanutils/BeanMap.class
+com/app/ssumobile/ssumobile_android/activity/DepartmentsActivity.class
 org/parceler/transfuse/annotations/OnStop.class
 org/parceler/guava/base/Functions$IdentityFunction.class
 org/parceler/guava/collect/Maps$NavigableAsMapView.class
@@ -146,9 +147,9 @@ org/parceler/guava/collect/Maps$EntryFunction$1.class
 android/support/v4/app/FragmentTransaction.class
 android/support/v4/app/ActivityCompat$OnRequestPermissionsResultCallback.class
 org/parceler/transfuse/annotations/MetaData.class
+com/app/ssumobile/ssumobile_android/activity/SchoolsActivity$2.class
 org/parceler/guava/io/ByteSource.class
 org/parceler/guava/util/concurrent/ForwardingService.class
-com/app/ssumobile/ssumobile_android/activity/FacultyStaffFragment.class
 android/support/v4/media/MediaMetadataCompatApi21$Builder.class
 org/parceler/transfuse/annotations/DefineScopes.class
 org/parceler/transfuse/analysis/astAnalyzer/InjectionAnalyzer.class
@@ -186,9 +187,9 @@ org/parceler/transfuse/annotations/ImplementedBy.class
 retrofit/http/GET.class
 org/parceler/guava/reflect/TypeToInstanceMap.class
 android/support/v7/app/ActionBarDrawerToggle$DelegateProvider.class
-com/app/ssumobile/ssumobile_android/activity/BuildingsFragment.class
 org/parceler/guava/io/FileBackedOutputStream.class
 org/parceler/transfuse/adapter/element/ASTElementFactory.class
+com/app/ssumobile/ssumobile_android/activity/FacultyStaffActivity$4.class
 org/parceler/transfuse/bootstrap/BootstrapsGenerator.class
 -keep class null {
 android/support/v7/widget/StaggeredGridLayoutManager.class
@@ -229,12 +230,15 @@ org/parceler/ParcelProperty.class
 org/parceler/apache/commons/beanutils/converters/AbstractArrayConverter.class
 com/app/ssumobile/ssumobile_android/activity/CalendarActivity.class
 org/parceler/transfuse/listeners/ActivityOnTrackballEventListener.class
+com/app/ssumobile/ssumobile_android/activity/BuildingsActivity$3.class
 org/parceler/guava/primitives/UnsignedInteger.class
 org/parceler/guava/reflect/Types$ClassOwnership.class
 org/parceler/internal/ParcelableGenerator.class
 android/support/v4/app/FragmentContainer.class
 org/parceler/guava/collect/DenseImmutableTable$ImmutableArrayMap.class
+com/app/ssumobile/ssumobile_android/activity/DepartmentsActivity$2.class
 org/parceler/transfuse/ConfigurationScope.class
+com/app/ssumobile/ssumobile_android/activity/SchoolsActivity$3.class
 org/parceler/transfuse/listeners/CallThrough.class
 org/parceler/transfuse/aop/UIThreadMethodInterceptor.class
 org/parceler/guava/annotations/GwtIncompatible.class
@@ -291,6 +295,7 @@ android/support/annotation/FloatRange.class
 org/parceler/ParcelAnnotationProcessor.class
 android/support/v4/app/FragmentManagerImpl$1.class
 android/support/annotation/AttrRes.class
+-keep class com.app.ssumobile.ssumobile_android.activity.BuildingsActivity { <init>(); }
 org/parceler/transfuse/listeners/ActivityOnKeyLongPressListener.class
 org/parceler/internal/ParcelerModule.class
 com/roomorama/caldroid/CaldroidListener.class
@@ -355,7 +360,6 @@ org/parceler/internal/generator/NullCheckFactory.class
 org/parceler/guava/reflect/TypeToken$TypeCollector.class
 org/parceler/transfuse/annotations/Intent.class
 org/parceler/transfuse/gen/variableBuilder/IndependentVariableBuilderWrapper.class
--keep class com.app.ssumobile.ssumobile_android.activity.DirActivity { <init>(); }
 android/support/v4/media/session/MediaSessionCompat$Callback.class
 org/parceler/transfuse/gen/variableBuilder/VariableInjectionNodeBuilder.class
 org/parceler/guava/collect/ImmutableMapEntry$TerminalEntry.class
@@ -371,20 +375,19 @@ org/parceler/apache/commons/beanutils/locale/LocaleConvertUtils.class
 org/parceler/guava/collect/RangeMap.class
 org/parceler/guava/collect/Multimaps.class
 android/support/v4/view/ViewCompatGingerbread.class
-android/support/v4/app/Fragment$InstantiationException.class
 android/support/annotation/AnyRes.class
-com/app/ssumobile/ssumobile_android/activity/DirActivity.class
 android/support/v4/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener.class
 org/parceler/guava/collect/HashBiMap$BiEntry.class
+com/app/ssumobile/ssumobile_android/activity/DepartmentsActivity$4.class
 org/parceler/transfuse/APIModule.class
 org/parceler/guava/collect/Maps$FilteredEntryNavigableMap.class
-android/support/v4/app/Fragment$1.class
 org/apache/commons/codec/digest/DigestUtils.class
 org/parceler/guava/io/BaseEncoding.class
 org/parceler/guava/collect/UnmodifiableListIterator.class
 android/support/v4/view/animation/LookupTableInterpolator.class
 android/support/v4/media/MediaBrowserCompat$MediaItem$Flags.class
 org/parceler/transfuse/adapter/ASTAnnotation.class
+com/app/ssumobile/ssumobile_android/activity/FacultyStaffActivity$1.class
 android/support/annotation/CheckResult.class
 android/support/v4/view/ViewCompat$ICSMr1ViewCompatImpl.class
 android/support/v7/internal/widget/TintTypedArray.class
@@ -443,6 +446,7 @@ android/support/v4/app/FragmentActivity.class
 org/parceler/transfuse/gen/invocationBuilder/PackageHelperGenerator.class
 org/parceler/guava/util/concurrent/ServiceManager.class
 org/parceler/javaxinject/Inject.class
+-keep class com.app.ssumobile.ssumobile_android.activity.FacultyStaffActivity { <init>(); }
 org/parceler/transfuse/gen/componentBuilder/MirroredMethodGeneratorFactory.class
 android/support/v4/widget/DrawerLayout$DrawerListener.class
 org/parceler/guava/net/InternetDomainName.class
@@ -482,6 +486,7 @@ org/parceler/guava/util/concurrent/AbstractService.class
 android/support/v7/app/ActionBar$OnNavigationListener.class
 org/parceler/transfuse/analysis/module/BindProcessor.class
 org/parceler/transfuse/annotations/Permission.class
+-keep class com.app.ssumobile.ssumobile_android.activity.DepartmentsActivity { <init>(); }
 retrofit/http/Body.class
 org/parceler/internal/ParcelableAnalysis.class
 org/parceler/guava/io/package-info.class
@@ -499,6 +504,7 @@ android/support/v4/app/ActivityCompatHoneycomb.class
 org/parceler/guava/collect/Sets$FilteredNavigableSet.class
 android/support/v4/view/ViewCompatICSMr1.class
 org/parceler/transfuse/bootstrap/BootstrapModule.class
+-keep class com.app.ssumobile.ssumobile_android.activity.SchoolsActivity { <init>(); }
 org/parceler/apache/commons/beanutils/converters/DoubleArrayConverter.class
 org/parceler/guava/eventbus/AllowConcurrentEvents.class
 org/parceler/transfuse/annotations/RegisterListener.class
@@ -506,6 +512,7 @@ org/parceler/transfuse/annotations/Preference.class
 retrofit/http/Query.class
 org/parceler/apache/commons/beanutils/WrapDynaClass.class
 android/support/v4/app/TaskStackBuilder$SupportParentable.class
+com/app/ssumobile/ssumobile_android/activity/BuildingsActivity$2.class
 android/support/v4/app/ActivityCompatApi23.class
 org/parceler/transfuse/analysis/module/BindConfigurationComposite.class
 org/parceler/guava/hash/AbstractHasher.class
@@ -521,6 +528,7 @@ android/support/v4/view/ViewCompatKitKat.class
 org/parceler/guava/base/CharMatcher.class
 org/parceler/transfuse/annotations/OnTrimMemory.class
 android/support/v4/view/ViewCompat$GBViewCompatImpl.class
+com/app/ssumobile/ssumobile_android/activity/SchoolsActivity.class
 android/support/v4/view/ViewCompat$JbMr2ViewCompatImpl.class
 org/parceler/guava/annotations/GwtCompatible.class
 org/parceler/transfuse/annotations/UsesPermission.class
@@ -529,13 +537,14 @@ org/parceler/transfuse/adapter/element/ElementConverterFactory.class
     *;
 org/parceler/guava/util/concurrent/Futures$ImmediateSuccessfulCheckedFuture.class
 android/support/v7/appcompat/R$attr.class
+com/app/ssumobile/ssumobile_android/activity/DepartmentsActivity$1.class
+com/app/ssumobile/ssumobile_android/activity/FacultyStaffActivity$3.class
 com/app/ssumobile/ssumobile_android/R$menu.class
 org/parceler/transfuse/adapter/element/ASTElementAnnotation.class
 android/support/v4/util/MapCollections.class
 org/parceler/transfuse/annotations/OnBackPressed.class
 org/parceler/transfuse/annotations/UIThread.class
 org/parceler/transfuse/gen/variableBuilder/ProxyVariableBuilder.class
-android/support/v4/view/LayoutInflaterCompat.class
 org/parceler/transfuse/annotations/Activity.class
 android/support/annotation/XmlRes.class
 org/parceler/transfuse/annotations/Observes.class
@@ -582,6 +591,7 @@ android/support/v4/view/ViewCompatJB.class
 org/parceler/transfuse/gen/invocationBuilder/PrivateInvocationBuilder.class
 org/parceler/transfuse/gen/variableBuilder/ScopeReferenceInjectionNodeBuilder.class
 org/parceler/transfuse/gen/invocationBuilder/PublicInvocationBuilder.class
+com/app/ssumobile/ssumobile_android/activity/SchoolsActivity$1.class
 org/parceler/transfuse/annotations/BindProvider.class
 org/parceler/guava/io/CharSource.class
 org/parceler/transfuse/gen/UniqueVariableNamer.class
@@ -626,6 +636,7 @@ org/parceler/internal/generator/ArrayReadWriteGenerator.class
 org/parceler/guava/reflect/Types.class
 android/support/v7/app/ActionBar$TabListener.class
 org/parceler/transfuse/annotations/Application.class
+com/app/ssumobile/ssumobile_android/activity/FacultyStaffActivity$2.class
 org/parceler/guava/primitives/package-info.class
 org/parceler/transfuse/adapter/ASTVoidType.class
 org/parceler/transfuse/annotations/ConfigChanges.class
@@ -677,6 +688,7 @@ org/parceler/transfuse/adapter/classes/ASTClassAnnotation.class
 android/support/v4/media/MediaMetadataCompat$BitmapKey.class
 org/parceler/guava/collect/FluentIterable.class
 org/parceler/transfuse/gen/variableDecorator/GeneratedProviderVariableBuilder.class
+com/app/ssumobile/ssumobile_android/activity/DepartmentsActivity$3.class
 org/parceler/transfuse/gen/ClassGenerationUtil.class
 org/parceler/guava/base/Optional.class
 org/parceler/guava/collect/TreeRangeSet.class
@@ -696,13 +708,13 @@ org/parceler/guava/collect/HashBiMap.class
 org/parceler/transfuse/transaction/ScopedTransactionBuilder.class
 org/parceler/ParcelConverter$EmptyConverter.class
 org/parceler/guava/base/Absent.class
-com/app/ssumobile/ssumobile_android/activity/DirActivity$2.class
 android/support/v4/media/MediaMetadataCompat.class
 retrofit/http/FieldMap.class
 android/support/annotation/RequiresPermission$Read.class
 android/support/v4/app/FragmentActivity$HostCallbacks.class
 android/support/v4/media/VolumeProviderCompat$Callback.class
 org/parceler/transfuse/adapter/ASTFactory.class
+com/app/ssumobile/ssumobile_android/activity/BuildingsActivity.class
 android/support/annotation/Nullable.class
 android/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase.class
 android/support/v4/media/MediaMetadataCompat$Builder.class
@@ -717,11 +729,11 @@ org/parceler/guava/hash/AbstractStreamingHashFunction.class
 org/parceler/transfuse/gen/variableBuilder/VariableASTImplementationInjectionNodeBuilder.class
 android/support/v4/view/ViewCompat$ICSViewCompatImpl.class
 android/support/annotation/BinderThread.class
-com/app/ssumobile/ssumobile_android/activity/DepartmentsFragment.class
 android/support/v7/widget/LinearLayoutCompat.class
 android/support/v4/view/ViewCompat$LollipopViewCompatImpl.class
 com/app/ssumobile/ssumobile_android/activity/StartScreenActivity$3.class
 org/parceler/guava/collect/package-info.class
+com/app/ssumobile/ssumobile_android/activity/DepartmentsActivity$5.class
 rx/annotations/Beta.class
 android/support/v4/media/session/PlaybackStateCompat$Actions.class
 org/parceler/transfuse/listeners/FragmentMenuComponent.class
@@ -734,7 +746,6 @@ org/parceler/transfuse/gen/variableBuilder/ProviderInjectionNodeBuilderFactory.c
 android/support/annotation/IntRange.class
 org/parceler/guava/hash/HashCodes.class
 android/support/annotation/AnimatorRes.class
-com/app/ssumobile/ssumobile_android/activity/SchoolsFragment.class
 org/parceler/guava/cache/Cache.class
 org/parceler/guava/util/concurrent/AbstractService$StateSnapshot.class
 android/support/v4/view/AccessibilityDelegateCompat.class
@@ -749,6 +760,7 @@ android/support/v4/view/ViewCompat$ScrollIndicators.class
 org/parceler/guava/cache/ForwardingCache.class
 org/parceler/guava/collect/Range.class
 android/support/v7/internal/view/menu/MenuItemImpl.class
+com/app/ssumobile/ssumobile_android/activity/BuildingsActivity$4.class
 org/parceler/internal/ExternalParcelTransactionWorker.class
 org/parceler/guava/reflect/MutableTypeToInstanceMap.class
 android/support/annotation/NonNull.class
@@ -759,6 +771,7 @@ org/parceler/transfuse/gen/variableDecorator/GeneratedProviderBuilderFactory.cla
 org/parceler/guava/collect/ImmutableList.class
 org/parceler/transfuse/gen/invocationBuilder/DefaultInvocationBuilderStrategy.class
 android/support/v4/widget/ResourceCursorAdapter.class
+com/app/ssumobile/ssumobile_android/activity/FacultyStaffActivity.class
 android/support/v4/app/ActivityCompatApi23$RequestPermissionsRequestCodeValidator.class
 android/support/v4/app/BaseFragmentActivityHoneycomb.class
 org/parceler/guava/collect/TreeBasedTable$TreeRow.class
@@ -783,6 +796,7 @@ org/parceler/transfuse/annotations/MetaDataSet.class
 org/parceler/guava/reflect/TypeToken$TypeCollector$1.class
 android/support/v4/media/RatingCompat.class
 org/parceler/guava/collect/RegularImmutableMap$NonTerminalMapEntry.class
+com/app/ssumobile/ssumobile_android/activity/SchoolsActivity$4.class
 android/support/annotation/RawRes.class
 android/support/v4/widget/SimpleCursorAdapter.class
 org/parceler/transfuse/gen/FilerSourceCodeWriter.class

@@ -107,7 +107,7 @@ public class StartScreenActivity extends AppCompatActivity {
 
                         // Start DirActivity.class
                         Intent myIntent = new Intent(StartScreenActivity.this,
-                                DirActivity.class);
+                                DepartmentsActivity.class);
                         startActivity(myIntent);
                     }
                 });
