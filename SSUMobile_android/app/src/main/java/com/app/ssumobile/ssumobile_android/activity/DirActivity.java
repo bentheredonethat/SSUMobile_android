@@ -35,9 +35,6 @@ public class DirActivity extends AppCompatActivity {
 
     ArrayAdapter adapter;
 
-    // Array of strings...
-    String[] mobileArray = {"Android","IPhone","WindowsMobile","Blackberry","WebOS","Ubuntu","Windows7","Max OS X", "boop", "jhsodfs","booooop"};
-
 
     ArrayList<ContactModel> contactsList = new ArrayList<>();
 
@@ -47,8 +44,7 @@ public class DirActivity extends AppCompatActivity {
             setContentView(R.layout.activity_dir);
 
 
-            adapter = new ArrayAdapter<ContactModel>(this, R.layout.activity_listview, contactsList);
-
+            adapter = new ArrayAdapter<>(this, R.layout.activity_listview, contactsList);
             ListView listView = (ListView) findViewById(R.id.mobile_list);
             listView.setAdapter(adapter);
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
