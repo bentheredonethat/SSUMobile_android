@@ -21,5 +21,7 @@ public class ContactModel {
     public String displayName;
     public String name;
     public String Deleted;
-
+    public String toString(){
+        return displayName == "null" ? name : displayName;
+    }
 }
