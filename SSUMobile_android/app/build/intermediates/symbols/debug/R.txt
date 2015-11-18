@@ -498,13 +498,12 @@ int drawable filtered_logo 0x7f02004b
 int drawable left_arrow 0x7f02004c
 int drawable list_divider 0x7f02004d
 int drawable logo4 0x7f02004e
-int drawable notification_template_icon_bg 0x7f020055
+int drawable notification_template_icon_bg 0x7f020054
 int drawable red_border 0x7f02004f
 int drawable red_border_dark 0x7f020050
 int drawable red_border_gray_bg 0x7f020051
 int drawable right_arrow 0x7f020052
-int drawable roundedbutton 0x7f020053
-int drawable ssubutton 0x7f020054
+int drawable ssubutton 0x7f020053
 int id AddContact_button 0x7f0b006e
 int id Buildings_Directory 0x7f0b0087
 int id Departments_Directory 0x7f0b0086
