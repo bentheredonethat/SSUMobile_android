@@ -1,15 +1,21 @@
 package com.app.ssumobile.ssumobile_android.adapters;
 
 import android.app.Activity;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.app.ssumobile.ssumobile_android.R;
+import com.app.ssumobile.ssumobile_android.activity.CalendarSingleDate;
 import com.app.ssumobile.ssumobile_android.activity.calendarSingleEvent;
 import com.app.ssumobile.ssumobile_android.models.calendarEventModel;
 
@@ -26,25 +32,43 @@ public class calendarCardAdapter extends RecyclerView.Adapter<calendarCardAdapte
 
     @Override
     public void onClick(View v) {
+// custom dialog
 
-        String StartsOn = ((TextView) v.findViewById(R.id.StartsOn)).getText().toString();
-        String Title = ((TextView) v.findViewById(R.id.Title)).getText().toString();
 
-        Activity current = (Activity) v.getContext();
-        Intent myIntent = new Intent(current, calendarSingleEvent.class);
-        myIntent.putExtra("StartsOn", StartsOn);
-        myIntent.putExtra("Title", Title);
 
-        calendarEventModel currentEvent = mDataset.get((Integer) v.findViewById(R.id.Title).getTag());
+        final Dialog dialog = new Dialog(v.getContext());
+        dialog.setContentView(R.layout.dialog);
+        dialog.setTitle("Title...");
 
-        myIntent.putExtra("Description", currentEvent.getDescription());
-        myIntent.putExtra("Deleted", currentEvent.getDeleted());
-        myIntent.putExtra("Created", currentEvent.getCreated());
-        myIntent.putExtra("Location", currentEvent.getLocation());
-        myIntent.putExtra("Id", currentEvent.getId());
-        myIntent.putExtra("EndsOn", currentEvent.getEndsOn());
+        Button dialogButton = (Button) dialog.findViewById(R.id.dialogButtonOK);
+        // if button is clicked, close the custom dialog
+        dialogButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
 
-        current.startActivity(myIntent);
+        dialog.show();
+//
+//        String StartsOn = ((TextView) v.findViewById(R.id.StartsOn)).getText().toString();
+//        String Title = ((TextView) v.findViewById(R.id.Title)).getText().toString();
+//
+//        Activity current = (Activity) v.getContext();
+//        Intent myIntent = new Intent(current, calendarSingleEvent.class);
+//        myIntent.putExtra("StartsOn", StartsOn);
+//        myIntent.putExtra("Title", Title);
+//
+//        calendarEventModel currentEvent = mDataset.get((Integer) v.findViewById(R.id.Title).getTag());
+//
+//        myIntent.putExtra("Description", currentEvent.getDescription());
+//        myIntent.putExtra("Deleted", currentEvent.getDeleted());
+//        myIntent.putExtra("Created", currentEvent.getCreated());
+//        myIntent.putExtra("Location", currentEvent.getLocation());
+//        myIntent.putExtra("Id", currentEvent.getId());
+//        myIntent.putExtra("EndsOn", currentEvent.getEndsOn());
+//
+      //  current.startActivity(myIntent);
     }
 
     // Provide a reference to the views for each data item
@@ -84,6 +108,7 @@ public class calendarCardAdapter extends RecyclerView.Adapter<calendarCardAdapte
         v.setOnClickListener(this);
         // set the view's size, margins, paddings and layout parameters here
         ViewHolder vh = new ViewHolder(v);
+
         return vh;
     }
 
@@ -102,6 +127,8 @@ public class calendarCardAdapter extends RecyclerView.Adapter<calendarCardAdapte
         holder.Title.setTag(position);
 
     }
+
+
 
     // Return the size of your dataset (invoked by the layout manager)
     @Override

@@ -39,6 +39,7 @@ import java.util.regex.Pattern;
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLSession;
+import javax.net.ssl.TrustManager;
 
 import retrofit.RestAdapter;
 
@@ -126,7 +127,7 @@ public class CalendarSingleDate extends AppCompatActivity {
         Thread runner = new Thread(new Runnable(){
             public void run()  {
                 try {
-                    //sendGet(url + Year + Month + Day); // get selected date's info
+                   // sendGet(url); // get selected date's info
                     sendGet("http://www.cs.sonoma.edu/~levinsky/mini_events.json");
                 } catch (Throwable t) {
                     System.out.println(t.getCause());
@@ -147,6 +148,34 @@ public class CalendarSingleDate extends AppCompatActivity {
     private void sendGet(String url) throws Exception {
 
         final String USER_AGENT = "Mozilla/5.0";
+
+        TrustManager trustManager = new TrustManager() {
+            @Override
+            protected Object clone() throws CloneNotSupportedException {
+                return super.clone();
+            }
+
+            @Override
+            public boolean equals(Object o) {
+                return super.equals(o);
+            }
+
+            @Override
+            protected void finalize() throws Throwable {
+                super.finalize();
+            }
+
+            @Override
+            public int hashCode() {
+                return super.hashCode();
+            }
+
+            @Override
+            public String toString() {
+                return super.toString();
+            }
+        };
+
 
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
