@@ -172,16 +172,17 @@ public class ContactActivity extends AppCompatActivity {
     public void ActivatePhoneCall() {
         String message = "You need to activate Phone permissions for this app";
         try {
-            if (checkSelfPermission(android.Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+            if (checkSelfPermission(android.Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
+                final Intent callIntent = new Intent(Intent.ACTION_CALL);
+                callIntent.setData(Uri.parse("tel:" + PhoneButton.getText().toString()));
+                ContactActivity.this.startActivity(callIntent);
+            }else{
                 String[] CallPermissions = {"android.permission.CALL_PHONE"};
                 int requestID = 1;
                 requestPermissions(CallPermissions, requestID);
             }
         }catch( Throwable t){
             Toast.makeText(getBaseContext(), message, Toast.LENGTH_SHORT).show();
-            final Intent callIntent = new Intent(Intent.ACTION_CALL);
-            callIntent.setData(Uri.parse("tel:" + PhoneButton.getText().toString()));
-            ContactActivity.this.startActivity(callIntent);
         }
     }
     @Override
