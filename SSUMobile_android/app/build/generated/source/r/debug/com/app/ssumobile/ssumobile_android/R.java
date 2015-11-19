@@ -1806,14 +1806,14 @@ containing a value of this type.
     }
     public static final class id {
         public static final int AddContact_button=0x7f0b006e;
-        public static final int Buildings_Directory=0x7f0b0088;
-        public static final int Departments_Directory=0x7f0b0087;
+        public static final int Buildings_Directory=0x7f0b0089;
+        public static final int Departments_Directory=0x7f0b0088;
         public static final int Email_button=0x7f0b006d;
-        public static final int Faculty_Staff_Directory=0x7f0b0086;
+        public static final int Faculty_Staff_Directory=0x7f0b0087;
         public static final int Fname_button=0x7f0b0069;
         public static final int Lname_button=0x7f0b006a;
         public static final int Phone_button=0x7f0b006c;
-        public static final int Schools_Directory=0x7f0b0089;
+        public static final int Schools_Directory=0x7f0b008a;
         public static final int StartsOn=0x7f0b0056;
         public static final int Title=0x7f0b0068;
         public static final int Title_button=0x7f0b006b;
@@ -1832,7 +1832,7 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f0b003e;
         public static final int action_mode_bar_stub=0x7f0b003d;
         public static final int action_mode_close_button=0x7f0b0023;
-        public static final int action_settings=0x7f0b0085;
+        public static final int action_settings=0x7f0b0086;
         public static final int activity_chooser_view_content=0x7f0b0024;
         public static final int alertTitle=0x7f0b0030;
         public static final int always=0x7f0b001b;
@@ -1859,11 +1859,12 @@ containing a value of this type.
         public static final int department_button=0x7f0b006f;
         public static final int description=0x7f0b0077;
         public static final int dialogButtonOK=0x7f0b0073;
+        public static final int dialogtext=0x7f0b0072;
         public static final int dir_button=0x7f0b005c;
         public static final int disableHome=0x7f0b000c;
         public static final int edit_query=0x7f0b0043;
         public static final int end=0x7f0b0019;
-        public static final int end_padder=0x7f0b0084;
+        public static final int end_padder=0x7f0b0085;
         public static final int expand_activities_button=0x7f0b0025;
         public static final int expanded_menu=0x7f0b0038;
         public static final int home=0x7f0b0004;
@@ -1872,7 +1873,7 @@ containing a value of this type.
         public static final int ifRoom=0x7f0b001d;
         public static final int image=0x7f0b0026;
         public static final int imageView1=0x7f0b005b;
-        public static final int info=0x7f0b0083;
+        public static final int info=0x7f0b0084;
         public static final int label=0x7f0b005a;
         public static final int line1=0x7f0b007e;
         public static final int line3=0x7f0b0082;
@@ -1930,7 +1931,7 @@ containing a value of this type.
         public static final int status_bar_latest_event_content=0x7f0b007b;
         public static final int submit_area=0x7f0b004c;
         public static final int tabMode=0x7f0b000b;
-        public static final int text=0x7f0b0072;
+        public static final int text=0x7f0b0083;
         public static final int text2=0x7f0b0081;
         public static final int textSpacerNoButtons=0x7f0b0034;
         public static final int time=0x7f0b007f;

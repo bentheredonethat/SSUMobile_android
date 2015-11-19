@@ -1,12 +1,10 @@
 package com.app.ssumobile.ssumobile_android.activity;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.JsonReader;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -15,11 +13,7 @@ import com.app.ssumobile.ssumobile_android.R;
 import com.app.ssumobile.ssumobile_android.adapters.calendarCardAdapter;
 import com.app.ssumobile.ssumobile_android.models.calendarEventModel;
 import com.app.ssumobile.ssumobile_android.service.CalendarService;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.JsonParser;
 
-import org.apache.http.conn.ssl.SSLSocketFactory;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -27,24 +21,27 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.security.cert.X509Certificate;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.Date;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSession;
 import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
+import javax.security.cert.CertificateException;
 
 import retrofit.RestAdapter;
 
 
 public class CalendarSingleDate extends AppCompatActivity {
+
+
+
 
     TextView t;
     ArrayList<calendarEventModel> events = new ArrayList<>();
@@ -52,7 +49,7 @@ public class CalendarSingleDate extends AppCompatActivity {
     RestAdapter restAdapter;
     CalendarService calendarService;
 
-    final String url = "https://moonlight.cs.sonoma.edu/ssumobile/1_0/directory.py";
+    final String url = "https://moonlight.cs.sonoma.edu/ssumobile/1_0/calendar.py";
 
     String body;
 
@@ -127,8 +124,8 @@ public class CalendarSingleDate extends AppCompatActivity {
         Thread runner = new Thread(new Runnable(){
             public void run()  {
                 try {
-                   // sendGet(url); // get selected date's info
-                    sendGet("http://www.cs.sonoma.edu/~levinsky/mini_events.json");
+                    sendGet(url); // get selected date's info
+                   // sendGet("http://www.cs.sonoma.edu/~levinsky/mini_events.json");
                 } catch (Throwable t) {
                     System.out.println(t.getCause());
                 }
@@ -149,35 +146,8 @@ public class CalendarSingleDate extends AppCompatActivity {
 
         final String USER_AGENT = "Mozilla/5.0";
 
-        TrustManager trustManager = new TrustManager() {
-            @Override
-            protected Object clone() throws CloneNotSupportedException {
-                return super.clone();
-            }
-
-            @Override
-            public boolean equals(Object o) {
-                return super.equals(o);
-            }
-
-            @Override
-            protected void finalize() throws Throwable {
-                super.finalize();
-            }
-
-            @Override
-            public int hashCode() {
-                return super.hashCode();
-            }
-
-            @Override
-            public String toString() {
-                return super.toString();
-            }
-        };
-
-
-        URL obj = new URL(url);
+      //  URL obj = new URL(url);
+        URL obj = new URL("http://www.cs.sonoma.edu/~levinsky/mini_events.json");
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
         con.setRequestMethod("GET");  // optional default is GET
         con.setRequestProperty("User-Agent", USER_AGENT); //add request header
@@ -221,4 +191,22 @@ public class CalendarSingleDate extends AppCompatActivity {
         return currentEvent;
     }
 
+    private static class MyTrustManager implements X509TrustManager
+    {
+
+        @Override
+        public void checkClientTrusted(X509Certificate[] chain, String authType) {
+        }
+
+        @Override
+        public void checkServerTrusted(X509Certificate[] chain, String authType) {
+        }
+
+        @Override
+        public X509Certificate[] getAcceptedIssuers()
+        {
+            return null;
+        }
+
+    }
 }

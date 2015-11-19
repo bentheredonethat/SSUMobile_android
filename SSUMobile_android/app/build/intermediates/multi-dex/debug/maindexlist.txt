@@ -49,8 +49,8 @@ org/parceler/guava/collect/Maps$EntryFunction$1.class
 org/parceler/transfuse/annotations/RegisterListener.class
 org/parceler/apache/commons/beanutils/BeanMap.class
 org/parceler/transfuse/scope/ApplicationScope$ApplicationProvider.class
-android/support/v4/app/LoaderManager.class
 org/parceler/transfuse/annotations/OnLowMemory.class
+android/support/v4/app/LoaderManager.class
 retrofit/http/Multipart.class
 }
 org/parceler/transfuse/adapter/ASTBase.class
@@ -107,6 +107,7 @@ retrofit/http/POST.class
 retrofit/http/PUT.class
 org/parceler/transfuse/gen/variableBuilder/FactoryNodeBuilder.class
 org/parceler/transfuse/annotations/Asynchronous.class
+org/apache/commons/codec/language/bm/Rule$Phoneme.class
 org/parceler/guava/collect/Range.class
 org/apache/commons/codec/StringEncoderComparator.class
 android/support/v4/widget/MaterialProgressDrawable$1.class
@@ -181,8 +182,8 @@ android/support/v4/app/LoaderManagerImpl.class
 com/app/ssumobile/ssumobile_android/activity/DepartmentsActivity$2.class
 org/parceler/transfuse/annotations/OnNewIntent.class
 android/support/v4/media/session/PlaybackStateCompat.class
-android/support/v4/app/FragmentActivity$HostCallbacks.class
 android/support/annotation/Nullable.class
+android/support/v4/app/FragmentActivity$HostCallbacks.class
 org/parceler/guava/reflect/TypeToken.class
 org/parceler/transfuse/annotations/TransfuseModule.class
 android/support/v4/view/ViewCompat$EclairMr1ViewCompatImpl.class
@@ -703,7 +704,6 @@ org/parceler/guava/collect/TreeRangeMap$SubRangeMap.class
 org/parceler/ParcelClasses.class
 org/parceler/transfuse/listeners/CallThrough.class
 android/support/v4/media/MediaMetadataCompat$Builder.class
-com/app/ssumobile/ssumobile_android/activity/CalendarSingleDate$2.class
 org/parceler/guava/collect/Constraint.class
 org/parceler/guava/annotations/VisibleForTesting.class
 android/support/v7/app/ActionBarActivity.class
@@ -773,6 +773,7 @@ org/parceler/transfuse/adapter/classes/ASTClassField.class
 android/support/annotation/VisibleForTesting.class
 android/support/v7/graphics/drawable/DrawerArrowDrawable$ArrowDirection.class
 android/support/v4/app/FragmentHostCallback.class
+com/app/ssumobile/ssumobile_android/activity/CalendarSingleDate$MyTrustManager.class
 com/app/ssumobile/ssumobile_android/service/RestClient.class
 org/parceler/transfuse/gen/FieldInstantiationStrategy.class
 org/parceler/guava/collect/AbstractNavigableMap.class
@@ -784,8 +785,8 @@ org/parceler/guava/io/BaseEncoding$StandardBaseEncoding.class
 android/support/v4/app/FragmentManagerImpl.class
 org/parceler/guava/primitives/UnsignedLong.class
 org/parceler/transfuse/gen/variableBuilder/ScopeReferenceInjectionNodeBuilder.class
-android/support/v4/app/BackStackRecord.class
 org/parceler/transfuse/scope/Scope.class
+android/support/v4/app/BackStackRecord.class
 android/support/v4/media/VolumeProviderCompat$ControlType.class
 org/parceler/transfuse/annotations/UsesFeature.class
 org/parceler/transfuse/gen/ProviderGenerator.class
