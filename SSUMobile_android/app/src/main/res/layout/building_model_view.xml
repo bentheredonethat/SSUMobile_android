@@ -14,8 +14,9 @@
         android:layout_height="100dp"
         android:layout_alignParentTop="true"
         android:layout_centerVertical="true"
+        android:src="@drawable/ssu_paw"
         android:layout_margin="10dp"
-        android:background="#ffcccccc" />
+        android:background="#001339"  />
 
     <Button
         android:layout_width="match_parent"
