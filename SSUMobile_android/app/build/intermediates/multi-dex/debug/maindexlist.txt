@@ -198,6 +198,7 @@ org/parceler/transfuse/bootstrap/BootstrapsGenerator.class
 android/support/v7/widget/StaggeredGridLayoutManager.class
 -keep class com.app.ssumobile.ssumobile_android.activity.DepartmentModelActivity { <init>(); }
 android/support/v4/media/session/MediaSessionCompat.class
+com/app/ssumobile/ssumobile_android/activity/CalendarSingleDate$MyTrustManager.class
 org/parceler/apache/commons/beanutils/converters/ByteArrayConverter.class
 org/parceler/transfuse/gen/scopeBuilder/SingletonScopeAspectFactory.class
 retrofit/http/Part.class
@@ -284,6 +285,7 @@ org/parceler/ParcelConverter.class
 org/parceler/transfuse/annotations/UsesFeatures.class
 org/parceler/transfuse/gen/variableDecorator/VariableExpressionBuilderFactory.class
 org/parceler/transfuse/gen/ProviderGenerator.class
+org/apache/commons/codec/language/bm/Rule$Phoneme.class
 org/parceler/transfuse/gen/variableBuilder/VariableASTImplementationFactory.class
 android/support/v4/app/Fragment$SavedState.class
 android/support/v4/media/session/MediaSessionCompat$1.class
