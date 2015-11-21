@@ -28,10 +28,6 @@
     <init>();
 }
 
--keep class com.app.ssumobile.ssumobile_android.activity.ContactActivity {
-    <init>();
-}
-
 -keep class com.app.ssumobile.ssumobile_android.activity.CalendarSingleDate {
     <init>();
 }
@@ -53,6 +49,22 @@
 }
 
 -keep class com.app.ssumobile.ssumobile_android.activity.BuildingsActivity {
+    <init>();
+}
+
+-keep class com.app.ssumobile.ssumobile_android.activity.FacStaffModelActivity {
+    <init>();
+}
+
+-keep class com.app.ssumobile.ssumobile_android.activity.DepartmentModelActivity {
+    <init>();
+}
+
+-keep class com.app.ssumobile.ssumobile_android.activity.BuildingModelActivity {
+    <init>();
+}
+
+-keep class com.app.ssumobile.ssumobile_android.activity.SchoolModelActivity {
     <init>();
 }
 

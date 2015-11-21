@@ -11,7 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.app.ssumobile.ssumobile_android.R;
-import com.app.ssumobile.ssumobile_android.models.ContactModel;
+import com.app.ssumobile.ssumobile_android.models.DepartmentModel;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -30,7 +30,7 @@ public class DepartmentsActivity extends AppCompatActivity {
 
     ArrayAdapter adapter;
 
-    ArrayList<ContactModel> contactsList = new ArrayList<>();
+    ArrayList<DepartmentModel> contactsList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +45,12 @@ public class DepartmentsActivity extends AppCompatActivity {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(DepartmentsActivity.this,ContactActivity.class);
+                Intent intent = new Intent(DepartmentsActivity.this,DepartmentModelActivity.class);
                 //based on item add info to intent
+                DepartmentModel Dmodel = contactsList.get(position);
+                Bundle B = new Bundle();
+                B.putSerializable("DepartmentModel", Dmodel);
+                intent.putExtras(B);
                 startActivity(intent);
             }
 
@@ -165,13 +169,13 @@ public class DepartmentsActivity extends AppCompatActivity {
         JSONArray the_json_array = myjson.getJSONArray("Department");
         for (int i = 0; i < the_json_array.length(); i++) {
             contactsList.add(convertDeptJSONtoContact(the_json_array.getJSONObject(i)));
-            //adapter.notifyDataSetChanged(); // update cards
+            adapter.notifyDataSetChanged(); // update cards
         }
     }
 
     // get attributes of event string into an event
-    private ContactModel convertDeptJSONtoContact(JSONObject s) throws org.json.JSONException{
-        ContactModel currentContact = new ContactModel();
+    private DepartmentModel convertDeptJSONtoContact(JSONObject s) throws org.json.JSONException{
+        DepartmentModel currentContact = new DepartmentModel();
 
         currentContact.ac = s.getString("ac");
         currentContact.office = s.getString("office");

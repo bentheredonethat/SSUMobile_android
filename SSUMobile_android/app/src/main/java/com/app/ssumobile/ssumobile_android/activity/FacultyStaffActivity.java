@@ -10,7 +10,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import com.app.ssumobile.ssumobile_android.R;
-import com.app.ssumobile.ssumobile_android.models.ContactModel;
+import com.app.ssumobile.ssumobile_android.models.FacStaffModel;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 import java.io.BufferedReader;
@@ -23,28 +24,30 @@ public class FacultyStaffActivity extends AppCompatActivity {
 
     String body;
 
-    //ArrayAdapter adapter;
-    String[] mobileArray = {"Android","IPhone","WindowsMobile","Blackberry","WebOS","Ubuntu","Windows7","Max OS X", "boop", "jhsodfs","booooop"};
+    ArrayAdapter adapter;
 
-    ArrayList<ContactModel> contactsList = new ArrayList<>();
+    ArrayList<FacStaffModel> contactsList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.fac_staff_view);
+        setContentView(R.layout.fac_staff_listview);
 
 
-        //adapter = new ArrayAdapter<>(this, R.layout.activity_listview, contactsList);
-        ArrayAdapter adapter = new ArrayAdapter<String>(this, R.layout.activity_listview, mobileArray);
+        adapter = new ArrayAdapter<>(this, R.layout.activity_listview, contactsList);
         ListView listView = (ListView) findViewById(R.id.mobile_list);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(FacultyStaffActivity.this, ContactActivity.class);
+                Intent intent = new Intent(FacultyStaffActivity.this, FacStaffModelActivity.class);
                 //based on item add info to intent
+                FacStaffModel FSmodel = contactsList.get(position);
+                Bundle FS = new Bundle();
+                FS.putSerializable("FacStaffModel", FSmodel);
+                intent.putExtras(FS);
                 startActivity(intent);
             }
 
@@ -54,11 +57,11 @@ public class FacultyStaffActivity extends AppCompatActivity {
     @Override
     protected void onStart(){
         super.onStart();
-        /*Thread runner = new Thread(new Runnable(){
+        Thread runner = new Thread(new Runnable(){
             public void run()  {
                 try {
                     //sendGet(url + Year + Month + Day); // get selected date's info
-                    sendGet("http://www.cs.sonoma.edu/~levinsky/mini_dir.json");
+                    sendGet("http://www.cs.sonoma.edu/~wmitchel/person.json");
                 } catch (Throwable t) {
                     System.out.println(t.getCause());
                 }
@@ -71,7 +74,7 @@ public class FacultyStaffActivity extends AppCompatActivity {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("in onstart()");*/
+        System.out.println("in onstart()");
     }
 
     @Override
@@ -161,30 +164,29 @@ public class FacultyStaffActivity extends AppCompatActivity {
 
 
         JSONObject myjson = new JSONObject(body);
-        JSONArray the_json_array = myjson.getJSONArray("Department");
+        JSONArray the_json_array = myjson.getJSONArray("Person");
         for (int i = 0; i < the_json_array.length(); i++) {
-            contactsList.add(convertDeptJSONtoContact(the_json_array.getJSONObject(i)));
-           // adapter.notifyDataSetChanged(); // update cards
+            contactsList.add(convertPersonJSONtoContact(the_json_array.getJSONObject(i)));
+           adapter.notifyDataSetChanged(); // update cards
         }
     }
 
     // get attributes of event string into an event
-    private ContactModel convertDeptJSONtoContact(JSONObject s) throws org.json.JSONException{
-        ContactModel currentContact = new ContactModel();
+    private FacStaffModel convertPersonJSONtoContact(JSONObject s) throws org.json.JSONException{
+        FacStaffModel currentContact = new FacStaffModel();
 
-        currentContact.ac = s.getString("ac");
         currentContact.office = s.getString("office");
         currentContact.Created = s.getString("Created");
         currentContact.site = s.getString("site");
         currentContact.Modified = s.getString("Modified");
         currentContact.phone = s.getString("phone");
-        currentContact.chair = s.getString("chair");
         currentContact.id = s.getString("id");
         currentContact.building = s.getString("building");
-        currentContact.school = s.getString("school");
-        currentContact.displayName = s.getString("displayName");
-        currentContact.name = s.getString("name");
-        currentContact.Deleted = s.getString("Deleted");
+        currentContact.firstName = s.getString("firstName");
+        currentContact.title = s.getString("title");
+        currentContact.lastName = s.getString("lastName");
+        currentContact.department = s.getString("department");
+        currentContact.email = s.getString("email");
 
         return currentContact;
     }

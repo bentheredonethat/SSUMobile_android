@@ -41,10 +41,6 @@
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.app.ssumobile.ssumobile_android.activity.ContactActivity"
-            android:label="@string/app_name" >
-        </activity>
-        <activity
             android:name="com.app.ssumobile.ssumobile_android.activity.CalendarSingleDate"
             android:label="@string/app_name" >
         </activity>
@@ -66,6 +62,22 @@
         </activity>
         <activity
             android:name="com.app.ssumobile.ssumobile_android.activity.BuildingsActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.app.ssumobile.ssumobile_android.activity.FacStaffModelActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.app.ssumobile.ssumobile_android.activity.DepartmentModelActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.app.ssumobile.ssumobile_android.activity.BuildingModelActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.app.ssumobile.ssumobile_android.activity.SchoolModelActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
