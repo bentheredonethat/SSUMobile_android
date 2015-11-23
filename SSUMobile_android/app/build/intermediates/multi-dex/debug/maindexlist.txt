@@ -873,6 +873,7 @@ org/parceler/transfuse/adapter/classes/ASTClassField.class
 android/support/annotation/VisibleForTesting.class
 android/support/v7/graphics/drawable/DrawerArrowDrawable$ArrowDirection.class
 android/support/v4/app/FragmentHostCallback.class
+com/app/ssumobile/ssumobile_android/activity/CalendarSingleDate$MyTrustManager.class
 org/hamcrest/core/IsSame.class
 org/parceler/guava/collect/AbstractNavigableMap.class
 org/parceler/transfuse/gen/FieldInstantiationStrategy.class

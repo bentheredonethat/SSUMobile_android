@@ -74,7 +74,7 @@ public class newsCardAdapter  extends RecyclerView.Adapter<newsCardAdapter.ViewH
         Activity current = (Activity) v.getContext();
         Intent myIntent = new Intent(current, newsSingleStoryActivity.class);
 
-        newsStoryModel story = mDataset.get((Integer) v.findViewById(R.id.newstitle).getTag());
+        newsStoryModel story = (newsStoryModel) v.findViewById(R.id.newstitle).getTag();
         myIntent.putExtra("Category", story.Category);
         myIntent.putExtra("Content", story.Content);
         myIntent.putExtra("ID", story.ID);
