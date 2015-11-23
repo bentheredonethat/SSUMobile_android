@@ -1,9 +1,11 @@
 package com.app.ssumobile.ssumobile_android.activity;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.app.ssumobile.ssumobile_android.R;
 
@@ -13,6 +15,9 @@ public class newsSingleStoryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_single_story);
+
+        Toast.makeText(getApplicationContext(), "Hello toast!", Toast.LENGTH_SHORT).show();
+
     }
 
     @Override

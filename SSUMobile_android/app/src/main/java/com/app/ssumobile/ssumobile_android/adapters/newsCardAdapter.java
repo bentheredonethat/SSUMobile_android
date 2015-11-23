@@ -1,5 +1,7 @@
 package com.app.ssumobile.ssumobile_android.adapters;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.app.ssumobile.ssumobile_android.R;
+import com.app.ssumobile.ssumobile_android.activity.newsSingleStoryActivity;
 import com.app.ssumobile.ssumobile_android.models.newsStoryModel;
 
 import java.util.ArrayList;
@@ -31,10 +34,14 @@ public class newsCardAdapter  extends RecyclerView.Adapter<newsCardAdapter.ViewH
     public void onBindViewHolder(ViewHolder holder, int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        String x = mDataset.get(position).title;
-        holder.title.setText(x);
-        holder.publishing_date.setText(mDataset.get(position).publish_date);
-        holder.description.setText(mDataset.get(position).description);
+        holder.Title.setText(mDataset.get(position).Title);
+        holder.Published.setText(mDataset.get(position).Published);
+        holder.Category.setText(mDataset.get(position).Category);
+
+
+        // save which event so it can be used later
+        holder.Title.setTag(mDataset.get(position));
+        //holder.story = mDataset.get(position);
     }
 
     // Provide a reference to the views for each data item
@@ -42,16 +49,16 @@ public class newsCardAdapter  extends RecyclerView.Adapter<newsCardAdapter.ViewH
     // you provide access to all the views for a data item in a view holder
     public static class ViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
-        public TextView title;
-        public TextView publishing_date;
-        public TextView description;
-
+        public TextView Title;
+        public TextView Published;
+        public TextView Category;
+        newsStoryModel story;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            title = (TextView) itemView.findViewById(R.id.title);
-            publishing_date = (TextView) itemView.findViewById(R.id.publish_date);
-            description = (TextView) itemView.findViewById(R.id.description);
+            Title = (TextView) itemView.findViewById(R.id.newstitle);
+            Published = (TextView) itemView.findViewById(R.id.newspublished);
+            Category = (TextView) itemView.findViewById(R.id.newscategory);
         }
     }
 
@@ -62,12 +69,24 @@ public class newsCardAdapter  extends RecyclerView.Adapter<newsCardAdapter.ViewH
 
     @Override
     public void onClick(View v) {
-        String title = ((TextView) v.findViewById(R.id.title)).getText().toString();
-        String publish_date = ((TextView) v.findViewById(R.id.publish_date)).getText().toString();
-        String description = ((TextView) v.findViewById(R.id.description)).getText().toString();
 
         //TO DO: IMPLEMENT NEW ACTIVITY ON CLICK
+        Activity current = (Activity) v.getContext();
+        Intent myIntent = new Intent(current, newsSingleStoryActivity.class);
 
+        newsStoryModel story = mDataset.get((Integer) v.findViewById(R.id.newstitle).getTag());
+        myIntent.putExtra("Category", story.Category);
+        myIntent.putExtra("Content", story.Content);
+        myIntent.putExtra("ID", story.ID);
+        myIntent.putExtra("ImageURL", story.ImageURL);
+        myIntent.putExtra("Link", story.Link);
+        myIntent.putExtra("Updated", story.Updated);
+        myIntent.putExtra("Title", story.Title);
+        myIntent.putExtra("Updated", story.Updated);
+        myIntent.putExtra("Summary", story.Summary);
+
+
+        current.startActivity(myIntent);
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
