@@ -143,6 +143,7 @@ org/parceler/guava/hash/PrimitiveSink.class
 org/parceler/internal/ExternalParcelRepository.class
 org/parceler/guava/util/concurrent/Futures$ImmediateSuccessfulFuture.class
 android/support/v4/view/ViewCompat$ICSViewCompatImpl.class
+com/koushikdutta/async/http/server/UnknownRequestBody.class
 org/junit/internal/runners/statements/RunBefores.class
 org/parceler/transfuse/analysis/astAnalyzer/ScopeAnalysis.class
 com/app/ssumobile/ssumobile_android/models/SchoolModel.class
@@ -231,8 +232,8 @@ com/app/ssumobile/ssumobile_android/activity/CalendarActivity.class
 org/junit/runners/ParentRunner$2.class
 org/parceler/apache/commons/beanutils/WrapDynaClass.class
 org/junit/internal/runners/MethodRoadie.class
-org/parceler/transfuse/annotations/UIThread.class
 android/support/v4/media/session/PlaybackStateCompat$Actions.class
+org/parceler/transfuse/annotations/UIThread.class
 org/parceler/transfuse/gen/invocationBuilder/PublicInvocationBuilder.class
 android/support/v4/view/ViewCompatJB.class
 org/parceler/guava/util/concurrent/AbstractService$StateSnapshot.class
@@ -277,6 +278,7 @@ org/parceler/guava/base/Optional.class
 android/support/annotation/DrawableRes.class
 android/support/v4/app/BackStackState.class
 org/parceler/guava/reflect/TypeToken$TypeCollector.class
+com/koushikdutta/ion/builder/LoadImageViewFutureBuilder.class
 android/support/v4/app/NotificationCompat$Builder.class
 android/support/v4/media/session/PlaybackStateCompat$CustomAction.class
 org/parceler/apache/commons/beanutils/locale/LocaleBeanUtils.class
@@ -355,6 +357,7 @@ android/support/annotation/InterpolatorRes.class
 org/parceler/guava/collect/TreeMultiset$AvlNode.class
 org/json/simple/JSONObject.class
 org/parceler/transfuse/annotations/OnPostCreate.class
+com/koushikdutta/ion/Ion.class
 android/support/v4/widget/MaterialProgressDrawable$Ring.class
 org/junit/runner/Runner.class
 rx/annotations/Beta.class
@@ -468,8 +471,8 @@ android/support/v7/graphics/drawable/DrawerArrowDrawable.class
 android/support/v7/widget/Toolbar.class
 org/parceler/transfuse/gen/componentBuilder/MirroredMethodGenerator.class
 org/parceler/transfuse/adapter/PackageClass.class
-android/support/v4/app/TaskStackBuilder$SupportParentable.class
 android/support/annotation/RequiresPermission.class
+android/support/v4/app/TaskStackBuilder$SupportParentable.class
 org/parceler/guava/hash/package-info.class
 org/parceler/guava/collect/Maps$EntryFunction$2.class
 org/parceler/guava/util/concurrent/AbstractScheduledService.class
@@ -498,6 +501,7 @@ android/support/v4/util/DebugUtils.class
 org/json/simple/JSONStreamAware.class
 org/junit/experimental/theories/Theory.class
 org/parceler/transfuse/annotations/OnBackPressed.class
+com/app/ssumobile/ssumobile_android/activity/newsSingleStoryActivity.class
 retrofit/http/Field.class
 org/parceler/transfuse/gen/invocationBuilder/TypeInvocationHelper.class
 -keep class com.app.ssumobile.ssumobile_android.activity.BuildingModelActivity { <init>(); }
@@ -570,6 +574,7 @@ android/support/v4/media/session/MediaSessionCompat$QueueItem.class
 -keep class com.app.ssumobile.ssumobile_android.activity.StartScreenActivity { <init>(); }
 com/google/gson/annotations/Expose.class
 org/parceler/guava/collect/Iterables.class
+com/koushikdutta/ion/builder/Builders$IV$F.class
 org/junit/AfterClass.class
 org/parceler/transfuse/util/Generated.class
 android/support/v4/view/GravityCompat.class
@@ -610,6 +615,7 @@ org/parceler/guava/io/ByteSource.class
 org/parceler/guava/base/Joiner.class
 com/app/ssumobile/ssumobile_android/activity/FacultyStaffActivity$3.class
 android/support/v7/app/ActionBarDrawerToggle$DelegateProvider.class
+com/koushikdutta/ion/builder/Builders.class
 android/support/v7/widget/LinearLayoutCompat.class
 org/parceler/transfuse/bootstrap/Bootstrap.class
 org/parceler/guava/eventbus/Subscribe.class
@@ -641,6 +647,7 @@ org/parceler/guava/hash/HashCodes.class
 android/support/v4/view/animation/LookupTableInterpolator.class
 rx/android/schedulers/HandlerThreadScheduler.class
 org/parceler/guava/collect/Constraints.class
+com/koushikdutta/async/http/socketio/SocketIOClient.class
 org/parceler/guava/collect/StandardTable.class
 org/parceler/transfuse/analysis/module/DefineScopeProcessor.class
 org/parceler/transfuse/annotations/Bind.class
@@ -737,6 +744,7 @@ org/parceler/transfuse/listeners/ActivityOnKeyLongPressListener.class
 org/parceler/transfuse/annotations/OnActivityCreated.class
 android/support/v4/view/ViewCompatKitKat.class
 org/parceler/guava/collect/DenseImmutableTable$ImmutableArrayMap.class
+com/koushikdutta/ion/builder/BitmapBuilder.class
 android/support/v4/view/ViewCompat$GBViewCompatImpl.class
 org/parceler/transfuse/analysis/module/InstallProcessor.class
 org/parceler/transfuse/annotations/LaunchMode.class
@@ -775,15 +783,16 @@ org/parceler/transfuse/annotations/WindowSoftInputMode.class
 org/junit/runners/ParentRunner$3.class
 org/parceler/guava/collect/TreeRangeSet.class
 org/parceler/transfuse/adapter/ASTParameter.class
-org/parceler/transfuse/annotations/OnSaveInstanceState.class
 org/parceler/transfuse/gen/InjectionBuilderContextFactory.class
-android/support/v4/media/VolumeProviderCompat.class
+org/parceler/transfuse/annotations/OnSaveInstanceState.class
 org/parceler/transfuse/gen/ExceptionWrapper.class
+android/support/v4/media/VolumeProviderCompat.class
 org/parceler/internal/ParcelsGenerator.class
-org/junit/internal/runners/MethodValidator.class
 org/parceler/transfuse/gen/variableBuilder/ProvidesVariableBuilder.class
+org/junit/internal/runners/MethodValidator.class
 retrofit/http/EncodedQuery.class
 org/parceler/guava/collect/ImmutableSet.class
+-keep class com.app.ssumobile.ssumobile_android.activity.newsSingleStoryActivity { <init>(); }
 android/support/v7/app/ActionBar.class
 org/parceler/transfuse/annotations/Fragment.class
 org/junit/runner/RunWith.class
@@ -814,6 +823,7 @@ android/support/v4/widget/SwipeRefreshLayout.class
 org/parceler/transfuse/annotations/OnActivityResult.class
 org/parceler/apache/commons/beanutils/converters/DoubleArrayConverter.class
 com/app/ssumobile/ssumobile_android/activity/CalendarActivity$1.class
+com/koushikdutta/ion/builder/Builders$IV.class
 org/parceler/transfuse/adapter/element/ReloadableASTElementFactory.class
 org/parceler/ParcelerRuntimeException.class
 android/support/v4/view/ViewPropertyAnimatorCompat.class
@@ -869,6 +879,7 @@ org/parceler/transfuse/adapter/classes/ReloadableASTClassFactory.class
 android/support/v7/app/ActionBarDrawerToggle$Delegate.class
 org/parceler/guava/reflect/Types$ClassOwnership.class
 org/parceler/transfuse/gen/proxy/VirtualProxyGenerator$VirtualProxyGeneratorCache.class
+com/koushikdutta/ion/builder/ImageViewBuilder.class
 org/parceler/transfuse/adapter/classes/ASTClassField.class
 android/support/annotation/VisibleForTesting.class
 android/support/v7/graphics/drawable/DrawerArrowDrawable$ArrowDirection.class
@@ -917,7 +928,7 @@ org/parceler/internal/ParcelableAnalysis.class
 org/parceler/guava/base/Functions$IdentityFunction.class
 org/junit/internal/runners/InitializationError.class
 android/support/annotation/BoolRes.class
-retrofit/mime/MimeUtil.class
 org/parceler/transfuse/annotations/OnResume.class
+retrofit/mime/MimeUtil.class
 android/support/v4/app/FragmentManager.class
 android/support/v4/media/RatingCompat.class

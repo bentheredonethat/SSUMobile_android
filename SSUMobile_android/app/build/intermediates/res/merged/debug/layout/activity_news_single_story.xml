@@ -6,8 +6,42 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.app.ssumobile.ssumobile_android.activity.newsSingleStoryActivity">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/singlenewstitle"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/singlenewspublished"
+            android:layout_below="@+id/singlenewstitle"
+            />
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/ssu_paw"
+            android:id="@+id/singlesnewsimage"
+            android:layout_below="@+id/singlenewspublished"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/singlenewscontent"
+            android:layout_below="@+id/singlesnewsimage"
+            />
+
+    </LinearLayout>
+</ScrollView>
 
 </RelativeLayout>
 <!-- From: file:/home/ben/school/370/Repositories/App/SSUMobile_android/app/src/main/res/layout/activity_news_single_story.xml -->

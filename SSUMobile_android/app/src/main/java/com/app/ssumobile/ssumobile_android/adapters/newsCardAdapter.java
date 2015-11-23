@@ -6,11 +6,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.app.ssumobile.ssumobile_android.R;
 import com.app.ssumobile.ssumobile_android.activity.newsSingleStoryActivity;
 import com.app.ssumobile.ssumobile_android.models.newsStoryModel;
+import com.koushikdutta.ion.Ion;
 
 import java.util.ArrayList;
 
@@ -35,8 +37,19 @@ public class newsCardAdapter  extends RecyclerView.Adapter<newsCardAdapter.ViewH
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         holder.Title.setText(mDataset.get(position).Title);
-        holder.Published.setText(mDataset.get(position).Published);
-        holder.Category.setText(mDataset.get(position).Category);
+
+        // check for image
+        if (mDataset.get(position).ImageURL != ""){
+            // load image
+
+            ImageView imageView = holder.storyImage;
+            Ion.with(imageView)
+                    .placeholder(R.drawable.ssu_paw)
+                    .error(R.drawable.ssu_paw)
+                    //.animateLoad(null)
+                    //.animateIn(null)
+                    .load(mDataset.get(position).ImageURL);
+        }
 
 
         // save which event so it can be used later
@@ -50,15 +63,12 @@ public class newsCardAdapter  extends RecyclerView.Adapter<newsCardAdapter.ViewH
     public static class ViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
         public TextView Title;
-        public TextView Published;
-        public TextView Category;
-        newsStoryModel story;
+        public ImageView storyImage;
 
         public ViewHolder(View itemView) {
             super(itemView);
             Title = (TextView) itemView.findViewById(R.id.newstitle);
-            Published = (TextView) itemView.findViewById(R.id.newspublished);
-            Category = (TextView) itemView.findViewById(R.id.newscategory);
+            storyImage = (ImageView) itemView.findViewById(R.id.newsstorylogo);
         }
     }
 
@@ -70,7 +80,6 @@ public class newsCardAdapter  extends RecyclerView.Adapter<newsCardAdapter.ViewH
     @Override
     public void onClick(View v) {
 
-        //TO DO: IMPLEMENT NEW ACTIVITY ON CLICK
         Activity current = (Activity) v.getContext();
         Intent myIntent = new Intent(current, newsSingleStoryActivity.class);
 
@@ -78,6 +87,7 @@ public class newsCardAdapter  extends RecyclerView.Adapter<newsCardAdapter.ViewH
         myIntent.putExtra("Category", story.Category);
         myIntent.putExtra("Content", story.Content);
         myIntent.putExtra("ID", story.ID);
+        myIntent.putExtra("Published", story.Published);
         myIntent.putExtra("ImageURL", story.ImageURL);
         myIntent.putExtra("Link", story.Link);
         myIntent.putExtra("Updated", story.Updated);

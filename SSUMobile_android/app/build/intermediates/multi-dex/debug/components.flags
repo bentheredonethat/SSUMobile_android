@@ -28,6 +28,10 @@
     <init>();
 }
 
+-keep class com.app.ssumobile.ssumobile_android.activity.newsSingleStoryActivity {
+    <init>();
+}
+
 -keep class com.app.ssumobile.ssumobile_android.activity.CalendarSingleDate {
     <init>();
 }
