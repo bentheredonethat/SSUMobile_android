@@ -1,15 +1,22 @@
 package com.app.ssumobile.ssumobile_android.adapters;
 
 import android.app.Activity;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.app.ssumobile.ssumobile_android.R;
+import com.app.ssumobile.ssumobile_android.activity.CalendarSingleDate;
 import com.app.ssumobile.ssumobile_android.activity.calendarSingleEvent;
 import com.app.ssumobile.ssumobile_android.models.calendarEventModel;
 
@@ -26,25 +33,51 @@ public class calendarCardAdapter extends RecyclerView.Adapter<calendarCardAdapte
 
     @Override
     public void onClick(View v) {
-
-        String StartsOn = ((TextView) v.findViewById(R.id.StartsOn)).getText().toString();
-        String Title = ((TextView) v.findViewById(R.id.Title)).getText().toString();
-
-        Activity current = (Activity) v.getContext();
-        Intent myIntent = new Intent(current, calendarSingleEvent.class);
-        myIntent.putExtra("StartsOn", StartsOn);
-        myIntent.putExtra("Title", Title);
-
         calendarEventModel currentEvent = mDataset.get((Integer) v.findViewById(R.id.Title).getTag());
 
-        myIntent.putExtra("Description", currentEvent.getDescription());
-        myIntent.putExtra("Deleted", currentEvent.getDeleted());
-        myIntent.putExtra("Created", currentEvent.getCreated());
-        myIntent.putExtra("Location", currentEvent.getLocation());
-        myIntent.putExtra("Id", currentEvent.getId());
-        myIntent.putExtra("EndsOn", currentEvent.getEndsOn());
 
-        current.startActivity(myIntent);
+        String location = currentEvent.getLocation();
+        if (location.isEmpty()){
+            location = "No Location Provided";
+        }
+        else if(location.contains("|")){
+            String[] locations = location.split("\\|");
+            if (locations.length <= 2){
+                location = locations[0] + (locations.length == 2 ? locations[1] : "");
+            }
+            else{ // multiple locations
+                location = "Locations: \n";
+                for (String i : locations){
+                    if (locations[1] == i){
+                        continue;
+                    }
+                    location += "   " + i + '\n';
+                }
+            }
+
+
+        }
+
+        String text = new StringBuilder("Start Time: " + currentEvent.getStartsOn() + "\n")
+                .append("End Time: " +currentEvent.getEndsOn() + "\n")
+                .append(location + '\n')
+                .toString();
+
+        final AlertDialog alertDialog = new AlertDialog.Builder(v.getContext())
+                .setTitle(currentEvent.getTitle())
+                .setPositiveButton("Close", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                        // User clicked OK, so save the mSelectedItems results somewhere
+                        // or return them to the component that opened the dialog
+                        dialog.dismiss();
+                    }
+                })
+                .setMessage(text)
+                .create();
+
+        alertDialog.show();
+
     }
 
     // Provide a reference to the views for each data item
@@ -84,6 +117,7 @@ public class calendarCardAdapter extends RecyclerView.Adapter<calendarCardAdapte
         v.setOnClickListener(this);
         // set the view's size, margins, paddings and layout parameters here
         ViewHolder vh = new ViewHolder(v);
+
         return vh;
     }
 
@@ -102,6 +136,8 @@ public class calendarCardAdapter extends RecyclerView.Adapter<calendarCardAdapte
         holder.Title.setTag(position);
 
     }
+
+
 
     // Return the size of your dataset (invoked by the layout manager)
     @Override

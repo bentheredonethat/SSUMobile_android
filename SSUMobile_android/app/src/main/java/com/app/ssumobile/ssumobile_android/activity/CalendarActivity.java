@@ -90,8 +90,22 @@ public class CalendarActivity extends AppCompatActivity {
 
             @Override
             public void onSelectDate(Date date, View view) {
-               // Toast.makeText(getApplicationContext(), date.toString(),
-                 //       Toast.LENGTH_SHORT).show();
+                final Date dateCopy = date;
+
+                Thread runner = new Thread(new Runnable() {
+                    public void run() {
+                        String message = "Error: Failed to start single date .";
+                        try {
+                            Intent singleDateIntent = new Intent(CalendarActivity.this, CalendarSingleDate.class);
+                            singleDateIntent.putExtra("dateString", dateCopy.toString());
+
+                            startActivity(singleDateIntent); // put intent with event map in activity
+                        } catch (Throwable t) {
+                            Toast.makeText(getBaseContext(), message, Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+                runner.start();
             }
 
             @Override
