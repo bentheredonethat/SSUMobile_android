@@ -243,6 +243,7 @@ com/app/ssumobile/ssumobile_android/activity/StartScreenActivity$2.class
 android/support/v4/media/session/MediaSessionCompat$ResultReceiverWrapper.class
 org/parceler/transfuse/gen/invocationBuilder/PackageHelperRepository.class
 org/apache/commons/codec/digest/DigestUtils.class
+com/app/ssumobile/ssumobile_android/activity/CalendarSingleDate$3.class
 org/parceler/apache/commons/beanutils/locale/LocaleConvertUtilsBean.class
 android/support/v4/view/ViewCompatBase.class
 android/support/v4/media/MediaBrowserCompat$1.class
@@ -301,8 +302,8 @@ org/parceler/internal/generator/MapReadWriteGenerator.class
 android/support/v4/app/FragmentState.class
 org/parceler/internal/ParcelerInvocationBuilderStrategy.class
 org/parceler/ParcelAnnotationProcessor.class
-org/parceler/guava/collect/TreeRangeMap$1.class
 android/support/v4/view/ViewCompatICS.class
+org/parceler/guava/collect/TreeRangeMap$1.class
 android/support/v4/app/FragmentManagerImpl$1.class
 org/parceler/transfuse/adapter/LazyASTTypeParameterBuilder.class
 org/parceler/internal/generator/SetReadWriteGenerator.class
@@ -809,6 +810,7 @@ org/hamcrest/core/IsInstanceOf.class
 -keep class com.app.ssumobile.ssumobile_android.activity.DepartmentModelActivity { <init>(); }
 android/support/v4/media/MediaMetadataCompat$Builder.class
 org/junit/After.class
+com/app/ssumobile/ssumobile_android/activity/CalendarSingleDate$2.class
 org/parceler/guava/collect/Constraint.class
 org/parceler/guava/annotations/VisibleForTesting.class
 android/support/v7/app/ActionBarActivity.class
@@ -884,7 +886,6 @@ org/parceler/transfuse/adapter/classes/ASTClassField.class
 android/support/annotation/VisibleForTesting.class
 android/support/v7/graphics/drawable/DrawerArrowDrawable$ArrowDirection.class
 android/support/v4/app/FragmentHostCallback.class
-com/app/ssumobile/ssumobile_android/activity/CalendarSingleDate$MyTrustManager.class
 org/hamcrest/core/IsSame.class
 org/parceler/guava/collect/AbstractNavigableMap.class
 org/parceler/transfuse/gen/FieldInstantiationStrategy.class
