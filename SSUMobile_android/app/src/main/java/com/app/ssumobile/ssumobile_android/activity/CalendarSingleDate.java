@@ -230,6 +230,7 @@ public class CalendarSingleDate extends AppCompatActivity {
             titleResult = findMe.group();
             titleResult = titleResult.substring(17);
             titleResult = titleResult.substring(0,titleResult.length()-1);
+            titleResult = titleResult.replace("&#39;", "'");
         }
         // find event id
         findMe = Pattern.compile(eventidregex, Pattern.DOTALL).matcher(s);
