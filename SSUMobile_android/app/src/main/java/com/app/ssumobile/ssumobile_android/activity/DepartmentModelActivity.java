@@ -98,7 +98,7 @@ public class DepartmentModelActivity extends AppCompatActivity {
     }
 
     public void setWebSiteButton(){
-        if( !WebSite.getText().equals("No website available" )) {
+        if( !WebSite.getText().toString().equals("No website available" )) {
             Thread runner = new Thread(new Runnable() {
                 @Override
                 public void run() {
