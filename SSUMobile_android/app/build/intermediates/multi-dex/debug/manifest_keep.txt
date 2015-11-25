@@ -5,6 +5,7 @@
 -keep class com.app.ssumobile.ssumobile_android.activity.StartScreenActivity { <init>(); }
 -keep class com.app.ssumobile.ssumobile_android.activity.CalendarActivity { <init>(); }
 -keep class com.app.ssumobile.ssumobile_android.activity.NewsActivity { <init>(); }
+-keep class com.app.ssumobile.ssumobile_android.activity.newsSingleStoryActivity { <init>(); }
 -keep class com.app.ssumobile.ssumobile_android.activity.CalendarSingleDate { <init>(); }
 -keep class com.app.ssumobile.ssumobile_android.activity.calendarSingleEvent { <init>(); }
 -keep class com.app.ssumobile.ssumobile_android.activity.FacultyStaffActivity { <init>(); }

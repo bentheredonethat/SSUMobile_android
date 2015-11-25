@@ -41,6 +41,10 @@
             android:label="@string/app_name" >
         </activity>
         <activity
+            android:name="com.app.ssumobile.ssumobile_android.activity.newsSingleStoryActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
             android:name="com.app.ssumobile.ssumobile_android.activity.CalendarSingleDate"
             android:label="@string/app_name" >
         </activity>

@@ -25,7 +25,11 @@ import java.security.cert.X509Certificate;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
@@ -49,7 +53,9 @@ public class CalendarSingleDate extends AppCompatActivity {
     RestAdapter restAdapter;
     CalendarService calendarService;
 
-    final String url = "https://moonlight.cs.sonoma.edu/ssumobile/1_0/calendar.py";
+    //final String url = "https://moonlight.cs.sonoma.edu/ssumobile/1_0/calendar.py";
+    final String url = "http://25livepub.collegenet.com/s.aspx?calendar=ssucalendar-all-events&widget=main&date=";
+
 
     String body;
 
@@ -124,7 +130,7 @@ public class CalendarSingleDate extends AppCompatActivity {
         Thread runner = new Thread(new Runnable(){
             public void run()  {
                 try {
-                    sendGet(url); // get selected date's info
+                    sendGet(url + Year + Month + Day); // get selected date's info
                    // sendGet("http://www.cs.sonoma.edu/~levinsky/mini_events.json");
                 } catch (Throwable t) {
                     System.out.println(t.getCause());
@@ -146,8 +152,8 @@ public class CalendarSingleDate extends AppCompatActivity {
 
         final String USER_AGENT = "Mozilla/5.0";
 
-      //  URL obj = new URL(url);
-        URL obj = new URL("http://www.cs.sonoma.edu/~levinsky/mini_events.json");
+        URL obj = new URL(url);
+       // URL obj = new URL("http://www.cs.sonoma.edu/~levinsky/mini_events.json");
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
         con.setRequestMethod("GET");  // optional default is GET
         con.setRequestProperty("User-Agent", USER_AGENT); //add request header
@@ -165,16 +171,87 @@ public class CalendarSingleDate extends AppCompatActivity {
     }
 
     // parse out events from body
-    private void parseOutEvents() throws org.json.JSONException {
+    private void parseOutEvents() throws InterruptedException {
+        String regexForOneEvent = "<tr class=\\\\\\\"twSimpleTableEventRow0 ebg0\\\\\\\">(.*?)<\\/tr>";
 
+        final Matcher matcher = Pattern
+                .compile(regexForOneEvent, Pattern.DOTALL)
+                .matcher(body);
+        while (matcher.find()){
+            // parse out event from html text, then add to group!
+            // IN PARALLEL!
 
-        JSONObject myjson = new JSONObject(body);
-        JSONArray the_json_array = myjson.getJSONArray("Event");
-        for (int i = 0; i < the_json_array.length(); i++) {
-            events.add(convertJSONtoEvent(the_json_array.getJSONObject(i)));
-            mAdapter.notifyDataSetChanged(); // update cards
+            Thread runner = new Thread(new Runnable(){
+                public void run()  {
+                    events.add(parseHTMLTableRow(matcher.group()));
+                }
+            });
+            runner.start();
+            runner.join();
         }
+        Collections.sort(events, new Comparator<calendarEventModel>() {
+            @Override
+            public int compare(calendarEventModel lhs, calendarEventModel rhs) {
+                return String.valueOf(lhs.getStartsOn()).compareTo(rhs.getStartsOn());
+            }
+        });
+        mAdapter.notifyDataSetChanged();
     }
+
+
+    // get attributes of event string into an event
+    private calendarEventModel parseHTMLTableRow(String s){
+        calendarEventModel currentEvent = new calendarEventModel();
+
+        String startdateregex = "StartDate(.*?)<", locationregex = "twLocation(.*?)<",
+                titleregex = "aria-level=\\\\\"6\\\\\">(.*?)<", eventidregex = "eventid=(.*?);",
+                timeregex = "level=\\\\\\\"5\\\\\\\"\\>(.*?)\\<\\/span\\>";
+
+        String startDateResult = "", locationResult = "", titleResult = "", eventIDResult = "", timeResult = "";
+
+        // find start date
+        Matcher findMe = Pattern.compile(startdateregex, Pattern.DOTALL).matcher(s);
+        while (findMe.find()){
+            startDateResult = findMe.group();
+            startDateResult = startDateResult.substring(12);
+            startDateResult = startDateResult.substring(0, startDateResult.length()-1);
+        }
+
+        // find location
+        findMe = Pattern.compile(locationregex, Pattern.DOTALL).matcher(s);
+        while (findMe.find()){
+            locationResult = findMe.group();
+            locationResult = locationResult.substring(13);
+            locationResult = locationResult.substring(0, locationResult.length()-1);
+        }
+        // find title
+        findMe = Pattern.compile(titleregex, Pattern.DOTALL).matcher(s);
+        while (findMe.find()){
+            titleResult = findMe.group();
+            titleResult = titleResult.substring(17);
+            titleResult = titleResult.substring(0,titleResult.length()-1);
+            titleResult = titleResult.replace("&#39;", "'");
+        }
+        // find event id
+        findMe = Pattern.compile(eventidregex, Pattern.DOTALL).matcher(s);
+        while (findMe.find()){
+            eventIDResult = findMe.group();
+            eventIDResult = eventIDResult.substring(8, eventIDResult.length()-5);}
+
+        // find time
+        findMe = Pattern.compile(timeregex, Pattern.DOTALL).matcher(s);
+        while (findMe.find()) {
+            timeResult = findMe.group();
+            timeResult = timeResult.substring(12,timeResult.length()-7);
+
+        }
+        currentEvent.setLocation(locationResult);
+        currentEvent.setTitle(titleResult);
+        currentEvent.setStartsOn(startDateResult);
+        currentEvent.setCreated(timeResult);
+        return currentEvent;
+    }
+
 
     // get attributes of event string into an event
     private calendarEventModel convertJSONtoEvent(JSONObject s) throws org.json.JSONException{
@@ -191,22 +268,4 @@ public class CalendarSingleDate extends AppCompatActivity {
         return currentEvent;
     }
 
-    private static class MyTrustManager implements X509TrustManager
-    {
-
-        @Override
-        public void checkClientTrusted(X509Certificate[] chain, String authType) {
-        }
-
-        @Override
-        public void checkServerTrusted(X509Certificate[] chain, String authType) {
-        }
-
-        @Override
-        public X509Certificate[] getAcceptedIssuers()
-        {
-            return null;
-        }
-
-    }
 }

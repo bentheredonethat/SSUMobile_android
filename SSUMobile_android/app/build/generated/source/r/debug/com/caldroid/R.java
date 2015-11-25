@@ -52,6 +52,7 @@ public final class R {
 		public static final int right_arrow = 0x7f020052;
 	}
 	public static final class id {
+<<<<<<< HEAD
 		public static final int calendar_gridview = 0x7f0b006b;
 		public static final int calendar_left_arrow = 0x7f0b0064;
 		public static final int calendar_month_year_textview = 0x7f0b0065;
@@ -60,6 +61,16 @@ public final class R {
 		public static final int calendar_tv = 0x7f0b007d;
 		public static final int months_infinite_pager = 0x7f0b0068;
 		public static final int weekday_gridview = 0x7f0b0067;
+=======
+		public static final int calendar_gridview = 0x7f0b0070;
+		public static final int calendar_left_arrow = 0x7f0b0069;
+		public static final int calendar_month_year_textview = 0x7f0b006a;
+		public static final int calendar_right_arrow = 0x7f0b006b;
+		public static final int calendar_title_view = 0x7f0b0068;
+		public static final int calendar_tv = 0x7f0b0081;
+		public static final int months_infinite_pager = 0x7f0b006d;
+		public static final int weekday_gridview = 0x7f0b006c;
+>>>>>>> 9c5aa1f95a66e81c9deccae447869a8b32293e34
 	}
 	public static final class layout {
 		public static final int calendar_view = 0x7f030023;
