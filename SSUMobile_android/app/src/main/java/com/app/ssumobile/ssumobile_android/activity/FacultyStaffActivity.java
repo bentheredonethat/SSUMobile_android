@@ -29,8 +29,7 @@ public class FacultyStaffActivity extends AppCompatActivity {
     ArrayAdapter adapter;
 
     ArrayList<FacStaffModel> contactsList = new ArrayList<>();
-    //ArrayList<DepartmentModel> departmentsList = new ArrayList<>();
-    //ArrayList<BuildingModel> buildingList = new ArrayList<>();
+    ArrayList<DepartmentModel> departmentsList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +64,7 @@ public class FacultyStaffActivity extends AppCompatActivity {
             public void run()  {
                 try {
                     //sendGet(url + Year + Month + Day); // get selected date's info
-                    sendGet("http://www.cs.sonoma.edu/~wmitchel/person.json");
+                    sendGet("http://www.cs.sonoma.edu/~wmitchel/master_dir.json");
                 } catch (Throwable t) {
                     System.out.println(t.getCause());
                 }
@@ -79,6 +78,24 @@ public class FacultyStaffActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         System.out.println("in onstart()");
+
+        // Set the FacStaff Department to it's respective name
+        Thread runner2 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for( int i = 0; i < contactsList.size(); i++ ){
+                    for( int j = 0; j < departmentsList.size(); j++){
+                        if( contactsList.get(i).department.equals( departmentsList.get(j).id ) ) {
+                            if (departmentsList.get(j).displayName != null)
+                                contactsList.get(i).department = departmentsList.get(j).displayName;
+                            else
+                                contactsList.get(i).department = departmentsList.get(j).name;
+                        }
+                    }
+                }
+            }
+        });
+        runner2.start();
     }
 
     @Override
@@ -168,11 +185,37 @@ public class FacultyStaffActivity extends AppCompatActivity {
 
 
         JSONObject myjson = new JSONObject(body);
+        JSONArray dept_array = myjson.getJSONArray("Department");
         JSONArray the_json_array = myjson.getJSONArray("Person");
         for (int i = 0; i < the_json_array.length(); i++) {
             contactsList.add(convertPersonJSONtoContact(the_json_array.getJSONObject(i)));
            adapter.notifyDataSetChanged(); // update cards
         }
+        for(int i = 0; i < dept_array.length(); i++){
+            departmentsList.add( convertDeptJSONtoContact(dept_array.getJSONObject(i)));
+        }
+
+    }
+
+    // get attributes of event string into an event
+    private DepartmentModel convertDeptJSONtoContact(JSONObject s) throws org.json.JSONException{
+        DepartmentModel currentContact = new DepartmentModel();
+
+        currentContact.ac = s.getString("ac");
+        currentContact.office = s.getString("office");
+        currentContact.Created = s.getString("Created");
+        currentContact.site = s.getString("site");
+        currentContact.Modified = s.getString("Modified");
+        currentContact.phone = s.getString("phone");
+        currentContact.chair = s.getString("chair");
+        currentContact.id = s.getString("id");
+        currentContact.building = s.getString("building");
+        currentContact.school = s.getString("school");
+        currentContact.displayName = s.getString("displayName");
+        currentContact.name = s.getString("name");
+        currentContact.Deleted = s.getString("Deleted");
+
+        return currentContact;
     }
 
     // get attributes of event string into an event

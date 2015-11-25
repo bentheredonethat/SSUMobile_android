@@ -82,13 +82,21 @@ public class DepartmentsActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         System.out.println("in onstart()");
+
         // Set the building name for each department
-        for(int i = 0; i < buildingList.size(); i++) {
-            for (int j = 0; j < contactsList.size(); j++) {
-                if (buildingList.get(i).id.equals(contactsList.get(j).building))
-                    contactsList.get(j).buildingName = buildingList.get(i).name;
+
+        Thread runner2 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for(int i = 0; i < buildingList.size(); i++) {
+                    for (int j = 0; j < contactsList.size(); j++) {
+                        if ( buildingList.get(i).id.equals( contactsList.get(j).building ) )
+                            contactsList.get(j).buildingName = buildingList.get(i).name;
+                    }
+                }
             }
-        }
+        });
+        runner2.start();
     }
 
     @Override

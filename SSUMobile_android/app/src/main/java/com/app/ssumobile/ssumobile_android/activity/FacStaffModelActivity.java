@@ -98,14 +98,14 @@ public class FacStaffModelActivity extends AppCompatActivity {
             EmailButton.setText(d.email);
 
         if( d.department != null && !d.department.isEmpty() && !d.department.equals("0"))
-            DepartmentButton.setText( "Department: " + d.department);
+            DepartmentButton.setText(d.department);
         else {
             String noDepartment = "No department available";
             DepartmentButton.setText(noDepartment);
         }
-
+        String Office = "Office " + d.office;
         if( d.office != null && !d.office.isEmpty())
-            OfficeButton.setText( "Office: " + d.office);
+            OfficeButton.setText( Office );
         else{
             String noOffice ="No office available";
             OfficeButton.setText(noOffice);

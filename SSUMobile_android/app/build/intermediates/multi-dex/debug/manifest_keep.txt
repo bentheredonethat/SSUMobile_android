@@ -16,6 +16,7 @@
 -keep class com.app.ssumobile.ssumobile_android.activity.DepartmentModelActivity { <init>(); }
 -keep class com.app.ssumobile.ssumobile_android.activity.BuildingModelActivity { <init>(); }
 -keep class com.app.ssumobile.ssumobile_android.activity.SchoolModelActivity { <init>(); }
+-keep class com.app.ssumobile.ssumobile_android.activity.WebViewActivity { <init>(); }
 -keep class android.support.v7.widget.TestActivity { <init>(); }
 -keep public class * extends android.app.backup.BackupAgent {
     <init>();

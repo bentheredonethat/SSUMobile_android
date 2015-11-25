@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,7 +12,6 @@ import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.app.ssumobile.ssumobile_android.R;
 import com.app.ssumobile.ssumobile_android.models.DepartmentModel;
 
@@ -28,7 +26,7 @@ public class DepartmentModelActivity extends AppCompatActivity {
     Button PhoneButton;
     Button WebSite;
     Button BuildingButton;
-    WebView webView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +38,6 @@ public class DepartmentModelActivity extends AppCompatActivity {
         PhoneButton = (Button) findViewById(R.id.Phone_button);
         WebSite = (Button) findViewById(R.id.webSite_button);
         BuildingButton = (Button) findViewById(R.id.office_button);
-        webView = (WebView) findViewById(R.id.web_view);
 
         Bundle data = getIntent().getExtras();
         ContactProvider((DepartmentModel) data.getSerializable("DepartmentModel"));
@@ -106,10 +103,9 @@ public class DepartmentModelActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
                             String url = WebSite.getText().toString();
-                            webView.getSettings().setLoadsImagesAutomatically(true);
-                            webView.getSettings().setJavaScriptEnabled(true);
-                            webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
-                            webView.loadUrl(url);
+                            Intent intent = new Intent(DepartmentModelActivity.this, WebViewActivity.class);
+                            intent.putExtra("url", url);
+                            startActivity(intent);
                         }
                     });
                 }
