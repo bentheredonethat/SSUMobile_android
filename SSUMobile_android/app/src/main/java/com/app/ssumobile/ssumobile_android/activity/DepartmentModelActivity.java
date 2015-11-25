@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,7 +27,8 @@ public class DepartmentModelActivity extends AppCompatActivity {
     TextView DisplayName;
     Button PhoneButton;
     Button WebSite;
-    Button OfficeButton;
+    Button BuildingButton;
+    WebView webView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,13 +39,14 @@ public class DepartmentModelActivity extends AppCompatActivity {
         DisplayName = (TextView) findViewById(R.id.DisplayName_button);
         PhoneButton = (Button) findViewById(R.id.Phone_button);
         WebSite = (Button) findViewById(R.id.webSite_button);
-        OfficeButton = (Button) findViewById(R.id.office_button);
-
+        BuildingButton = (Button) findViewById(R.id.office_button);
+        webView = (WebView) findViewById(R.id.web_view);
 
         Bundle data = getIntent().getExtras();
         ContactProvider((DepartmentModel) data.getSerializable("DepartmentModel"));
         // Initiate Threads for onClickListeners
         PhoneButtonThread();
+        setWebSiteButton();
 
     }
 
@@ -70,39 +73,80 @@ public class DepartmentModelActivity extends AppCompatActivity {
     }
 
     public void ContactProvider(DepartmentModel d) {
-        if( !d.office.equals("null") )
-            OfficeButton.setText(d.office);
-        if( !d.site.equals("null") )
+        if( d.buildingName != null && !d.buildingName.isEmpty() )
+            BuildingButton.setText( d.buildingName );
+        else{
+            String noBuilding ="No building available";
+            BuildingButton.setText(noBuilding);
+        }
+        if( !d.site.isEmpty() )
             WebSite.setText(d.site);
-        if( !d.phone.equals("null") )
+        else{
+            String noSite = "No website available";
+            WebSite.setText(noSite);
+        }
+        if( !d.phone.isEmpty() )
             PhoneButton.setText(d.phone);
-        if( !d.displayName.equals("null") )
+        else{
+            String noPhone = "No phone available";
+            PhoneButton.setText(noPhone);
+        }
+        if( d.displayName != null && !d.displayName.isEmpty() )
             DisplayName.setText(d.displayName);
-        if( d.displayName.equals("null") )
+        if( d.name != null && !d.name.isEmpty() )
             DisplayName.setText(d.name);
     }
 
+    public void setWebSiteButton(){
+        if( !WebSite.getText().equals("No website available" )) {
+            Thread runner = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    WebSite.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            String url = WebSite.getText().toString();
+                            webView.getSettings().setLoadsImagesAutomatically(true);
+                            webView.getSettings().setJavaScriptEnabled(true);
+                            webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+                            webView.loadUrl(url);
+                        }
+                    });
+                }
+            });
+            runner.start();
+        }
+    }
     public void PhoneButtonThread() {
         Thread PhoneCallRunner = new Thread(new Runnable() {
             public void run() {
-                String message = "Error: Failed to SetPhoneButton.";
-                try {
-                    SetPhoneButton();
-                } catch (Throwable t) {
-                    Toast.makeText(getBaseContext(), message, Toast.LENGTH_SHORT).show();
-                }
+                if( PhoneButton.getText().toString().isEmpty() || PhoneButton.getText().toString().equals("No phone available"))
+                    SetPhoneButton(0);
+                else
+                    SetPhoneButton(1);
             }
         });
         PhoneCallRunner.start();
     }
 
-    public void SetPhoneButton() {
-        PhoneButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ActivatePhoneCall();
-            }
-        });
+    public void SetPhoneButton(int flag) {
+        if (flag == 1) {
+            PhoneButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ActivatePhoneCall();
+                }
+            });
+        }
+        if (flag == 0) {
+            PhoneButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String message = "There is no Phone number available.";
+                    Toast.makeText(getBaseContext(), message, Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
     }
 
     public void ActivatePhoneCall() {

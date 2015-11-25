@@ -17,6 +17,7 @@ public class DepartmentModel implements Serializable {
     public String chair;
     public String id;
     public String building;
+    public String buildingName;
     public String school;
     public String displayName;
     public String name;

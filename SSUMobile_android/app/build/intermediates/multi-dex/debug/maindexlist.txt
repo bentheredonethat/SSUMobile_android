@@ -47,6 +47,7 @@ org/parceler/transfuse/listeners/ActivityOnKeyMultipleListener.class
 org/parceler/guava/collect/GwtTransient.class
 org/parceler/guava/io/Closeables.class
 org/parceler/guava/collect/ImmutableCollection$Builder.class
+com/app/ssumobile/ssumobile_android/activity/FacStaffModelActivity$7.class
 org/parceler/transfuse/annotations/OnTerminate.class
 android/support/annotation/StringDef.class
 org/parceler/transfuse/annotations/ProtectionLevel.class
@@ -179,6 +180,7 @@ org/parceler/apache/commons/beanutils/PropertyUtilsBean.class
 android/support/annotation/BoolRes.class
 android/support/v4/view/ViewCompatEclairMr1.class
 android/support/annotation/WorkerThread.class
+com/app/ssumobile/ssumobile_android/activity/DepartmentModelActivity$4.class
 -keep class com.app.ssumobile.ssumobile_android.activity.calendarSingleEvent { <init>(); }
 org/parceler/guava/collect/TreeRangeMap$1.class
 android/support/v4/widget/MaterialProgressDrawable$3.class
@@ -574,6 +576,7 @@ org/parceler/javaxinject/Provider.class
 -keep class com.app.ssumobile.ssumobile_android.activity.FacStaffModelActivity { <init>(); }
 android/support/v4/widget/MaterialProgressDrawable$ProgressDrawableSize.class
 android/support/v4/media/MediaMetadataCompatApi21.class
+com/app/ssumobile/ssumobile_android/activity/DepartmentModelActivity$3.class
 android/support/v7/widget/LinearLayoutCompat$DividerMode.class
 org/parceler/transfuse/util/ScopePredicate.class
 org/parceler/guava/cache/CacheBuilderSpec.class

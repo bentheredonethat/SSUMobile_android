@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.app.ssumobile.ssumobile_android.R;
+import com.app.ssumobile.ssumobile_android.models.DepartmentModel;
 import com.app.ssumobile.ssumobile_android.models.FacStaffModel;
 
 /**
@@ -50,8 +51,6 @@ public class FacStaffModelActivity extends AppCompatActivity {
         // Initiate Threads for onClickListeners
         PhoneButtonThread();
         EmailButtonThread();
-
-
         AddToContactsThread();
     }
 
@@ -80,39 +79,69 @@ public class FacStaffModelActivity extends AppCompatActivity {
     public void ContactProvider(FacStaffModel d) {
         Fname.setText(d.firstName);
         Lname.setText(d.lastName);
-        if(d.title != null)
+
+        if( !d.title.isEmpty() )
             Title.setText(d.title);
-        if(d.phone != null)
+        else {
+            String noTitle = "No title available";
+            Title.setText(noTitle);
+        }
+
+        if( !d.phone.isEmpty())
             PhoneButton.setText(d.phone);
-        if(d.email != null)
+        else {
+            String noPhone = "No phone available";
+            PhoneButton.setText(noPhone);
+        }
+
+        if( !d.email.isEmpty() )
             EmailButton.setText(d.email);
-        if(d.department != null)
-            DepartmentButton.setText(d.department);
-        if(d.office != null)
-            OfficeButton.setText(d.office);
+
+        if( d.department != null && !d.department.isEmpty() && !d.department.equals("0"))
+            DepartmentButton.setText( "Department: " + d.department);
+        else {
+            String noDepartment = "No department available";
+            DepartmentButton.setText(noDepartment);
+        }
+
+        if( d.office != null && !d.office.isEmpty())
+            OfficeButton.setText( "Office: " + d.office);
+        else{
+            String noOffice ="No office available";
+            OfficeButton.setText(noOffice);
+        }
     }
 
     public void PhoneButtonThread() {
         Thread PhoneCallRunner = new Thread(new Runnable() {
             public void run() {
-                String message = "Error: Failed to SetPhoneButton.";
-                try {
-                    SetPhoneButton();
-                } catch (Throwable t) {
-                    Toast.makeText(getBaseContext(), message, Toast.LENGTH_SHORT).show();
-                }
+                if( PhoneButton.getText().toString().isEmpty() || PhoneButton.getText().equals("No phone available") )
+                    SetPhoneButton(0);
+                else
+                    SetPhoneButton(1);
             }
         });
         PhoneCallRunner.start();
     }
 
-    public void SetPhoneButton() {
-        PhoneButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ActivatePhoneCall();
-            }
-        });
+    public void SetPhoneButton(int flag) {
+        if( flag == 1) {
+            PhoneButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ActivatePhoneCall();
+                }
+                });
+        }
+        if( flag == 0) {
+            PhoneButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String message = "No Phone number available.";
+                    Toast.makeText(getBaseContext(), message, Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
     }
 
     public void EmailButtonThread() {

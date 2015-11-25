@@ -30,7 +30,7 @@ public class BuildingModelActivity extends AppCompatActivity {
         Bundle data = getIntent().getExtras();
         BuildingModel building;
         building = (BuildingModel) data.getSerializable("BuildingModel");
-        if( !building.name.equals("null") )
+        if( !building.name.isEmpty() )
             BuildingName.setText(building.name);
 
         // Initiate Threads for onClickListeners

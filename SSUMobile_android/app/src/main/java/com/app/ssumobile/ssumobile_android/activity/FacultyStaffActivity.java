@@ -10,6 +10,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import com.app.ssumobile.ssumobile_android.R;
+import com.app.ssumobile.ssumobile_android.models.BuildingModel;
+import com.app.ssumobile.ssumobile_android.models.DepartmentModel;
 import com.app.ssumobile.ssumobile_android.models.FacStaffModel;
 
 import org.json.JSONArray;
@@ -27,6 +29,8 @@ public class FacultyStaffActivity extends AppCompatActivity {
     ArrayAdapter adapter;
 
     ArrayList<FacStaffModel> contactsList = new ArrayList<>();
+    //ArrayList<DepartmentModel> departmentsList = new ArrayList<>();
+    //ArrayList<BuildingModel> buildingList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
