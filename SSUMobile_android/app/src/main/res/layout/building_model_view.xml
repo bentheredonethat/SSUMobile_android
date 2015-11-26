@@ -8,15 +8,15 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="#001339" >
 
-    <!--<ImageView-->
-        <!--android:id="@+id/PawLogo"-->
-        <!--android:layout_width="100dp"-->
-        <!--android:layout_height="100dp"-->
-        <!--android:layout_alignParentTop="true"-->
-        <!--android:layout_centerVertical="true"-->
-        <!--android:src="@drawable/ssu_paw"-->
-        <!--android:layout_margin="10dp"-->
-        <!--android:background="#001339"  />-->
+  <ImageView
+        android:id="@+id/PawLogo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ssu_paw"
+        android:layout_margin="10dp"
+        android:background="#001339"  />
 
     <Button
         android:layout_width="match_parent"
@@ -25,29 +25,30 @@
         android:id="@+id/building_textview"
         android:background="@drawable/ssubutton"
         android:textColor="@color/caldroid_white"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/PawLogo" />
 
-    <!--android:layout_below="@+id/PawLogo"-->
 
+   
+<!--
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="person1"
         android:id="@+id/person1"
         android:background="@drawable/ssubutton"
         android:textColor="@color/caldroid_white"
         android:layout_below="@+id/building_textview"
         android:layout_alignParentStart="true"
         android:layout_marginTop="25dp" />
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="person2"
         android:id="@+id/person2"
         android:background="@drawable/ssubutton"
         android:textColor="@color/caldroid_white"
         android:layout_below="@+id/person1"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp" /> -->
 
 </RelativeLayout>

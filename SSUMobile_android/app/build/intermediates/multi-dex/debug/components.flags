@@ -72,6 +72,10 @@
     <init>();
 }
 
+-keep class com.app.ssumobile.ssumobile_android.activity.WebViewActivity {
+    <init>();
+}
+
 -keep class android.support.v7.widget.TestActivity {
     <init>();
 }

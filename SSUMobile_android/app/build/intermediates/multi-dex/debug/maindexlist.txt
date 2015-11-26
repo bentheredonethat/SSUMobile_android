@@ -131,6 +131,7 @@ android/support/v4/media/MediaBrowserCompat$MediaItem$Flags.class
 android/support/v7/app/ActionBar$LayoutParams.class
 org/parceler/transfuse/gen/componentBuilder/InjectionNodeImplFactory.class
 com/google/gson/annotations/Until.class
+com/app/ssumobile/ssumobile_android/activity/DepartmentModelActivity$4.class
 org/parceler/transfuse/bootstrap/Namespace.class
 org/parceler/transfuse/annotations/BroadcastReceiver.class
 org/parceler/apache/commons/beanutils/locale/LocaleBeanUtilsBean$Descriptor.class
@@ -165,9 +166,9 @@ org/apache/http/client/params/HttpClientParamConfig.class
 com/google/gson/annotations/JsonAdapter.class
 com/app/ssumobile/ssumobile_android/activity/NewsActivity.class
 android/support/v4/widget/MaterialProgressDrawable$ProgressDrawableSize.class
-org/parceler/transfuse/bootstrap/BootstrapModule.class
-org/parceler/guava/reflect/Types.class
 org/parceler/guava/util/concurrent/AbstractExecutionThreadService.class
+org/parceler/guava/reflect/Types.class
+org/parceler/transfuse/bootstrap/BootstrapModule.class
 org/parceler/apache/commons/beanutils/converters/CharacterArrayConverter.class
 com/app/ssumobile/ssumobile_android/activity/FacultyStaffActivity.class
 android/support/v4/app/ActivityCompatHoneycomb.class
@@ -332,6 +333,7 @@ org/parceler/guava/collect/ImmutableList$Builder.class
 org/parceler/transfuse/event/EventManager.class
 org/parceler/transfuse/annotations/BindProvider.class
 org/parceler/internal/WriteReferenceVisitor.class
+com/app/ssumobile/ssumobile_android/activity/FacultyStaffActivity$6.class
 org/parceler/transfuse/util/QualifierPredicate.class
 android/support/annotation/StringRes.class
 org/parceler/transfuse/gen/variableBuilder/ProviderInjectionNodeBuilderFactory.class
@@ -344,6 +346,7 @@ android/support/v4/widget/MaterialProgressDrawable$2.class
 com/app/ssumobile/ssumobile_android/activity/BuildingModelActivity.class
 org/parceler/guava/collect/ImmutableSortedSet.class
 org/parceler/transfuse/gen/variableBuilder/ScopeReferenceInjectionFactory.class
+com/app/ssumobile/ssumobile_android/activity/DepartmentModelActivity$3.class
 org/parceler/transfuse/annotations/OnRestoreInstanceState.class
 org/parceler/guava/annotations/Beta.class
 com/app/ssumobile/ssumobile_android/activity/DepartmentsActivity$5.class
@@ -358,6 +361,7 @@ android/support/v4/widget/MaterialProgressDrawable$Ring.class
 rx/annotations/Beta.class
 org/parceler/guava/reflect/Types$ClassOwnership$2.class
 org/parceler/transfuse/adapter/element/ElementConverterFactory.class
+com/app/ssumobile/ssumobile_android/activity/FacStaffModelActivity$7.class
 org/parceler/transfuse/adapter/classes/ASTClassAnnotation.class
 com/app/ssumobile/ssumobile_android/activity/SchoolsActivity.class
 org/parceler/transfuse/adapter/ASTType.class
@@ -389,8 +393,8 @@ org/parceler/guava/collect/TreeRangeSet$SubRangeSet.class
 retrofit/http/Part.class
 org/parceler/apache/commons/beanutils/converters/AbstractArrayConverter.class
 android/support/v4/media/VolumeProviderCompatApi21$Delegate.class
-android/support/v4/media/MediaMetadataCompatApi21$Builder.class
 android/support/v7/app/AppCompatDelegate.class
+android/support/v4/media/MediaMetadataCompatApi21$Builder.class
 android/support/v4/util/ArrayMap$1.class
 android/support/v4/media/RatingCompat$Style.class
 android/support/v4/widget/MaterialProgressDrawable.class
@@ -442,6 +446,7 @@ org/apache/http/entity/StringEntityHC4.class
 android/support/v4/view/ViewCompatHC.class
 org/parceler/internal/PackageHelperGeneratorAdapter.class
 org/parceler/transfuse/annotations/UsesFeatures.class
+com/app/ssumobile/ssumobile_android/activity/WebViewActivity.class
 android/support/v4/view/ViewCompatEclairMr1.class
 android/support/v4/media/MediaDescriptionCompat$Builder.class
 android/support/v4/media/session/MediaSessionCompat$MediaSessionImpl.class
@@ -464,9 +469,9 @@ android/support/v4/app/TaskStackBuilder$SupportParentable.class
 android/support/annotation/RequiresPermission.class
 org/parceler/guava/hash/package-info.class
 org/parceler/guava/collect/Maps$EntryFunction$2.class
+org/parceler/guava/util/concurrent/AbstractScheduledService.class
 org/parceler/transfuse/annotations/ManualSuper.class
 org/parceler/transfuse/annotations/OnTaskRemoved.class
-org/parceler/guava/util/concurrent/AbstractScheduledService.class
 org/parceler/transfuse/annotations/OnCreate.class
 org/parceler/guava/collect/ImmutableCollection$Builder.class
 org/apache/http/impl/pool/BasicConnPool.class
@@ -684,6 +689,7 @@ org/parceler/guava/cache/LocalCache$LocalManualCache.class
 org/parceler/transfuse/annotations/Observes.class
 org/apache/http/message/BasicLineFormatterHC4.class
 org/parceler/guava/collect/ImmutableSortedMultisetFauxverideShim.class
+-keep class com.app.ssumobile.ssumobile_android.activity.WebViewActivity { <init>(); }
 android/support/v4/media/session/MediaControllerCompat.class
 com/app/ssumobile/ssumobile_android/activity/NewsActivity$2.class
 org/parceler/transfuse/listeners/FragmentMenuComponent.class
@@ -782,11 +788,11 @@ org/parceler/guava/annotations/VisibleForTesting.class
 android/support/v7/app/ActionBarActivity.class
     <init>();
 org/apache/commons/codec/language/Caverphone.class
-org/parceler/transfuse/adapter/ASTFactory.class
 android/support/annotation/AnimatorRes.class
+org/parceler/transfuse/adapter/ASTFactory.class
 org/parceler/transfuse/adapter/classes/ASTClassType.class
-android/support/v7/widget/LinearLayoutCompat$DividerMode.class
 org/parceler/guava/base/Function.class
+android/support/v7/widget/LinearLayoutCompat$DividerMode.class
 android/support/v4/widget/SwipeRefreshLayout.class
 org/parceler/transfuse/annotations/OnActivityResult.class
 org/parceler/apache/commons/beanutils/converters/DoubleArrayConverter.class
@@ -827,6 +833,7 @@ android/support/v4/view/WindowInsetsCompat.class
 org/parceler/transfuse/scope/ApplicationScope.class
 android/support/v4/view/ViewCompat$JbMr1ViewCompatImpl.class
 org/parceler/transfuse/analysis/module/BindProviderProcessor.class
+com/app/ssumobile/ssumobile_android/activity/DepartmentsActivity$6.class
 android/support/v4/media/MediaMetadataCompatApi21.class
 org/parceler/transfuse/annotations/Provides.class
 org/parceler/transfuse/annotations/OnHandleIntent.class

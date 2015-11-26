@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.app.ssumobile.ssumobile_android.R;
+import com.app.ssumobile.ssumobile_android.models.BuildingModel;
 import com.app.ssumobile.ssumobile_android.models.DepartmentModel;
 
 import org.json.JSONArray;
@@ -31,6 +32,8 @@ public class DepartmentsActivity extends AppCompatActivity {
     ArrayAdapter adapter;
 
     ArrayList<DepartmentModel> contactsList = new ArrayList<>();
+    //ArrayList<DepartmentModel> departmentsList = new ArrayList<>();
+    ArrayList<BuildingModel> buildingList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +51,7 @@ public class DepartmentsActivity extends AppCompatActivity {
                 Intent intent = new Intent(DepartmentsActivity.this,DepartmentModelActivity.class);
                 //based on item add info to intent
                 DepartmentModel Dmodel = contactsList.get(position);
+
                 Bundle B = new Bundle();
                 B.putSerializable("DepartmentModel", Dmodel);
                 intent.putExtras(B);
@@ -64,7 +68,7 @@ public class DepartmentsActivity extends AppCompatActivity {
             public void run()  {
                 try {
                     //sendGet(url + Year + Month + Day); // get selected date's info
-                    sendGet("http://www.cs.sonoma.edu/~levinsky/mini_dir.json");
+                    sendGet("http://www.cs.sonoma.edu/~wmitchel/master_dir.json");
                 } catch (Throwable t) {
                     System.out.println(t.getCause());
                 }
@@ -78,6 +82,21 @@ public class DepartmentsActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         System.out.println("in onstart()");
+
+        // Set the building name for each department
+
+        Thread runner2 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for(int i = 0; i < buildingList.size(); i++) {
+                    for (int j = 0; j < contactsList.size(); j++) {
+                        if ( buildingList.get(i).id.equals( contactsList.get(j).building ) )
+                            contactsList.get(j).buildingName = buildingList.get(i).name;
+                    }
+                }
+            }
+        });
+        runner2.start();
     }
 
     @Override
@@ -164,13 +183,28 @@ public class DepartmentsActivity extends AppCompatActivity {
     // parse out events from body
     private void parseOutEvents() throws org.json.JSONException {
 
-
         JSONObject myjson = new JSONObject(body);
         JSONArray the_json_array = myjson.getJSONArray("Department");
+        JSONArray building_json_array = myjson.getJSONArray("Building");
         for (int i = 0; i < the_json_array.length(); i++) {
             contactsList.add(convertDeptJSONtoContact(the_json_array.getJSONObject(i)));
             adapter.notifyDataSetChanged(); // update cards
         }
+        for(int i = 0; i < building_json_array.length(); i++){
+            buildingList.add(convertBuildJSONtoContact(building_json_array.getJSONObject(i)));
+        }
+    }
+
+    private BuildingModel convertBuildJSONtoContact(JSONObject s) throws org.json.JSONException{
+        BuildingModel currentContact = new BuildingModel();
+
+        currentContact.Created = s.getString("Created");
+        currentContact.Modified = s.getString("Modified");
+        currentContact.id = s.getString("id");
+        currentContact.name = s.getString("name");
+        currentContact.Deleted = s.getString("Deleted");
+
+        return currentContact;
     }
 
     // get attributes of event string into an event
