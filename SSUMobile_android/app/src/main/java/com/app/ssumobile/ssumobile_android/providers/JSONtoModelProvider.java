@@ -1,0 +1,63 @@
+package com.app.ssumobile.ssumobile_android.providers;
+
+import com.app.ssumobile.ssumobile_android.models.BuildingModel;
+import com.app.ssumobile.ssumobile_android.models.DepartmentModel;
+import com.app.ssumobile.ssumobile_android.models.FacStaffModel;
+
+import org.json.JSONObject;
+
+
+public class JSONtoModelProvider {
+
+    // get attributes of event string into an event
+    public FacStaffModel convertPersonJSONtoModel(JSONObject s) throws org.json.JSONException{
+        FacStaffModel currentContact = new FacStaffModel();
+
+        currentContact.office = s.getString("office");
+        currentContact.Created = s.getString("Created");
+        currentContact.site = s.getString("site");
+        currentContact.Modified = s.getString("Modified");
+        currentContact.phone = s.getString("phone");
+        currentContact.id = s.getString("id");
+        currentContact.building = s.getString("building");
+        currentContact.firstName = s.getString("firstName");
+        currentContact.title = s.getString("title");
+        currentContact.lastName = s.getString("lastName");
+        currentContact.department = s.getString("department");
+        currentContact.email = s.getString("email");
+
+        return currentContact;
+    }
+
+    public BuildingModel convertBuildJSONtoModel(JSONObject s) throws org.json.JSONException{
+        BuildingModel currentContact = new BuildingModel();
+
+        currentContact.Created = s.getString("Created");
+        currentContact.Modified = s.getString("Modified");
+        currentContact.id = s.getString("id");
+        currentContact.name = s.getString("name");
+        currentContact.Deleted = s.getString("Deleted");
+
+        return currentContact;
+    }
+
+    public DepartmentModel convertDeptJSONtoModel(JSONObject s) throws org.json.JSONException{
+        DepartmentModel currentContact = new DepartmentModel();
+
+        currentContact.ac = s.getString("ac");
+        currentContact.office = s.getString("office");
+        currentContact.Created = s.getString("Created");
+        currentContact.site = s.getString("site");
+        currentContact.Modified = s.getString("Modified");
+        currentContact.phone = s.getString("phone");
+        currentContact.chair = s.getString("chair");
+        currentContact.id = s.getString("id");
+        currentContact.building = s.getString("building");
+        currentContact.school = s.getString("school");
+        currentContact.displayName = s.getString("displayName");
+        currentContact.name = s.getString("name");
+        currentContact.Deleted = s.getString("Deleted");
+
+        return currentContact;
+    }
+}

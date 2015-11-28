@@ -3,11 +3,14 @@ package com.app.ssumobile.ssumobile_android.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import com.app.ssumobile.ssumobile_android.R;
@@ -27,19 +30,21 @@ public class SchoolsActivity extends AppCompatActivity {
 
     ArrayAdapter adapter;
 
+    EditText inputSearch;
+
     ArrayList<SchoolModel> contactsList = new ArrayList<>();
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.school_view);
+        setContentView(R.layout.directory_view);
 
+        inputSearch = (EditText) findViewById(R.id.input_search);
 
         adapter = new ArrayAdapter<>(this, R.layout.activity_listview, contactsList);
         ListView listView = (ListView) findViewById(R.id.mobile_list);
         listView.setAdapter(adapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
-
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(SchoolsActivity.this, SchoolModelActivity.class);
@@ -50,7 +55,22 @@ public class SchoolsActivity extends AppCompatActivity {
                 intent.putExtras(B);
                 startActivity(intent);
             }
+        });
 
+        // Enable Search Filter for search logic
+        inputSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                SchoolsActivity.this.adapter.getFilter().filter(s);
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                SchoolsActivity.this.adapter.getFilter().filter(s);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) { }
         });
     }
 

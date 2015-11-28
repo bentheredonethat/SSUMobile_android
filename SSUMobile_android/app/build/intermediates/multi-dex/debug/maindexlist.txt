@@ -106,6 +106,7 @@ com/app/ssumobile/ssumobile_android/activity/calendarSingleEvent.class
 org/hamcrest/core/Is.class
 android/support/v4/view/ViewCompat$ViewCompatImpl.class
 org/parceler/guava/hash/Funnels.class
+com/app/ssumobile/ssumobile_android/activity/DepartmentsActivity$8.class
 org/parceler/transfuse/annotations/BroadcastReceiver.class
 com/app/ssumobile/ssumobile_android/activity/NewsActivity.class
 com/app/ssumobile/ssumobile_android/activity/SchoolsActivity$5.class
@@ -233,6 +234,7 @@ org/parceler/transfuse/analysis/Analyzer.class
 com/app/ssumobile/ssumobile_android/models/calendarEventModel.class
 org/parceler/guava/collect/UnmodifiableIterator.class
 android/support/v4/view/ViewCompatMarshmallow.class
+com/app/ssumobile/ssumobile_android/activity/BuildingsActivity$6.class
 com/koushikdutta/async/http/server/UnknownRequestBody.class
 android/support/v4/media/VolumeProviderCompatApi21.class
 org/parceler/guava/annotations/VisibleForTesting.class
@@ -596,6 +598,7 @@ android/support/v4/view/ViewCompatICSMr1.class
 org/parceler/transfuse/bootstrap/BootstrapModule.class
 -keep class com.app.ssumobile.ssumobile_android.activity.SchoolsActivity { <init>(); }
 org/hamcrest/core/IsAnything.class
+com/app/ssumobile/ssumobile_android/providers/JSONtoModelProvider.class
 org/parceler/apache/commons/beanutils/converters/DoubleArrayConverter.class
 org/parceler/guava/eventbus/AllowConcurrentEvents.class
 org/parceler/transfuse/annotations/RegisterListener.class
@@ -631,6 +634,7 @@ org/junit/experimental/theories/suppliers/TestedOn.class
 org/parceler/transfuse/annotations/UsesPermission.class
 org/parceler/transfuse/adapter/element/ElementConverterFactory.class
     *;
+com/app/ssumobile/ssumobile_android/activity/SchoolsActivity$6.class
 org/parceler/guava/util/concurrent/Futures$ImmediateSuccessfulCheckedFuture.class
 android/support/v7/appcompat/R$attr.class
 com/app/ssumobile/ssumobile_android/activity/DepartmentsActivity$1.class
@@ -694,6 +698,7 @@ org/parceler/transfuse/gen/invocationBuilder/PrivateInvocationBuilder.class
 org/parceler/transfuse/gen/variableBuilder/ScopeReferenceInjectionNodeBuilder.class
 org/parceler/transfuse/gen/invocationBuilder/PublicInvocationBuilder.class
 com/app/ssumobile/ssumobile_android/activity/SchoolsActivity$1.class
+com/app/ssumobile/ssumobile_android/activity/DepartmentsActivity$7.class
 org/parceler/transfuse/annotations/BindProvider.class
 org/junit/internal/runners/MethodRoadie.class
 org/parceler/guava/io/CharSource.class
@@ -861,6 +866,7 @@ org/parceler/guava/reflect/Types$ClassOwnership$1.class
 android/support/v4/app/FragmentManagerImpl$2.class
 org/parceler/transfuse/annotations/OnResume.class
 android/support/v4/view/ViewCompat$KitKatViewCompatImpl.class
+com/app/ssumobile/ssumobile_android/activity/FacultyStaffActivity$7.class
 org/parceler/transfuse/gen/variableBuilder/ProviderInjectionNodeBuilderFactory.class
 android/support/annotation/IntRange.class
 org/junit/runner/manipulation/Filter.class

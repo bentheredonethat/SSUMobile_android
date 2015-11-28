@@ -54,19 +54,23 @@
         </activity>
         <activity
             android:name="com.app.ssumobile.ssumobile_android.activity.FacultyStaffActivity"
-            android:label="@string/Faculty_Staff_Directory" >
+            android:label="@string/Faculty_Staff_Directory"
+            android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
             android:name="com.app.ssumobile.ssumobile_android.activity.DepartmentsActivity"
-            android:label="@string/Departments_Directory" >
+            android:label="@string/Departments_Directory"
+            android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
             android:name="com.app.ssumobile.ssumobile_android.activity.SchoolsActivity"
-            android:label="@string/Schools_Directory" >
+            android:label="@string/Schools_Directory"
+            android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
             android:name="com.app.ssumobile.ssumobile_android.activity.BuildingsActivity"
-            android:label="@string/Buildings_Directory" >
+            android:label="@string/Buildings_Directory"
+            android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
             android:name="com.app.ssumobile.ssumobile_android.activity.FacStaffModelActivity"
