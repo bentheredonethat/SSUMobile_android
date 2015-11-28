@@ -64,7 +64,7 @@ public class FacultyStaffActivity extends AppCompatActivity {
         inputSearch.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                FacultyStaffActivity.this.adapter.getFilter().filter(s.toString());
+                FacultyStaffActivity.this.adapter.getFilter().filter(s);
             }
 
             @Override
