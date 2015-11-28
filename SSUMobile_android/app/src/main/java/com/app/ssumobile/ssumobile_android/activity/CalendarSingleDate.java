@@ -12,13 +12,21 @@ import android.widget.TextView;
 import com.app.ssumobile.ssumobile_android.R;
 import com.app.ssumobile.ssumobile_android.adapters.calendarCardAdapter;
 import com.app.ssumobile.ssumobile_android.models.calendarEventModel;
+import com.app.ssumobile.ssumobile_android.models.newsStoryModel;
 import com.app.ssumobile.ssumobile_android.service.CalendarService;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.lang.reflect.Type;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.security.cert.X509Certificate;
@@ -28,6 +36,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -53,8 +62,8 @@ public class CalendarSingleDate extends AppCompatActivity {
     RestAdapter restAdapter;
     CalendarService calendarService;
 
-    //final String url = "https://moonlight.cs.sonoma.edu/ssumobile/1_0/calendar.py";
-    final String url = "http://25livepub.collegenet.com/s.aspx?calendar=ssucalendar-all-events&widget=main&date=";
+    final String url = "https://moonlight.cs.sonoma.edu/ssumobile/1_0/calendar.py";
+    //final String url = "http://25livepub.collegenet.com/s.aspx?calendar=ssucalendar-all-events&widget=main&date=";
 
 
     String body;
@@ -130,7 +139,7 @@ public class CalendarSingleDate extends AppCompatActivity {
         Thread runner = new Thread(new Runnable(){
             public void run()  {
                 try {
-                    sendGet(url + Year + Month + Day); // get selected date's info
+                    sendGet(url); // get selected date's info
                    // sendGet("http://www.cs.sonoma.edu/~levinsky/mini_events.json");
                 } catch (Throwable t) {
                     System.out.println(t.getCause());
@@ -154,11 +163,10 @@ public class CalendarSingleDate extends AppCompatActivity {
 
         URL obj = new URL(url);
        // URL obj = new URL("http://www.cs.sonoma.edu/~levinsky/mini_events.json");
-        HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+        HttpsURLConnection con = (HttpsURLConnection) obj.openConnection();
         con.setRequestMethod("GET");  // optional default is GET
         con.setRequestProperty("User-Agent", USER_AGENT); //add request header
-
-
+        con.setHostnameVerifier(org.apache.http.conn.ssl.SSLSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);
         BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
         String inputLine;
         StringBuffer response = new StringBuffer();
@@ -172,100 +180,17 @@ public class CalendarSingleDate extends AppCompatActivity {
 
     // parse out events from body
     private void parseOutEvents() throws InterruptedException {
-        String regexForOneEvent = "<tr class=\\\\\\\"twSimpleTableEventRow0 ebg0\\\\\\\">(.*?)<\\/tr>";
 
-        final Matcher matcher = Pattern
-                .compile(regexForOneEvent, Pattern.DOTALL)
-                .matcher(body);
-        while (matcher.find()){
-            // parse out event from html text, then add to group!
-            // IN PARALLEL!
+        Gson gson = new Gson();
+        JsonElement jelement = new JsonParser().parse(body);
+        JsonObject jsonObject = jelement.getAsJsonObject();
+        JsonElement jsonarray = jsonObject.get("Event");
 
-            Thread runner = new Thread(new Runnable(){
-                public void run()  {
-                    events.add(parseHTMLTableRow(matcher.group()));
-                }
-            });
-            runner.start();
-            runner.join();
-        }
-        Collections.sort(events, new Comparator<calendarEventModel>() {
-            @Override
-            public int compare(calendarEventModel lhs, calendarEventModel rhs) {
-                return String.valueOf(lhs.getStartsOn()).compareTo(rhs.getStartsOn());
-            }
-        });
+        Type listType = new TypeToken<List<calendarEventModel>>(){}.getType();
+        List<calendarEventModel> array = (List<calendarEventModel>) gson.fromJson(jsonarray.toString(), listType);
+        events.addAll(array);
+
         mAdapter.notifyDataSetChanged();
-    }
-
-
-    // get attributes of event string into an event
-    private calendarEventModel parseHTMLTableRow(String s){
-        calendarEventModel currentEvent = new calendarEventModel();
-
-        String startdateregex = "StartDate(.*?)<", locationregex = "twLocation(.*?)<",
-                titleregex = "aria-level=\\\\\"6\\\\\">(.*?)<", eventidregex = "eventid=(.*?);",
-                timeregex = "level=\\\\\\\"5\\\\\\\"\\>(.*?)\\<\\/span\\>";
-
-        String startDateResult = "", locationResult = "", titleResult = "", eventIDResult = "", timeResult = "";
-
-        // find start date
-        Matcher findMe = Pattern.compile(startdateregex, Pattern.DOTALL).matcher(s);
-        while (findMe.find()){
-            startDateResult = findMe.group();
-            startDateResult = startDateResult.substring(12);
-            startDateResult = startDateResult.substring(0, startDateResult.length()-1);
-        }
-
-        // find location
-        findMe = Pattern.compile(locationregex, Pattern.DOTALL).matcher(s);
-        while (findMe.find()){
-            locationResult = findMe.group();
-            locationResult = locationResult.substring(13);
-            locationResult = locationResult.substring(0, locationResult.length()-1);
-        }
-        // find title
-        findMe = Pattern.compile(titleregex, Pattern.DOTALL).matcher(s);
-        while (findMe.find()){
-            titleResult = findMe.group();
-            titleResult = titleResult.substring(17);
-            titleResult = titleResult.substring(0,titleResult.length()-1);
-            titleResult = titleResult.replace("&#39;", "'");
-        }
-        // find event id
-        findMe = Pattern.compile(eventidregex, Pattern.DOTALL).matcher(s);
-        while (findMe.find()){
-            eventIDResult = findMe.group();
-            eventIDResult = eventIDResult.substring(8, eventIDResult.length()-5);}
-
-        // find time
-        findMe = Pattern.compile(timeregex, Pattern.DOTALL).matcher(s);
-        while (findMe.find()) {
-            timeResult = findMe.group();
-            timeResult = timeResult.substring(12,timeResult.length()-7);
-
-        }
-        currentEvent.setLocation(locationResult);
-        currentEvent.setTitle(titleResult);
-        currentEvent.setStartsOn(startDateResult);
-        currentEvent.setCreated(timeResult);
-        return currentEvent;
-    }
-
-
-    // get attributes of event string into an event
-    private calendarEventModel convertJSONtoEvent(JSONObject s) throws org.json.JSONException{
-        calendarEventModel currentEvent = new calendarEventModel();
-
-        currentEvent.setId(s.getString("Id"));
-        currentEvent.setTitle(s.getString("Title"));
-        currentEvent.setCreated(s.getString("Created"));
-        currentEvent.setDeleted(s.getString("Deleted"));
-        currentEvent.setStartsOn(s.getString("StartsOn"));
-        currentEvent.setEndsOn(s.getString("EndsOn"));
-        currentEvent.setLocation(s.getString("Location"));
-
-        return currentEvent;
     }
 
 }
