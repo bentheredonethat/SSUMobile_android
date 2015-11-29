@@ -151,7 +151,6 @@ android/support/v4/view/ViewCompat$ICSViewCompatImpl.class
 com/koushikdutta/async/http/server/UnknownRequestBody.class
 org/parceler/transfuse/analysis/astAnalyzer/ScopeAnalysis.class
 com/app/ssumobile/ssumobile_android/models/SchoolModel.class
-com/google/gson/JsonObject.class
 org/parceler/transfuse/annotations/OnPause.class
 org/parceler/guava/collect/ContiguousSet.class
 org/apache/http/conn/scheme/LayeredSocketFactoryAdaptor.class
@@ -167,8 +166,8 @@ com/google/gson/annotations/JsonAdapter.class
 com/app/ssumobile/ssumobile_android/activity/NewsActivity.class
 android/support/v4/widget/MaterialProgressDrawable$ProgressDrawableSize.class
 org/parceler/guava/util/concurrent/AbstractExecutionThreadService.class
-org/parceler/guava/reflect/Types.class
 org/parceler/transfuse/bootstrap/BootstrapModule.class
+org/parceler/guava/reflect/Types.class
 org/parceler/apache/commons/beanutils/converters/CharacterArrayConverter.class
 com/app/ssumobile/ssumobile_android/activity/FacultyStaffActivity.class
 android/support/v4/app/ActivityCompatHoneycomb.class
@@ -274,7 +273,6 @@ com/app/ssumobile/ssumobile_android/service/CalendarService.class
 com/app/ssumobile/ssumobile_android/activity/DepartmentModelActivity$2.class
 org/parceler/transfuse/annotations/OnConfigurationChanged.class
 org/parceler/transfuse/gen/UniqueVariableNamer.class
-com/google/gson/JsonElement.class
 org/parceler/ParcelConstructor.class
 org/parceler/guava/base/Optional.class
 android/support/annotation/DrawableRes.class
@@ -782,14 +780,13 @@ org/parceler/ParcelClasses.class
 org/parceler/transfuse/listeners/CallThrough.class
 -keep class com.app.ssumobile.ssumobile_android.activity.DepartmentModelActivity { <init>(); }
 android/support/v4/media/MediaMetadataCompat$Builder.class
-com/app/ssumobile/ssumobile_android/activity/CalendarSingleDate$2.class
 org/parceler/guava/collect/Constraint.class
 org/parceler/guava/annotations/VisibleForTesting.class
 android/support/v7/app/ActionBarActivity.class
     <init>();
 org/apache/commons/codec/language/Caverphone.class
-android/support/annotation/AnimatorRes.class
 org/parceler/transfuse/adapter/ASTFactory.class
+android/support/annotation/AnimatorRes.class
 org/parceler/transfuse/adapter/classes/ASTClassType.class
 org/parceler/guava/base/Function.class
 android/support/v7/widget/LinearLayoutCompat$DividerMode.class
@@ -808,7 +805,6 @@ android/support/v4/app/TaskStackBuilder.class
 org/parceler/transfuse/annotations/ImplementedBy.class
 org/parceler/transfuse/annotations/SystemService.class
 org/parceler/transfuse/gen/InjectionBuilderContext.class
-com/google/gson/JsonParser.class
 android/support/v4/media/MediaBrowserCompat$ItemCallback.class
 org/parceler/transfuse/gen/variableBuilder/VariableASTImplementationInjectionNodeBuilder.class
 org/parceler/transfuse/annotations/NonConfigurationInstance.class
@@ -832,6 +828,7 @@ org/parceler/transfuse/bootstrap/ExistingVariableInjectionBuilder.class
 android/support/v4/view/WindowInsetsCompat.class
 org/parceler/transfuse/scope/ApplicationScope.class
 android/support/v4/view/ViewCompat$JbMr1ViewCompatImpl.class
+com/app/ssumobile/ssumobile_android/models/calendarEventModel.class
 org/parceler/transfuse/analysis/module/BindProviderProcessor.class
 com/app/ssumobile/ssumobile_android/activity/DepartmentsActivity$6.class
 android/support/v4/media/MediaMetadataCompatApi21.class

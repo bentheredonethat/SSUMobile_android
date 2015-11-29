@@ -4,6 +4,8 @@ package com.app.ssumobile.ssumobile_android.models;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.Comparator;
+
 /**
  * Created by ben on 10/26/15.
  */
@@ -128,4 +130,11 @@ public class calendarEventModel implements Parcelable{
             return new calendarEventModel[size];
         }
     };
+
+    public static Comparator<calendarEventModel> COMPARE_BY_START = new Comparator<calendarEventModel>() {
+        public int compare(calendarEventModel one, calendarEventModel other) {
+            return one.StartsOn.compareTo(other.StartsOn);
+        }
+    };
+
 }

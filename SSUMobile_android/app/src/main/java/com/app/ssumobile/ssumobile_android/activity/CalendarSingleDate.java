@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.app.ssumobile.ssumobile_android.R;
 import com.app.ssumobile.ssumobile_android.adapters.calendarCardAdapter;
@@ -63,7 +64,7 @@ public class CalendarSingleDate extends AppCompatActivity {
     CalendarService calendarService;
 
     final String url = "https://moonlight.cs.sonoma.edu/ssumobile/1_0/calendar.py";
-    //final String url = "http://25livepub.collegenet.com/s.aspx?calendar=ssucalendar-all-events&widget=main&date=";
+
 
 
     String body;
@@ -73,6 +74,7 @@ public class CalendarSingleDate extends AppCompatActivity {
     private RecyclerView.LayoutManager mLayoutManager;
 
     String Year, Month, Day, DateString = null;
+    String currentdate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,12 +99,17 @@ public class CalendarSingleDate extends AppCompatActivity {
 
         try {
             date = new SimpleDateFormat(format).parse(dateStr);
-            Integer month = date.getMonth();
+            Integer month = date.getMonth() + 1;
 
             Year = dateStr.substring(24);
             Month = month.toString();
             Day = dateStr.substring(8, 10);
             DateString = Year + Month + Day;
+
+            currentdate = new StringBuilder()
+                    .append(Year).append("-").append(Month).append("-").append(Day)
+                    .toString();
+
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -149,7 +156,6 @@ public class CalendarSingleDate extends AppCompatActivity {
         runner.start();
         try {
             runner.join();
-            mAdapter.notifyDataSetChanged(); // update cards
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -178,19 +184,74 @@ public class CalendarSingleDate extends AppCompatActivity {
         parseOutEvents();
     }
 
+
+
+
     // parse out events from body
     private void parseOutEvents() throws InterruptedException {
 
-        Gson gson = new Gson();
-        JsonElement jelement = new JsonParser().parse(body);
-        JsonObject jsonObject = jelement.getAsJsonObject();
-        JsonElement jsonarray = jsonObject.get("Event");
 
-        Type listType = new TypeToken<List<calendarEventModel>>(){}.getType();
-        List<calendarEventModel> array = (List<calendarEventModel>) gson.fromJson(jsonarray.toString(), listType);
-        events.addAll(array);
+        String[] parsedBody = body.split("\\}\\, \\{");
+        for (int i = 0; i < parsedBody.length; i++){
 
-        mAdapter.notifyDataSetChanged();
+            if (parsedBody[i].contains(currentdate)){
+                events.add(stringToEvent(parsedBody[i]));
+            }
+
+        }
+
+
+        Collections.sort(events, calendarEventModel.COMPARE_BY_START);
+
+        mAdapter.notifyDataSetChanged(); // update cards for user
+
     }
+
+
+
+
+
+    static final String REstartson = "StartsOn\\\"\\:\\s\\\"(.*?)\\\"";
+    static final String REdescription = "Description\\\"\\:\\s\\\"(.*?)\\\"";
+    static final String REtitle = "Title\\\"\\:\\s\\\"(.*?)\\\"";
+    static final String REendson = "EndsOn\\\"\\:\\s\\\"(.*?)\\\"";
+    static final String RElocation = "Location\\\"\\:\\s\\\"(.*?)\\\"";
+
+    private calendarEventModel stringToEvent(String text){
+        calendarEventModel c = new calendarEventModel();
+
+        Matcher m;
+
+        String insertMe;
+
+        m = Pattern.compile(REstartson).matcher(text); // startson
+        if (m.find()){
+            insertMe = m.group(1);
+            c.setStartsOn(insertMe);
+        }
+        m = Pattern.compile(REdescription).matcher(text); // description
+        if (m.find()) {
+            insertMe = m.group(1);
+            c.setDescription(insertMe);
+        }
+        m = Pattern.compile(REtitle).matcher(text); // title
+        if (m.find()) {
+            insertMe = m.group(1);
+            c.setTitle(insertMe);
+        }
+        m = Pattern.compile(RElocation).matcher(text); // location
+        if (m.find()) {
+            insertMe = m.group(1);
+            c.setLocation(insertMe);
+        }
+        m = Pattern.compile(REendson).matcher(text); // endson
+        if (m.find()) {
+            insertMe = m.group(1);
+            c.setEndsOn(insertMe);
+        }
+
+        return c;
+    }
+
 
 }
