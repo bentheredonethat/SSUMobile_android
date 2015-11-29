@@ -1,6 +1,7 @@
 package com.app.ssumobile.ssumobile_android.activity;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,7 +26,17 @@ public class newsSingleStoryActivity extends AppCompatActivity {
 
 
         content = (WebView) findViewById(R.id.singlenewscontent);
-        content.loadData(getIntent().getStringExtra("Content"), "text/html", null);
+
+        String htmlData= "<font color='white'>" +
+                "<h2>" +
+                getIntent().getStringExtra("Title") +
+                "</h2> <br>" +
+                getIntent().getStringExtra("Content") +
+                "</font>";
+
+
+        content.loadData(htmlData, "text/html", null);
+        content.setBackgroundColor(Color.parseColor("#001339"));
 
 
     }
