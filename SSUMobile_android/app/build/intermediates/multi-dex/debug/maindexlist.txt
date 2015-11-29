@@ -176,6 +176,7 @@ android/support/v7/app/ActionBar$OnNavigationListener.class
 org/parceler/guava/io/CharSource.class
 android/support/v4/media/session/PlaybackStateCompat$Builder.class
 org/parceler/guava/collect/TreeBasedTable$TreeRow.class
+com/app/ssumobile/ssumobile_android/activity/DepartmentsActivity$7.class
 org/parceler/transfuse/annotations/Application.class
 -keep class com.app.ssumobile.ssumobile_android.activity.FacStaffModelActivity { <init>(); }
 com/app/ssumobile/ssumobile_android/activity/SchoolsActivity$1.class
@@ -213,6 +214,7 @@ retrofit/http/EncodedPath.class
 org/apache/http/annotation/NotThreadSafe.class
 org/apache/http/entity/FileEntityHC4.class
 android/support/v4/view/accessibility/AccessibilityNodeProviderCompat.class
+com/app/ssumobile/ssumobile_android/activity/DepartmentsActivity$8.class
 android/support/v4/content/ContextCompat.class
 org/parceler/guava/collect/ImmutableListMultimap.class
 android/support/v4/app/FragmentManagerState.class
@@ -262,6 +264,7 @@ org/parceler/transfuse/adapter/classes/ASTClassConstructor.class
 android/support/v7/app/AppCompatCallback.class
 android/support/v4/media/RatingCompat$StarStyle.class
 org/parceler/guava/collect/ImmutableList.class
+com/app/ssumobile/ssumobile_android/models/newsStoryModel.class
 org/parceler/guava/hash/AbstractCompositeHashFunction$1.class
 org/parceler/transfuse/gen/variableDecorator/ExpressionDecoratorFactory.class
 android/support/v4/app/BackStackRecord$TransitionState.class
@@ -278,7 +281,6 @@ org/parceler/guava/base/Optional.class
 android/support/annotation/DrawableRes.class
 android/support/v4/app/BackStackState.class
 org/parceler/guava/reflect/TypeToken$TypeCollector.class
-com/koushikdutta/ion/builder/LoadImageViewFutureBuilder.class
 android/support/v4/app/NotificationCompat$Builder.class
 org/apache/http/conn/ssl/AbstractVerifierHC4.class
 android/support/v4/media/session/PlaybackStateCompat$CustomAction.class
@@ -354,7 +356,6 @@ android/support/annotation/InterpolatorRes.class
 org/parceler/guava/collect/TreeMultiset$AvlNode.class
 com/google/gson/Gson.class
 org/parceler/transfuse/annotations/OnPostCreate.class
-com/koushikdutta/ion/Ion.class
 android/support/v4/widget/MaterialProgressDrawable$Ring.class
 rx/annotations/Beta.class
 org/parceler/guava/reflect/Types$ClassOwnership$2.class
@@ -452,6 +453,7 @@ android/support/v4/media/session/MediaSessionCompat$Token.class
 org/parceler/transfuse/gen/variableBuilder/FactoryVariableBuilder.class
 org/parceler/ParcelConverter.class
 org/parceler/transfuse/gen/variableBuilder/ProvidesInjectionNodeBuilder.class
+com/app/ssumobile/ssumobile_android/activity/BuildingsActivity$6.class
 com/squareup/okhttp/ConnectionPool.class
 org/parceler/transfuse/listeners/ActivityOnKeyUpListener.class
 android/support/v4/view/ViewCompatGingerbread.class
@@ -559,7 +561,6 @@ android/support/v4/media/session/MediaSessionCompat$QueueItem.class
 -keep class com.app.ssumobile.ssumobile_android.activity.StartScreenActivity { <init>(); }
 com/google/gson/annotations/Expose.class
 org/parceler/guava/collect/Iterables.class
-com/koushikdutta/ion/builder/Builders$IV$F.class
 org/parceler/transfuse/util/Generated.class
 android/support/v4/view/GravityCompat.class
 org/parceler/transfuse/gen/ClassNamer.class
@@ -595,7 +596,6 @@ org/parceler/guava/base/Joiner.class
 org/parceler/guava/io/ByteSource.class
 com/app/ssumobile/ssumobile_android/activity/FacultyStaffActivity$3.class
 android/support/v7/app/ActionBarDrawerToggle$DelegateProvider.class
-com/koushikdutta/ion/builder/Builders.class
 android/support/v7/widget/LinearLayoutCompat.class
 org/parceler/transfuse/bootstrap/Bootstrap.class
 org/parceler/guava/eventbus/Subscribe.class
@@ -694,6 +694,7 @@ org/parceler/transfuse/listeners/FragmentMenuComponent.class
 org/parceler/Transient.class
 android/support/annotation/AnyRes.class
 android/support/annotation/DimenRes.class
+com/app/ssumobile/ssumobile_android/activity/SchoolsActivity$6.class
 org/apache/http/conn/scheme/SchemeSocketFactory.class
 android/support/annotation/CallSuper.class
 org/apache/http/client/methods/HttpRequestWrapper.class
@@ -723,7 +724,6 @@ org/parceler/transfuse/listeners/ActivityOnKeyLongPressListener.class
 org/parceler/transfuse/annotations/OnActivityCreated.class
 android/support/v4/view/ViewCompatKitKat.class
 org/parceler/guava/collect/DenseImmutableTable$ImmutableArrayMap.class
-com/koushikdutta/ion/builder/BitmapBuilder.class
 android/support/v4/view/ViewCompat$GBViewCompatImpl.class
 org/parceler/transfuse/analysis/module/InstallProcessor.class
 org/parceler/transfuse/annotations/LaunchMode.class
@@ -761,6 +761,7 @@ org/parceler/guava/collect/TreeRangeSet.class
 org/parceler/transfuse/adapter/ASTParameter.class
 org/parceler/transfuse/annotations/OnSaveInstanceState.class
 org/parceler/transfuse/gen/InjectionBuilderContextFactory.class
+com/app/ssumobile/ssumobile_android/providers/JSONtoModelProvider.class
 android/support/v4/media/VolumeProviderCompat.class
 org/parceler/transfuse/gen/ExceptionWrapper.class
 org/parceler/internal/ParcelsGenerator.class
@@ -794,7 +795,6 @@ android/support/v4/widget/SwipeRefreshLayout.class
 org/parceler/transfuse/annotations/OnActivityResult.class
 org/parceler/apache/commons/beanutils/converters/DoubleArrayConverter.class
 com/app/ssumobile/ssumobile_android/activity/CalendarActivity$1.class
-com/koushikdutta/ion/builder/Builders$IV.class
 org/parceler/transfuse/adapter/element/ReloadableASTElementFactory.class
 org/parceler/ParcelerRuntimeException.class
 android/support/v4/view/ViewPropertyAnimatorCompat.class
@@ -815,6 +815,7 @@ org/parceler/transfuse/annotations/OnStop.class
 org/parceler/apache/commons/beanutils/converters/IntegerArrayConverter.class
 org/parceler/guava/io/FileBackedOutputStream.class
 android/support/v4/media/session/MediaSessionCompat$OnActiveChangeListener.class
+com/app/ssumobile/ssumobile_android/activity/FacultyStaffActivity$7.class
 org/apache/http/entity/AbstractHttpEntityHC4.class
 android/support/v7/internal/widget/ViewUtils.class
 org/parceler/transfuse/gen/variableDecorator/GeneratedProviderInjectionNodeBuilder.class
@@ -850,7 +851,6 @@ org/apache/http/impl/io/DefaultHttpResponseParser.class
 android/support/v7/app/ActionBarDrawerToggle$Delegate.class
 org/parceler/guava/reflect/Types$ClassOwnership.class
 org/parceler/transfuse/gen/proxy/VirtualProxyGenerator$VirtualProxyGeneratorCache.class
-com/koushikdutta/ion/builder/ImageViewBuilder.class
 org/parceler/transfuse/adapter/classes/ASTClassField.class
 android/support/annotation/VisibleForTesting.class
 android/support/v7/graphics/drawable/DrawerArrowDrawable$ArrowDirection.class

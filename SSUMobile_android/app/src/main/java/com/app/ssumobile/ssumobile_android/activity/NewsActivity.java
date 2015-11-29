@@ -10,6 +10,7 @@ import android.view.MenuItem;
 
 import com.app.ssumobile.ssumobile_android.R;
 import com.app.ssumobile.ssumobile_android.adapters.newsCardAdapter;
+import com.app.ssumobile.ssumobile_android.models.calendarEventModel;
 import com.app.ssumobile.ssumobile_android.models.newsStoryModel;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -19,6 +20,7 @@ import java.io.InputStreamReader;
 import java.lang.reflect.Type;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import javax.net.ssl.HttpsURLConnection;
@@ -117,9 +119,11 @@ public class NewsActivity extends AppCompatActivity {
         Gson gson = new Gson();
         Type listType = new TypeToken<List<newsStoryModel>>(){}.getType();
         List<newsStoryModel> array = (List<newsStoryModel>) gson.fromJson(body, listType);
-        events.addAll(array);
-        mAdapter.notifyDataSetChanged(); // update cards
-
+        for (newsStoryModel current : array){
+            events.add(current);
+        }
+        Collections.sort(events, newsStoryModel.COMPARE_BY_PUBLISHED);
+        mAdapter.notifyDataSetChanged();
     }
 
 }

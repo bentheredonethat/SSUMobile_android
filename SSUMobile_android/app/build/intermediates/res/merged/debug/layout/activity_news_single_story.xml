@@ -16,24 +16,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:id="@+id/singlenewstitle"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:id="@+id/singlenewspublished"
-            android:layout_below="@+id/singlenewstitle"
-            />
-        <ImageView
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            android:src="@drawable/ssu_paw"
-            android:id="@+id/singlesnewsimage"
-            android:layout_below="@+id/singlenewspublished"
-            />
-        <TextView
+        <WebView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/singlenewscontent"
