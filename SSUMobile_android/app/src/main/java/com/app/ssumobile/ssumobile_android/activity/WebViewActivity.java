@@ -23,7 +23,7 @@ public class WebViewActivity extends Activity {
 
         // set url string from Bundle
         String url = (String) B.get("url");
-        
+
         // Check to make sure the url has "http" in it, or won't render page
         String isHttp = url.substring(0,3);
         if( !isHttp.equals("http") )

@@ -307,6 +307,7 @@
     <string name="office_button">"Office"</string>
     <string name="phone_button">"Phone"</string>
     <string name="resources_button">Resources</string>
+    <string name="search">"Search…"</string>
     <!-- From: file:/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
     <eat-comment/>
     <string name="status_bar_notification_info_overflow">999+</string>

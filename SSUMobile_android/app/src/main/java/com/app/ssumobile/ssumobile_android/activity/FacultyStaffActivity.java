@@ -3,14 +3,16 @@ package com.app.ssumobile.ssumobile_android.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import com.app.ssumobile.ssumobile_android.R;
-import com.app.ssumobile.ssumobile_android.models.BuildingModel;
 import com.app.ssumobile.ssumobile_android.models.DepartmentModel;
 import com.app.ssumobile.ssumobile_android.models.FacStaffModel;
 
@@ -27,6 +29,9 @@ public class FacultyStaffActivity extends AppCompatActivity {
     String body;
 
     ArrayAdapter adapter;
+    //JSONtoModelProvider jsonConverter = new JSONtoModelProvider();
+
+    EditText inputSearch;
 
     ArrayList<FacStaffModel> contactsList = new ArrayList<>();
     ArrayList<DepartmentModel> departmentsList = new ArrayList<>();
@@ -34,9 +39,9 @@ public class FacultyStaffActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.directory_view);
 
-        setContentView(R.layout.fac_staff_listview);
-
+        inputSearch = (EditText) findViewById(R.id.input_search);
 
         adapter = new ArrayAdapter<>(this, R.layout.activity_listview, contactsList);
         ListView listView = (ListView) findViewById(R.id.mobile_list);
@@ -55,6 +60,23 @@ public class FacultyStaffActivity extends AppCompatActivity {
             }
 
         });
+        // Enable Search Filter for search logic
+        inputSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                FacultyStaffActivity.this.adapter.getFilter().filter(s);
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                FacultyStaffActivity.this.adapter.getFilter().filter(s.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
     }
 
     @Override
@@ -63,7 +85,6 @@ public class FacultyStaffActivity extends AppCompatActivity {
         Thread runner = new Thread(new Runnable(){
             public void run()  {
                 try {
-                    //sendGet(url + Year + Month + Day); // get selected date's info
                     sendGet("http://www.cs.sonoma.edu/~wmitchel/master_dir.json");
                 } catch (Throwable t) {
                     System.out.println(t.getCause());
@@ -183,22 +204,42 @@ public class FacultyStaffActivity extends AppCompatActivity {
     // parse out events from body
     private void parseOutEvents() throws org.json.JSONException {
 
-
         JSONObject myjson = new JSONObject(body);
         JSONArray dept_array = myjson.getJSONArray("Department");
         JSONArray the_json_array = myjson.getJSONArray("Person");
+
         for (int i = 0; i < the_json_array.length(); i++) {
-            contactsList.add(convertPersonJSONtoContact(the_json_array.getJSONObject(i)));
-           adapter.notifyDataSetChanged(); // update cards
+            //JSONObject obj = the_json_array.getJSONObject(i);
+            contactsList.add( convertPersonJSONtoModel(the_json_array.getJSONObject(i)) );
+            adapter.notifyDataSetChanged(); // update cards
         }
         for(int i = 0; i < dept_array.length(); i++){
-            departmentsList.add( convertDeptJSONtoContact(dept_array.getJSONObject(i)));
+            //JSONObject obj = dept_array.getJSONObject(i);
+            departmentsList.add( convertDeptJSONtoModel(dept_array.getJSONObject(i)) );
         }
-
     }
 
     // get attributes of event string into an event
-    private DepartmentModel convertDeptJSONtoContact(JSONObject s) throws org.json.JSONException{
+    public FacStaffModel convertPersonJSONtoModel(JSONObject s) throws org.json.JSONException{
+        FacStaffModel currentContact = new FacStaffModel();
+
+        currentContact.office = s.getString("office");
+        currentContact.Created = s.getString("Created");
+        currentContact.site = s.getString("site");
+        currentContact.Modified = s.getString("Modified");
+        currentContact.phone = s.getString("phone");
+        currentContact.id = s.getString("id");
+        currentContact.building = s.getString("building");
+        currentContact.firstName = s.getString("firstName");
+        currentContact.title = s.getString("title");
+        currentContact.lastName = s.getString("lastName");
+        currentContact.department = s.getString("department");
+        currentContact.email = s.getString("email");
+
+        return currentContact;
+    }
+
+    public DepartmentModel convertDeptJSONtoModel(JSONObject s) throws org.json.JSONException{
         DepartmentModel currentContact = new DepartmentModel();
 
         currentContact.ac = s.getString("ac");
@@ -214,26 +255,6 @@ public class FacultyStaffActivity extends AppCompatActivity {
         currentContact.displayName = s.getString("displayName");
         currentContact.name = s.getString("name");
         currentContact.Deleted = s.getString("Deleted");
-
-        return currentContact;
-    }
-
-    // get attributes of event string into an event
-    private FacStaffModel convertPersonJSONtoContact(JSONObject s) throws org.json.JSONException{
-        FacStaffModel currentContact = new FacStaffModel();
-
-        currentContact.office = s.getString("office");
-        currentContact.Created = s.getString("Created");
-        currentContact.site = s.getString("site");
-        currentContact.Modified = s.getString("Modified");
-        currentContact.phone = s.getString("phone");
-        currentContact.id = s.getString("id");
-        currentContact.building = s.getString("building");
-        currentContact.firstName = s.getString("firstName");
-        currentContact.title = s.getString("title");
-        currentContact.lastName = s.getString("lastName");
-        currentContact.department = s.getString("department");
-        currentContact.email = s.getString("email");
 
         return currentContact;
     }

@@ -1,18 +1,21 @@
 package com.app.ssumobile.ssumobile_android.activity;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import com.app.ssumobile.ssumobile_android.R;
 import com.app.ssumobile.ssumobile_android.models.BuildingModel;
+import com.app.ssumobile.ssumobile_android.providers.JSONtoModelProvider;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -28,22 +31,26 @@ public class BuildingsActivity extends AppCompatActivity {
 
     ArrayAdapter adapter;
 
+    EditText inputSearch;
+
+    JSONtoModelProvider jsonConverter = new JSONtoModelProvider();
     ArrayList<BuildingModel> contactsList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.school_view);
+        setContentView(R.layout.directory_view);
 
+        inputSearch = (EditText) findViewById(R.id.input_search);
 
         adapter = new ArrayAdapter<>(this, R.layout.activity_listview, contactsList);
         ListView listView = (ListView) findViewById(R.id.mobile_list);
         listView.setAdapter(adapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(BuildingsActivity.this,BuildingModelActivity.class);
+                Intent intent = new Intent(BuildingsActivity.this, BuildingModelActivity.class);
                 //based on item add info to intent
                 BuildingModel building = contactsList.get(position);
                 Bundle B = new Bundle();
@@ -51,7 +58,23 @@ public class BuildingsActivity extends AppCompatActivity {
                 intent.putExtras(B);
                 startActivity(intent);
             }
+        });
+        // Enable Search Filter for search logic
+        inputSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                BuildingsActivity.this.adapter.getFilter().filter(s.toString());
+            }
 
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                BuildingsActivity.this.adapter.getFilter().filter(s.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
         });
     }
 
@@ -160,25 +183,12 @@ public class BuildingsActivity extends AppCompatActivity {
     // parse out events from body
     private void parseOutEvents() throws org.json.JSONException {
 
-
         JSONObject myjson = new JSONObject(body);
         JSONArray the_json_array = myjson.getJSONArray("Building");
         for (int i = 0; i < the_json_array.length(); i++) {
-            contactsList.add(convertJSONtoContact(the_json_array.getJSONObject(i)));
+            JSONObject obj = the_json_array.getJSONObject(i);
+            contactsList.add(jsonConverter.convertBuildJSONtoModel( obj ));
             adapter.notifyDataSetChanged(); // update cards
         }
-    }
-
-    // get attributes of event string into an event
-    private BuildingModel convertJSONtoContact(JSONObject s) throws org.json.JSONException{
-        BuildingModel currentContact = new BuildingModel();
-
-        currentContact.Created = s.getString("Created");
-        currentContact.Modified = s.getString("Modified");
-        currentContact.id = s.getString("id");
-        currentContact.name = s.getString("name");
-        currentContact.Deleted = s.getString("Deleted");
-
-        return currentContact;
     }
 }

@@ -1,14 +1,14 @@
--injars /home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/multi-dex/debug/allclasses.jar
--outjars /home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/multi-dex/debug/componentClasses.jar
+-injars 'C:\Users\Tephros\Desktop\Repositories\SSUMobile_android\SSUMobile_android\app\build\intermediates\multi-dex\debug\allclasses.jar'
+-outjars 'C:\Users\Tephros\Desktop\Repositories\SSUMobile_android\SSUMobile_android\app\build\intermediates\multi-dex\debug\componentClasses.jar'
 
--libraryjars /home/ben/Android/Sdk/build-tools/23.0.2/lib/shrinkedAndroid.jar
+-libraryjars 'C:\Users\Tephros\AppData\Local\Android\sdk\build-tools\23.0.2\lib\shrinkedAndroid.jar'
 
 -forceprocessing
 -dontoptimize
 -dontobfuscate
 -dontpreverify
 -dontwarn
--printconfiguration /home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/multi-dex/debug/components.flags
+-printconfiguration 'C:\Users\Tephros\Desktop\Repositories\SSUMobile_android\SSUMobile_android\app\build\intermediates\multi-dex\debug\components.flags'
 
 
 -keep class null {
