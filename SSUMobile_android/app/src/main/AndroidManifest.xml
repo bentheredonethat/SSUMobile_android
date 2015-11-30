@@ -88,7 +88,7 @@
         </activity>
         <activity
             android:name=".activity.resourcesActivity"
-            android:label="@string/title_activity_resources" >
+            android:label="Click One For More Information" >
         </activity>
     </application>
 

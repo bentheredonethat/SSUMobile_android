@@ -20,32 +20,37 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.net.ssl.HttpsURLConnection;
 
 public class resourcesActivity extends AppCompatActivity {
 
 
-    ArrayList<String> emergencycontacts = new ArrayList<>();
-    ArrayAdapter emergencycontactsadapter;
+    ArrayList<String> sectionsList = new ArrayList<>();
+    ArrayAdapter sectionsadapter;
 
-    ArrayList<String> campuscontacts = new ArrayList<>();
-    ArrayAdapter campuscontactsadapter;
-
-    ArrayList<String> CulinaryServices = new ArrayList<>();
-    ArrayAdapter CulinaryServicesadapter;
-
-    ArrayList<String> Transportation = new ArrayList<>();
-    ArrayAdapter Transportationadapter;
-
-    ArrayList<String> weburls = new ArrayList<>();
-    ArrayAdapter weburlsadapter;
-
-    ListView culinaryListView;
-    ListView emergencycontactslistView;
-    ListView campuscontactslistView;
-    ListView weburlsListView;
-    ListView transportationlistView;
+//
+//    ArrayList<String> emergencycontacts = new ArrayList<>();
+//    ArrayAdapter emergencycontactsadapter;
+//
+//    ArrayList<String> campuscontacts = new ArrayList<>();
+//    ArrayAdapter campuscontactsadapter;
+//
+//    ArrayList<String> CulinaryServices = new ArrayList<>();
+//    ArrayAdapter CulinaryServicesadapter;
+//
+//    ArrayList<String> Transportation = new ArrayList<>();
+//    ArrayAdapter Transportationadapter;
+//
+//    ArrayList<String> weburls = new ArrayList<>();
+//    ArrayAdapter weburlsadapter;
+//
+//    ListView culinaryListView;
+//    ListView emergencycontactslistView;
+//    ListView campuscontactslistView;
+//    ListView weburlsListView;
+//    ListView transportationlistView;
 
     String body;
 
@@ -54,14 +59,22 @@ public class resourcesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resources);
 
-        addHeaders();
+        ListView sectionsListView = (ListView) findViewById(R.id.sections);
+        sectionsadapter = new ArrayAdapter<>(this, R.layout.activity_listview, sectionsList);
+        sectionsListView.setAdapter(sectionsadapter);
+        sectionsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getApplicationContext(), "hiii", Toast.LENGTH_SHORT).show();
+            }
+        });
 
-
-        initEmergencyContacts();
-        initCampusContacts();
-        initCulinary();
-        initTransportation();
-        initWebURLS();
+//        addHeaders();
+//        initEmergencyContacts();
+//        initCampusContacts();
+//        initCulinary();
+//        initTransportation();
+//        initWebURLS();
 
         Thread runner = new Thread(new Runnable(){
             public void run()  {
@@ -104,74 +117,82 @@ public class resourcesActivity extends AppCompatActivity {
         net.minidev.json.parser.JSONParser parser = new JSONParser(JSONParser.ACCEPT_USELESS_COMMA);
         Object o = parser.parse(body);
         net.minidev.json.JSONObject jsonObject = (net.minidev.json.JSONObject)o;
-        net.minidev.json.JSONArray resources = (net.minidev.json.JSONArray) jsonObject.get("Resource");
+        net.minidev.json.JSONArray sections = (net.minidev.json.JSONArray) jsonObject.get("Section");
 
-        setEmergencycontactsadapter(resources);
-        setCampuscontactsadapter(resources);
-        setCulinaryServicesadapteradapter(resources);
-        setTransportationadapter(resources);
-        setWeburlsadapter(resources);
-    }
 
-    private void setEmergencycontactsadapter(net.minidev.json.JSONArray resources){
-        for (Object currentResource : resources){
-            net.minidev.json.JSONObject jsonResource = (net.minidev.json.JSONObject) currentResource;
 
-            if ((Long)jsonResource.get("section_id") == 1) {
-                String name = (String) jsonResource.get("name");
-                emergencycontacts.add(name);
-                emergencycontactsadapter.notifyDataSetChanged();
-            }
+
+        for (Object current : sections){
+            sectionsList.add((String)(( (net.minidev.json.JSONObject) current).get("name")));
         }
+        sectionsadapter.notifyDataSetChanged();
+
+//        setEmergencycontactsadapter(resources);
+//        setCampuscontactsadapter(resources);
+//        setCulinaryServicesadapteradapter(resources);
+//        setTransportationadapter(resources);
+//        setWeburlsadapter(resources);
     }
 
-    private void setCulinaryServicesadapteradapter(net.minidev.json.JSONArray resources){
-        for (Object currentResource : resources){
-            net.minidev.json.JSONObject jsonResource = (net.minidev.json.JSONObject) currentResource;
+//    private void setEmergencycontactsadapter(net.minidev.json.JSONArray resources){
+//        for (Object currentResource : resources){
+//            net.minidev.json.JSONObject jsonResource = (net.minidev.json.JSONObject) currentResource;
+//
+//            if ((Long)jsonResource.get("section_id") == 1) {
+//                String name = (String) jsonResource.get("name");
+//                emergencycontacts.add(name);
+//                emergencycontactsadapter.notifyDataSetChanged();
+//            }
+//        }
+//    }
 
-            if ((Long)jsonResource.get("section_id") == 3) {
-                String name = (String) jsonResource.get("name");
-                CulinaryServices.add(name);
-                CulinaryServicesadapter.notifyDataSetChanged();
-            }
-        }
-    }
+//    private void setCulinaryServicesadapteradapter(net.minidev.json.JSONArray resources){
+//        for (Object currentResource : resources){
+//            net.minidev.json.JSONObject jsonResource = (net.minidev.json.JSONObject) currentResource;
+//
+//            if ((Long)jsonResource.get("section_id") == 3) {
+//                String name = (String) jsonResource.get("name");
+//                CulinaryServices.add(name);
+//                CulinaryServicesadapter.notifyDataSetChanged();
+//            }
+//        }
+//    }
 
-    private void setCampuscontactsadapter(net.minidev.json.JSONArray resources){
-        for (Object currentResource : resources){
-            net.minidev.json.JSONObject jsonResource = (net.minidev.json.JSONObject) currentResource;
+//    private void setCampuscontactsadapter(net.minidev.json.JSONArray resources){
+//        for (Object currentResource : resources){
+//            net.minidev.json.JSONObject jsonResource = (net.minidev.json.JSONObject) currentResource;
+//
+//            if ((Long)jsonResource.get("section_id") == 2) {
+//                String name = (String) jsonResource.get("name");
+//                campuscontacts.add(name);
+//                campuscontactsadapter.notifyDataSetChanged();
+//            }
+//        }
+//    }
 
-            if ((Long)jsonResource.get("section_id") == 2) {
-                String name = (String) jsonResource.get("name");
-                campuscontacts.add(name);
-                campuscontactsadapter.notifyDataSetChanged();
-            }
-        }
-    }
+//    private void setTransportationadapter(net.minidev.json.JSONArray resources){
+//        for (Object currentResource : resources){
+//            net.minidev.json.JSONObject jsonResource = (net.minidev.json.JSONObject) currentResource;
+//
+//            if ((Long)jsonResource.get("section_id") == 4) {
+//                String name = (String) jsonResource.get("name");
+//                Transportation.add(name);
+//                Transportationadapter.notifyDataSetChanged();
+//            }
+//        }
+//    }
 
-    private void setTransportationadapter(net.minidev.json.JSONArray resources){
-        for (Object currentResource : resources){
-            net.minidev.json.JSONObject jsonResource = (net.minidev.json.JSONObject) currentResource;
-
-            if ((Long)jsonResource.get("section_id") == 4) {
-                String name = (String) jsonResource.get("name");
-                Transportation.add(name);
-                Transportationadapter.notifyDataSetChanged();
-            }
-        }
-    }
-
-    private void setWeburlsadapter(net.minidev.json.JSONArray resources){
-        for (Object currentResource : resources){
-            net.minidev.json.JSONObject jsonResource = (net.minidev.json.JSONObject) currentResource;
-
-            if ((Long)jsonResource.get("section_id") == 5) {
-                String name = (String) jsonResource.get("name");
-                weburls.add(name);
-                weburlsadapter.notifyDataSetChanged();
-            }
-        }
-    }
+//    private void setWeburlsadapter(net.minidev.json.JSONArray resources){
+//        for (Object currentResource : resources){
+//            net.minidev.json.JSONObject jsonResource = (net.minidev.json.JSONObject) currentResource;
+//
+//            if ((Long)jsonResource.get("section_id") == 5) {
+//                String name = (String) jsonResource.get("name");
+//                weburls.add(name);
+//                weburlsadapter.notifyDataSetChanged();
+//            }
+//        }
+//    }
 
 
     @Override
@@ -195,96 +216,96 @@ public class resourcesActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-
-    private void initEmergencyContacts(){
-        emergencycontactsadapter = new ArrayAdapter<>(this, R.layout.activity_listview, emergencycontacts);
-        emergencycontactslistView.setAdapter(emergencycontactsadapter);
-        emergencycontactslistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(), "hiii", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-
-    private void initCampusContacts(){
-        campuscontactsadapter = new ArrayAdapter<>(this, R.layout.activity_listview, campuscontacts);
-        campuscontactslistView.setAdapter(campuscontactsadapter);
-        campuscontactslistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(), "hiii", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-
-    private void initCulinary(){
-        CulinaryServicesadapter = new ArrayAdapter<>(this, R.layout.activity_listview, CulinaryServices);
-        culinaryListView.setAdapter(CulinaryServicesadapter);
-        culinaryListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(), "hiii", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-
-    private void initTransportation(){
-        Transportationadapter = new ArrayAdapter<>(this, R.layout.activity_listview, Transportation);
-        transportationlistView.setAdapter(Transportationadapter);
-        transportationlistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(), "hiii", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-
-    private void initWebURLS(){
-        weburlsadapter = new ArrayAdapter<>(this, R.layout.activity_listview, weburls);
-
-        weburlsListView.setAdapter(weburlsadapter);
-        weburlsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(), "hiii", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-
-    private void addHeaders(){
-
-        weburlsListView = (ListView) findViewById(R.id.WebURLs);
-        transportationlistView = (ListView) findViewById(R.id.Transportation);
-        culinaryListView = (ListView) findViewById(R.id.CulinaryServices);
-        emergencycontactslistView = (ListView) findViewById(R.id.EmergencyContacts);
-        campuscontactslistView = (ListView) findViewById(R.id.CampusContacts);
-
-        TextView textView = new TextView(this);
-        textView.setBackgroundColor(Color.WHITE);
-        textView.setAllCaps(true);
-        textView.setTextColor(Color.parseColor("#001339"));
-
-
-
-        textView.setText("Culinary Services");
-        culinaryListView.addHeaderView(textView);
-
-        textView.setText("Emergency Contacts");
-        emergencycontactslistView.addHeaderView(textView);
-
-        textView.setText("Campus Contacts");
-        campuscontactslistView.addHeaderView(textView);
-
-        textView.setText("Transportation");
-        transportationlistView.addHeaderView(textView);
-
-        textView.setText("Emergency Contacts");
-        weburlsListView.addHeaderView(textView);
-
-
-    }
-
+//
+//
+//    private void initEmergencyContacts(){
+//        emergencycontactsadapter = new ArrayAdapter<>(this, R.layout.activity_listview, emergencycontacts);
+//        emergencycontactslistView.setAdapter(emergencycontactsadapter);
+//        emergencycontactslistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                Toast.makeText(getApplicationContext(), "hiii", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//    }
+//
+//    private void initCampusContacts(){
+//        campuscontactsadapter = new ArrayAdapter<>(this, R.layout.activity_listview, campuscontacts);
+//        campuscontactslistView.setAdapter(campuscontactsadapter);
+//        campuscontactslistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                Toast.makeText(getApplicationContext(), "hiii", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//    }
+//
+//    private void initCulinary(){
+//        CulinaryServicesadapter = new ArrayAdapter<>(this, R.layout.activity_listview, CulinaryServices);
+//        culinaryListView.setAdapter(CulinaryServicesadapter);
+//        culinaryListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                Toast.makeText(getApplicationContext(), "hiii", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//    }
+//
+//    private void initTransportation(){
+//        Transportationadapter = new ArrayAdapter<>(this, R.layout.activity_listview, Transportation);
+//        transportationlistView.setAdapter(Transportationadapter);
+//        transportationlistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                Toast.makeText(getApplicationContext(), "hiii", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//    }
+//
+//    private void initWebURLS(){
+//        weburlsadapter = new ArrayAdapter<>(this, R.layout.activity_listview, weburls);
+//
+//        weburlsListView.setAdapter(weburlsadapter);
+//        weburlsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                Toast.makeText(getApplicationContext(), "hiii", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//    }
+//
+//    private void addHeaders(){
+//
+//        weburlsListView = (ListView) findViewById(R.id.WebURLs);
+//        transportationlistView = (ListView) findViewById(R.id.Transportation);
+//        culinaryListView = (ListView) findViewById(R.id.CulinaryServices);
+//        emergencycontactslistView = (ListView) findViewById(R.id.EmergencyContacts);
+//        campuscontactslistView = (ListView) findViewById(R.id.CampusContacts);
+//
+//        TextView textView = new TextView(this);
+//        textView.setBackgroundColor(Color.WHITE);
+//        textView.setAllCaps(true);
+//        textView.setTextColor(Color.parseColor("#001339"));
+//
+//
+//
+//        textView.setText("Culinary Services");
+//        culinaryListView.addHeaderView(textView);
+//
+//        textView.setText("Emergency Contacts");
+//        emergencycontactslistView.addHeaderView(textView);
+//
+//        textView.setText("Campus Contacts");
+//        campuscontactslistView.addHeaderView(textView);
+//
+//        textView.setText("Transportation");
+//        transportationlistView.addHeaderView(textView);
+//
+//        textView.setText("Emergency Contacts");
+//        weburlsListView.addHeaderView(textView);
+//
+//
+//    }
+//
 
 }

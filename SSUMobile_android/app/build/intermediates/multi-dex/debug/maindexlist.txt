@@ -56,7 +56,6 @@ org/parceler/transfuse/annotations/OnDetach.class
 org/parceler/transfuse/annotations/RegisterListener.class
 org/parceler/apache/commons/beanutils/BeanMap.class
 org/parceler/transfuse/scope/ApplicationScope$ApplicationProvider.class
-com/app/ssumobile/ssumobile_android/activity/resourcesActivity$4.class
 android/support/v4/app/LoaderManager.class
 org/parceler/transfuse/annotations/OnLowMemory.class
 retrofit/http/Multipart.class
@@ -319,7 +318,6 @@ com/app/ssumobile/ssumobile_android/activity/SchoolsActivity$5.class
 org/parceler/transfuse/annotations/MetaDataSet.class
 org/parceler/guava/collect/ImmutableEntry.class
 android/support/v4/app/NavUtils.class
-com/app/ssumobile/ssumobile_android/activity/resourcesActivity$5.class
 android/support/v4/view/ViewCompatJellybeanMr2.class
 org/parceler/transfuse/listeners/ActivityOnTrackballEventListener.class
 org/parceler/transfuse/gen/proxy/VirtualProxyGenerator.class
@@ -369,7 +367,6 @@ org/parceler/transfuse/adapter/element/ElementConverterFactory.class
 com/app/ssumobile/ssumobile_android/activity/FacStaffModelActivity$7.class
 org/parceler/transfuse/adapter/classes/ASTClassAnnotation.class
 com/app/ssumobile/ssumobile_android/activity/SchoolsActivity.class
-com/app/ssumobile/ssumobile_android/activity/resourcesActivity$3.class
 org/parceler/transfuse/adapter/ASTType.class
 org/parceler/ParcelPropertyConverter.class
 org/parceler/transfuse/annotations/Permissions.class
@@ -495,7 +492,6 @@ org/parceler/transfuse/gen/variableBuilder/ProviderVariableBuilder.class
 org/parceler/guava/collect/ImmutableRangeMap.class
 android/support/v4/view/ViewCompat$MarshmallowViewCompatImpl.class
 -keep public class * extends android.app.backup.BackupAgent {
-com/app/ssumobile/ssumobile_android/activity/resourcesActivity$6.class
 org/parceler/transfuse/annotations/Permission.class
 android/support/v4/media/MediaBrowserCompat.class
 retrofit/http/EncodedQueryMap.class
@@ -776,8 +772,8 @@ org/parceler/guava/collect/TreeRangeSet.class
 org/parceler/transfuse/adapter/ASTParameter.class
 org/parceler/transfuse/annotations/OnSaveInstanceState.class
 org/parceler/transfuse/gen/InjectionBuilderContextFactory.class
-android/support/v4/media/VolumeProviderCompat.class
 com/app/ssumobile/ssumobile_android/providers/JSONtoModelProvider.class
+android/support/v4/media/VolumeProviderCompat.class
 org/parceler/transfuse/gen/ExceptionWrapper.class
 org/parceler/internal/ParcelsGenerator.class
 org/parceler/transfuse/gen/variableBuilder/ProvidesVariableBuilder.class
@@ -881,10 +877,10 @@ org/apache/http/impl/auth/DigestSchemeHC4.class
 org/parceler/transfuse/adapter/element/LazyElementParameterBuilder.class
 org/parceler/guava/io/BaseEncoding$StandardBaseEncoding.class
 android/support/v4/app/FragmentManagerImpl.class
+org/parceler/guava/primitives/UnsignedLong.class
 org/parceler/transfuse/gen/variableBuilder/ScopeReferenceInjectionNodeBuilder.class
 org/parceler/transfuse/scope/Scope.class
 android/support/v4/app/BackStackRecord.class
-org/parceler/guava/primitives/UnsignedLong.class
 android/support/v4/media/VolumeProviderCompat$ControlType.class
 org/parceler/transfuse/annotations/UsesFeature.class
 com/app/ssumobile/ssumobile_android/activity/FacStaffModelActivity$5.class

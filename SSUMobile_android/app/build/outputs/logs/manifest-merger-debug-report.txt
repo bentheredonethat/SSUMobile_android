@@ -176,7 +176,7 @@ ADDED from /home/ben/school/370/Repositories/App/SSUMobile_android/app/src/main/
 activity#com.app.ssumobile.ssumobile_android.activity.resourcesActivity
 ADDED from /home/ben/school/370/Repositories/App/SSUMobile_android/app/src/main/AndroidManifest.xml:89:9-92:20
 	android:label
-		ADDED from /home/ben/school/370/Repositories/App/SSUMobile_android/app/src/main/AndroidManifest.xml:91:13-61
+		ADDED from /home/ben/school/370/Repositories/App/SSUMobile_android/app/src/main/AndroidManifest.xml:91:13-59
 	android:name
 		ADDED from /home/ben/school/370/Repositories/App/SSUMobile_android/app/src/main/AndroidManifest.xml:90:13-55
 uses-sdk
