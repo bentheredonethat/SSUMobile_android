@@ -166,7 +166,6 @@ public class CalendarSingleDate extends AppCompatActivity {
     private void sendGet(String url) throws Exception {
 
         final String USER_AGENT = "Mozilla/5.0";
-
         URL obj = new URL(url);
        // URL obj = new URL("http://www.cs.sonoma.edu/~levinsky/mini_events.json");
         HttpsURLConnection con = (HttpsURLConnection) obj.openConnection();

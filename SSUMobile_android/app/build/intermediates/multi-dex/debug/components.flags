@@ -76,6 +76,10 @@
     <init>();
 }
 
+-keep class com.app.ssumobile.ssumobile_android.activity.resourcesActivity {
+    <init>();
+}
+
 -keep class android.support.v7.widget.TestActivity {
     <init>();
 }

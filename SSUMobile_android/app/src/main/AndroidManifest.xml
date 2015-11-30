@@ -2,12 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.app.ssumobile.ssumobile_android" >
 
-
     <uses-permission android:name="android.permission.READ_CALENDAR" />
     <uses-permission android:name="android.permission.WRITE_CALENDAR" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
     <uses-permission android:name="android.permission.SET_DEBUG_APP" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -16,11 +14,10 @@
 
     <application
         android:allowBackup="true"
-        android:icon= "@drawable/filtered_logo"
+        android:icon="@drawable/filtered_logo"
         android:label="@string/app_name"
         android:theme="@style/Theme.AppCompat.Light" >
-
-    <activity
+        <activity
             android:name=".activity.StartScreenActivity"
             android:label="@string/app_name" >
             <intent-filter>
@@ -41,7 +38,7 @@
             android:name=".activity.newsSingleStoryActivity"
             android:label="@string/app_name" >
         </activity>
-	    <activity
+        <activity
             android:name=".activity.CalendarSingleDate"
             android:label="@string/app_name" >
         </activity>
@@ -87,7 +84,11 @@
         </activity>
         <activity
             android:name=".activity.WebViewActivity"
-            android:label="@string/app_name">
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".activity.resourcesActivity"
+            android:label="@string/title_activity_resources" >
         </activity>
     </application>
 

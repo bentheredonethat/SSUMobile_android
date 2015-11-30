@@ -1,0 +1,60 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#001339"
+    tools:context="com.app.ssumobile.ssumobile_android.activity.resourcesActivity">
+
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/EmergencyContacts"
+        android:divider="@drawable/list_divider"
+        android:dividerHeight="3dp" >
+        >
+    </ListView>
+
+
+    <ListView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/CampusContacts"
+        android:layout_below="@+id/EmergencyContacts"
+        android:divider="@drawable/list_divider"
+        android:dividerHeight="4dp" >
+
+        >
+    </ListView>
+
+
+    <ListView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/CulinaryServices"
+        android:layout_below="@+id/CampusContacts"
+        >
+    </ListView>
+
+
+    <ListView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/Transportation"
+        android:layout_below="@+id/CulinaryServices"
+        >
+    </ListView>
+
+
+    <ListView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/WebURLs"
+        android:layout_below="@+id/Transportation"
+        >
+    </ListView>
+
+</RelativeLayout>

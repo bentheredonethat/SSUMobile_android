@@ -33,5 +33,6 @@
     <string name="department_button">"Department"</string>
     <string name="office_button">"Office"</string>
     <string name="mockName">"John Doe</string>
+    <string name="title_activity_resources">resourcesActivity</string>
 
 </resources>
