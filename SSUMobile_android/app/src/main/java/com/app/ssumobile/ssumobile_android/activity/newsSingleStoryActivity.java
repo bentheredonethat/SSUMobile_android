@@ -1,11 +1,13 @@
 package com.app.ssumobile.ssumobile_android.activity;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,35 +17,27 @@ import com.koushikdutta.ion.Ion;
 
 public class newsSingleStoryActivity extends AppCompatActivity {
 
-    private TextView title;
-    private TextView published;
-    private TextView content;
+    private WebView content;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_single_story);
 
-        title = (TextView) findViewById(R.id.singlenewstitle);
-        title.setText(getIntent().getStringExtra("Title"));
 
-        // check for image
-        String imageurl = getIntent().getStringExtra("ImageURL");
-        if (imageurl != ""){
-            // load image
+        content = (WebView) findViewById(R.id.singlenewscontent);
 
-            ImageView imageView = (ImageView) findViewById(R.id.singlesnewsimage);
-            Ion.with(imageView)
-                    .placeholder(R.drawable.ssu_paw)
-                    .error(R.drawable.ssu_paw)
-                    .load(imageurl);
-        }
+        String htmlData= "<font color='white'>" +
+                "<h2>" +
+                getIntent().getStringExtra("Title") +
+                "</h2> <br>" +
+                getIntent().getStringExtra("Content") +
+                "</font>";
 
-        published = (TextView) findViewById(R.id.singlenewspublished);
-        published.setText(getIntent().getStringExtra("Published"));
 
-        content = (TextView) findViewById(R.id.singlenewscontent);
-        content.setText(getIntent().getStringExtra("Content"));
+        content.loadData(htmlData, "text/html", null);
+        content.setBackgroundColor(Color.parseColor("#001339"));
+
 
     }
 

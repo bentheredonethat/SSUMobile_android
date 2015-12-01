@@ -62,11 +62,11 @@ public final class R {
 		public static final int weekday_gridview = 0x7f0b006b;
 	}
 	public static final class layout {
-		public static final int calendar_view = 0x7f030022;
-		public static final int date_grid_fragment = 0x7f030024;
-		public static final int normal_date_cell = 0x7f03002a;
-		public static final int square_date_cell = 0x7f030037;
-		public static final int weekday_textview = 0x7f030039;
+		public static final int calendar_view = 0x7f030024;
+		public static final int date_grid_fragment = 0x7f030026;
+		public static final int normal_date_cell = 0x7f03002c;
+		public static final int square_date_cell = 0x7f030039;
+		public static final int weekday_textview = 0x7f03003b;
 	}
 	public static final class string {
 		public static final int app_name = 0x7f05001b;

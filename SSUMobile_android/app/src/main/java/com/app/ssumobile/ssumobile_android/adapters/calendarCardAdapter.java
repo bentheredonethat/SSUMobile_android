@@ -59,6 +59,7 @@ public class calendarCardAdapter extends RecyclerView.Adapter<calendarCardAdapte
         }
 
         String text = new StringBuilder("Start Time: " + currentEvent.getStartsOn() + "\n")
+                .append("End Time: " + currentEvent.getEndsOn() + "\n")
                 .append(location + '\n')
                 .toString();
 

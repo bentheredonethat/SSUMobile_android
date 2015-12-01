@@ -29,6 +29,7 @@ public class StartScreenActivity extends AppCompatActivity {
         setCalendarButton();
         setNewsButton();
         setDirButton();
+        setResourcesButton();
     }
 
     @Override
@@ -116,5 +117,24 @@ public class StartScreenActivity extends AppCompatActivity {
         DirThread.start();
     }
 
+    public void setResourcesButton(){
+        Thread resourceThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                // Locate the button in activity_main.xml
+                DirButton = (Button) findViewById(R.id.resources_button);
+                // Capture button clicks
+                DirButton.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View arg0) {
 
+                        // Start DirActivity.class
+                        Intent myIntent = new Intent(StartScreenActivity.this,
+                                resourcesActivity.class);
+                        startActivity(myIntent);
+                    }
+                });
+            }
+        });
+        resourceThread.start();
+    }
 }

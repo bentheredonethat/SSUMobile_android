@@ -1903,6 +1903,7 @@ containing a value of this type.
         public static final int progress_horizontal=0x7f0b0006;
         public static final int radio=0x7f0b003b;
         public static final int recycler_view=0x7f0b0051;
+        public static final int resourceWebView=0x7f0b0063;
         public static final int resources_button=0x7f0b005f;
         public static final int screen=0x7f0b0014;
         public static final int scrollIndicatorDown=0x7f0b0035;
@@ -1918,6 +1919,7 @@ containing a value of this type.
         public static final int search_plate=0x7f0b0049;
         public static final int search_src_text=0x7f0b004a;
         public static final int search_voice_btn=0x7f0b004e;
+        public static final int sections=0x7f0b0064;
         public static final int select_dialog_listview=0x7f0b004f;
         public static final int shortcut=0x7f0b003a;
         public static final int showCustom=0x7f0b000f;
@@ -1928,10 +1930,8 @@ containing a value of this type.
         public static final int singleLocation=0x7f0b0057;
         public static final int singleStartsOn=0x7f0b0054;
         public static final int singleTitle=0x7f0b0052;
-        public static final int singlenewscontent=0x7f0b0064;
-        public static final int singlenewspublished=0x7f0b0062;
-        public static final int singlenewstitle=0x7f0b0061;
-        public static final int singlesnewsimage=0x7f0b0063;
+        public static final int singlenewscontent=0x7f0b0061;
+        public static final int singlesnewsimage=0x7f0b0062;
         public static final int spacer=0x7f0b002c;
         public static final int split_action_bar=0x7f0b0007;
         public static final int src_atop=0x7f0b0015;
@@ -1996,31 +1996,33 @@ containing a value of this type.
         public static final int activity_main=0x7f03001e;
         public static final int activity_news=0x7f03001f;
         public static final int activity_news_single_story=0x7f030020;
-        public static final int building_model_view=0x7f030021;
-        public static final int calendar_view=0x7f030022;
-        public static final int cardview=0x7f030023;
-        public static final int date_grid_fragment=0x7f030024;
-        public static final int department_model_view=0x7f030025;
-        public static final int dialog=0x7f030026;
-        public static final int directory_view=0x7f030027;
-        public static final int facstaff_model_view=0x7f030028;
-        public static final int newscardview=0x7f030029;
-        public static final int normal_date_cell=0x7f03002a;
-        public static final int notification_media_action=0x7f03002b;
-        public static final int notification_media_cancel_action=0x7f03002c;
-        public static final int notification_template_big_media=0x7f03002d;
-        public static final int notification_template_big_media_narrow=0x7f03002e;
-        public static final int notification_template_lines=0x7f03002f;
-        public static final int notification_template_media=0x7f030030;
-        public static final int notification_template_part_chronometer=0x7f030031;
-        public static final int notification_template_part_time=0x7f030032;
-        public static final int school_model_view=0x7f030033;
-        public static final int select_dialog_item_material=0x7f030034;
-        public static final int select_dialog_multichoice_material=0x7f030035;
-        public static final int select_dialog_singlechoice_material=0x7f030036;
-        public static final int square_date_cell=0x7f030037;
-        public static final int support_simple_spinner_dropdown_item=0x7f030038;
-        public static final int weekday_textview=0x7f030039;
+        public static final int activity_resource_to_url=0x7f030021;
+        public static final int activity_resources=0x7f030022;
+        public static final int building_model_view=0x7f030023;
+        public static final int calendar_view=0x7f030024;
+        public static final int cardview=0x7f030025;
+        public static final int date_grid_fragment=0x7f030026;
+        public static final int department_model_view=0x7f030027;
+        public static final int dialog=0x7f030028;
+        public static final int directory_view=0x7f030029;
+        public static final int facstaff_model_view=0x7f03002a;
+        public static final int newscardview=0x7f03002b;
+        public static final int normal_date_cell=0x7f03002c;
+        public static final int notification_media_action=0x7f03002d;
+        public static final int notification_media_cancel_action=0x7f03002e;
+        public static final int notification_template_big_media=0x7f03002f;
+        public static final int notification_template_big_media_narrow=0x7f030030;
+        public static final int notification_template_lines=0x7f030031;
+        public static final int notification_template_media=0x7f030032;
+        public static final int notification_template_part_chronometer=0x7f030033;
+        public static final int notification_template_part_time=0x7f030034;
+        public static final int school_model_view=0x7f030035;
+        public static final int select_dialog_item_material=0x7f030036;
+        public static final int select_dialog_multichoice_material=0x7f030037;
+        public static final int select_dialog_singlechoice_material=0x7f030038;
+        public static final int square_date_cell=0x7f030039;
+        public static final int support_simple_spinner_dropdown_item=0x7f03003a;
+        public static final int weekday_textview=0x7f03003b;
     }
     public static final class menu {
         public static final int menu_calendar=0x7f0c0000;
@@ -2031,6 +2033,8 @@ containing a value of this type.
         public static final int menu_my=0x7f0c0005;
         public static final int menu_news=0x7f0c0006;
         public static final int menu_news_single_story=0x7f0c0007;
+        public static final int menu_resource_to_url=0x7f0c0008;
+        public static final int menu_resources=0x7f0c0009;
     }
     public static final class string {
         public static final int Buildings_Directory=0x7f050014;
@@ -2084,7 +2088,9 @@ containing a value of this type.
         public static final int title_activity_contact=0x7f050030;
         public static final int title_activity_dir=0x7f050031;
         public static final int title_activity_news=0x7f050032;
-        public static final int title_button=0x7f050033;
+        public static final int title_activity_resource_to_url=0x7f050033;
+        public static final int title_activity_resources=0x7f050034;
+        public static final int title_button=0x7f050035;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat=0x7f08007e;

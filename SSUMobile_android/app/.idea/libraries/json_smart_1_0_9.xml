@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="json-smart-1.0.9">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.minidev/json-smart/1.0.9/740cece59da8261afe49585a0ea207981ac5aeb/json-smart-1.0.9.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.minidev/json-smart/1.0.9/de5f742700077066e3d9501e77480762e404495f/json-smart-1.0.9-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
