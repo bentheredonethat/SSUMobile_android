@@ -5,7 +5,9 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -78,7 +80,19 @@ public class resourcesActivity extends AppCompatActivity {
                     alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, r.phone, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            Toast.makeText(resourcesActivity.this, "to do", Toast.LENGTH_SHORT).show();
+                            String message = "You need to activate Phone permissions for this app";
+                            try {
+                                if (checkSelfPermission(android.Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
+                                    final Intent callIntent = new Intent(Intent.ACTION_CALL);
+                                    callIntent.setData(Uri.parse("tel:" + r.phone));
+                                }else{
+                                    String[] CallPermissions = {"android.permission.CALL_PHONE"};
+                                    int requestID = 1;
+                                    requestPermissions(CallPermissions, requestID);
+                                }
+                            }catch( Throwable t){
+                                Toast.makeText(getBaseContext(), message, Toast.LENGTH_SHORT).show();
+                            }
                         }
                     });
                 }
