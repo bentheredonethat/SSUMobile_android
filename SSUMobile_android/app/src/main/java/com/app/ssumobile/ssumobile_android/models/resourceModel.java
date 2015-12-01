@@ -7,7 +7,7 @@ public class resourceModel {
     public String name;
     public String phone;
     public String url;
-    public Integer section_id;
-    public Integer id;
+    public Long section_id;
+    public Long id;
 
 }

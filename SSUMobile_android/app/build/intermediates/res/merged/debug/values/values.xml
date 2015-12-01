@@ -319,6 +319,7 @@
     <string name="title_activity_contact">Contacts</string>
     <string name="title_activity_dir">Directory</string>
     <string name="title_activity_news">University News</string>
+    <string name="title_activity_resource_to_url">resourceToURL</string>
     <string name="title_activity_resources">resourcesActivity</string>
     <string name="title_button">"Title"</string>
     <!-- From: file:/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->

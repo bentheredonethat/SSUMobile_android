@@ -80,6 +80,10 @@
     <init>();
 }
 
+-keep class com.app.ssumobile.ssumobile_android.activity.resourceToURL {
+    <init>();
+}
+
 -keep class android.support.v7.widget.TestActivity {
     <init>();
 }

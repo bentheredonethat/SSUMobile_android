@@ -250,6 +250,7 @@ com/app/ssumobile/ssumobile_android/activity/StartScreenActivity$2.class
 android/support/v4/media/session/MediaSessionCompat$ResultReceiverWrapper.class
 org/parceler/transfuse/gen/invocationBuilder/PackageHelperRepository.class
 org/apache/commons/codec/digest/DigestUtils.class
+-keep class com.app.ssumobile.ssumobile_android.activity.resourceToURL { <init>(); }
 org/parceler/apache/commons/beanutils/locale/LocaleConvertUtilsBean.class
 android/support/v4/view/ViewCompatBase.class
 android/support/v4/media/MediaBrowserCompat$1.class
@@ -362,6 +363,7 @@ com/google/gson/Gson.class
 org/parceler/transfuse/annotations/OnPostCreate.class
 android/support/v4/widget/MaterialProgressDrawable$Ring.class
 rx/annotations/Beta.class
+com/app/ssumobile/ssumobile_android/models/resourceModel.class
 org/parceler/guava/reflect/Types$ClassOwnership$2.class
 org/parceler/transfuse/adapter/element/ElementConverterFactory.class
 com/app/ssumobile/ssumobile_android/activity/FacStaffModelActivity$7.class
@@ -874,6 +876,7 @@ org/parceler/guava/base/Splitter.class
 org/parceler/transfuse/validation/Validator.class
 -keep class com.app.ssumobile.ssumobile_android.activity.SchoolModelActivity { <init>(); }
 org/apache/http/impl/auth/DigestSchemeHC4.class
+com/app/ssumobile/ssumobile_android/activity/resourceToURL.class
 org/parceler/transfuse/adapter/element/LazyElementParameterBuilder.class
 org/parceler/guava/io/BaseEncoding$StandardBaseEncoding.class
 android/support/v4/app/FragmentManagerImpl.class

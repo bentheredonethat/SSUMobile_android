@@ -34,5 +34,6 @@
     <string name="office_button">"Office"</string>
     <string name="mockName">"John Doe</string>
     <string name="title_activity_resources">resourcesActivity</string>
+    <string name="title_activity_resource_to_url">resourceToURL</string>
 
 </resources>

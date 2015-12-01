@@ -90,6 +90,10 @@
             android:name=".activity.resourcesActivity"
             android:label="Click One For More Information" >
         </activity>
+        <activity
+            android:name=".activity.resourceToURL"
+            android:label="@string/title_activity_resource_to_url" >
+        </activity>
     </application>
 
 </manifest>
