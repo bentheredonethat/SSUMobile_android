@@ -52,7 +52,7 @@ public class BuildingsActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(BuildingsActivity.this, BuildingModelActivity.class);
                 //based on item add info to intent
-                BuildingModel building = contactsList.get(position);
+                BuildingModel building = (BuildingModel) adapter.getItem(position);
                 Bundle B = new Bundle();
                 B.putSerializable("BuildingModel", building);
                 intent.putExtras(B);

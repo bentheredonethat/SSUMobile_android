@@ -52,7 +52,7 @@ public class FacultyStaffActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(FacultyStaffActivity.this, FacStaffModelActivity.class);
                 //based on item add info to intent
-                FacStaffModel FSmodel = contactsList.get(position);
+                FacStaffModel FSmodel = (FacStaffModel) adapter.getItem(position);
                 Bundle FS = new Bundle();
                 FS.putSerializable("FacStaffModel", FSmodel);
                 intent.putExtras(FS);
@@ -64,7 +64,7 @@ public class FacultyStaffActivity extends AppCompatActivity {
         inputSearch.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                FacultyStaffActivity.this.adapter.getFilter().filter(s);
+                FacultyStaffActivity.this.adapter.getFilter().filter(s.toString());
             }
 
             @Override

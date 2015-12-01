@@ -97,7 +97,7 @@ public class FacStaffModelActivity extends AppCompatActivity {
         if( !d.email.isEmpty() )
             EmailButton.setText(d.email);
 
-        if( d.department != null && !d.department.isEmpty() && !d.department.equals("0"))
+        if( d.department != null && !d.department.isEmpty() && !d.department.equals("0") && !d.department.equals("null"))
             DepartmentButton.setText(d.department);
         else {
             String noDepartment = "No department available";

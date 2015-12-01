@@ -17,7 +17,10 @@
         android:inputType="text"
         android:layout_alignParentTop="true"
         android:hint="@string/search"
-        android:background="@color/caldroid_white"
+        android:paddingStart="6dp"
+        android:background="#001339"
+        android:textColor="@color/caldroid_white"
+        android:textColorHint="@color/caldroid_white"
         />
 
     <ListView

@@ -50,7 +50,7 @@ public class SchoolsActivity extends AppCompatActivity {
                 Intent intent = new Intent(SchoolsActivity.this, SchoolModelActivity.class);
                 //based on item add info to intent
                 Bundle B = new Bundle();
-                SchoolModel school = contactsList.get(position);
+                SchoolModel school = (SchoolModel) adapter.getItem(position);
                 B.putSerializable("SchoolModel", school);
                 intent.putExtras(B);
                 startActivity(intent);
@@ -61,12 +61,12 @@ public class SchoolsActivity extends AppCompatActivity {
         inputSearch.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                SchoolsActivity.this.adapter.getFilter().filter(s);
+                SchoolsActivity.this.adapter.getFilter().filter(s.toString());
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                SchoolsActivity.this.adapter.getFilter().filter(s);
+                SchoolsActivity.this.adapter.getFilter().filter(s.toString());
             }
 
             @Override

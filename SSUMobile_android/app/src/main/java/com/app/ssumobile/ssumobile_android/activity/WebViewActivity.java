@@ -25,8 +25,7 @@ public class WebViewActivity extends Activity {
         String url = (String) B.get("url");
 
         // Check to make sure the url has "http" in it, or won't render page
-        String isHttp = url.substring(0,3);
-        if( !isHttp.equals("http") )
+        if( !url.startsWith("http") && !url.startsWith("HTTP") )
             url = "http://" + url;
 
         // Display the url to the screen to make sure it's correct.

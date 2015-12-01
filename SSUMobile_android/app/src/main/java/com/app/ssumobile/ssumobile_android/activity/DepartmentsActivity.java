@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.ListView;
 
@@ -50,12 +51,13 @@ public class DepartmentsActivity extends AppCompatActivity {
         adapter = new ArrayAdapter<>(this, R.layout.activity_listview, contactsList);
         ListView listView = (ListView) findViewById(R.id.mobile_list);
         listView.setAdapter(adapter);
+        listView.setTextFilterEnabled(true);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(DepartmentsActivity.this, DepartmentModelActivity.class);
                 //based on item add info to intent
-                DepartmentModel Dmodel = contactsList.get(position);
+                DepartmentModel Dmodel = (DepartmentModel) adapter.getItem(position);
                 Bundle B = new Bundle();
                 B.putSerializable("DepartmentModel", Dmodel);
                 intent.putExtras(B);
@@ -67,7 +69,7 @@ public class DepartmentsActivity extends AppCompatActivity {
         inputSearch.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                DepartmentsActivity.this.adapter.getFilter().filter(s);
+                DepartmentsActivity.this.adapter.getFilter().filter(s.toString());
             }
 
             @Override
