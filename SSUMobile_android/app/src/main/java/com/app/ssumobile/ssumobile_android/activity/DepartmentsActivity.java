@@ -10,23 +10,22 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.ListView;
-
 import com.app.ssumobile.ssumobile_android.R;
 import com.app.ssumobile.ssumobile_android.models.BuildingModel;
 import com.app.ssumobile.ssumobile_android.models.DepartmentModel;
-
+import java.net.HttpURLConnection;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.net.URL;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.ArrayList;
+
+import javax.net.ssl.HttpsURLConnection;
 
 
 public class DepartmentsActivity extends AppCompatActivity {
@@ -90,7 +89,7 @@ public class DepartmentsActivity extends AppCompatActivity {
        Thread runner = new Thread(new Runnable(){
             public void run()  {
                 try {
-                    sendGet("http://www.cs.sonoma.edu/~wmitchel/master_dir.json");
+                    sendGet("https://moonlight.cs.sonoma.edu/ssumobile/1_0/directory.py");
                 } catch (Throwable t) {
                     System.out.println(t.getCause());
                 }
@@ -186,10 +185,10 @@ public class DepartmentsActivity extends AppCompatActivity {
         final String USER_AGENT = "Mozilla/5.0";
 
         URL obj = new URL(url);
-        HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+        HttpsURLConnection con = (HttpsURLConnection) obj.openConnection();
         con.setRequestMethod("GET");  // optional default is GET
         con.setRequestProperty("User-Agent", USER_AGENT); //add request header
-
+        con.setHostnameVerifier(org.apache.http.conn.ssl.SSLSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);
 
         BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
         String inputLine;

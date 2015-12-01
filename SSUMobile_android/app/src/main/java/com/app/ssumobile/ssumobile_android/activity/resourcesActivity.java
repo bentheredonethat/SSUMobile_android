@@ -1,12 +1,9 @@
 package com.app.ssumobile.ssumobile_android.activity;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
@@ -17,7 +14,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.app.ssumobile.ssumobile_android.R;
@@ -29,7 +25,6 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 
 import javax.net.ssl.HttpsURLConnection;
 
@@ -85,6 +80,7 @@ public class resourcesActivity extends AppCompatActivity {
                                 if (checkSelfPermission(android.Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
                                     final Intent callIntent = new Intent(Intent.ACTION_CALL);
                                     callIntent.setData(Uri.parse("tel:" + r.phone));
+                                    resourcesActivity.this.startActivity(callIntent);
                                 }else{
                                     String[] CallPermissions = {"android.permission.CALL_PHONE"};
                                     int requestID = 1;
@@ -108,7 +104,6 @@ public class resourcesActivity extends AppCompatActivity {
             }
         });
 
-
         Thread runner = new Thread(new Runnable(){
             public void run()  {
                 try {
@@ -119,6 +114,7 @@ public class resourcesActivity extends AppCompatActivity {
             }
         });
         runner.start();
+
         try {
             runner.join();
         } catch (InterruptedException e) {
@@ -128,7 +124,6 @@ public class resourcesActivity extends AppCompatActivity {
     }
 
     public void populateResources()throws Exception{
-
 
         final String USER_AGENT = "Mozilla/5.0";
         URL obj = new URL("https://moonlight.cs.sonoma.edu/ssumobile/1_0/resources");

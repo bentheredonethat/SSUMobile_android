@@ -10,7 +10,6 @@ import android.view.MenuItem;
 
 import com.app.ssumobile.ssumobile_android.R;
 import com.app.ssumobile.ssumobile_android.adapters.newsCardAdapter;
-import com.app.ssumobile.ssumobile_android.models.calendarEventModel;
 import com.app.ssumobile.ssumobile_android.models.newsStoryModel;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;

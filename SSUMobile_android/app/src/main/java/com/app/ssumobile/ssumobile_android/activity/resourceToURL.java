@@ -1,13 +1,10 @@
 package com.app.ssumobile.ssumobile_android.activity;
 
-import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import android.widget.Toast;
 
 import com.app.ssumobile.ssumobile_android.R;
 
@@ -22,6 +19,8 @@ public class resourceToURL extends AppCompatActivity {
         setContentView(R.layout.activity_resource_to_url);
         webView = (WebView) findViewById(R.id.resourceWebView);
         webView.getSettings().setJavaScriptEnabled(true); // enable javascript
+        webView.getSettings().setUseWideViewPort(true); // Fit content within screen size.
+        webView.getSettings().setLoadWithOverviewMode(true); // same as above ^^
         webView.loadUrl(getIntent().getStringExtra("url"));
 
     }

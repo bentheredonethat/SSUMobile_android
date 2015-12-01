@@ -26,6 +26,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 
+import javax.net.ssl.HttpsURLConnection;
+
 public class BuildingsActivity extends AppCompatActivity {
     String body;
 
@@ -85,7 +87,7 @@ public class BuildingsActivity extends AppCompatActivity {
             public void run()  {
                 try {
                     //sendGet(url + Year + Month + Day); // get selected date's info
-                    sendGet("http://www.cs.sonoma.edu/~wmitchel/building.json");
+                    sendGet("https://moonlight.cs.sonoma.edu/ssumobile/1_0/directory.py");
                 } catch (Throwable t) {
                     System.out.println(t.getCause());
                 }
@@ -163,9 +165,10 @@ public class BuildingsActivity extends AppCompatActivity {
         final String USER_AGENT = "Mozilla/5.0";
 
         URL obj = new URL(url);
-        HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+        HttpsURLConnection con = (HttpsURLConnection) obj.openConnection();
         con.setRequestMethod("GET");  // optional default is GET
         con.setRequestProperty("User-Agent", USER_AGENT); //add request header
+        con.setHostnameVerifier(org.apache.http.conn.ssl.SSLSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);
 
 
         BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
