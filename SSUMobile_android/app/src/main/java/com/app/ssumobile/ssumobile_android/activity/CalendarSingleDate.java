@@ -1,6 +1,7 @@
 package com.app.ssumobile.ssumobile_android.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,46 +9,24 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.app.ssumobile.ssumobile_android.R;
 import com.app.ssumobile.ssumobile_android.adapters.calendarCardAdapter;
 import com.app.ssumobile.ssumobile_android.models.calendarEventModel;
-import com.app.ssumobile.ssumobile_android.models.newsStoryModel;
 import com.app.ssumobile.ssumobile_android.service.CalendarService;
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-import com.google.gson.reflect.TypeToken;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.lang.reflect.Type;
-import java.net.HttpURLConnection;
 import java.net.URL;
-import java.security.cert.X509Certificate;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.Date;
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLSession;
-import javax.net.ssl.TrustManager;
-import javax.net.ssl.X509TrustManager;
-import javax.security.cert.CertificateException;
 
 import retrofit.RestAdapter;
 
@@ -190,12 +169,22 @@ public class CalendarSingleDate extends AppCompatActivity {
     private void parseOutEvents() throws InterruptedException {
 
 
+        Boolean hasEvents = Boolean.FALSE;
+
         String[] parsedBody = body.split("\\}\\, \\{");
         for (int i = 0; i < parsedBody.length; i++){
 
             if (parsedBody[i].contains(currentdate)){
                 events.add(stringToEvent(parsedBody[i]));
+                hasEvents = Boolean.TRUE;
             }
+
+        }
+
+        if (hasEvents == Boolean.FALSE){
+            Intent singleDateIntent = new Intent(CalendarSingleDate.this, CalendarActivity.class);
+            singleDateIntent.putExtra("noEvent", true);
+            startActivity(singleDateIntent); // put intent with event map in activity
 
         }
 
