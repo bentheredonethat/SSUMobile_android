@@ -2,13 +2,17 @@ package com.app.ssumobile.ssumobile_android.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.app.ssumobile.ssumobile_android.R;
 import com.app.ssumobile.ssumobile_android.adapters.calendarCardAdapter;
@@ -182,9 +186,12 @@ public class CalendarSingleDate extends AppCompatActivity {
         }
 
         if (hasEvents == Boolean.FALSE){
-            Intent singleDateIntent = new Intent(CalendarSingleDate.this, CalendarActivity.class);
-            singleDateIntent.putExtra("noEvent", true);
-            startActivity(singleDateIntent); // put intent with event map in activity
+            RelativeLayout r = (RelativeLayout)findViewById(R.id.poss);
+
+            TextView err = new TextView(this);
+            err.setText("There are no events on this date.");
+            err.setTextColor(Color.WHITE);
+            r.addView(err);
 
         }
 
