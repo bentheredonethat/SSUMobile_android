@@ -69,6 +69,8 @@ public class StartScreenActivity extends AppCompatActivity {
                             // Start NewActivity.class
                             Intent myIntent = new Intent(StartScreenActivity.this,
                                     CalendarActivity.class);
+                            myIntent.putExtra("noEvent", false);
+
                             startActivity(myIntent);
                         }
                     });

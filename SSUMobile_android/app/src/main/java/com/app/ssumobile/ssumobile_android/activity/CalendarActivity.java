@@ -46,6 +46,13 @@ public class CalendarActivity extends AppCompatActivity {
         initializeListener();
 
 
+        boolean isEvent = getIntent().getBooleanExtra("noEvent", false);
+        if (isEvent == true){
+            Toast.makeText(getBaseContext(), "There are no events on this date.", Toast.LENGTH_SHORT).show();
+
+        }
+
+
     }
 
     @Override
@@ -110,8 +117,6 @@ public class CalendarActivity extends AppCompatActivity {
 
             @Override
             public void onChangeMonth(int month, int year) {
-                String text = "month: " + month + " year: " + year;
-                //Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -138,7 +143,6 @@ public class CalendarActivity extends AppCompatActivity {
 
             @Override
             public void onCaldroidViewCreated() {
-                Toast.makeText(getApplicationContext(), "Caldroid view is created", Toast.LENGTH_SHORT).show();
             }
         };
         caldroidFragment.setCaldroidListener(listener);
