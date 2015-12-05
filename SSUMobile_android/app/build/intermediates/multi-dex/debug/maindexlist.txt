@@ -378,6 +378,7 @@ org/apache/http/impl/io/DefaultHttpRequestParser.class
 org/parceler/transfuse/gen/FactoriesGenerator.class
 android/support/v4/media/VolumeProviderCompat.class
 com/app/ssumobile/ssumobile_android/activity/DepartmentModelActivity.class
+com/app/ssumobile/ssumobile_android/activity/DepartmentsActivity$9.class
 org/parceler/transfuse/adapter/element/ASTElementConverterFactory.class
 org/parceler/transfuse/annotations/OnRebind.class
 android/support/v4/media/VolumeProviderCompat$ControlType.class
@@ -525,6 +526,7 @@ org/parceler/transfuse/gen/variableBuilder/ProvidesVariableBuilder.class
 org/parceler/transfuse/adapter/classes/ASTClassType.class
 org/parceler/transfuse/adapter/ASTPrimitiveType.class
 android/support/v4/media/MediaBrowserCompat$ItemCallback.class
+com/app/ssumobile/ssumobile_android/activity/DepartmentModelActivity$5.class
 org/parceler/apache/commons/beanutils/PropertyUtils.class
 retrofit/http/POST.class
 org/parceler/guava/collect/ImmutableMultiset.class

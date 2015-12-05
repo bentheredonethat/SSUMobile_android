@@ -4,16 +4,28 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
 import android.webkit.WebView;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.app.ssumobile.ssumobile_android.R;
 import com.app.ssumobile.ssumobile_android.models.DepartmentModel;
+import com.app.ssumobile.ssumobile_android.models.FacStaffModel;
 
 
 /**
@@ -26,25 +38,45 @@ public class DepartmentModelActivity extends AppCompatActivity {
     Button PhoneButton;
     Button WebSite;
     Button BuildingButton;
-
+    ArrayAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         // Set the Department_model_view to the current view
         setContentView(R.layout.department_model_view);
+
         // Set instances of each Button/Text View
         DisplayName = (TextView) findViewById(R.id.DisplayName_button);
         PhoneButton = (Button) findViewById(R.id.Phone_button);
         WebSite = (Button) findViewById(R.id.webSite_button);
-        BuildingButton = (Button) findViewById(R.id.office_button);
+        BuildingButton = (Button) findViewById(R.id.building_button);
 
+        // Get bundle to retrieve the Department Model
         Bundle data = getIntent().getExtras();
-        ContactProvider((DepartmentModel) data.getSerializable("DepartmentModel"));
+        final DepartmentModel Dmodel = (DepartmentModel)data.getSerializable("DepartmentModel");
+        ContactProvider(Dmodel);
+        adapter = new ArrayAdapter<>(this, R.layout.activity_listview, Dmodel.getFacStaffList());
+
+        ListView listView = (ListView) findViewById(R.id.mobile_list);
+        listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(DepartmentModelActivity.this, FacStaffModelActivity.class);
+                //based on item add info to intent
+                FacStaffModel FSmodel = (FacStaffModel) adapter.getItem(position);
+                FSmodel.department = Dmodel.displayName;
+                Bundle FS = new Bundle();
+                FS.putSerializable("FacStaffModel", FSmodel);
+                intent.putExtras(FS);
+                startActivity(intent);
+            }
+        });
         // Initiate Threads for onClickListeners
         PhoneButtonThread();
         setWebSiteButton();
-
     }
 
     @Override

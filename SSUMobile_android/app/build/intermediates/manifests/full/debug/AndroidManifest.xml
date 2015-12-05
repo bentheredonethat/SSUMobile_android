@@ -22,7 +22,7 @@
         android:allowBackup="true"
         android:icon="@drawable/filtered_logo"
         android:label="@string/app_name"
-        android:theme="@style/Theme.AppCompat.Light" >
+        android:theme="@style/AppTheme" >
         <activity
             android:name="com.app.ssumobile.ssumobile_android.activity.StartScreenActivity"
             android:label="@string/app_name" >
@@ -59,8 +59,7 @@
         </activity>
         <activity
             android:name="com.app.ssumobile.ssumobile_android.activity.DepartmentsActivity"
-            android:label="@string/Departments_Directory"
-            android:windowSoftInputMode="stateHidden" >
+            android:label="@string/Departments_Directory" >
         </activity>
         <activity
             android:name="com.app.ssumobile.ssumobile_android.activity.SchoolsActivity"
@@ -74,11 +73,11 @@
         </activity>
         <activity
             android:name="com.app.ssumobile.ssumobile_android.activity.FacStaffModelActivity"
-            android:label="@string/app_name" >
+            android:label="@string/Faculty_Staff_Directory" >
         </activity>
         <activity
             android:name="com.app.ssumobile.ssumobile_android.activity.DepartmentModelActivity"
-            android:label="@string/app_name" >
+            android:label="@string/Departments_Directory" >
         </activity>
         <activity
             android:name="com.app.ssumobile.ssumobile_android.activity.BuildingModelActivity"
@@ -86,11 +85,11 @@
         </activity>
         <activity
             android:name="com.app.ssumobile.ssumobile_android.activity.SchoolModelActivity"
-            android:label="@string/app_name" >
+            android:label="@string/Schools_Directory" >
         </activity>
         <activity
             android:name="com.app.ssumobile.ssumobile_android.activity.WebViewActivity"
-            android:label="@string/app_name" >
+            android:label="@string/Buildings_Directory" >
         </activity>
         <activity
             android:name="com.app.ssumobile.ssumobile_android.activity.resourcesActivity"

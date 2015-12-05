@@ -62,6 +62,7 @@ public class FacultyStaffActivity extends AppCompatActivity {
             }
 
         });
+
         // Enable Search Filter for search logic
         inputSearch.addTextChangedListener(new TextWatcher() {
             @Override

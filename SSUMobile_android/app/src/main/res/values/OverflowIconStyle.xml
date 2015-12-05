@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <style name="OverflowTheme" parent="@style/Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:src">@mipmap/ic_launcher</item>
+    </style>
+    <style name="AppTheme" parent="@style/Theme.AppCompat.Light">
+        <item name="actionOverflowButtonStyle">@style/OverflowTheme</item>
+        <item name="android:actionOverflowButtonStyle">@style/OverflowTheme</item>
+    </style>
+</resources>

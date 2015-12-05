@@ -22,8 +22,7 @@ import com.app.ssumobile.ssumobile_android.models.FacStaffModel;
  */
 public class FacStaffModelActivity extends AppCompatActivity {
 
-    TextView Fname;
-    TextView Lname;
+    TextView name;
     TextView Title;
     Button PhoneButton;
     Button EmailButton;
@@ -37,8 +36,7 @@ public class FacStaffModelActivity extends AppCompatActivity {
         // Set the facstaff_model_view to the current view
         setContentView(R.layout.facstaff_model_view);
         // Set instances of each Button/Text View
-        Fname = (TextView) findViewById(R.id.Fname_button);
-        Lname = (TextView) findViewById(R.id.Lname_button);
+        name = (TextView) findViewById(R.id.name_button);
         Title = (TextView) findViewById(R.id.Title_button);
         PhoneButton = (Button) findViewById(R.id.Phone_button);
         EmailButton = (Button) findViewById(R.id.Email_button);
@@ -77,8 +75,7 @@ public class FacStaffModelActivity extends AppCompatActivity {
     }
 
     public void ContactProvider(FacStaffModel d) {
-        Fname.setText(d.firstName);
-        Lname.setText(d.lastName);
+        name.setText(d.firstName + " " + d.lastName);
 
         if( !d.title.isEmpty() )
             Title.setText(d.title);
@@ -195,7 +192,7 @@ public class FacStaffModelActivity extends AppCompatActivity {
                 intent.setType(ContactsContract.RawContacts.CONTENT_TYPE);
                 intent.putExtra(ContactsContract.Intents.Insert.EMAIL, EmailButton.getText());
                 intent.putExtra(ContactsContract.Intents.Insert.PHONE, PhoneButton.getText());
-                intent.putExtra(ContactsContract.Intents.Insert.NAME, Fname.getText() + " " + Lname.getText());
+                intent.putExtra(ContactsContract.Intents.Insert.NAME, name.getText());
                 intent.putExtra(ContactsContract.Intents.Insert.JOB_TITLE, Title.getText());
                 startActivity(intent);
             }

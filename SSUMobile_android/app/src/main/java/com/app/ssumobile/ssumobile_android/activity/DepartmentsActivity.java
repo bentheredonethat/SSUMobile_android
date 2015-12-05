@@ -15,6 +15,8 @@ import android.widget.ListView;
 import com.app.ssumobile.ssumobile_android.R;
 import com.app.ssumobile.ssumobile_android.models.BuildingModel;
 import com.app.ssumobile.ssumobile_android.models.DepartmentModel;
+import com.app.ssumobile.ssumobile_android.models.FacStaffModel;
+
 import java.net.HttpURLConnection;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -35,7 +37,7 @@ public class DepartmentsActivity extends AppCompatActivity {
     //JSONtoModelProvider jsonConverter;
 
     ArrayList<DepartmentModel> contactsList = new ArrayList<>();
-    //ArrayList<FacStaffModel> facStaffList = new ArrayList<>();
+    ArrayList<FacStaffModel> facStaffList1 = new ArrayList<>();
     ArrayList<BuildingModel> buildingList = new ArrayList<>();
 
     EditText inputSearch;
@@ -86,7 +88,7 @@ public class DepartmentsActivity extends AppCompatActivity {
     @Override
     protected void onStart(){
         super.onStart();
-       Thread runner = new Thread(new Runnable(){
+        Thread runner = new Thread(new Runnable(){
             public void run()  {
                 try {
                     sendGet("https://moonlight.cs.sonoma.edu/ssumobile/1_0/directory.py");
@@ -96,21 +98,20 @@ public class DepartmentsActivity extends AppCompatActivity {
             }
         });
         runner.start();
+
         try {
             runner.join();
             adapter.notifyDataSetChanged(); // update cards
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("in onstart()");
 
         // Set the building name for each department
-
         Thread runner2 = new Thread(new Runnable() {
             @Override
             public void run() {
-                for(int i = 0; i < buildingList.size(); i++) {
-                    for (int j = 0; j < contactsList.size(); j++) {
+                for(int i = 0; i < buildingList.size(); ++i) {
+                    for (int j = 0; j < contactsList.size(); ++j) {
                         if ( buildingList.get(i).id.equals( contactsList.get(j).building ) )
                             contactsList.get(j).buildingName = buildingList.get(i).name;
                     }
@@ -118,6 +119,33 @@ public class DepartmentsActivity extends AppCompatActivity {
             }
         });
         runner2.start();
+
+        try {
+            runner2.join();
+            adapter.notifyDataSetChanged(); // update cards
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        Thread runner3 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for( int i = 0; i < facStaffList1.size(); ++i ){
+                    for( int k = 0; k < contactsList.size(); ++k ){
+                        if(contactsList.get(k).id.equals(facStaffList1.get(i).department ))
+                            contactsList.get(k).getFacStaffList().add( facStaffList1.get(i) );
+                    }
+                }
+            }
+        });
+        runner3.start();
+
+        try {
+            runner3.join();
+            adapter.notifyDataSetChanged(); // update cards
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -216,12 +244,18 @@ public class DepartmentsActivity extends AppCompatActivity {
                    JSONObject myjson = new JSONObject(body);
                    JSONArray the_json_array = myjson.getJSONArray("Department");
                    JSONArray building_json_array = myjson.getJSONArray("Building");
+                   JSONArray facStaff_json_array = myjson.getJSONArray("Person");
                    for (int i = 0; i < the_json_array.length(); i++) {
                        contactsList.add(convertDeptJSONtoModel(the_json_array.getJSONObject(i)));
                        adapter.notifyDataSetChanged(); // update cards
                    }
                    for (int i = 0; i < building_json_array.length(); i++) {
                        buildingList.add(convertBuildJSONtoModel(building_json_array.getJSONObject(i)));
+                       adapter.notifyDataSetChanged(); // update cards
+                   }
+                   for (int i = 0; i < facStaff_json_array.length(); i++){
+                       facStaffList1.add(convertPersonJSONtoModel(facStaff_json_array.getJSONObject(i)));
+                       adapter.notifyDataSetChanged(); // update cards
                    }
                }catch( JSONException e){
                    throw new RuntimeException(e);
@@ -260,6 +294,26 @@ public class DepartmentsActivity extends AppCompatActivity {
         currentContact.id = s.getString("id");
         currentContact.name = s.getString("name");
         currentContact.Deleted = s.getString("Deleted");
+
+        return currentContact;
+    }
+
+    // get attributes of event string into an event
+    public FacStaffModel convertPersonJSONtoModel(JSONObject s) throws org.json.JSONException{
+        FacStaffModel currentContact = new FacStaffModel();
+
+        currentContact.office = s.getString("office");
+        currentContact.Created = s.getString("Created");
+        currentContact.site = s.getString("site");
+        currentContact.Modified = s.getString("Modified");
+        currentContact.phone = s.getString("phone");
+        currentContact.id = s.getString("id");
+        currentContact.building = s.getString("building");
+        currentContact.firstName = s.getString("firstName");
+        currentContact.title = s.getString("title");
+        currentContact.lastName = s.getString("lastName");
+        currentContact.department = s.getString("department");
+        currentContact.email = s.getString("email");
 
         return currentContact;
     }

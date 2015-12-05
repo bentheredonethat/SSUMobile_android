@@ -8,17 +8,6 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin" >
 
-
-    <ImageView
-        android:id="@+id/listName"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/ssu_paw"
-        android:layout_alignParentTop="true"
-        android:layout_centerVertical="true"
-        android:layout_margin="10dp"
-        android:background="#001339"  />
-
     <Button
         style="?android:attr/buttonStyleSmall"
         android:layout_width="match_parent"
@@ -26,21 +15,20 @@
         android:id="@+id/DisplayName_button"
         android:background="@drawable/ssubutton"
         android:textColor="@color/caldroid_white"
-        android:layout_below="@+id/listName"
-        android:text="displayName"
-        android:layout_marginTop="10dp" />
+        android:text="@string/display_name"
+        android:layout_marginTop="5dp" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/webSite_button"
-        android:text="WebSite button"
+        android:text="@string/web_site"
         android:background="@drawable/ssubutton"
         android:textColor="@color/caldroid_white"
         android:layout_below="@+id/Phone_button"
         android:layout_alignEnd="@+id/DisplayName_button"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="5dp" />
 
     <Button
         android:layout_width="match_parent"
@@ -50,16 +38,28 @@
         android:background="@drawable/ssubutton"
         android:textColor="@color/caldroid_white"
         android:layout_below="@+id/DisplayName_button"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="5dp" />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/office_button"
-        android:id="@+id/office_button"
+        android:text="@string/building_button"
+        android:id="@+id/building_button"
         android:background="@drawable/ssubutton"
         android:textColor="@color/caldroid_white"
         android:layout_below="@+id/webSite_button"
         android:layout_alignEnd="@+id/webSite_button"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="5dp" />
+
+    <ListView
+        android:id="@+id/mobile_list"
+        android:layout_width="match_parent"
+        android:divider="@drawable/list_divider"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:dividerHeight="4dp"
+        android:background="#D9001339"
+        android:layout_below="@+id/building_button">
+    </ListView>
+
 
 </RelativeLayout>

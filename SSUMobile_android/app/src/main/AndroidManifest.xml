@@ -16,7 +16,7 @@
         android:allowBackup="true"
         android:icon="@drawable/filtered_logo"
         android:label="@string/app_name"
-        android:theme="@style/Theme.AppCompat.Light" >
+        android:theme="@style/AppTheme" >
         <activity
             android:name=".activity.StartScreenActivity"
             android:label="@string/app_name" >
@@ -54,7 +54,7 @@
         <activity
             android:name=".activity.DepartmentsActivity"
             android:label="@string/Departments_Directory"
-            android:windowSoftInputMode="stateHidden" >
+             >
         </activity>
         <activity
             android:name=".activity.SchoolsActivity"
@@ -68,11 +68,11 @@
         </activity>
         <activity
             android:name=".activity.FacStaffModelActivity"
-            android:label="@string/app_name" >
+            android:label="@string/Faculty_Staff_Directory" >
         </activity>
         <activity
             android:name=".activity.DepartmentModelActivity"
-            android:label="@string/app_name" >
+            android:label="@string/Departments_Directory" >
         </activity>
         <activity
             android:name=".activity.BuildingModelActivity"
@@ -80,11 +80,11 @@
         </activity>
         <activity
             android:name=".activity.SchoolModelActivity"
-            android:label="@string/app_name" >
+            android:label="@string/Schools_Directory" >
         </activity>
         <activity
             android:name=".activity.WebViewActivity"
-            android:label="@string/app_name" >
+            android:label="@string/Buildings_Directory" >
         </activity>
         <activity
             android:name=".activity.resourcesActivity"

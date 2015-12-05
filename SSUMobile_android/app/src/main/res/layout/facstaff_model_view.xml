@@ -8,36 +8,13 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="#001339" >
 
-    <ImageView
-        android:id="@+id/listName"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerVertical="true"
-        android:layout_margin="10dp"
-        android:src="@drawable/ssu_paw"
-        android:background="#001339"  />
-
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/fname_button"
-        android:id="@+id/Fname_button"
+        android:text="@string/name_button"
+        android:id="@+id/name_button"
         android:background="@drawable/ssubutton"
-        android:layout_marginTop = "10dp"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/Lname_button"
-        android:textColor="@color/caldroid_white" />
-
-    <Button
-        android:layout_width="208dp"
-        android:layout_height="wrap_content"
-        android:text="@string/lname_button"
-        android:id="@+id/Lname_button"
-        android:background="@drawable/ssubutton"
-        android:layout_marginTop = "10dp"
-        android:layout_below="@+id/Fname_button"
-        android:layout_alignParentEnd="true"
         android:textColor="@color/caldroid_white" />
 
     <Button
@@ -46,10 +23,34 @@
         android:text="@string/title_button"
         android:id="@+id/Title_button"
         android:background="@drawable/ssubutton"
-        android:layout_below="@+id/Lname_button"
-        android:layout_marginTop = "10dp"
+        android:layout_below="@+id/name_button"
+        android:layout_marginTop = "12dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
+        android:textColor="@color/caldroid_white"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/department_button"
+        android:id="@+id/department_button"
+        android:layout_below="@+id/Title_button"
+        android:background="@drawable/ssubutton"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="35dp"
+        android:layout_alignParentEnd="true"
+        android:textColor="@color/caldroid_white" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/office_button"
+        android:layout_below="@+id/department_button"
+        android:background="@drawable/ssubutton"
+        android:layout_marginTop = "12dp"
+        android:layout_alignEnd="@+id/name_button"
+        android:layout_alignParentStart="true"
+        android:id="@+id/office_button"
         android:textColor="@color/caldroid_white"/>
 
     <Button
@@ -58,9 +59,9 @@
         android:text="@string/phone_button"
         android:id="@+id/Phone_button"
         android:background="@drawable/ssubutton"
-        android:layout_marginTop = "10dp"
-        android:layout_below="@+id/Title_button"
-        android:layout_alignEnd="@+id/Lname_button"
+        android:layout_marginTop = "35dp"
+        android:layout_below="@+id/office_button"
+        android:layout_alignEnd="@+id/name_button"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:textColor="@color/caldroid_white"/>
@@ -72,34 +73,11 @@
         android:id="@+id/Email_button"
         android:background="@drawable/ssubutton"
         android:layout_below="@+id/Phone_button"
-        android:layout_marginTop = "10dp"
+        android:layout_marginTop = "15dp"
         android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/Lname_button"
+        android:layout_alignEnd="@+id/name_button"
         android:textColor="@color/caldroid_white"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/department_button"
-        android:id="@+id/department_button"
-        android:layout_below="@+id/Email_button"
-        android:background="@drawable/ssubutton"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="25dp"
-        android:layout_alignParentEnd="true"
-        android:textColor="@color/caldroid_white" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/office_button"
-        android:layout_below="@+id/department_button"
-        android:background="@drawable/ssubutton"
-        android:layout_marginTop = "10dp"
-        android:layout_alignEnd="@+id/Lname_button"
-        android:layout_alignParentStart="true"
-        android:id="@+id/office_button"
-        android:textColor="@color/caldroid_white"/>
 
     <Button
         android:layout_width="wrap_content"

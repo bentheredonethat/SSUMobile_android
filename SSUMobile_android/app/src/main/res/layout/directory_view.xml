@@ -18,6 +18,7 @@
         android:layout_alignParentTop="true"
         android:hint="@string/search"
         android:paddingStart="6dp"
+        android:paddingEnd="6dp"
         android:background="#001339"
         android:textColor="@color/caldroid_white"
         android:textColorHint="@color/caldroid_white"
@@ -29,7 +30,8 @@
         android:divider="@drawable/list_divider"
         android:layout_height="wrap_content"
         android:dividerHeight="4dp"
-        android:layout_below="@+id/input_search">
+        android:layout_below="@+id/input_search"
+        android:layout_marginTop="20dp">
     </ListView>
 
 </RelativeLayout>

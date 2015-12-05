@@ -1,6 +1,10 @@
 package com.app.ssumobile.ssumobile_android.models;
 
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  * Created by WestFlow on 10/16/2015.
@@ -22,6 +26,12 @@ public class DepartmentModel implements Serializable {
     public String displayName;
     public String name;
     public String Deleted;
+
+    ArrayList<FacStaffModel> facStaffList2 = new ArrayList<>();
+
+    public ArrayList<FacStaffModel> getFacStaffList() {
+        return facStaffList2;
+    }
     public String toString(){ return displayName.equals("null") ? name : displayName; }
 
 
