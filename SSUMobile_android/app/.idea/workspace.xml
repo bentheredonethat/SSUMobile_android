@@ -47,22 +47,38 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/com/app/ssumobile/ssumobile_android/activity/NewsActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/com/app/ssumobile/ssumobile_android/activity/NewsActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/android/support/v7/appcompat/R$id.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/android/support/v7/appcompat/R$id.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/com/app/ssumobile/ssumobile_android/R$id.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/com/app/ssumobile/ssumobile_android/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/com/caldroid/R$id.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/com/caldroid/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/com/app/ssumobile/ssumobile_android/R$integer.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/com/app/ssumobile/ssumobile_android/R$integer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/com/app/ssumobile/ssumobile_android/R$layout.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/com/app/ssumobile/ssumobile_android/R$layout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/com/app/ssumobile/ssumobile_android/R$menu.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/com/app/ssumobile/ssumobile_android/R$menu.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/com/app/ssumobile/ssumobile_android/R$string.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/com/app/ssumobile/ssumobile_android/R$string.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/com/app/ssumobile/ssumobile_android/R$style.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/com/app/ssumobile/ssumobile_android/R$style.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/com/app/ssumobile/ssumobile_android/R$styleable.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/com/app/ssumobile/ssumobile_android/R$styleable.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/com/app/ssumobile/ssumobile_android/service/RestClient.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/com/app/ssumobile/ssumobile_android/service/RestClient.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/com/app/ssumobile/ssumobile_android/activity/StartScreenActivity$1.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/com/app/ssumobile/ssumobile_android/activity/StartScreenActivity$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/com/app/ssumobile/ssumobile_android/activity/StartScreenActivity$3.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/com/app/ssumobile/ssumobile_android/activity/StartScreenActivity$3.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/com/app/ssumobile/ssumobile_android/activity/StartScreenActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/com/app/ssumobile/ssumobile_android/activity/StartScreenActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/multi-dex/debug/allclasses.jar" afterPath="$PROJECT_DIR$/build/intermediates/multi-dex/debug/allclasses.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/outputs/apk/app-debug-unaligned.apk" afterPath="$PROJECT_DIR$/build/outputs/apk/app-debug-unaligned.apk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/outputs/apk/app-debug.apk" afterPath="$PROJECT_DIR$/build/outputs/apk/app-debug.apk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.gradle/2.4/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/../.gradle/2.4/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/com/app/ssumobile/ssumobile_android/adapters/calendarCardAdapter$ViewHolder.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/com/app/ssumobile/ssumobile_android/adapters/calendarCardAdapter$ViewHolder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/com/app/ssumobile/ssumobile_android/adapters/calendarCardAdapter.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/com/app/ssumobile/ssumobile_android/adapters/calendarCardAdapter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/com/app/ssumobile/ssumobile_android/activity/calendarSingleEvent.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/com/app/ssumobile/ssumobile_android/activity/calendarSingleEvent.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/intermediates/gradle_project_sync_data.bin" afterPath="$PROJECT_DIR$/../build/intermediates/gradle_project_sync_data.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex/debug/classes.dex" afterPath="$PROJECT_DIR$/build/intermediates/dex/debug/classes.dex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/multi-dex/debug/componentClasses.jar" afterPath="$PROJECT_DIR$/build/intermediates/multi-dex/debug/componentClasses.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.gradle/2.4/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/../.gradle/2.4/taskArtifacts/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.gradle/2.4/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/../.gradle/2.4/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/com/app/ssumobile/ssumobile_android/adapters/newsCardAdapter$ViewHolder.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/com/app/ssumobile/ssumobile_android/adapters/newsCardAdapter$ViewHolder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/com/app/ssumobile/ssumobile_android/adapters/newsCardAdapter.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/com/app/ssumobile/ssumobile_android/adapters/newsCardAdapter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/com/app/ssumobile/ssumobile_android/activity/newsSingleStoryActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/com/app/ssumobile/ssumobile_android/activity/newsSingleStoryActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/com/app/ssumobile/ssumobile_android/models/newsStoryModel.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/com/app/ssumobile/ssumobile_android/models/newsStoryModel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/app/ssumobile/ssumobile_android/activity/CalendarActivity.java" afterPath="$PROJECT_DIR$/src/main/java/com/app/ssumobile/ssumobile_android/activity/CalendarActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/app/ssumobile/ssumobile_android/activity/CalendarSingleDate.java" afterPath="$PROJECT_DIR$/src/main/java/com/app/ssumobile/ssumobile_android/activity/CalendarSingleDate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SSUMobile_android.iml" afterPath="$PROJECT_DIR$/../SSUMobile_android.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/app/ssumobile/ssumobile_android/activity/StartScreenActivity.java" afterPath="$PROJECT_DIR$/src/main/java/com/app/ssumobile/ssumobile_android/activity/StartScreenActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/build/intermediates/res/resources-debug.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.gradle/2.4/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/../.gradle/2.4/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/generated/source/r/debug/android/support/v7/appcompat/R.java" afterPath="$PROJECT_DIR$/build/generated/source/r/debug/android/support/v7/appcompat/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/generated/source/r/debug/com/app/ssumobile/ssumobile_android/R.java" afterPath="$PROJECT_DIR$/build/generated/source/r/debug/com/app/ssumobile/ssumobile_android/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/generated/source/r/debug/com/caldroid/R.java" afterPath="$PROJECT_DIR$/build/generated/source/r/debug/com/caldroid/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/symbols/debug/R.txt" afterPath="$PROJECT_DIR$/build/intermediates/symbols/debug/R.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml" afterPath="$PROJECT_DIR$/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/abc_action_bar_title_item.xml" afterPath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/abc_action_bar_title_item.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/abc_action_bar_up_container.xml" afterPath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/abc_action_bar_up_container.xml" />
@@ -140,7 +156,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/activity_calendar.xml" afterPath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/activity_calendar.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout-v11/activity_calendar.xml" afterPath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout-v11/activity_calendar.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/activity_calendar_single_date.xml" afterPath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/activity_calendar_single_date.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/activity_calendar_single_date.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_calendar_single_date.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/activity_calendar_single_event.xml" afterPath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/activity_calendar_single_event.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/activity_dir.xml" afterPath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/activity_dir.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/activity_main.xml" afterPath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/activity_main.xml" />
@@ -165,9 +180,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/menu/menu_my.xml" afterPath="$PROJECT_DIR$/build/intermediates/res/merged/debug/menu/menu_my.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/menu/menu_news.xml" afterPath="$PROJECT_DIR$/build/intermediates/res/merged/debug/menu/menu_news.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/menu/menu_news_single_story.xml" afterPath="$PROJECT_DIR$/build/intermediates/res/merged/debug/menu/menu_news_single_story.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental/mergeAssets/androidTest/debug/merger.xml" afterPath="$PROJECT_DIR$/build/intermediates/incremental/mergeAssets/androidTest/debug/merger.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental/mergeAssets/debug/merger.xml" afterPath="$PROJECT_DIR$/build/intermediates/incremental/mergeAssets/debug/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental/mergeResourcesandroidTest/debug/merger.xml" afterPath="$PROJECT_DIR$/build/intermediates/incremental/mergeResourcesandroidTest/debug/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental/mergeResourcesdebug/merger.xml" afterPath="$PROJECT_DIR$/build/intermediates/incremental/mergeResourcesdebug/merger.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/newscardview.xml" afterPath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/newscardview.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/normal_date_cell.xml" afterPath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/normal_date_cell.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/notification_media_action.xml" afterPath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/notification_media_action.xml" />
@@ -292,6 +306,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/values-zh-rHK/values-zh-rHK.xml" afterPath="$PROJECT_DIR$/build/intermediates/res/merged/debug/values-zh-rHK/values-zh-rHK.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/values-zh-rTW/values-zh-rTW.xml" afterPath="$PROJECT_DIR$/build/intermediates/res/merged/debug/values-zh-rTW/values-zh-rTW.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/values-zu/values-zu.xml" afterPath="$PROJECT_DIR$/build/intermediates/res/merged/debug/values-zu/values-zu.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/values/values.xml" afterPath="$PROJECT_DIR$/build/intermediates/res/merged/debug/values/values.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/weekday_textview.xml" afterPath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/weekday_textview.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -321,10 +336,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DepartmentsActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DepartmentsActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/app/ssumobile/ssumobile_android/activity/DepartmentsActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="0.3321492">
               <caret line="117" column="17" selection-start-line="117" selection-start-column="17" selection-end-line="117" selection-end-column="17" />
               <folding>
                 <element signature="e#1875#2472#0" expanded="true" />
@@ -342,12 +357,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FacStaffModelActivity.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/app/ssumobile/ssumobile_android/activity/FacStaffModelActivity.java">
+      <file leaf-file-name="DepartmentModelActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/app/ssumobile/ssumobile_android/activity/DepartmentModelActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.30195382">
-              <caret line="195" column="92" selection-start-line="195" selection-start-column="92" selection-end-line="195" selection-end-column="92" />
-              <folding />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="69" column="56" selection-start-line="69" selection-start-column="56" selection-end-line="69" selection-end-column="56" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -2018,24 +2035,6 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SSUMobile_android" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
             </PATH_ELEMENT>
@@ -2277,7 +2276,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="635" y="0" width="1285" height="1040" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32918552" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33484164" sideWeight="0.49219564" order="7" side_tool="false" content_ui="tabs" />
@@ -2661,28 +2660,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/app/ssumobile/ssumobile_android/activity/DepartmentModelActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5435169">
-          <caret line="69" column="56" selection-start-line="69" selection-start-column="56" selection-end-line="69" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2275#2930#0" expanded="true" />
-            <element signature="e#2929#2930#0" expanded="true" />
-            <element signature="e#4816#5428#0" expanded="true" />
-            <element signature="e#4942#5394#0" expanded="true" />
-            <element signature="e#5393#5394#0" expanded="true" />
-            <element signature="e#5427#5428#0" expanded="true" />
-            <element signature="e#5557#5857#0" expanded="true" />
-            <element signature="e#5856#5857#0" expanded="true" />
-            <element signature="e#6011#6184#0" expanded="true" />
-            <element signature="e#6183#6184#0" expanded="true" />
-            <element signature="e#6265#6563#0" expanded="true" />
-            <element signature="e#6562#6563#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.36940297">
@@ -2699,25 +2676,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="58" column="35" selection-start-line="58" selection-start-column="35" selection-end-line="58" selection-end-column="35" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/app/ssumobile/ssumobile_android/activity/DepartmentsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="117" column="17" selection-start-line="117" selection-start-column="17" selection-end-line="117" selection-end-column="17" />
-          <folding>
-            <element signature="e#1875#2472#0" expanded="true" />
-            <element signature="e#2471#2472#0" expanded="true" />
-            <element signature="e#3226#3523#0" expanded="true" />
-            <element signature="e#3522#3523#0" expanded="true" />
-            <element signature="e#3828#4275#0" expanded="true" />
-            <element signature="e#4274#4275#0" expanded="true" />
-            <element signature="e#4529#4983#0" expanded="true" />
-            <element signature="e#4982#4983#0" expanded="true" />
-            <element signature="e#8466#9803#0" expanded="true" />
-            <element signature="e#9802#9803#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2742,9 +2700,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/app/ssumobile/ssumobile_android/activity/FacStaffModelActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30195382">
-          <caret line="195" column="92" selection-start-line="195" selection-start-column="92" selection-end-line="195" selection-end-column="92" />
+        <state vertical-scroll-proportion="4.37833">
+          <caret line="199" column="5" selection-start-line="199" selection-start-column="5" selection-end-line="199" selection-end-column="5" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app/ssumobile/ssumobile_android/activity/DepartmentModelActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="69" column="56" selection-start-line="69" selection-start-column="56" selection-end-line="69" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app/ssumobile/ssumobile_android/activity/DepartmentsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3321492">
+          <caret line="117" column="17" selection-start-line="117" selection-start-column="17" selection-end-line="117" selection-end-column="17" />
+          <folding>
+            <element signature="e#1875#2472#0" expanded="true" />
+            <element signature="e#2471#2472#0" expanded="true" />
+            <element signature="e#3226#3523#0" expanded="true" />
+            <element signature="e#3522#3523#0" expanded="true" />
+            <element signature="e#3828#4275#0" expanded="true" />
+            <element signature="e#4274#4275#0" expanded="true" />
+            <element signature="e#4529#4983#0" expanded="true" />
+            <element signature="e#4982#4983#0" expanded="true" />
+            <element signature="e#8466#9803#0" expanded="true" />
+            <element signature="e#9802#9803#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
