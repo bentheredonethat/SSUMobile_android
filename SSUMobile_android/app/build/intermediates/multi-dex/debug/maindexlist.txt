@@ -100,7 +100,6 @@ android/support/v4/view/ViewCompat$EclairMr1ViewCompatImpl.class
 com/app/ssumobile/ssumobile_android/activity/calendarSingleEvent.class
 android/support/v4/view/ViewCompat$ViewCompatImpl.class
 org/parceler/guava/hash/Funnels.class
-com/app/ssumobile/ssumobile_android/activity/DepartmentsActivity$8.class
 org/parceler/transfuse/annotations/BroadcastReceiver.class
 com/app/ssumobile/ssumobile_android/activity/NewsActivity.class
 com/app/ssumobile/ssumobile_android/activity/SchoolsActivity$5.class
@@ -378,7 +377,6 @@ org/apache/http/impl/io/DefaultHttpRequestParser.class
 org/parceler/transfuse/gen/FactoriesGenerator.class
 android/support/v4/media/VolumeProviderCompat.class
 com/app/ssumobile/ssumobile_android/activity/DepartmentModelActivity.class
-com/app/ssumobile/ssumobile_android/activity/DepartmentsActivity$9.class
 org/parceler/transfuse/adapter/element/ASTElementConverterFactory.class
 org/parceler/transfuse/annotations/OnRebind.class
 android/support/v4/media/VolumeProviderCompat$ControlType.class
@@ -667,7 +665,6 @@ org/apache/http/message/BasicHeaderValueParserHC4.class
 org/parceler/transfuse/gen/variableBuilder/ScopeReferenceInjectionNodeBuilder.class
 org/parceler/transfuse/gen/invocationBuilder/PublicInvocationBuilder.class
 com/app/ssumobile/ssumobile_android/activity/SchoolsActivity$1.class
-com/app/ssumobile/ssumobile_android/activity/DepartmentsActivity$7.class
 org/parceler/transfuse/annotations/BindProvider.class
 org/parceler/guava/io/CharSource.class
 org/parceler/transfuse/gen/UniqueVariableNamer.class
