@@ -1,6 +1,7 @@
 package com.app.ssumobile.ssumobile_android.activity;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
@@ -17,7 +18,6 @@ import com.app.ssumobile.ssumobile_android.models.BuildingModel;
 import com.app.ssumobile.ssumobile_android.models.DepartmentModel;
 import com.app.ssumobile.ssumobile_android.models.FacStaffModel;
 
-import java.net.HttpURLConnection;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -26,6 +26,8 @@ import java.net.URL;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
 
 import javax.net.ssl.HttpsURLConnection;
 
@@ -34,12 +36,11 @@ public class DepartmentsActivity extends AppCompatActivity {
     String body;
 
     ArrayAdapter adapter;
-    //JSONtoModelProvider jsonConverter;
 
     ArrayList<DepartmentModel> contactsList = new ArrayList<>();
     ArrayList<FacStaffModel> facStaffList1 = new ArrayList<>();
     ArrayList<BuildingModel> buildingList = new ArrayList<>();
-
+    ListView listView;
     EditText inputSearch;
 
     @Override
@@ -48,10 +49,39 @@ public class DepartmentsActivity extends AppCompatActivity {
         setContentView(R.layout.directory_view);
         // Set input search bar
         inputSearch = (EditText) findViewById(R.id.input_search);
+        listView = (ListView) findViewById(R.id.mobile_list);
+        new AsyncTask<String,String,ArrayList<DepartmentModel>>(){
 
-        adapter = new ArrayAdapter<>(this, R.layout.activity_listview, contactsList);
-        ListView listView = (ListView) findViewById(R.id.mobile_list);
-        listView.setAdapter(adapter);
+            @Override
+            protected ArrayList<DepartmentModel> doInBackground(String... params) {
+                try {
+                    sendGet("https://moonlight.cs.sonoma.edu/ssumobile/1_0/directory.py");
+                } catch (Throwable t) {
+                    System.out.println(t.getCause());
+                }
+                for (int i = 0; i < buildingList.size(); ++i) {
+                    for (int j = 0; j < contactsList.size(); ++j) {
+                        if (buildingList.get(i).id.equals(contactsList.get(j).building))
+                            contactsList.get(j).buildingName = buildingList.get(i).name;
+                    }
+                }
+                for( int k = 0; k < contactsList.size(); ++k ){
+                    for( int i = 0; i < facStaffList1.size(); ++i ){
+                        if(contactsList.get(k).id.equals( facStaffList1.get(i).department ))
+                            contactsList.get(k).getFacStaffList().add( facStaffList1.get(i) );
+                    }
+                }
+                return contactsList; //need to return the output type
+            }
+
+            @Override
+            protected void onPostExecute(ArrayList<DepartmentModel> results ) {
+                super.onPostExecute(results);
+                adapter = new ArrayAdapter<>(DepartmentsActivity.this, R.layout.activity_listview, results);
+                DepartmentsActivity.this.listView.setAdapter(adapter);
+            }
+        }.execute("SomeString");
+
         listView.setTextFilterEnabled(true);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -67,85 +97,28 @@ public class DepartmentsActivity extends AppCompatActivity {
         });
 
         // Enable Search Filter for search logic
-        inputSearch.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                DepartmentsActivity.this.adapter.getFilter().filter(s.toString());
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                DepartmentsActivity.this.adapter.getFilter().filter(s.toString());
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
-    }
-
-    @Override
-    protected void onStart(){
-        super.onStart();
-        Thread runner = new Thread(new Runnable(){
-            public void run()  {
-                try {
-                    sendGet("https://moonlight.cs.sonoma.edu/ssumobile/1_0/directory.py");
-                } catch (Throwable t) {
-                    System.out.println(t.getCause());
-                }
-            }
-        });
-        runner.start();
-
-        try {
-            runner.join();
-            adapter.notifyDataSetChanged(); // update cards
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        // Set the building name for each department
         Thread runner2 = new Thread(new Runnable() {
             @Override
             public void run() {
-                for(int i = 0; i < buildingList.size(); ++i) {
-                    for (int j = 0; j < contactsList.size(); ++j) {
-                        if ( buildingList.get(i).id.equals( contactsList.get(j).building ) )
-                            contactsList.get(j).buildingName = buildingList.get(i).name;
+                inputSearch.addTextChangedListener(new TextWatcher() {
+                    @Override
+                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                        DepartmentsActivity.this.adapter.getFilter().filter(s.toString());
                     }
-                }
+
+                    @Override
+                    public void onTextChanged(CharSequence s, int start, int before, int count) {
+                        DepartmentsActivity.this.adapter.getFilter().filter(s.toString());
+                    }
+
+                    @Override
+                    public void afterTextChanged(Editable s) {
+
+                    }
+                });
             }
         });
         runner2.start();
-
-        try {
-            runner2.join();
-            adapter.notifyDataSetChanged(); // update cards
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        Thread runner3 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                for( int i = 0; i < facStaffList1.size(); ++i ){
-                    for( int k = 0; k < contactsList.size(); ++k ){
-                        if(contactsList.get(k).id.equals(facStaffList1.get(i).department ))
-                            contactsList.get(k).getFacStaffList().add( facStaffList1.get(i) );
-                    }
-                }
-            }
-        });
-        runner3.start();
-
-        try {
-            runner3.join();
-            adapter.notifyDataSetChanged(); // update cards
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 
     @Override
@@ -220,49 +193,32 @@ public class DepartmentsActivity extends AppCompatActivity {
 
         BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
         String inputLine;
-        StringBuffer response = new StringBuffer();
+        StringBuilder response = new StringBuilder();
 
         while ((inputLine = in.readLine()) != null) {response.append(inputLine);}
         in.close();
 
         body = response.toString();
-        String test = body.substring(0, 15);
-        System.out.println("in sendGet()");
-        System.out.println(test);
         parseOutEvents();
     }
-
 
     // parse out events from body
     private void parseOutEvents() throws org.json.JSONException {
         System.out.println("in parseOutEvents()");
-
-        Thread runner = new Thread(new Runnable() {
-            @Override
-            public void run() {
-               try {
-                   JSONObject myjson = new JSONObject(body);
-                   JSONArray the_json_array = myjson.getJSONArray("Department");
-                   JSONArray building_json_array = myjson.getJSONArray("Building");
-                   JSONArray facStaff_json_array = myjson.getJSONArray("Person");
-                   for (int i = 0; i < the_json_array.length(); i++) {
-                       contactsList.add(convertDeptJSONtoModel(the_json_array.getJSONObject(i)));
-                       adapter.notifyDataSetChanged(); // update cards
-                   }
-                   for (int i = 0; i < building_json_array.length(); i++) {
-                       buildingList.add(convertBuildJSONtoModel(building_json_array.getJSONObject(i)));
-                       adapter.notifyDataSetChanged(); // update cards
-                   }
-                   for (int i = 0; i < facStaff_json_array.length(); i++){
-                       facStaffList1.add(convertPersonJSONtoModel(facStaff_json_array.getJSONObject(i)));
-                       adapter.notifyDataSetChanged(); // update cards
-                   }
-               }catch( JSONException e){
-                   throw new RuntimeException(e);
-               }
-            }
-        });
-        runner.start();
+        JSONObject myjson = new JSONObject(body);
+        JSONArray the_json_array = myjson.getJSONArray("Department");
+        JSONArray building_json_array = myjson.getJSONArray("Building");
+        JSONArray facStaff_json_array = myjson.getJSONArray("Person");
+        for (int i = 0; i < the_json_array.length(); i++) {
+            contactsList.add(convertDeptJSONtoModel(the_json_array.getJSONObject(i)));
+        }
+        for (int i = 0; i < building_json_array.length(); i++) {
+            buildingList.add(convertBuildJSONtoModel(building_json_array.getJSONObject(i)));
+        }
+        for (int i = 0; i < facStaff_json_array.length(); i++) {
+            facStaffList1.add(convertPersonJSONtoModel(facStaff_json_array.getJSONObject(i)));
+        }
+        adapter.notifyDataSetChanged(); // update cards
     }
 
     // get attributes of event string into an event

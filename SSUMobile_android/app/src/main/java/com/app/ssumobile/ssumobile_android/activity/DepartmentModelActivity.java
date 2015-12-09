@@ -4,28 +4,20 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.app.ssumobile.ssumobile_android.R;
 import com.app.ssumobile.ssumobile_android.models.DepartmentModel;
 import com.app.ssumobile.ssumobile_android.models.FacStaffModel;
+import java.util.ArrayList;
 
 
 /**
@@ -57,10 +49,13 @@ public class DepartmentModelActivity extends AppCompatActivity {
         Bundle data = getIntent().getExtras();
         final DepartmentModel Dmodel = (DepartmentModel)data.getSerializable("DepartmentModel");
         ContactProvider(Dmodel);
-        adapter = new ArrayAdapter<>(this, R.layout.activity_listview, Dmodel.getFacStaffList());
+        final ArrayList<FacStaffModel> realizedData = Dmodel.getFacStaffList();
+
+        adapter = new ArrayAdapter<>(this, R.layout.activity_listview, realizedData);
 
         ListView listView = (ListView) findViewById(R.id.mobile_list);
         listView.setAdapter(adapter);
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

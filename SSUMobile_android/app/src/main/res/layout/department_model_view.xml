@@ -55,10 +55,9 @@
         android:layout_width="match_parent"
         android:divider="@drawable/list_divider"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:dividerHeight="4dp"
-        android:background="#D9001339"
-        android:layout_below="@+id/building_button">
+        android:layout_below="@id/building_button"
+        android:layout_marginTop="20dp">
     </ListView>
 
 
