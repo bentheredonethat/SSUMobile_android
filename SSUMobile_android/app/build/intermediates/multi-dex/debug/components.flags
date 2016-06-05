@@ -1,14 +1,14 @@
--injars /home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/multi-dex/debug/allclasses.jar
--outjars /home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/multi-dex/debug/componentClasses.jar
+-injars 'C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\multi-dex\debug\allclasses.jar'
+-outjars 'C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\multi-dex\debug\componentClasses.jar'
 
--libraryjars /home/ben/Android/Sdk/build-tools/23.0.2/lib/shrinkedAndroid.jar
+-libraryjars 'C:\Users\WestFlow\AppData\Local\Android\sdk\build-tools\23.0.2\lib\shrinkedAndroid.jar'
 
 -forceprocessing
 -dontoptimize
 -dontobfuscate
 -dontpreverify
 -dontwarn
--printconfiguration /home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/multi-dex/debug/components.flags
+-printconfiguration 'C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\multi-dex\debug\components.flags'
 
 
 -keep class null {
@@ -81,10 +81,6 @@
 }
 
 -keep class com.app.ssumobile.ssumobile_android.activity.resourceToURL {
-    <init>();
-}
-
--keep class android.support.v7.widget.TestActivity {
     <init>();
 }
 

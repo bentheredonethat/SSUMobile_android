@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
+    <!-- From: file:/C:/Users/WestFlow/Desktop/Repositories/SSUMobile%20Android/SSUMobile_android/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
     <eat-comment/>
     <attr format="reference" name="drawerArrowStyle"/>
     <attr format="dimension" name="height"/>
     <attr format="boolean" name="isLightTheme"/>
-    <!-- From: file:/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/exploded-aar/com.roomorama/caldroid/2.2.1/res/values/values.xml -->
+    <!-- From: file:/C:/Users/WestFlow/Desktop/Repositories/SSUMobile%20Android/SSUMobile_android/SSUMobile_android/app/build/intermediates/exploded-aar/com.roomorama/caldroid/2.2.1/res/values/values.xml -->
     <eat-comment/>
     <attr format="reference" name="styleCaldroidGridView"/>
     <attr format="reference" name="styleCaldroidLeftArrow"/>
@@ -15,7 +15,7 @@
     <attr format="reference" name="styleCaldroidSquareCell"/>
     <attr format="reference" name="styleCaldroidViewLayout"/>
     <attr format="reference" name="styleCaldroidWeekdayView"/>
-    <!-- From: file:/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
+    <!-- From: file:/C:/Users/WestFlow/Desktop/Repositories/SSUMobile%20Android/SSUMobile_android/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
     <eat-comment/>
     <attr format="string" name="title"/>
     <bool name="abc_action_bar_embed_tabs">true</bool>
@@ -44,7 +44,7 @@
     <color name="bright_foreground_material_light">@android:color/black</color>
     <color name="button_material_dark">#ff5a595b</color>
     <color name="button_material_light">#ffd6d7d7</color>
-    <!-- From: file:/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/exploded-aar/com.roomorama/caldroid/2.2.1/res/values/values.xml -->
+    <!-- From: file:/C:/Users/WestFlow/Desktop/Repositories/SSUMobile%20Android/SSUMobile_android/SSUMobile_android/app/build/intermediates/exploded-aar/com.roomorama/caldroid/2.2.1/res/values/values.xml -->
     <eat-comment/>
     <color name="caldroid_333">#333</color>
     <color name="caldroid_555">#555</color>
@@ -59,16 +59,16 @@
     <color name="caldroid_sky_blue">#FFA3E8F7</color>
     <color name="caldroid_transparent">#00000000</color>
     <color name="caldroid_white">#FFFFFF</color>
-    <!-- From: file:/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/21.0.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/WestFlow/Desktop/Repositories/SSUMobile%20Android/SSUMobile_android/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.1.0/res/values/values.xml -->
     <eat-comment/>
     <color name="cardview_dark_background">#FF202020</color>
     <color name="cardview_light_background">#FFFAFAFA</color>
     <color name="cardview_shadow_end_color">#03000000</color>
     <color name="cardview_shadow_start_color">#37000000</color>
-    <!-- From: file:/home/ben/school/370/Repositories/App/SSUMobile_android/app/src/main/res/values/colors.xml -->
+    <!-- From: file:/C:/Users/WestFlow/Desktop/Repositories/SSUMobile%20Android/SSUMobile_android/SSUMobile_android/app/src/main/res/values/colors.xml -->
     <eat-comment/>
     <item name="darkgreen" type="color">#FF669900</item>
-    <!-- From: file:/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
+    <!-- From: file:/C:/Users/WestFlow/Desktop/Repositories/SSUMobile%20Android/SSUMobile_android/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
     <eat-comment/>
     <color name="dim_foreground_disabled_material_dark">#80bebebe</color>
     <color name="dim_foreground_disabled_material_light">#80323232</color>
@@ -76,11 +76,11 @@
     <color name="dim_foreground_material_light">#ff323232</color>
     <color name="foreground_material_dark">@android:color/white</color>
     <color name="foreground_material_light">@android:color/black</color>
-    <!-- From: file:/home/ben/school/370/Repositories/App/SSUMobile_android/app/src/main/res/values/colors.xml -->
+    <!-- From: file:/C:/Users/WestFlow/Desktop/Repositories/SSUMobile%20Android/SSUMobile_android/SSUMobile_android/app/src/main/res/values/colors.xml -->
     <eat-comment/>
     <item name="green" type="color">#4499CC00</item>
     <item name="grey" type="color">#555555</item>
-    <!-- From: file:/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
+    <!-- From: file:/C:/Users/WestFlow/Desktop/Repositories/SSUMobile%20Android/SSUMobile_android/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
     <eat-comment/>
     <color name="highlighted_text_material_dark">#6680cbc4</color>
     <color name="highlighted_text_material_light">#66009688</color>
@@ -112,17 +112,17 @@
     <color name="secondary_text_default_material_light">#8a000000</color>
     <color name="secondary_text_disabled_material_dark">#36ffffff</color>
     <color name="secondary_text_disabled_material_light">#24000000</color>
-    <!-- From: file:/home/ben/school/370/Repositories/App/SSUMobile_android/app/src/main/res/values/colors.xml -->
+    <!-- From: file:/C:/Users/WestFlow/Desktop/Repositories/SSUMobile%20Android/SSUMobile_android/SSUMobile_android/app/src/main/res/values/colors.xml -->
     <eat-comment/>
     <item name="ssublue" type="color">#001339</item>
     <item name="ssublue_op" type="color">"#D9001339"</item>
-    <!-- From: file:/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
+    <!-- From: file:/C:/Users/WestFlow/Desktop/Repositories/SSUMobile%20Android/SSUMobile_android/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
     <eat-comment/>
     <color name="switch_thumb_disabled_material_dark">#ff616161</color>
     <color name="switch_thumb_disabled_material_light">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_dark">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_light">#fff1f1f1</color>
-    <!-- From: file:/home/ben/school/370/Repositories/App/SSUMobile_android/app/src/main/res/values/colors.xml -->
+    <!-- From: file:/C:/Users/WestFlow/Desktop/Repositories/SSUMobile%20Android/SSUMobile_android/SSUMobile_android/app/src/main/res/values/colors.xml -->
     <eat-comment/>
     <item name="transparent" type="color">#00FFFFFF</item>
     <declare-styleable name="ActionBar"><attr name="navigationMode"><enum name="normal" value="0"/><enum name="listMode" value="1"/><enum name="tabMode" value="2"/></attr><attr name="displayOptions"><flag name="none" value="0"/><flag name="useLogo" value="0x1"/><flag name="showHome" value="0x2"/><flag name="homeAsUp" value="0x4"/><flag name="showTitle" value="0x8"/><flag name="showCustom" value="0x10"/><flag name="disableHome" value="0x20"/></attr><attr name="title"/><attr format="string" name="subtitle"/><attr format="reference" name="titleTextStyle"/><attr format="reference" name="subtitleTextStyle"/><attr format="reference" name="icon"/><attr format="reference" name="logo"/><attr format="reference" name="divider"/><attr format="reference" name="background"/><attr format="reference|color" name="backgroundStacked"/><attr format="reference|color" name="backgroundSplit"/><attr format="reference" name="customNavigationLayout"/><attr name="height"/><attr format="reference" name="homeLayout"/><attr format="reference" name="progressBarStyle"/><attr format="reference" name="indeterminateProgressStyle"/><attr format="dimension" name="progressBarPadding"/><attr name="homeAsUpIndicator"/><attr format="dimension" name="itemPadding"/><attr format="boolean" name="hideOnContentScroll"/><attr format="dimension" name="contentInsetStart"/><attr format="dimension" name="contentInsetEnd"/><attr format="dimension" name="contentInsetLeft"/><attr format="dimension" name="contentInsetRight"/><attr format="dimension" name="elevation"/><attr format="reference" name="popupTheme"/></declare-styleable>
@@ -147,6 +147,7 @@
     <declare-styleable name="MenuView"><attr name="android:itemTextAppearance"/><attr name="android:horizontalDivider"/><attr name="android:verticalDivider"/><attr name="android:headerBackground"/><attr name="android:itemBackground"/><attr name="android:windowAnimationStyle"/><attr name="android:itemIconDisabledAlpha"/><attr format="boolean" name="preserveIconSpacing"/></declare-styleable>
     <declare-styleable name="PopupWindow"><attr format="boolean" name="overlapAnchor"/><attr name="android:popupBackground"/></declare-styleable>
     <declare-styleable name="PopupWindowBackgroundState"><attr format="boolean" name="state_above_anchor"/></declare-styleable>
+    <declare-styleable name="RecyclerView"><attr format="string" name="layoutManager"/><attr name="android:orientation"/><attr format="integer" name="spanCount"/><attr format="boolean" name="reverseLayout"/><attr format="boolean" name="stackFromEnd"/></declare-styleable>
     <declare-styleable name="SearchView"><attr format="reference" name="layout"/><attr format="boolean" name="iconifiedByDefault"/><attr name="android:maxWidth"/><attr format="string" name="queryHint"/><attr format="string" name="defaultQueryHint"/><attr name="android:imeOptions"/><attr name="android:inputType"/><attr format="reference" name="closeIcon"/><attr format="reference" name="goIcon"/><attr format="reference" name="searchIcon"/><attr format="reference" name="searchHintIcon"/><attr format="reference" name="voiceIcon"/><attr format="reference" name="commitIcon"/><attr format="reference" name="suggestionRowLayout"/><attr format="reference" name="queryBackground"/><attr format="reference" name="submitBackground"/><attr name="android:focusable"/></declare-styleable>
     <declare-styleable name="Spinner"><attr name="android:prompt"/><attr name="popupTheme"/><attr name="android:popupBackground"/><attr name="android:dropDownWidth"/></declare-styleable>
     <declare-styleable name="SwitchCompat"><attr name="android:thumb"/><attr format="reference" name="track"/><attr name="android:textOn"/><attr name="android:textOff"/><attr format="dimension" name="thumbTextPadding"/><attr format="reference" name="switchTextAppearance"/><attr format="dimension" name="switchMinWidth"/><attr format="dimension" name="switchPadding"/><attr format="boolean" name="splitTrack"/><attr format="boolean" name="showText"/></declare-styleable>
@@ -156,7 +157,7 @@
     <declare-styleable name="View"><attr format="dimension" name="paddingStart"/><attr format="dimension" name="paddingEnd"/><attr name="android:focusable"/><attr format="reference" name="theme"/><attr name="android:theme"/></declare-styleable>
     <declare-styleable name="ViewBackgroundHelper"><attr name="android:background"/><attr format="color" name="backgroundTint"/><attr name="backgroundTintMode"><enum name="src_over" value="3"/><enum name="src_in" value="5"/><enum name="src_atop" value="9"/><enum name="multiply" value="14"/><enum name="screen" value="15"/></attr></declare-styleable>
     <declare-styleable name="ViewStubCompat"><attr name="android:layout"/><attr name="android:inflatedId"/><attr name="android:id"/></declare-styleable>
-    <!-- From: file:/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
+    <!-- From: file:/C:/Users/WestFlow/Desktop/Repositories/SSUMobile%20Android/SSUMobile_android/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
     <eat-comment/>
     <dimen name="abc_action_bar_content_inset_material">16dp</dimen>
     <dimen name="abc_action_bar_default_height_material">56dp</dimen>
@@ -225,22 +226,27 @@
     <dimen name="abc_text_size_subtitle_material_toolbar">16dp</dimen>
     <dimen name="abc_text_size_title_material">20sp</dimen>
     <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
-    <!-- From: file:/home/ben/school/370/Repositories/App/SSUMobile_android/app/src/main/res/values/dimens.xml -->
+    <!-- From: file:/C:/Users/WestFlow/Desktop/Repositories/SSUMobile%20Android/SSUMobile_android/SSUMobile_android/app/src/main/res/values/dimens.xml -->
     <eat-comment/>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <!-- From: file:/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/21.0.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/WestFlow/Desktop/Repositories/SSUMobile%20Android/SSUMobile_android/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.1.0/res/values/values.xml -->
     <eat-comment/>
     <dimen name="cardview_compat_inset_shadow">1dp</dimen>
     <dimen name="cardview_default_elevation">2dp</dimen>
     <dimen name="cardview_default_radius">2dp</dimen>
-    <!-- From: file:/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
+    <!-- From: file:/C:/Users/WestFlow/Desktop/Repositories/SSUMobile%20Android/SSUMobile_android/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
     <eat-comment/>
     <item format="float" name="disabled_alpha_material_dark" type="dimen">0.30</item>
     <item format="float" name="disabled_alpha_material_light" type="dimen">0.26</item>
     <item format="float" name="highlight_alpha_material_colored" type="dimen">0.26</item>
     <item format="float" name="highlight_alpha_material_dark" type="dimen">0.20</item>
     <item format="float" name="highlight_alpha_material_light" type="dimen">0.12</item>
+    <!-- From: file:/C:/Users/WestFlow/Desktop/Repositories/SSUMobile%20Android/SSUMobile_android/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.0/res/values/values.xml -->
+    <eat-comment/>
+    <dimen name="item_touch_helper_max_drag_scroll_per_frame">20dp</dimen>
+    <!-- From: file:/C:/Users/WestFlow/Desktop/Repositories/SSUMobile%20Android/SSUMobile_android/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
+    <eat-comment/>
     <dimen name="notification_large_icon_height">64dp</dimen>
     <dimen name="notification_large_icon_width">64dp</dimen>
     <dimen name="notification_subtext_size">12dp</dimen>
@@ -250,6 +256,11 @@
     <item name="action_menu_divider" type="id"/>
     <item name="action_menu_presenter" type="id"/>
     <item name="home" type="id"/>
+    <!-- From: file:/C:/Users/WestFlow/Desktop/Repositories/SSUMobile%20Android/SSUMobile_android/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.0/res/values/values.xml -->
+    <eat-comment/>
+    <item name="item_touch_helper_previous_elevation" type="id"/>
+    <!-- From: file:/C:/Users/WestFlow/Desktop/Repositories/SSUMobile%20Android/SSUMobile_android/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
+    <eat-comment/>
     <item name="progress_circular" type="id"/>
     <item name="progress_horizontal" type="id"/>
     <item name="split_action_bar" type="id"/>
@@ -259,14 +270,14 @@
     <integer name="abc_max_action_buttons">2</integer>
     <integer name="cancel_button_image_alpha">127</integer>
     <integer name="status_bar_notification_info_maxnum">999</integer>
-    <!-- From: file:/home/ben/school/370/Repositories/App/SSUMobile_android/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/C:/Users/WestFlow/Desktop/Repositories/SSUMobile%20Android/SSUMobile_android/SSUMobile_android/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="Buildings_Directory">"Buildings"</string>
     <string name="Departments_Directory">"Departments"</string>
     <string name="Faculty_Staff_Directory">"Faculty &amp; Staff"</string>
     <string name="PLAIN_TEXT_TYPE">"text/plain"</string>
     <string name="Schools_Directory">"Schools"</string>
-    <!-- From: file:/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
+    <!-- From: file:/C:/Users/WestFlow/Desktop/Repositories/SSUMobile%20Android/SSUMobile_android/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
     <eat-comment/>
     <string name="abc_action_bar_home_description">Navigate home</string>
     <string name="abc_action_bar_home_description_format">%1$s, %2$s</string>
@@ -287,7 +298,7 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
-    <!-- From: file:/home/ben/school/370/Repositories/App/SSUMobile_android/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/C:/Users/WestFlow/Desktop/Repositories/SSUMobile%20Android/SSUMobile_android/SSUMobile_android/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="action_settings">Settings</string>
     <string name="add_to_contacts">"Add To Contacts"</string>
@@ -310,10 +321,10 @@
     <string name="phone_button">"Phone"</string>
     <string name="resources_button">Resources</string>
     <string name="search">"Search…"</string>
-    <!-- From: file:/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
+    <!-- From: file:/C:/Users/WestFlow/Desktop/Repositories/SSUMobile%20Android/SSUMobile_android/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
     <eat-comment/>
     <string name="status_bar_notification_info_overflow">999+</string>
-    <!-- From: file:/home/ben/school/370/Repositories/App/SSUMobile_android/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/C:/Users/WestFlow/Desktop/Repositories/SSUMobile%20Android/SSUMobile_android/SSUMobile_android/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="title_activity_calendar">CalendarActivity</string>
     <string name="title_activity_calendar_single_date">CalendarSingleDate</string>
@@ -325,19 +336,19 @@
     <string name="title_activity_resources">resourcesActivity</string>
     <string name="title_button">"Title"</string>
     <string name="web_site">"Website Button"</string>
-    <!-- From: file:/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
+    <!-- From: file:/C:/Users/WestFlow/Desktop/Repositories/SSUMobile%20Android/SSUMobile_android/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
     <eat-comment/>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>
     <style name="Animation.AppCompat.DropDownUp" parent="Base.Animation.AppCompat.DropDownUp"/>
-    <!-- From: file:/home/ben/school/370/Repositories/App/SSUMobile_android/app/src/main/res/values/OverflowIconStyle.xml -->
+    <!-- From: file:/C:/Users/WestFlow/Desktop/Repositories/SSUMobile%20Android/SSUMobile_android/SSUMobile_android/app/src/main/res/values/OverflowIconStyle.xml -->
     <eat-comment/>
     <style name="AppTheme" parent="@style/Theme.AppCompat.Light">
         <item name="actionOverflowButtonStyle">@style/OverflowTheme</item>
         <item name="android:actionOverflowButtonStyle">@style/OverflowTheme</item>
     </style>
-    <!-- From: file:/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
+    <!-- From: file:/C:/Users/WestFlow/Desktop/Repositories/SSUMobile%20Android/SSUMobile_android/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
     <eat-comment/>
     <style name="Base.AlertDialog.AppCompat" parent="android:Widget">
         <item name="android:layout">@layout/abc_alert_dialog_material</item>
@@ -1274,7 +1285,7 @@
         <item name="android:minWidth">56dp</item>
         <item name="android:scaleType">center</item>
     </style>
-    <!-- From: file:/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/exploded-aar/com.roomorama/caldroid/2.2.1/res/values/values.xml -->
+    <!-- From: file:/C:/Users/WestFlow/Desktop/Repositories/SSUMobile%20Android/SSUMobile_android/SSUMobile_android/app/build/intermediates/exploded-aar/com.roomorama/caldroid/2.2.1/res/values/values.xml -->
     <eat-comment/>
     <style name="CaldroidDefault">
         <item name="styleCaldroidViewLayout">@style/CaldroidDefaultCalendarViewLayout</item>
@@ -1302,7 +1313,7 @@
         <item name="android:textSize">14sp</item>
         <item name="android:textStyle">bold</item>
     </style>
-    <!-- From: file:/home/ben/school/370/Repositories/App/SSUMobile_android/app/src/main/res/values/caldroid.xml -->
+    <!-- From: file:/C:/Users/WestFlow/Desktop/Repositories/SSUMobile%20Android/SSUMobile_android/SSUMobile_android/app/src/main/res/values/caldroid.xml -->
     <eat-comment/>
     <style name="CaldroidDefaultDark" parent="CaldroidDefault">
         <item name="styleCaldroidViewLayout">@style/CaldroidDefaultDarkCalendarViewLayout</item>
@@ -1328,7 +1339,7 @@
         <item name="android:padding">5dp</item>
     </style>
     <style name="CaldroidDefaultDarkSquareCell" parent="CaldroidDefaultDarkCell"/>
-    <!-- From: file:/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/exploded-aar/com.roomorama/caldroid/2.2.1/res/values/values.xml -->
+    <!-- From: file:/C:/Users/WestFlow/Desktop/Repositories/SSUMobile%20Android/SSUMobile_android/SSUMobile_android/app/build/intermediates/exploded-aar/com.roomorama/caldroid/2.2.1/res/values/values.xml -->
     <eat-comment/>
     <style name="CaldroidDefaultGridView">
         <item name="android:adjustViewBounds">true</item>
@@ -1367,7 +1378,7 @@
         <item name="android:paddingTop">6dp</item>
         <item name="android:paddingBottom">5dp</item>
     </style>
-    <!-- From: file:/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/21.0.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/WestFlow/Desktop/Repositories/SSUMobile%20Android/SSUMobile_android/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.1.0/res/values/values.xml -->
     <eat-comment/>
     <style name="CardView">
         <item name="cardBackgroundColor">@color/cardview_light_background</item>
@@ -1383,12 +1394,12 @@
     <style name="CardView.Light">
         <item name="cardBackgroundColor">@color/cardview_light_background</item>
     </style>
-    <!-- From: file:/home/ben/school/370/Repositories/App/SSUMobile_android/app/src/main/res/values/OverflowIconStyle.xml -->
+    <!-- From: file:/C:/Users/WestFlow/Desktop/Repositories/SSUMobile%20Android/SSUMobile_android/SSUMobile_android/app/src/main/res/values/OverflowIconStyle.xml -->
     <eat-comment/>
     <style name="OverflowTheme" parent="@style/Widget.AppCompat.ActionButton.Overflow">
         <item name="android:src">@mipmap/ic_launcher</item>
     </style>
-    <!-- From: file:/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
+    <!-- From: file:/C:/Users/WestFlow/Desktop/Repositories/SSUMobile%20Android/SSUMobile_android/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
     <eat-comment/>
     <style name="Platform.AppCompat" parent="android:Theme">
         <item name="android:windowNoTitle">true</item>

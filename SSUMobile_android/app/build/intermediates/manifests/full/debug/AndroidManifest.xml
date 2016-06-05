@@ -99,9 +99,6 @@
             android:name="com.app.ssumobile.ssumobile_android.activity.resourceToURL"
             android:label="@string/title_activity_resource_to_url" >
         </activity>
-        <activity
-            android:name="android.support.v7.widget.TestActivity"
-            android:label="RecyclerViewTestActivity" />
     </application>
 
 </manifest>
