@@ -15,6 +15,7 @@ import android.widget.ListView;
 
 import com.app.ssumobile.ssumobile_android.R;
 import com.app.ssumobile.ssumobile_android.models.BuildingModel;
+import com.app.ssumobile.ssumobile_android.models.DepartmentModel;
 import com.app.ssumobile.ssumobile_android.providers.JSONtoModelProvider;
 
 import org.json.JSONArray;
@@ -36,7 +37,8 @@ public class BuildingsActivity extends AppCompatActivity {
     EditText inputSearch;
 
     JSONtoModelProvider jsonConverter = new JSONtoModelProvider();
-    ArrayList<BuildingModel> contactsList = new ArrayList<>();
+    ArrayList<DepartmentModel> DeptList = new ArrayList<>();
+    ArrayList<BuildingModel> BuildingList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +47,7 @@ public class BuildingsActivity extends AppCompatActivity {
 
         inputSearch = (EditText) findViewById(R.id.input_search);
 
-        adapter = new ArrayAdapter<>(this, R.layout.activity_listview, contactsList);
+        adapter = new ArrayAdapter<>(this, R.layout.activity_listview, BuildingList);
         ListView listView = (ListView) findViewById(R.id.mobile_list);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -87,7 +89,7 @@ public class BuildingsActivity extends AppCompatActivity {
             public void run()  {
                 try {
                     //sendGet(url + Year + Month + Day); // get selected date's info
-                    sendGet("https://moonlight.cs.sonoma.edu/ssumobile/1_0/directory.py");
+                    sendGet("https://moonlight.cs.sonoma.edu/ssumobile/1_0/directory");
                 } catch (Throwable t) {
                     System.out.println(t.getCause());
                 }
@@ -187,10 +189,16 @@ public class BuildingsActivity extends AppCompatActivity {
     private void parseOutEvents() throws org.json.JSONException {
 
         JSONObject myjson = new JSONObject(body);
-        JSONArray the_json_array = myjson.getJSONArray("Building");
-        for (int i = 0; i < the_json_array.length(); i++) {
-            JSONObject obj = the_json_array.getJSONObject(i);
-            contactsList.add(jsonConverter.convertBuildJSONtoModel( obj ));
+        JSONArray the_json_array1 = myjson.getJSONArray("Department");
+        JSONArray the_json_array2 = myjson.getJSONArray("Building");
+        for(int i = 0; i < the_json_array1.length(); i++){
+            JSONObject obj1 = the_json_array1.getJSONObject(i);
+            DeptList.add(jsonConverter.convertDeptJSONtoModel(obj1));
+            adapter.notifyDataSetChanged(); // update cards
+        }
+        for (int i = 0; i < the_json_array2.length(); i++) {
+            JSONObject obj2 = the_json_array2.getJSONObject(i);
+            BuildingList.add(jsonConverter.convertBuildJSONtoModel( obj2 ));
             adapter.notifyDataSetChanged(); // update cards
         }
     }

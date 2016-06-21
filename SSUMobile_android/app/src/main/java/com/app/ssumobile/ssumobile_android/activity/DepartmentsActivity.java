@@ -98,65 +98,6 @@ public class DepartmentsActivity extends AppCompatActivity {
 
             }
         });
-
-//        Thread runner = new Thread(new Runnable(){
-//            public void run()  {
-//                try {
-//                    sendGet("https://moonlight.cs.sonoma.edu/ssumobile/1_0/directory.py");
-//                } catch (Throwable t) {
-//                    System.out.println(t.getCause());
-//                }
-//            }
-//        });
-//        runner.start();
-//
-//        try {
-//            runner.join();
-//            adapter.notifyDataSetChanged(); // update cards
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-
-        // Set the building name for each department
-//        Thread runner2 = new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                for(int i = 0; i < buildingList.size(); ++i) {
-//                    for (int j = 0; j < contactsList.size(); ++j) {
-//                        if ( buildingList.get(i).id.equals( contactsList.get(j).building ) )
-//                            contactsList.get(j).buildingName = buildingList.get(i).name;
-//                    }
-//                }
-//            }
-//        });
-//        runner2.start();
-//
-//        try {
-//            runner2.join();
-//            adapter.notifyDataSetChanged(); // update cards
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-//
-//        Thread runner3 = new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                for( int i = 0; i < facStaffList1.size(); ++i ){
-//                    for( int k = 0; k < contactsList.size(); ++k ){
-//                        if(contactsList.get(k).id.equals(facStaffList1.get(i).department ))
-//                            contactsList.get(k).getFacStaffList().add( facStaffList1.get(i) );
-//                    }
-//                }
-//            }
-//        });
-//        runner3.start();
-//
-//        try {
-//            runner3.join();
-//            adapter.notifyDataSetChanged(); // update cards
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
     }
 
     @Override
@@ -231,7 +172,7 @@ public class DepartmentsActivity extends AppCompatActivity {
 
         BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
         String inputLine;
-        StringBuffer response = new StringBuffer();
+        StringBuilder response = new StringBuilder();
 
         while ((inputLine = in.readLine()) != null) {
             response.append(inputLine);
@@ -240,14 +181,12 @@ public class DepartmentsActivity extends AppCompatActivity {
 
         body = response.toString();
 
-     //   parseOutEvents();
     }
 
 
     // parse out events from body
     private void parseOutEvents() throws org.json.JSONException {
         System.out.println("in parseOutEvents()");
-
 
         JSONObject myjson = new JSONObject(body);
         JSONArray the_json_array = myjson.getJSONArray("Department");
@@ -372,7 +311,7 @@ public class DepartmentsActivity extends AppCompatActivity {
 
         private void trysendGet(){
             try {
-                sendGet("https://moonlight.cs.sonoma.edu/ssumobile/1_0/directory.py");
+                sendGet("https://moonlight.cs.sonoma.edu/ssumobile/1_0/directory");
             } catch (Throwable t) {
                 System.out.println(t.getCause());
             }

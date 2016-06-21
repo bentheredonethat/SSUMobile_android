@@ -83,7 +83,7 @@ public class SchoolsActivity extends AppCompatActivity {
             public void run()  {
                 try {
                     //sendGet(url + Year + Month + Day); // get selected date's info
-                    sendGet("https://moonlight.cs.sonoma.edu/ssumobile/1_0/directory.py");
+                    sendGet("https://moonlight.cs.sonoma.edu/ssumobile/1_0/directory");
                 } catch (Throwable t) {
                     System.out.println(t.getCause());
                 }
@@ -169,7 +169,7 @@ public class SchoolsActivity extends AppCompatActivity {
 
         BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
         String inputLine;
-        StringBuffer response = new StringBuffer();
+        StringBuilder response = new StringBuilder();
 
         while ((inputLine = in.readLine()) != null) {response.append(inputLine);}
         in.close();
@@ -177,7 +177,6 @@ public class SchoolsActivity extends AppCompatActivity {
         body = response.toString();
         parseOutEvents();
     }
-
 
     // parse out events from body
     private void parseOutEvents() throws org.json.JSONException {
