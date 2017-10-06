@@ -2,144 +2,172 @@
 <items version="2" >
 
     <item
-        jar="/home/ben/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.6.0/98476622f10715998eacf9240d6b479f12c66143/okio-1.6.0.jar"
+        jar="C:\Users\WestFlow\.gradle\caches\modules-2\files-2.1\commons-lang\commons-lang\2.6\ce1edb914c94ebc388f086c6827e8bdeec71ac2\commons-lang-2.6.jar"
         jumboMode="false"
-        revision="23.0.1"
-        sha1="98476622f10715998eacf9240d6b479f12c66143">
-        <dex dex="/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/pre-dexed/debug/okio-1.6.0-30f4c984861164396393d5fc727f05191a14a119.jar/classes.dex" />
-    </item>
-    <item
-        jar="/home/ben/.gradle/caches/modules-2/files-2.1/commons-lang/commons-lang/2.6/ce1edb914c94ebc388f086c6827e8bdeec71ac2/commons-lang-2.6.jar"
-        jumboMode="false"
-        revision="23.0.1"
+        revision="23.0.2"
         sha1="0ce1edb914c94ebc388f086c6827e8bdeec71ac2">
-        <dex dex="/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/pre-dexed/debug/commons-lang-2.6-6b2f2fff187fa6c11f7bf96b1f6c10074693ed21.jar/classes.dex" />
+        <dex dex="C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\pre-dexed\debug\commons-lang-2.6-fdad39b0babc1cd32bbcb18e318f3bf32d04ca57.jar\classes.dex" />
     </item>
     <item
-        jar="/home/ben/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.3.1/ecb6e1f8e4b0e84c4b886c2f14a1500caf309757/gson-2.3.1.jar"
+        jar="C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\23.1.0\jars\classes.jar"
         jumboMode="false"
-        revision="23.0.1"
-        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
-        <dex dex="/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/pre-dexed/debug/gson-2.3.1-2a30fdb403495a64f0add3d4f92f23d8df95a0b0.jar/classes.dex" />
+        revision="23.0.2"
+        sha1="d96886efea7cc74fbb3abd0e3b51d5638fc57be0">
+        <dex dex="C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\pre-dexed\debug\classes-398a29902a95a78a073073a87e4a9b9475b6ceae.jar\classes.dex" />
     </item>
     <item
-        jar="/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/jars/classes.jar"
+        jar="C:\Users\WestFlow\.gradle\caches\modules-2\files-2.1\net.minidev\json-smart\1.0.9\740cece59da8261afe49585a0ea207981ac5aeb\json-smart-1.0.9.jar"
         jumboMode="false"
-        revision="23.0.1"
+        revision="23.0.2"
+        sha1="0740cece59da8261afe49585a0ea207981ac5aeb">
+        <dex dex="C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\pre-dexed\debug\json-smart-1.0.9-3e2a4420f1ce180e3d6322ced3c60452ee9ed186.jar\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
         sha1="ddde541c289c8b816a8f8fd6c325d80788c522a6">
-        <dex dex="/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/pre-dexed/debug/classes-a89f24178fb16c6c221f5a0ae354e0d5531e67a1.jar/classes.dex" />
+        <dex dex="C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\pre-dexed\debug\classes-16754a506435eac70f74b255501896a666840830.jar\classes.dex" />
     </item>
     <item
-        jar="/home/ben/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.8/af3be3f74d25fc5163b54f56a0d394b462dafafd/commons-codec-1.8.jar"
+        jar="C:\Users\WestFlow\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.5\686c608d1805b6d4d425ec4459e88164ffc85870\gson-2.5.jar"
         jumboMode="false"
-        revision="23.0.1"
-        sha1="af3be3f74d25fc5163b54f56a0d394b462dafafd">
-        <dex dex="/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/pre-dexed/debug/commons-codec-1.8-ef69a1b8743e98ae46030e7112a0ef5c357138af.jar/classes.dex" />
+        revision="23.0.2"
+        sha1="686c608d1805b6d4d425ec4459e88164ffc85870">
+        <dex dex="C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\pre-dexed\debug\gson-2.5-ba54596b0e45b309c42add8fb3a898dce0698291.jar\classes.dex" />
     </item>
     <item
-        jar="/home/ben/.gradle/caches/modules-2/files-2.1/org.parceler/parceler-api/0.2.13/3bdd7267446c60215c6165a8129cc572ad407660/parceler-api-0.2.13.jar"
+        jar="C:\Users\WestFlow\.gradle\caches\modules-2\files-2.1\com.koushikdutta.ion\ion\2.1.6\cd55ef3ba6d8b62838b658ba2507b019dffb3a08\ion-2.1.6.jar"
         jumboMode="false"
-        revision="23.0.1"
+        revision="23.0.2"
+        sha1="cd55ef3ba6d8b62838b658ba2507b019dffb3a08">
+        <dex dex="C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\pre-dexed\debug\ion-2.1.6-f17a81b766b382e43f6fe34f86b0679da9de2ba5.jar\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\WestFlow\.gradle\caches\modules-2\files-2.1\org.parceler\parceler-api\0.2.13\3bdd7267446c60215c6165a8129cc572ad407660\parceler-api-0.2.13.jar"
+        jumboMode="false"
+        revision="23.0.2"
         sha1="3bdd7267446c60215c6165a8129cc572ad407660">
-        <dex dex="/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/pre-dexed/debug/parceler-api-0.2.13-cef1071ec0faf072cf8e9db86baed69c7fcded83.jar/classes.dex" />
+        <dex dex="C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\pre-dexed\debug\parceler-api-0.2.13-a25c58bf64d1711f86002417b1fe5c185c598bc5.jar\classes.dex" />
     </item>
     <item
-        jar="/home/ben/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit/retrofit/1.9.0/a681c044244d9fc375198588297a39ba78028423/retrofit-1.9.0.jar"
+        jar="C:\Users\WestFlow\.gradle\caches\modules-2\files-2.1\com.darwinsys\hirondelle-date4j\1.5.1\7b52de513f87ae4d9ff5d17518def0a1e9bc3df0\hirondelle-date4j-1.5.1.jar"
         jumboMode="false"
-        revision="23.0.1"
-        sha1="a681c044244d9fc375198588297a39ba78028423">
-        <dex dex="/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/pre-dexed/debug/retrofit-1.9.0-1ad06b6bbcc22f4551cfd86356bb618fb5dbe273.jar/classes.dex" />
-    </item>
-    <item
-        jar="/home/ben/.gradle/caches/modules-2/files-2.1/io.reactivex/rxjava/1.0.4/a607b0e12d2de769dc219e00b60a9b3d9e730d/rxjava-1.0.4.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="00a607b0e12d2de769dc219e00b60a9b3d9e730d">
-        <dex dex="/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/pre-dexed/debug/rxjava-1.0.4-b2b8c0a0885570d033bc1867707d687627c850ff.jar/classes.dex" />
-    </item>
-    <item
-        jar="/home/ben/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.0/support-annotations-23.1.0.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="92e3fc113ec3ee36b64603a38857b95700025633">
-        <dex dex="/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/pre-dexed/debug/support-annotations-23.1.0-38c4dbbca6b86b60caa8273721f580c1971e2a4e.jar/classes.dex" />
-    </item>
-    <item
-        jar="/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/21.0.3/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="4b8945fc23a7461c6fdde15753456d64b0a9358b">
-        <dex dex="/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/pre-dexed/debug/classes-d920e8d46e8c09be0701c7e29354984a7773ca1f.jar/classes.dex" />
-    </item>
-    <item
-        jar="/home/ben/.gradle/caches/modules-2/files-2.1/com.darwinsys/hirondelle-date4j/1.5.1/7b52de513f87ae4d9ff5d17518def0a1e9bc3df0/hirondelle-date4j-1.5.1.jar"
-        jumboMode="false"
-        revision="23.0.1"
+        revision="23.0.2"
         sha1="7b52de513f87ae4d9ff5d17518def0a1e9bc3df0">
-        <dex dex="/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/pre-dexed/debug/hirondelle-date4j-1.5.1-223aff8a2400ce364a0f960d0f543ce6e3d6548a.jar/classes.dex" />
+        <dex dex="C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\pre-dexed\debug\hirondelle-date4j-1.5.1-3ef9a37e11568088c4dadf5074cd2efae79b020d.jar\classes.dex" />
     </item>
     <item
-        jar="/home/ben/.gradle/caches/modules-2/files-2.1/io.reactivex/rxandroid/0.24.0/42dab493b8f74b164e082f281480c9d493ff89da/rxandroid-0.24.0.jar"
+        jar="C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\jars\libs\internal_impl-23.1.0.jar"
         jumboMode="false"
-        revision="23.0.1"
-        sha1="42dab493b8f74b164e082f281480c9d493ff89da">
-        <dex dex="/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/pre-dexed/debug/rxandroid-0.24.0-107ab26c165032db534d581b54ef67a009ec3ff8.jar/classes.dex" />
-    </item>
-    <item
-        jar="/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/jars/libs/internal_impl-23.1.0.jar"
-        jumboMode="false"
-        revision="23.0.1"
+        revision="23.0.2"
         sha1="8716243bf04bae8d6c9ca94d27b9a9be7236f0a3">
-        <dex dex="/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/pre-dexed/debug/internal_impl-23.1.0-a4c8a1fd7f3edfa289715f8dbc9bdd2a56005f8f.jar/classes.dex" />
+        <dex dex="C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\pre-dexed\debug\internal_impl-23.1.0-94dcbe006ece4c31b911e4395e861b8b4a6ee760.jar\classes.dex" />
     </item>
     <item
-        jar="/home/ben/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp/okhttp/2.5.0/4de2b4ed3445c37ec1720a7d214712e845a24636/okhttp-2.5.0.jar"
+        jar="C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\exploded-aar\com.roomorama\caldroid\2.2.1\jars\classes.jar"
         jumboMode="false"
-        revision="23.0.1"
-        sha1="4de2b4ed3445c37ec1720a7d214712e845a24636">
-        <dex dex="/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/pre-dexed/debug/okhttp-2.5.0-4b79731a9b09e129458b7bf3b29af3804d18e230.jar/classes.dex" />
-    </item>
-    <item
-        jar="/home/ben/.gradle/caches/modules-2/files-2.1/org.mnode.ical4j/ical4j/1.0.5/8becf5df098856732212652d3a63de0c1b0b75db/ical4j-1.0.5.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="8becf5df098856732212652d3a63de0c1b0b75db">
-        <dex dex="/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/pre-dexed/debug/ical4j-1.0.5-5aec154a7b668b825a115379d241a02059e7b77e.jar/classes.dex" />
-    </item>
-    <item
-        jar="/home/ben/.gradle/caches/modules-2/files-2.1/backport-util-concurrent/backport-util-concurrent/2.1/f1beb9cecc07b3abea236d6f88c99653360787cd/backport-util-concurrent-2.1.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="f1beb9cecc07b3abea236d6f88c99653360787cd">
-        <dex dex="/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/pre-dexed/debug/backport-util-concurrent-2.1-260348ad6ec40ae05011a5af21fd717b90fca969.jar/classes.dex" />
-    </item>
-    <item
-        jar="/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="57ae0d750ff83f0c738d21720224ac7ea866a094">
-        <dex dex="/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/pre-dexed/debug/classes-03d2fb069fbae5347b69b849c296973216dfedb9.jar/classes.dex" />
-    </item>
-    <item
-        jar="/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/21.0.3/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="00b0b7233e1ec64acebfac40d4983d32d4712426">
-        <dex dex="/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/pre-dexed/debug/classes-ae858db18ef2afbf0d6905082765ef6800320e28.jar/classes.dex" />
-    </item>
-    <item
-        jar="/home/ben/.gradle/caches/modules-2/files-2.1/org.parceler/parceler/0.2.13/ea3579621a7fe7083e7f7bb8be0d90c8751acbf9/parceler-0.2.13.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="ea3579621a7fe7083e7f7bb8be0d90c8751acbf9">
-        <dex dex="/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/pre-dexed/debug/parceler-0.2.13-4f1f0f74eb787a80f0391112f6afa0b762137f4d.jar/classes.dex" />
-    </item>
-    <item
-        jar="/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/exploded-aar/com.roomorama/caldroid/2.2.1/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
+        revision="23.0.2"
         sha1="5326261b0e9b167c7b2cc8957de3270488670272">
-        <dex dex="/home/ben/school/370/Repositories/App/SSUMobile_android/app/build/intermediates/pre-dexed/debug/classes-7b7f75694f2199ab5dddf9eb31eb5479ba2a364a.jar/classes.dex" />
+        <dex dex="C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\pre-dexed\debug\classes-b63f368a99eba023ad50472d2124a2f5ed8635ed.jar\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\WestFlow\.gradle\caches\modules-2\files-2.1\io.reactivex\rxjava\1.0.4\a607b0e12d2de769dc219e00b60a9b3d9e730d\rxjava-1.0.4.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="00a607b0e12d2de769dc219e00b60a9b3d9e730d">
+        <dex dex="C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\pre-dexed\debug\rxjava-1.0.4-e937ae2faedaee8a0120bc415445e05639f68f3f.jar\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\WestFlow\.gradle\caches\modules-2\files-2.1\commons-codec\commons-codec\1.8\af3be3f74d25fc5163b54f56a0d394b462dafafd\commons-codec-1.8.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="af3be3f74d25fc5163b54f56a0d394b462dafafd">
+        <dex dex="C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\pre-dexed\debug\commons-codec-1.8-42d06e3d249d178f5c2bae669c0b719baf7f6299.jar\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\WestFlow\.gradle\caches\modules-2\files-2.1\io.reactivex\rxandroid\0.24.0\42dab493b8f74b164e082f281480c9d493ff89da\rxandroid-0.24.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="42dab493b8f74b164e082f281480c9d493ff89da">
+        <dex dex="C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\pre-dexed\debug\rxandroid-0.24.0-10d660f1e77877d974e6d5839ba6433b6a74849c.jar\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\WestFlow\.gradle\caches\modules-2\files-2.1\org.apache.httpcomponents\httpclient-android\4.3.5.1\eecbb0b998e77629862a13d957d552b3be58fc4e\httpclient-android-4.3.5.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="eecbb0b998e77629862a13d957d552b3be58fc4e">
+        <dex dex="C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\pre-dexed\debug\httpclient-android-4.3.5.1-1093d2d7dcf6a04493bda8efe1eaaf04e9071f2f.jar\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\WestFlow\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.0\support-annotations-23.1.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="92e3fc113ec3ee36b64603a38857b95700025633">
+        <dex dex="C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\pre-dexed\debug\support-annotations-23.1.0-e56bffca6eb1101c66410ff20e7e237813fc2c77.jar\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\WestFlow\.gradle\caches\modules-2\files-2.1\backport-util-concurrent\backport-util-concurrent\2.1\f1beb9cecc07b3abea236d6f88c99653360787cd\backport-util-concurrent-2.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="f1beb9cecc07b3abea236d6f88c99653360787cd">
+        <dex dex="C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\pre-dexed\debug\backport-util-concurrent-2.1-df3796b361428836a2b242ebf252b67a55bb03ea.jar\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\WestFlow\.gradle\caches\modules-2\files-2.1\com.koushikdutta.async\androidasync\2.1.6\e3d5f6ab2003e31f2cf5ea61b4731a21e9517935\androidasync-2.1.6.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="e3d5f6ab2003e31f2cf5ea61b4731a21e9517935">
+        <dex dex="C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\pre-dexed\debug\androidasync-2.1.6-02212d1d00c85097b0ddbe3a7d36d5226714c6fe.jar\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\WestFlow\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.6.0\98476622f10715998eacf9240d6b479f12c66143\okio-1.6.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\pre-dexed\debug\okio-1.6.0-923a76d0aff713dea386e165fab07732dbe1005c.jar\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="57ae0d750ff83f0c738d21720224ac7ea866a094">
+        <dex dex="C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\pre-dexed\debug\classes-5917be7e22b3de145687022982acef1180937b27.jar\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\WestFlow\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit\retrofit\1.9.0\a681c044244d9fc375198588297a39ba78028423\retrofit-1.9.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="a681c044244d9fc375198588297a39ba78028423">
+        <dex dex="C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\pre-dexed\debug\retrofit-1.9.0-d79322872b186967c89375269836daeabec59a32.jar\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\WestFlow\.gradle\caches\modules-2\files-2.1\org.parceler\parceler\0.2.13\ea3579621a7fe7083e7f7bb8be0d90c8751acbf9\parceler-0.2.13.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="ea3579621a7fe7083e7f7bb8be0d90c8751acbf9">
+        <dex dex="C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\pre-dexed\debug\parceler-0.2.13-1c8ee673fcbea1a19765b5946c8f8ac1deecd406.jar\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="3f151e49c316a5ab2c065969a3b3b55ef9b393fc">
+        <dex dex="C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\pre-dexed\debug\classes-76aeada06852ac103192d748f3390a4563e063cb.jar\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\WestFlow\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp\okhttp\2.5.0\4de2b4ed3445c37ec1720a7d214712e845a24636\okhttp-2.5.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="4de2b4ed3445c37ec1720a7d214712e845a24636">
+        <dex dex="C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\pre-dexed\debug\okhttp-2.5.0-eeac6ec31211fa409a451701a33affeb7c02f814.jar\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\WestFlow\.gradle\caches\modules-2\files-2.1\org.mnode.ical4j\ical4j\1.0.5\8becf5df098856732212652d3a63de0c1b0b75db\ical4j-1.0.5.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8becf5df098856732212652d3a63de0c1b0b75db">
+        <dex dex="C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\pre-dexed\debug\ical4j-1.0.5-efe694b44670f380ee459bf456252d7ac3687387.jar\classes.dex" />
     </item>
 
 </items>
