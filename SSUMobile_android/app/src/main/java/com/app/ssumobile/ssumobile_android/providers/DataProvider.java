@@ -5,6 +5,7 @@ import com.app.ssumobile.ssumobile_android.models.DepartmentModel;
 import com.app.ssumobile.ssumobile_android.models.FacStaffModel;
 import com.app.ssumobile.ssumobile_android.models.SchoolModel;
 
+import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.json.JSONArray;
 import org.json.JSONException;
 
@@ -18,14 +19,16 @@ import javax.net.ssl.HttpsURLConnection;
 /**
  * Created by WestFlow on 10/5/2017.
  */
+
 public class DataProvider {
-    String Djson = null;
-    String Fjson = null;
-    String Bjson = null;
-    String Sjson = null;
-    JSONtoModelProvider jsonConverter = new JSONtoModelProvider();
+    private String Djson = null;
+    private String Fjson = null;
+    private String Bjson = null;
+    private String Sjson = null;
+    private JSONtoModelProvider jsonConverter = new JSONtoModelProvider();
 
     public  void getData(ArrayList<DepartmentModel> D, ArrayList<FacStaffModel> F, ArrayList<BuildingModel> B, ArrayList<SchoolModel> S){
+
         Thread runner1 = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -50,10 +53,11 @@ public class DataProvider {
             final String USER_AGENT = "Mozilla/5.0";
 
             URL obj = new URL(url);
+
             HttpsURLConnection con = (HttpsURLConnection) obj.openConnection();
             con.setRequestMethod("GET");  // optional default is GET
             con.setRequestProperty("User-Agent", USER_AGENT); //add request header
-            con.setHostnameVerifier(org.apache.http.conn.ssl.SSLSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);
+            con.setHostnameVerifier(SSLConnectionSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);
 
             BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
             String inputLine;
@@ -67,7 +71,7 @@ public class DataProvider {
 
             return response.toString();
         } catch (Throwable t) {
-            System.out.println(t.getCause());
+            System.out.println(t.getCause().toString());
         }
         return null;
     }

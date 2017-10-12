@@ -51,11 +51,16 @@ ADDED from C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_an
 		ADDED from C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\src\main\AndroidManifest.xml:13:22-77
 application
 ADDED from C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\src\main\AndroidManifest.xml:15:5-97:19
-MERGED from [com.android.support:appcompat-v7:23.1.0] C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.0\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.1.0] C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.1.0] C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:cardview-v7:23.1.0] C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\23.1.0\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.1.0] C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\WestFlow\.android\build-cache\f5f9c6fbdc32a0359c79a1839666b73ea25e62ba\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\WestFlow\.android\build-cache\32b5738a9e7c026b25176b1fa827933a3d43085a\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\WestFlow\.android\build-cache\c4fc736d72c64a2a00341d41daf97d8d2ada8a61\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\WestFlow\.android\build-cache\cc77a10a8f60747d1fd76729afa2b2e5964e3c1d\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\WestFlow\.android\build-cache\d475091ea0fbd9b581e0b5d367bd646a63a45d73\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\WestFlow\.android\build-cache\e51a0ae299d44c339927a563e0d8e563626be3f9\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\WestFlow\.android\build-cache\6408021001f361d72fb2d20240d882964d2c4eae\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:cardview-v7:25.3.1] C:\Users\WestFlow\.android\build-cache\ebcd9c9780502e96ea7ecbeb1fb1ebb336ca22e4\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\WestFlow\.android\build-cache\69f5faad9e15710198f199447459f5d0d1dc1881\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\WestFlow\.android\build-cache\3a90d3c533cd4b41599f921851afa59e4bfdc192\output\AndroidManifest.xml:29:5-20
 	android:label
 		ADDED from C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\src\main\AndroidManifest.xml:18:9-41
 	android:allowBackup
@@ -184,16 +189,39 @@ ADDED from C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_an
 		ADDED from C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\src\main\AndroidManifest.xml:94:13-51
 uses-sdk
 INJECTED from C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support:appcompat-v7:23.1.0] C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.0\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.1.0] C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\AndroidManifest.xml:20:5-43
-MERGED from [com.roomorama:caldroid:2.2.1] C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\exploded-aar\com.roomorama\caldroid\2.2.1\AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:support-v4:23.1.0] C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:cardview-v7:23.1.0] C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\23.1.0\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:recyclerview-v7:23.1.0] C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.0\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.1.0] C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\WestFlow\.android\build-cache\f5f9c6fbdc32a0359c79a1839666b73ea25e62ba\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\WestFlow\.android\build-cache\32b5738a9e7c026b25176b1fa827933a3d43085a\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\WestFlow\.android\build-cache\c4fc736d72c64a2a00341d41daf97d8d2ada8a61\output\AndroidManifest.xml:20:5-43
+MERGED from [com.roomorama:caldroid:2.2.1] C:\Users\WestFlow\.android\build-cache\0fb18741f3148dc04cd11c6f6097a892c3d32289\output\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\WestFlow\.android\build-cache\cc77a10a8f60747d1fd76729afa2b2e5964e3c1d\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\WestFlow\.android\build-cache\d475091ea0fbd9b581e0b5d367bd646a63a45d73\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\WestFlow\.android\build-cache\e51a0ae299d44c339927a563e0d8e563626be3f9\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\WestFlow\.android\build-cache\6408021001f361d72fb2d20240d882964d2c4eae\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:cardview-v7:25.3.1] C:\Users\WestFlow\.android\build-cache\ebcd9c9780502e96ea7ecbeb1fb1ebb336ca22e4\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\WestFlow\.android\build-cache\5cd4fcb445097f1a3f3b65c8a34178282dcd6ba2\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\WestFlow\.android\build-cache\69f5faad9e15710198f199447459f5d0d1dc1881\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\WestFlow\.android\build-cache\3a90d3c533cd4b41599f921851afa59e4bfdc192\output\AndroidManifest.xml:21:5-23:58
+	tools:overrideLibrary
+		ADDED from [com.android.support:appcompat-v7:25.3.1] C:\Users\WestFlow\.android\build-cache\f5f9c6fbdc32a0359c79a1839666b73ea25e62ba\output\AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
 		INJECTED from C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
 		INJECTED from C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\WestFlow\Desktop\Repositories\SSUMobile Android\SSUMobile_android\SSUMobile_android\app\src\main\AndroidManifest.xml
+meta-data#android.support.VERSION
+ADDED from [com.android.support:appcompat-v7:25.3.1] C:\Users\WestFlow\.android\build-cache\f5f9c6fbdc32a0359c79a1839666b73ea25e62ba\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\WestFlow\.android\build-cache\32b5738a9e7c026b25176b1fa827933a3d43085a\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\WestFlow\.android\build-cache\c4fc736d72c64a2a00341d41daf97d8d2ada8a61\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\WestFlow\.android\build-cache\cc77a10a8f60747d1fd76729afa2b2e5964e3c1d\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\WestFlow\.android\build-cache\d475091ea0fbd9b581e0b5d367bd646a63a45d73\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\WestFlow\.android\build-cache\e51a0ae299d44c339927a563e0d8e563626be3f9\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\WestFlow\.android\build-cache\6408021001f361d72fb2d20240d882964d2c4eae\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:cardview-v7:25.3.1] C:\Users\WestFlow\.android\build-cache\ebcd9c9780502e96ea7ecbeb1fb1ebb336ca22e4\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\WestFlow\.android\build-cache\5cd4fcb445097f1a3f3b65c8a34178282dcd6ba2\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\WestFlow\.android\build-cache\69f5faad9e15710198f199447459f5d0d1dc1881\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\WestFlow\.android\build-cache\3a90d3c533cd4b41599f921851afa59e4bfdc192\output\AndroidManifest.xml:25:5-27:34
+	android:value
+		ADDED from [com.android.support:appcompat-v7:25.3.1] C:\Users\WestFlow\.android\build-cache\f5f9c6fbdc32a0359c79a1839666b73ea25e62ba\output\AndroidManifest.xml:27:9-31
+	android:name
+		ADDED from [com.android.support:appcompat-v7:25.3.1] C:\Users\WestFlow\.android\build-cache\f5f9c6fbdc32a0359c79a1839666b73ea25e62ba\output\AndroidManifest.xml:26:9-47

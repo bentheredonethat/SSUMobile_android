@@ -211,7 +211,6 @@ public class DepartmentsActivity extends AppCompatActivity {
 
             Dal.getData(contactsList, facStaffList, buildingList, schoolList);
 
-
             Collections.sort(contactsList, new Comparator<DepartmentModel>() {
                 @Override
                 public int compare(DepartmentModel lhs, DepartmentModel rhs) {
